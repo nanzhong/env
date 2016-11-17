@@ -1,0 +1,56 @@
+[general]
+accounts = nine27, do
+fsync = false
+pythonfile = ~/.offlineimap.py
+socktimeout = 10
+
+[Account nine27]
+localrepository = nine27-local
+remoterepository = nine27-remote
+status_backend = sqlite
+synclabels = yes
+labelsheader = X-Keywords
+postsynchook = ~/.offlineimap/hooks/postsync-nine27
+
+[Repository nine27-local]
+type = GmailMaildir
+localfolders = ~/.mail/nine27
+
+[Repository nine27-remote]
+type = Gmail
+auth_mechanisms = XOAUTH2
+remoteuser = nan@nine27.com
+oauth2_client_id_eval = secure_string_for("nan@nine27.com", "mail.nine27.com", "client_id")
+oauth2_client_secret_eval = secure_string_for("nan@nine27.com", "mail.nine27.com", "client_secret")
+oauth2_refresh_token_eval = secure_string_for("nan@nine27.com", "mail.nine27.com", "refresh_token")
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+realdelete = no
+folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
+    folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam'] 
+trashfolder = [Gmail]/Trash 
+
+[Account do]
+localrepository = do-local
+remoterepository = do-remote
+status_backend = sqlite
+synclabels = yes
+labelsheader = X-Keywords
+postsynchook = ~/.offlineimap/hooks/postsync-do
+
+[Repository do-local]
+type = GmailMaildir
+localfolders = ~/.mail/do
+
+[Repository do-remote]
+type = Gmail
+auth_mechanisms = XOAUTH2
+remoteuser = nzhong@digitalocean.com
+oauth2_client_id_eval = secure_string_for("nzhong@digitalocean.com", "mail.digitalocean.com", "client_id")
+oauth2_client_secret_eval = secure_string_for("nzhong@digitalocean.com", "mail.digitalocean.com", "client_secret")
+oauth2_refresh_token_eval = secure_string_for("nzhong@digitalocean.com", "mail.digitalocean.com", "refresh_token")
+ssl=true
+sslcacertfile = /usr/local/etc/openssl/cert.pem
+realdelete = no
+folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
+    folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam'] 
+trashfolder = [Gmail]/Trash 

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+#count new mail for every maildir
+maildirnew="$HOME/.mail/nine27/[Gmail].All Mail/new"
+new="$(find $maildirnew -type f | wc -l | sed 's/ //g')"
+
+if [ $new -gt 0 ]
+then
+    /usr/local/bin/reattach-to-user-namespace /usr/local/bin/terminal-notifier -title 'offlineimap' -subtitle 'nan@nine27.com' -message "You have $new new email(s)!" -group offlineimap-nine27
+fi

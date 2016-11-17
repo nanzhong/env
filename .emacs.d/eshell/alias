@@ -1,0 +1,4 @@
+alias nil  $*
+alias dogo-edge dogo; cd docode/src/teams/edge
+alias dogo cd ~/do/repos/cthulhu; . .env.el
+alias clear-dns sudo killall -HUP mDNSResponder

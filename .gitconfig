@@ -1,0 +1,7 @@
+[user]
+	name = Nan Zhong
+	email = nan@nine27.com
+	signingkey = F3822C54A2ED35D3
+[core]
+	editor = emacsclient
+
