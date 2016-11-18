@@ -18,7 +18,7 @@
  '(js-indent-level 2)
  '(package-selected-packages
    (quote
-    (ace-window shackle flycheck-swift company-sourcekit swift-mode eyebrowse-mode yaml-mode web-mode use-package spaceline smartparens rspec-mode robe rbenv rainbow-mode rainbow-delimiters projectile-rails mu4e-maildirs-extension markdown-mode magit helm-projectile helm-ag haml-mode git-gutter-fringe flycheck fish-mode exec-path-from-shell enh-ruby-mode company-go)))
+    (go-mode eyebrowse projectile helm company smart-mode-line ace-window shackle flycheck-swift company-sourcekit swift-mode eyebrowse-mode yaml-mode web-mode use-package spaceline smartparens rspec-mode robe rbenv rainbow-mode rainbow-delimiters projectile-rails mu4e-maildirs-extension markdown-mode magit helm-projectile helm-ag haml-mode git-gutter-fringe flycheck fish-mode exec-path-from-shell enh-ruby-mode company-go)))
  '(powerline-default-separator nil)
  '(protect-buffer-bury-p nil)
  '(rspec-use-rake-when-possible nil)
