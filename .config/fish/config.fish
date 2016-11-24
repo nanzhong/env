@@ -1,23 +1,20 @@
-# aliases
-function em
-	emacsclient $argv
-end
-
-alias em emacsclient
+set -U fish_user_paths $HOME/bin $fish_user_paths
 
 # editor
-set EDITOR 'em -n'
-set VISUAL 'em -n'
+set EDITOR 'nvim'
+set VISUAL 'nvim'
 
-# rbenv
-set PATH $HOME/bin $HOME/.rbenv/bin $PATH
-status --is-interactive; and . (rbenv init -|psub)
+# homebrew
+set -U fish_user_paths /usr/local/bin /usr/local/sbin $fish_user_paths
 
 # go
 set -x GOPATH $HOME/go
-set PATH $GOPATH/bin $PATH
+set -U fish_user_paths $HOME/go/bin $fish_user_paths
 
-# swift
-setenv SWIFTENV_ROOT "$HOME/.swiftenv"
-setenv PATH "$SWIFTENV_ROOT/bin" $PATH
-status --is-interactive; and . (swiftenv init -|psub)
+# rbenv
+set -U fish_user_paths $HOME/.rbenv/bin $fish_user_paths
+status --is-interactive; and . (rbenv init -|psub)
+
+# ls colors
+set -x CLICOLOR 2
+set -x LSCOLORS GxFxCxDxBxegedabagaced

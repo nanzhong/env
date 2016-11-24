@@ -16,6 +16,10 @@
    (quote
     ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
  '(js-indent-level 2)
+ '(mac-command-modifier (quote meta))
+ '(mac-frame-tabbing (quote automatic))
+ '(mac-mouse-wheel-smooth-scroll t)
+ '(mac-right-command-modifier (quote meta))
  '(package-selected-packages
    (quote
     (go-mode eyebrowse projectile helm company smart-mode-line ace-window shackle flycheck-swift company-sourcekit swift-mode eyebrowse-mode yaml-mode web-mode use-package spaceline smartparens rspec-mode robe rbenv rainbow-mode rainbow-delimiters projectile-rails mu4e-maildirs-extension markdown-mode magit helm-projectile helm-ag haml-mode git-gutter-fringe flycheck fish-mode exec-path-from-shell enh-ruby-mode company-go)))

@@ -1,8 +1,8 @@
 ;;; appearance.el --- theme and ui related config
-(setq default-frame-alist '((font . "Menlo 11")))
+(setq default-frame-alist '((font . "Menlo 10")))
 (set-face-bold-p 'bold nil)
 
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 

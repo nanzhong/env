@@ -17,6 +17,7 @@ kwmc config mouse-drag on
 kwmc config mouse-drag mod shift+ctrl
 
 kwmc rule owner="Emacs" properties={role="AXStandardWindow"}
+kwmc rule owner="iTerm2" properties={role="AXDialog"}
 kwmc rule owner="Screenhero" properties={float="true"}
 kwmc rule owner="Transmission" except="Transmission" properties={float="true"}
 

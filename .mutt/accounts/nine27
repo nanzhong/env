@@ -1,0 +1,15 @@
+# Account Settings ------------------------------
+set from     = "nan@nine27.com"
+set sendmail = "/usr/local/bin/msmtp -a nine27"
+
+# Default inbox.
+set spoolfile = "+nine27/INBOX"
+
+# Other special folders.
+set mbox      = "+nine27/[Gmail].All Mail"
+set postponed = "+nine27/[Gmail].Drafts"
+set record    = "+nine27/[Gmail].Sent Mail"
+
+color status brightgreen default
+color indicator brightblack brightgreen
+color progress brightblack brightgreen

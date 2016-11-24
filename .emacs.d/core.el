@@ -24,6 +24,12 @@
 ;; Disable bidirectional editing
 (setq-default bidi-display-reordering nil)
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config
+  (exec-path-from-shell-initialize)
+  (exec-path-from-shell-copy-env "GOPATH"))
+
 (use-package smart-mode-line
   :ensure t
   :config

@@ -20,7 +20,6 @@
 ;; Load configs
 (load (expand-file-name "appearance.el" user-emacs-directory))
 (load (expand-file-name "core.el" user-emacs-directory))
-(load (expand-file-name "macos.el" user-emacs-directory))
 (load (expand-file-name "ruby.el" user-emacs-directory))
 (load (expand-file-name "go.el" user-emacs-directory))
 (load (expand-file-name "swift.el" user-emacs-directory))
