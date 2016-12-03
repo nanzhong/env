@@ -27,14 +27,15 @@
 		       (message-fetch-field "from")))
 	       (account
 		(cond
+		 ((string-match "nan@notanumber.io" from) "NaN")
 		 ((string-match "nzhong@digitalocean.com" from) "do")
 		 ((string-match "nan@nine27.com" from) "nine27"))))
 	    (setq message-sendmail-extra-arguments (list '"-a" account))))))
 
   (setq mail-user-agent 'mu4e-user-agent)
   (setq mu4e-mu-binary "/usr/local/bin/mu")
-  (setq mu4e-maildir "~/.mail")
-  (setq mu4e-get-mail-command "offlineimap -o")
+  (setq mu4e-maildir "~/Mail")
+  (setq mu4e-get-mail-command "mailsync-all")
   (setq mu4e-update-interval 300)
   (setq mu4e-view-show-images t)
   (setq mu4e-html2text-command "w3m -dump -T text/html")
@@ -57,12 +58,25 @@
   (add-hook 'mu4e-compose-mode-hook 'flyspell-mode)
   (add-hook 'mu4e-mark-execute-pre-hook
 	    (lambda (mark msg)
-	      (cond ((member mark '(refile trash)) (mu4e-action-retag-message msg "-\\Inbox"))
+	      (cond ((member mark '(refile trash)) (mu4e-action-retag-message msg "-\\Inbox -\\github -\\jira"))
 		    ((equal mark 'flag) (mu4e-action-retag-message msg "\\Starred"))
 		    ((equal mark 'unflag) (mu4e-action-retag-message msg "-\\Starred")))))
 
   (setq mu4e-contexts
 	`( ,(make-mu4e-context
+	     :name "NaN"
+	     :enter-func (lambda () (mu4e-message "Switch to the NaN context"))
+	     :match-func (lambda (msg)
+			   (when msg
+			     (mu4e-message-maildir-matches msg "^/NaN")))
+	     :leave-func (lambda () (mu4e-clear-caches))
+	     :vars '((user-mail-address     . "nan@notanumber.io")
+		     (user-full-name        . "Nan Zhong")
+		     (mu4e-sent-folder      . "/NaN/[Gmail].All Mail")
+		     (mu4e-drafts-folder    . "/NaN/[Gmail].Drafts")
+		     (mu4e-trash-folder     . "/NaN/[Gmail].Trash")
+		     (mu4e-refile-folder    . "/NaN/[Gmail].All Mail")))
+	   ,(make-mu4e-context
 	     :name "nine27"
 	     :enter-func (lambda () (mu4e-message "Switch to the nine27 context"))
 	     :match-func (lambda (msg)
@@ -101,4 +115,6 @@
 			 ("flag:unread" "Unread messages" ?u)
 			 ("date:today..now" "Today's messages" ?t)
 			 ("date:7d..now" "Last 7 days" ?w)
+			 ("tag:github" "github" ?g)
+			 ("tag:jira" "jira" ?j)
 			 ("mime:image/*" "Messages with images" ?p))))

@@ -30,11 +30,6 @@
   (exec-path-from-shell-initialize)
   (exec-path-from-shell-copy-env "GOPATH"))
 
-(use-package smart-mode-line
-  :ensure t
-  :config
-  (sml/setup))
-
 (use-package company
   :ensure t
   :config
@@ -57,14 +52,34 @@
   :config
   (smartparens-global-mode t))
 
-(use-package helm-config
-  :ensure helm
+(use-package flx
+  :ensure t)
+
+(add-to-list 'package-pinned-packages '(swiper . "melpa"))
+(add-to-list 'package-pinned-packages '(ivy . "melpa"))
+(use-package ivy
+  :ensure t
   :config
-  (helm-mode 1)
-  :bind
-  (("M-x" . helm-M-x)
-   ("C-x C-f" . helm-find-files)
-   ("C-x C-b" . helm-buffers-list)))
+  (ivy-mode 1)
+  (setq ivy-use-virtual-buffers t)
+  (setq ivy-count-format "(%d/%d) ")
+  (setq ivy-re-builders-alist
+	'((ivy-switch-buffer . ivy--regex-plus)
+	  (t . ivy--regex-fuzzy)))
+  (global-set-key (kbd "C-s") 'swiper)
+  (global-set-key (kbd "M-x") 'counsel-M-x)
+  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+  ;;(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+  ;;(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+  ;;(global-set-key (kbd "<f1> l") 'counsel-load-library)
+  ;;(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+  ;;(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+  (global-set-key (kbd "C-c g") 'counsel-git)
+  (global-set-key (kbd "C-c j") 'counsel-git-grep)
+  (global-set-key (kbd "C-c k") 'counsel-ag)
+  ;;(global-set-key (kbd "C-x l") 'counsel-locate)
+  ;;(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+  )
 
 (use-package projectile
   :ensure t
@@ -74,13 +89,10 @@
   (add-hook 'text-mode-hook 'projectile-mode)
   (add-hook 'prog-mode-hook 'projectile-mode))
 
-(use-package helm-projectile
+(use-package counsel-projectile
   :ensure t
   :config
-  (helm-projectile-on))
-
-(use-package helm-ag
-  :ensure t)
+  (counsel-projectile-on))
 
 (use-package eyebrowse
   :ensure t
@@ -92,11 +104,11 @@
   :config
   (setq helm-display-function 'pop-to-buffer)
   (setq shackle-rules '(("\\`\\*helm.*?\\*\\'" :regexp t :align t :size 0.3)
-			("\\`\\*magit.*\\'" :regexp t :align right :size 0.4)))
+                        ("\\`\\*magit.*\\'" :regexp t :align right :size 0.4)))
   (shackle-mode))
 
 (use-package ace-window
   :ensure t
   :config
-  (global-set-key (kbd "M-p") 'ace-window)
+  (global-set-key (kbd "M-<return>") 'ace-window)
   (setq aw-keys '(?a ?o ?e ?u ?h ?t ?n ?s)))

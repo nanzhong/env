@@ -4,6 +4,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'Shougo/deoplete.nvim'
 Plug 'airblade/vim-rooter'
 Plug 'benekastah/neomake'
+" Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
 Plug 'jiangmiao/auto-pairs'
@@ -12,7 +13,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'mhinz/vim-startify'
 Plug 'rking/ag.vim'
 Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sleuth'
+" Plug 'tpope/vim-sleuth'
+Plug 'embear/vim-localvimrc'
 Plug 'tpope/vim-surround'
 
 " Git plugins
@@ -25,11 +27,19 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-rbenv'
 Plug 'vim-ruby/vim-ruby'
 
-" Markdown plugins
-Plug 'shime/vim-livedown'
+" Go plugins
+Plug 'fatih/vim-go'
 
-" Colorschemes
-Plug 'justinmk/molokai'
+" Rust plugins
+Plug 'rust-lang/rust.vim'
+Plug 'sebastianmarkow/deoplete-rust'
+
+" Toml plugins
+Plug 'cespare/vim-toml'
+
+" Swift plugins
+Plug 'keith/swift.vim'
+Plug 'mitsuse/autocomplete-swift'
 
 call plug#end()
 
@@ -53,8 +63,13 @@ set cc=80
 " enable syntax processesing
 syntax on
 
+" indentation
+set expandtab
+set shiftwidth=2
+set tabstop=2
+
 " whitespace
-set list listchars=tab:»·,trail:·
+set list listchars=tab:»\ ,trail:·
 
 " allow unsaved buffers
 set hidden
@@ -90,7 +105,6 @@ nnoremap <esc> :noh<return><esc>
 tnoremap <Esc> <C-\><C-n>
 
 " neomake
-autocmd BufReadPost,BufWritePost * Neomake
 let g:neomake_ruby_enabled_makers = ['rubocop', 'mri']
 let g:neomake_open_list = 2
 
@@ -104,6 +118,16 @@ let g:neomake_warning_sign = {
         \ 'texthl': 'NeomakeWarningSign',
         \ }
 
+augroup neomake_makers
+  autocmd!
+  let project_maker_exts = ['rs']
+
+  autocmd BufReadPost,BufWritePost * if index(project_maker_exts, &ft) > 0 | Neomake | endif
+
+  " Have neomake run cargo when Rust files are saved.
+  autocmd BufReadPost,BufWritePost *.rs Neomake! cargo
+augroup END
+
 " deoplete
 let g:deoplete#enable_at_startup=1
 let g:deoplete#enable_smart_case = 1
@@ -114,6 +138,9 @@ let g:deoplete#auto_completion_start_length=2
 let g:deoplete#sources={}
 let g:deoplete#sources._    = ['buffer', 'member', 'file']
 let g:deoplete#sources.ruby = ['buffer', 'member', 'file']
+
+let g:deoplete#sources#rust#racer_binary='/Users/nan/.cargo/bin/racer'
+let g:deoplete#sources#rust#rust_source_path='/Users/nan/src/rust/src'
 
 " fzf
 function! s:find_git_root()
@@ -136,4 +163,35 @@ nmap <silent> <leader>l :TestLast<CR>
 nmap <silent> <leader>g :TestVisit<CR>
 
 " vim-rooter
+let g:rooter_patterns = ['OWNERS', 'Rakefile', 'Makefile', 'README.md', '.git/']
 let g:rooter_silent_chdir = 0
+
+" vim-go
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>rt <Plug>(go-run-tab)
+au FileType go nmap <Leader>rs <Plug>(go-run-split)
+au FileType go nmap <Leader>rv <Plug>(go-run-vertical)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>gv <Plug>(go-doc-vertical)
+au FileType go nmap <Leader>gb <Plug>(go-doc-browser)
+au FileType go nmap <Leader>s <Plug>(go-implements)
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>e <Plug>(go-rename)
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_fmt_command = "goimports"
+
+" rust.vim
+"let g:rustfmt_autosave = 1

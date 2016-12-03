@@ -40,6 +40,8 @@ mailboxes "+do ───────────────────" \
           "+do/jira" \
           "+do/sentry" \
           "+do/bugsnag" \
+          "+NaN ---───────────────" \
+          "+NaN/INBOX" \
           "+nine27 ───────────────" \
           "+nine27/INBOX" \
 
@@ -49,6 +51,11 @@ macro index I "<enter-command>mailboxes \
             \"+do/[Gmail].Sent Mail\" \
             \"+do/[Gmail].Spam\" \
             \"+do/[Gmail].Trash\" \
+            \"+NaN/[Gmail].All Mail\" \
+            \"+NaN/[Gmail].Drafts\" \
+            \"+NaN/[Gmail].Sent Mail\" \
+            \"+NaN/[Gmail].Spam\" \
+            \"+NaN/[Gmail].Trash\" \
             \"+nine27/[Gmail].All Mail\" \
             \"+nine27/[Gmail].Drafts\" \
             \"+nine27/[Gmail].Sent Mail\" \
@@ -62,6 +69,11 @@ macro index i "<enter-command>unmailboxes \
             \"+do/[Gmail].Sent Mail\" \
             \"+do/[Gmail].Spam\" \
             \"+do/[Gmail].Trash\" \
+            \"+NaN/[Gmail].All Mail\" \
+            \"+NaN/[Gmail].Drafts\" \
+            \"+NaN/[Gmail].Sent Mail\" \
+            \"+NaN/[Gmail].Spam\" \
+            \"+NaN/[Gmail].Trash\" \
             \"+nine27/[Gmail].All Mail\" \
             \"+nine27/[Gmail].Drafts\" \
             \"+nine27/[Gmail].Sent Mail\" \
@@ -156,7 +168,8 @@ set forward_quote                    # include message in forwards
 set editor = "nvim"                  # Use terminal Vim to compose email.
 
 # Set account specific options on folder change
-source ~/.mutt/accounts/nine27
+source ~/.mutt/accounts/NaN
+folder-hook NaN/* source ~/.mutt/accounts/NaN
 folder-hook nine27/* source ~/.mutt/accounts/nine27
 folder-hook do/*     source ~/.mutt/accounts/do
 
@@ -231,7 +244,7 @@ color quoted7 green black
 ## Default color definitions
 #color hdrdefault white green
 color signature brightmagenta black
-color attachment black green
+color attachment yellow brightblack
 color error red black
 color message white black
 color search brightwhite magenta

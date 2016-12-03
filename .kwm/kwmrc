@@ -22,11 +22,11 @@ kwmc rule owner="Screenhero" properties={float="true"}
 kwmc rule owner="Transmission" except="Transmission" properties={float="true"}
 
 kwmc config border focused on
-kwmc config border focused size 2
-kwmc config border focused color 0xFFBDD322
+kwmc config border focused size 4
+kwmc config border focused color 0xFF86B20E
 kwmc config border focused radius 6
 
 kwmc config border marked on
-kwmc config border marked size 2
+kwmc config border marked size 4
 kwmc config border marked color 0xFFCC5577
 kwmc config border marked radius 6

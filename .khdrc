@@ -2,8 +2,8 @@
 khd kwm on
 
 # set border color for different modes
-khd mode default color 0xddd5c4a1
-khd mode kwm color 0xddbdd322
+khd mode default color 0xFF86B20E
+khd mode kwm color 0xFF66D9EF
 
 # toggle between modes
 alt - tab       : khd -e "mode activate kwm"

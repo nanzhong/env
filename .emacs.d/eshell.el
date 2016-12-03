@@ -25,7 +25,7 @@
   (interactive)
   (eshell 'Z))
 
-(global-set-key (kbd "M-<return>") 'eshell-new)
+(global-set-key (kbd "M-S-<return>") 'eshell-new)
 
 (defun eshell/d (&rest args)
   (dired (pop args) "."))

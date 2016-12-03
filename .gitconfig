@@ -1,7 +1,8 @@
 [user]
 	name = Nan Zhong
-	email = nan@nine27.com
+	email = nan@notanumber.io
 	signingkey = A2ED35D3
 [core]
-	editor = nvim
+	editor = emacsclient
+	excludesfile = /Users/nan/.gitignore
 
