@@ -57,7 +57,7 @@ set showmatch
 set incsearch
 set hlsearch
 set ruler
-set fillchars+=vert:\ 
+set fillchars+=vert:│
 set cc=80
 
 " enable syntax processesing

@@ -58,7 +58,7 @@
   (add-hook 'mu4e-compose-mode-hook 'flyspell-mode)
   (add-hook 'mu4e-mark-execute-pre-hook
 	    (lambda (mark msg)
-	      (cond ((member mark '(refile trash)) (mu4e-action-retag-message msg "-\\Inbox -\\github -\\jira"))
+	      (cond ((member mark '(refile trash)) (mu4e-action-retag-message msg "-\\Inbox"))
 		    ((equal mark 'flag) (mu4e-action-retag-message msg "\\Starred"))
 		    ((equal mark 'unflag) (mu4e-action-retag-message msg "-\\Starred")))))
 

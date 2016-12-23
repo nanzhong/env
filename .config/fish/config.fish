@@ -1,6 +1,6 @@
 # editor
-set EDITOR 'emacsclient'
-set VISUAL 'emacsclient'
+set EDITOR 'nvim'
+set VISUAL 'nvim'
 
 set -U fish_user_paths $HOME/bin $HOME/.cargo/bin $HOME/.rbenv/bin $HOME/.fzf/bin $HOME/go/bin /usr/local/bin /usr/local/sbin
 

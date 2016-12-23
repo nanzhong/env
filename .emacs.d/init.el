@@ -23,6 +23,7 @@
 (load (expand-file-name "ruby.el" user-emacs-directory))
 (load (expand-file-name "go.el" user-emacs-directory))
 (load (expand-file-name "swift.el" user-emacs-directory))
+(load (expand-file-name "lua.el" user-emacs-directory))
 (load (expand-file-name "web.el" user-emacs-directory))
 (load (expand-file-name "mu.el" user-emacs-directory))
 (load (expand-file-name "git.el" user-emacs-directory))

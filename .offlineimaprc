@@ -25,8 +25,8 @@ oauth2_client_secret_eval = secure_string_for("nan@notanumber.io", "mail.notanum
 oauth2_refresh_token_eval = secure_string_for("nan@notanumber.io", "mail.notanumber.io", "refresh_token")
 sslcacertfile = /usr/local/etc/openssl/cert.pem
 realdelete = no
-folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
-    folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam'] 
+#folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
+#    folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam'] 
 trashfolder = [Gmail]/Trash 
 
 [Account nine27]
@@ -50,8 +50,8 @@ oauth2_client_secret_eval = secure_string_for("nan@nine27.com", "mail.nine27.com
 oauth2_refresh_token_eval = secure_string_for("nan@nine27.com", "mail.nine27.com", "refresh_token")
 sslcacertfile = /usr/local/etc/openssl/cert.pem
 realdelete = no
-folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
-    folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam'] 
+#folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
+#    folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam'] 
 trashfolder = [Gmail]/Trash 
 
 [Account do]
@@ -76,6 +76,6 @@ oauth2_refresh_token_eval = secure_string_for("nzhong@digitalocean.com", "mail.d
 ssl=true
 sslcacertfile = /usr/local/etc/openssl/cert.pem
 realdelete = no
-folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
-    folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam'] 
+#folderfilter = lambda folder: folder.startswith('[Gmail]/') and \
+#    folder[8:] in ['All Mail', 'Trash', 'Drafts', 'Spam'] 
 trashfolder = [Gmail]/Trash

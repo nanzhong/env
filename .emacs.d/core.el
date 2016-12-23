@@ -107,6 +107,12 @@
                         ("\\`\\*magit.*\\'" :regexp t :align right :size 0.4)))
   (shackle-mode))
 
+(use-package avy
+  :ensure t
+  :config
+  (global-set-key (kbd "C-.") 'avy-goto-char)
+  (global-set-key (kbd "C-,") 'avy-goto-char-2))
+
 (use-package ace-window
   :ensure t
   :config

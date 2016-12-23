@@ -3,6 +3,6 @@
 	email = nan@notanumber.io
 	signingkey = A2ED35D3
 [core]
-	editor = emacsclient
+	editor = nvim
 	excludesfile = /Users/nan/.gitignore
 

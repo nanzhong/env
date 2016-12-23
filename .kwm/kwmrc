@@ -11,8 +11,8 @@ kwmc config float-non-resizable on
 kwmc config lock-to-container on
 kwmc config cycle-focus on
 
-kwmc config focus-follows-mouse on
-kwmc config mouse-follows-focus on
+kwmc config focus-follows-mouse off
+kwmc config mouse-follows-focus off
 kwmc config mouse-drag on
 kwmc config mouse-drag mod shift+ctrl
 
