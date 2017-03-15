@@ -22,8 +22,13 @@
   :config
   (add-hook 'projectile-mode-hook 'projectile-rails-on))
 
-(use-package rspec-mode
+(use-package rinari
   :ensure t)
+
+(use-package rspec-mode
+  :ensure t
+  :config
+  (add-hook 'after-init-hook 'inf-ruby-switch-setup))
 
 (use-package inf-ruby
   :ensure t

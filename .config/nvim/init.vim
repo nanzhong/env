@@ -1,9 +1,10 @@
-call plug#begin('~/.config/nvim/plugged')
+call plug#begin('~/.local/share/nvim/plugged')
 
 " General plugins
 Plug 'Shougo/deoplete.nvim'
 Plug 'airblade/vim-rooter'
 Plug 'benekastah/neomake'
+Plug 'scrooloose/nerdtree'
 " Plug 'w0rp/ale'
 Plug 'itchyny/lightline.vim'
 Plug 'janko-m/vim-test'
@@ -195,3 +196,6 @@ let g:go_fmt_command = "goimports"
 
 " rust.vim
 "let g:rustfmt_autosave = 1
+
+" NERDTree
+map <A-t> :NERDTreeToggle<CR>

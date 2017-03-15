@@ -32,7 +32,7 @@ path=/Users/nan/Mail
 
 [user]
 name=Nan Zhong
-primary_email=nan@nine27.com
+primary_email=nan@notanumber.io
 
 # Configuration for "notmuch new"
 #
@@ -48,7 +48,7 @@ primary_email=nan@nine27.com
 #		names will be ignored, independent of its depth/location
 #		in the mail store.
 #
-other_email=nzhong@digitalocean.com;
+other_email=nan@nine27.com;nzhong@digitalocean.com;
 
 [new]
 tags=unread;

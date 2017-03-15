@@ -1,6 +1,8 @@
 ;;; mu.el --- mu email config
 
-(add-to-list 'load-path "/usr/local/Cellar/mu/0.9.16/share/emacs/site-lisp/mu")
+;;; Commentary:
+
+;;; Code:
 
 (use-package mu4e
   :config
@@ -40,7 +42,7 @@
   (setq mu4e-view-show-images t)
   (setq mu4e-html2text-command "w3m -dump -T text/html")
   ;;(setq mu4e-use-fancy-chars t)
-  (setq mu4e-headers-skip-duplicates t)
+  ;;(setq mu4e-headers-skip-duplicates t)
   ;;(setq mu4e-headers-include-related t)
   (setq mu4e-attachment-dir  "~/Downloads")
   (setq mu4e-sent-messages-behavior 'delete)
@@ -118,3 +120,16 @@
 			 ("tag:github" "github" ?g)
 			 ("tag:jira" "jira" ?j)
 			 ("mime:image/*" "Messages with images" ?p))))
+
+(use-package mu4e-alert
+  :ensure t
+  :config
+  (mu4e-alert-set-default-style 'notifier)
+  (add-hook 'after-init-hook #'mu4e-alert-enable-notifications)
+  (add-hook 'after-init-hook #'mu4e-alert-enable-mode-line-display)
+  (setq mu4e-alert-interesting-mail-query "flag:unread")
+  (setq mu4e-alert-notify-repeated-mails t)
+  (setq mu4e-alert-email-notification-types '(count))
+  (setq mu4e-alert-modeline-formatter (lambda (count) (format " [Mail %d] " count))))
+
+;;; mu.el ends here

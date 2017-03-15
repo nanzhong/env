@@ -15,9 +15,10 @@
  '(custom-safe-themes
    (quote
     ("3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" default)))
+ '(magit-auto-revert-immediately nil)
  '(package-selected-packages
    (quote
-    (company-lua lua-mode ivy powerline flx counsel-projectile go-mode eyebrowse projectile helm company smart-mode-line ace-window shackle flycheck-swift company-sourcekit swift-mode eyebrowse-mode yaml-mode web-mode use-package spaceline smartparens rspec-mode robe rbenv rainbow-mode rainbow-delimiters projectile-rails mu4e-maildirs-extension markdown-mode magit helm-projectile helm-ag haml-mode git-gutter-fringe flycheck fish-mode exec-path-from-shell enh-ruby-mode company-go))))
+    (js2-mode magithub go-projectile xterm-color rinari mu4e mu4e-alert unicode-fonts avy zerodark-theme all-the-icons company-lua lua-mode ivy powerline flx counsel-projectile go-mode eyebrowse projectile helm company smart-mode-line ace-window shackle flycheck-swift company-sourcekit swift-mode eyebrowse-mode yaml-mode web-mode use-package spaceline smartparens rspec-mode robe rbenv rainbow-mode rainbow-delimiters projectile-rails mu4e-maildirs-extension markdown-mode magit helm-projectile helm-ag haml-mode git-gutter-fringe flycheck fish-mode exec-path-from-shell enh-ruby-mode company-go))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

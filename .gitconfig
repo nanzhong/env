@@ -3,6 +3,8 @@
 	email = nan@notanumber.io
 	signingkey = A2ED35D3
 [core]
-	editor = nvim
+	editor = emacsclient
 	excludesfile = /Users/nan/.gitignore
 
+[hub]
+	host = github.internal.digitalocean.com

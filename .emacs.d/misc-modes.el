@@ -1,5 +1,9 @@
 ;;; misc-modes.el --- miscellaneous modes
 
+;;; Commentary:
+
+;;; Code:
+
 (use-package rainbow-mode
   :ensure t)
 
@@ -21,3 +25,5 @@
 
 (use-package fish-mode
   :ensure t)
+
+;;; misc-modes.el ends here

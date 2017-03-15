@@ -8,7 +8,7 @@ set spoolfile = "+NaN/INBOX"
 # Other special folders.
 set mbox      = "+NaN/[Gmail].All Mail"
 set postponed = "+NaN/[Gmail].Drafts"
-set record    = "+NaN/[Gmail].Sent Mail"
+unset record
 
 color status brightgreen default
 color indicator brightblack brightgreen

@@ -4,6 +4,8 @@ set alias_file       = ~/.mutt/alias         # where to store aliases
 set mailcap_path     = ~/.mutt/mailcap       # entries for filetypes
 set tmpdir           = ~/.mutt/tmp           # where to keep temp files
 set header_cache     = ~/.mutt/cache/headers # speeds up opening large folders
+set message_cachedir = ~/.mutt/cache/bodies  # where to cache bodies
+set certificate_file = ~/.mutt/certificates  # where to store certs
 set signature        = ~/.mutt/sig           # my signature file
 set nm_default_uri   = "notmuch:///Users/nan/Mail"
 
@@ -28,21 +30,18 @@ set sidebar_visible       = yes
 set sidebar_width         = 25
 set sidebar_sort_method   = 'path'
 set sidebar_format        = '%B%?F? [%F]?%* %?N?%N/?%S'
-set sidebar_short_path    = yes
+set sidebar_short_path    = no
 set sidebar_delim_chars   = '/.'
-set sidebar_folder_indent = yes
+set sidebar_folder_indent = no
 set mail_check_stats
 
 # Mailboxes to show in the sidebar.
-mailboxes "+do ───────────────────" \
-          "+do/INBOX" \
+mailboxes "+do/INBOX" \
           "+do/github" \
           "+do/jira" \
           "+do/sentry" \
           "+do/bugsnag" \
-          "+NaN ---───────────────" \
           "+NaN/INBOX" \
-          "+nine27 ───────────────" \
           "+nine27/INBOX" \
 
 macro index I "<enter-command>mailboxes \
@@ -124,7 +123,7 @@ macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
 
 # Notmuch search
-macro index / "<enter-command>unset wait_key<enter><shell-escape>mutt-notmuch-py -g<enter><change-folder-readonly>~/.cache/mutt_results<enter>" "search mail (using notmuch)"
+bind index,pager / vfolder-from-query
 
 # Pager View Options ---------------------------------
 set pager_index_lines = 10 # number of index lines to show

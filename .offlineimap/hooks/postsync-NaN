@@ -1,0 +1,9 @@
+#!/bin/sh
+
+/usr/local/bin/notmuch new
+new=`~/bin/newmail NaN`
+
+if [ $new -gt 0 ]
+then
+   /usr/local/bin/terminal-notifier -title 'offlineimap' -subtitle 'nan@notanumber.io' -message "You have $new new email(s)!" -group offlineimap-NaN
+fi

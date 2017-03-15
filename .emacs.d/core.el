@@ -1,8 +1,8 @@
 ;;; core.el --- core configuration
 
-;; Emacs server
-(require 'server)
-(unless (server-running-p) (server-start))
+;;; Commentary:
+
+;;; Code:
 
 ;; Startup
 (setq inhibit-splash-screen t)
@@ -27,8 +27,7 @@
 (use-package exec-path-from-shell
   :ensure t
   :config
-  (exec-path-from-shell-initialize)
-  (exec-path-from-shell-copy-env "GOPATH"))
+  (exec-path-from-shell-initialize))
 
 (use-package company
   :ensure t
@@ -39,7 +38,7 @@
 (use-package whitespace
   :config
   (setq whitespace-line-column 80)
-  (setq whitespace-style '(face lines-tail))
+  (setq whitespace-style '(face tabs indentation lines-tail))
   (add-hook 'prog-mode-hook 'whitespace-mode))
 
 (use-package rainbow-delimiters
@@ -84,10 +83,7 @@
 (use-package projectile
   :ensure t
   :config
-  ;; this hack is needed because tramp hangs otherwise
-  ; (projectile-global-mode)
-  (add-hook 'text-mode-hook 'projectile-mode)
-  (add-hook 'prog-mode-hook 'projectile-mode))
+  (projectile-global-mode))
 
 (use-package counsel-projectile
   :ensure t
@@ -118,3 +114,5 @@
   :config
   (global-set-key (kbd "M-<return>") 'ace-window)
   (setq aw-keys '(?a ?o ?e ?u ?h ?t ?n ?s)))
+
+;;; core.el ends here
