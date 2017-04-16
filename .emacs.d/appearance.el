@@ -40,7 +40,7 @@
 (setq-default cursor-type 'bar)
 
 ;; Highlight current line
-(global-hl-line-mode 1)
+;;(global-hl-line-mode 1)
 
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)

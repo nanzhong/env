@@ -44,3 +44,4 @@
 (load (expand-file-name "misc-modes.el" user-emacs-directory))
 
 ;;; init.el ends here
+(put 'downcase-region 'disabled nil)

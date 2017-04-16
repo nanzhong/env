@@ -7,7 +7,6 @@ socktimeout = 10
 [Account NaN]
 localrepository = NaN-local
 remoterepository = NaN-remote
-status_backend = sqlite
 synclabels = yes
 labelsheader = X-Keywords
 #postsynchook = ~/.offlineimap/hooks/postsync-NaN
@@ -32,7 +31,6 @@ trashfolder = [Gmail]/Trash
 [Account nine27]
 localrepository = nine27-local
 remoterepository = nine27-remote
-status_backend = sqlite
 synclabels = yes
 labelsheader = X-Keywords
 #postsynchook = ~/.offlineimap/hooks/postsync-nine27
@@ -57,7 +55,6 @@ trashfolder = [Gmail]/Trash
 [Account do]
 localrepository = do-local
 remoterepository = do-remote
-status_backend = sqlite
 synclabels = yes
 labelsheader = X-Keywords
 #postsynchook = ~/.offlineimap/hooks/postsync-do

@@ -116,7 +116,7 @@ file to edit."
   `(propertize ,str 'face (list ,@properties)))
 
 (defun shk-eshell-prompt ()
-  (let ((header-bg "#24282f")
+  (let ((header-bg "#262626")
 	(blue "#61afef")
 	(green "#98be65")
 	(red "#ff6c6b")
