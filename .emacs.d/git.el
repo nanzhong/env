@@ -4,22 +4,30 @@
 
 ;;; Code:
 
+(use-package diff-hl
+  :ensure t
+  :demand
+  :hook ((dired-mode . diff-hl-dired-mode-unless-remote)
+         (diff-hl . diff-hl-flydiff-mode))
+  :config (global-diff-hl-mode))
+
 (use-package magit
   :ensure t
-  :config
-  (setq vc-handled-backends (delq 'Git vc-handled-backends))
-  :bind
-  (("C-x g" . magit-status)))
+  :after diff-hl
+  :bind (("C-x g" . magit-status))
+  :hook (magit-post-refresh . diff-hl-magit-post-refresh)
+  :config (setq magit-process-popup-time 0))
+
+;; don't use until there is a way to ignore folders...
+;; (use-package magit-todos
+;;   :ensure t
+;;   :after magit
+;;   :config (magit-todos-mode))
 
 ;; currently disabled as it makes magit even slower :(
 ;; (use-package magithub
 ;;   :ensure t
 ;;   :after magit
 ;;   :config (magithub-feature-autoinject t))
-
-(use-package git-gutter-fringe
-  :ensure t
-  :config
-  (global-git-gutter-mode +1))
 
 ;;; git.el ends here

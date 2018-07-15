@@ -8,6 +8,10 @@
 (require 'server)
 (unless (server-running-p) (server-start))
 
+;; Increase gc threshold
+;; (this value is a balancing act between overall performance and responsiveness)
+(setq gc-cons-threshold (* 1 1024 1024))
+
 ;; Setup packages
 (require 'package)
 (setq package-enable-at-startup nil)
@@ -21,27 +25,37 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
-;; Custom file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-(load custom-file)
+;; icons-in-terminal
+(add-to-list 'load-path "~/src/icons-in-terminal/build")
 
 ;; Common lisp extensions
-(require 'cl)
+(use-package cl
+  :ensure t)
 
 ;; Load configs
-(load (expand-file-name "appearance.el" user-emacs-directory))
 (load (expand-file-name "core.el" user-emacs-directory))
+(load (expand-file-name "appearance.el" user-emacs-directory))
+(load (expand-file-name "org.el" user-emacs-directory))
+(load (expand-file-name "elisp.el" user-emacs-directory))
+;(load (expand-file-name "gnus.el" user-emacs-directory))
 (load (expand-file-name "ruby.el" user-emacs-directory))
 (load (expand-file-name "go.el" user-emacs-directory))
 (load (expand-file-name "swift.el" user-emacs-directory))
 (load (expand-file-name "js.el" user-emacs-directory))
 (load (expand-file-name "web.el" user-emacs-directory))
-(load (expand-file-name "mu.el" user-emacs-directory))
+;(load (expand-file-name "mu.el" user-emacs-directory))
 (load (expand-file-name "git.el" user-emacs-directory))
 (load (expand-file-name "term.el" user-emacs-directory))
-(load (expand-file-name "flycheck.el" user-emacs-directory))
 (load (expand-file-name "spelling.el" user-emacs-directory))
 (load (expand-file-name "misc-modes.el" user-emacs-directory))
 
-;;; init.el ends here
+;(load (expand-file-name "do.el" user-emacs-directory))
+
+;; Custom file
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(load custom-file)
+
+;; disabled commands
 (put 'downcase-region 'disabled nil)
+
+;;; init.el ends here
