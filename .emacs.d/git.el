@@ -9,7 +9,10 @@
   :demand
   :hook ((dired-mode . diff-hl-dired-mode-unless-remote)
          (diff-hl . diff-hl-flydiff-mode))
-  :config (global-diff-hl-mode))
+  :config
+  (global-diff-hl-mode)
+  (unless window-system
+    (diff-hl-margin-mode)))
 
 (use-package magit
   :ensure t

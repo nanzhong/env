@@ -4,21 +4,22 @@
 
 ;;; Code:
 
-(add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-;; (add-to-list 'default-frame-alist '(ns-appearance . dark))
-(add-to-list 'default-frame-alist '(ns-appearance . light))
-(setq frame-title-format nil)
-
-(add-to-list 'default-frame-alist '(font . "Iosevka 11"))
-
-;;(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-
 (add-to-list 'custom-theme-load-path "~/src/emacs-nan-theme")
 (load-theme 'nan t)
 
-(fringe-mode 5)
+(menu-bar-mode -1)
+(if window-system
+    (progn (fringe-mode 5)
+           (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+           ;; (add-to-list 'default-frame-alist '(ns-appearance . dark))
+           (add-to-list 'default-frame-alist '(ns-appearance . light))
+           (setq frame-title-format nil)
+           (add-to-list 'default-frame-alist '(font . "Iosevka 11"))
+           (tool-bar-mode -1)
+           (scroll-bar-mode -1))
+  (progn (xterm-mouse-mode 1)
+         (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
+         (global-set-key (kbd "<mouse-5>") 'scroll-up-line)))
 
 ;; No bell
 (setq visible-bell t
@@ -51,13 +52,14 @@
   :config (setq highlight-indent-guides-method 'column))
 
 ;; Modeline
-(use-package moody
-  :ensure t
-  :config
-  (setq x-underline-at-descent-line t)
-  (setq moody-mode-line-height 24)
-  (setq moody-slant-function #'moody-slant-apple-rgb)
-  (moody-replace-mode-line-buffer-identification)
-  (moody-replace-vc-mode))
+(when window-system
+  (use-package moody
+    :ensure t
+    :config
+    (setq x-underline-at-descent-line t)
+    (setq moody-mode-line-height 24)
+    (setq moody-slant-function #'moody-slant-apple-rgb)
+    (moody-replace-mode-line-buffer-identification)
+    (moody-replace-vc-mode)))
 
 ;;; appearance.el ends here
