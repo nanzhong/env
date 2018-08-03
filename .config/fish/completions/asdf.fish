@@ -1,0 +1,1 @@
+/Users/nan/.asdf/completions/asdf.fish

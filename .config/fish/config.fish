@@ -1,18 +1,15 @@
-# editor
-set EDITOR 'emacsclient'
-set VISUAL 'emacsclient'
+alias n="nvim"
+alias e="emacsclient"
 
-set -U fish_user_paths $HOME/bin $HOME/.cargo/bin $HOME/.rbenv/bin $HOME/.fzf/bin $HOME/go/bin /usr/local/bin /usr/local/sbin
+if status is-interactive
+  set EDITOR 'e -t'
+  set VISUAL 'e -t'
+end
 
-# go
-set -x GOPATH $HOME/go
+if not set -q GOPATH
+    set -gx GOPATH $HOME/go
+end
+set -U fish_user_paths $HOME/bin $GOPATH/bin /usr/local/bin
 
-# rbenv
-status --is-interactive; and source (rbenv init -|psub)
-
-# ls colors
-set -x CLICOLOR 2
-set -x LSCOLORS GxFxCxDxBxegedabagaced
-
-# direnv
-direnv hook fish | source
+source ~/.asdf/asdf.fish
+eval (direnv hook fish)

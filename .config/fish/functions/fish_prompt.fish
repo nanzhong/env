@@ -1,8 +1,25 @@
+function prompt::colour::fst; set_color -o 6af; end
+function prompt::colour::snd; set_color -o cf3; end
+function prompt::colour::trd; set_color -o fff; end
+function prompt::colour::dim; set_color -o 888; end
+function prompt::colour::err; set_color -o f30; end
+function prompt::colour::off; set_color normal; end
+
 function fish_prompt
-	test $SSH_TTY; and printf (set_color red)(whoami)(set_color white)'@'(set_color yellow)(hostname)' '
+  set -l code $status
+  set -l base (basename "$PWD")
 
-    test $USER = 'root'; and echo (set_color red)"#"
+  function prompt::status::colour -S
+    test $code -ne 0; and prompt::colour::err; or prompt::colour::snd
+  end
 
-    # Main
-	echo -n (set_color cyan)(prompt_pwd) (set_color red)'❯'(set_color yellow)'❯'(set_color green)'❯ '
+  if test "$PWD" != "/"
+    prompt_pwd | sed "s|$base|"(prompt::colour::trd)"$base"(prompt::colour::off)"|g" \
+    | sed "s|~|"(prompt::colour::fst)"~"(prompt::colour::off)"|g" \
+    | sed "s|/|"(prompt::status::colour)"/"(prompt::colour::off)(prompt::colour::dim)"|g" \
+    | tr -d \n
+  else
+    printf (prompt::colour::fst)"/"(prompt::colour::off)
+  end
+  printf (prompt::status::colour)" ≡ "(prompt::colour::off)
 end
