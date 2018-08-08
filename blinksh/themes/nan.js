@@ -1,4 +1,4 @@
-black       = '#000000';
+black       = '#262626';
 red         = '#ff005f'; // red
 green       = '#5fd75f'; // green
 yellow      = '#ffd787'; // yellow
