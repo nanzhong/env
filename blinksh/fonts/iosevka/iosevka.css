@@ -1,3 +1,4 @@
+/*
 @font-face {
 	font-family: 'Iosevka Web';
 	font-weight: 100;
@@ -60,7 +61,7 @@
 	font-style: oblique;
 	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/blinksh/fonts/iosevka/woff2/iosevka-lightoblique.woff2') format('woff2'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/blinksh/fonts/iosevka/woff/iosevka-lightoblique.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/blinksh/fonts/iosevka/ttf/iosevka-lightoblique.ttf') format('truetype');
 }
-
+*/
 @font-face {
 	font-family: 'Iosevka Web';
 	font-weight: 400;
@@ -81,7 +82,7 @@
 	font-style: oblique;
 	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/blinksh/fonts/iosevka/woff2/iosevka-oblique.woff2') format('woff2'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/blinksh/fonts/iosevka/woff/iosevka-oblique.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/blinksh/fonts/iosevka/ttf/iosevka-oblique.ttf') format('truetype');
 }
-
+/*
 @font-face {
 	font-family: 'Iosevka Web';
 	font-weight: 500;
@@ -186,3 +187,4 @@
 	font-style: oblique;
 	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/blinksh/fonts/iosevka/woff2/iosevka-heavyoblique.woff2') format('woff2'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/blinksh/fonts/iosevka/woff/iosevka-heavyoblique.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/blinksh/fonts/iosevka/ttf/iosevka-heavyoblique.ttf') format('truetype');
 }
+*/
