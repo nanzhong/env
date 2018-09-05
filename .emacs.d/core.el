@@ -225,7 +225,7 @@
 (use-package ace-window
   :ensure t
   :config
-  (global-set-key (kbd "M-<return>") 'ace-window)
+  (global-set-key (kbd "M-RET") 'ace-window)
   (setq aw-keys '(?a ?o ?e ?u ?h ?t ?n ?s)))
 
 (use-package editorconfig
