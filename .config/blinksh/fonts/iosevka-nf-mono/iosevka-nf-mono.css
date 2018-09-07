@@ -1,0 +1,192 @@
+* {
+        line-height: 1.3;
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 100;
+	font-style: normal;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-thin-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-thin-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 100;
+	font-style: italic;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-thinitalic-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-thinitalic-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 100;
+	font-style: oblique;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-thinoblique-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-thinoblique-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 200;
+	font-style: normal;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-extralight-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-extralight-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 200;
+	font-style: italic;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-extralightitalic-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-extralightitalic-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 200;
+	font-style: oblique;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-extralightoblique-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-extralightoblique-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 300;
+	font-style: normal;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-light-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-light-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 300;
+	font-style: italic;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-lightitalic-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-lightitalic-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 300;
+	font-style: oblique;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-lightoblique-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-lightoblique-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 400;
+	font-style: normal;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-regular-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-regular-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 400;
+	font-style: italic;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-italic-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-italic-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 400;
+	font-style: oblique;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-oblique-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-oblique-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 500;
+	font-style: normal;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-medium-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-medium-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 500;
+	font-style: italic;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-mediumitalic-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-mediumitalic-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 500;
+	font-style: oblique;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-mediumoblique-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-mediumoblique-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 600;
+	font-style: normal;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-semibold-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-semibold-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 600;
+	font-style: italic;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-semibolditalic-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-semibolditalic-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 600;
+	font-style: oblique;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-semiboldoblique-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-semiboldoblique-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 700;
+	font-style: normal;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-bold-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-bold-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 700;
+	font-style: italic;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-bolditalic-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-bolditalic-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 700;
+	font-style: oblique;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-boldoblique-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-boldoblique-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 800;
+	font-style: normal;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-extrabold-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-extrabold-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 800;
+	font-style: italic;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-extrabolditalic-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-extrabolditalic-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 800;
+	font-style: oblique;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-extraboldoblique-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-extraboldoblique-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 900;
+	font-style: normal;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-heavy-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-heavy-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 900;
+	font-style: italic;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-heavyitalic-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-heavyitalic-nf-complete-mono.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Iosevka';
+	font-weight: 900;
+	font-style: oblique;
+	src: url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/woff/iosevka-heavyoblique-nf-complete-mono.woff') format('woff'), url('https://raw.githubusercontent.com/nanzhong/dotfiles/master/.config/blinksh/fonts/iosevka-nf-mono/ttf/iosevka-heavyoblique-nf-complete-mono.ttf') format('truetype');
+}
