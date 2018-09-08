@@ -18,27 +18,26 @@
 (deftheme nan
   "A simple theme")
 
-(let ((bg--   "#0f0f0f")
-      (bg-    "#1e1d1e")
-      (bg     "#232223")
-      (bg+    "#2F2E2F")
-      (bg++   "#363537")
-      (bg+++  "#494850")
+(let ((bg--   "#000000")
+      (bg-    "#121212")
+      (bg     "#262626")
+      (bg+    "#303030")
+      (bg++   "#5f5f5f")
 
-      (fg---  "#515151")
-      (fg--   "#6c6c6d")
-      (fg-    "#7F7E7F")
-      (fg     "#ececec")
-      (fg+    "#fefefe")
+      (fg---  "#4e4e4e")
+      (fg--   "#6c6c6c")
+      (fg-    "#767676")
+      (fg     "#eeeeee")
+      (fg+    "#ffffff")
 
-      (pink   "#ff90d0")
-      (purple "#b084eb")
-      (blue   "#7dc1ff")
-      (cyan   "#35ffdc")
-      (green  "#63de5d")
-      (yellow "#ffe184")
-      (orange "#ffb86c")
-      (red    "#ec2864"))
+      (pink   "#ff87d7")
+      (purple "#af87ff")
+      (blue   "#87afff")
+      (cyan   "#5fffd7")
+      (green  "#5fd75f")
+      (yellow "#ffd787")
+      (orange "#ffaf5f")
+      (red    "#ff005f"))
 
   (custom-theme-set-faces
    'nan
@@ -57,7 +56,7 @@
    `(region ((t (:background ,bg++))))
    `(show-paren-match-face ((t (:background ,red))))
    `(trailing-whitespace ((t :foreground nil :background ,red)))
-   `(vertical-border ((t (:foreground ,bg-))))
+   `(vertical-border ((t (:foreground ,bg+ :background ,bg+))))
    `(warning ((t (:foreground ,orange))))
 
    ;; modeline
@@ -74,8 +73,8 @@
 
    ;; Syntax highlighting
    `(font-lock-builtin-face ((t (:foreground ,pink))))
-   `(font-lock-comment-face ((t (:foreground ,fg- :inherit italic))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,fg- :inherit italic))))
+   `(font-lock-comment-face ((t (:foreground ,fg-  :background ,bg :inherit italic))))
+   `(font-lock-comment-delimiter-face ((t (:foreground ,fg- :background ,bg :inherit italic))))
    `(font-lock-constant-face ((t (:foreground ,purple))))
    `(font-lock-doc-face ((t (:foreground ,fg- :inherit italic))))
    `(font-lock-function-name-face ((t (:foreground ,green))))
