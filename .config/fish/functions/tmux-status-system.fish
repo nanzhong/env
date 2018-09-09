@@ -18,24 +18,3 @@ function tmux-status-system
 
     echo "⌈$cpu%⌋ ⌈$mem%⌋ ⌈$disk%⌋ ⌈$net_in⌋ ⌈$net_out⌋"
 end
-
-function tmux-status-ip
-    set ip (ip addr show eth0 | grep -Po 'inet \K[\d.]+')
-    echo "酪 $ip"
-end
-
-function tmux-status-vpn
-    set ip (ip addr show gpd0 ^ /dev/null | grep -Po 'inet \K[\d.]+')
-    if test -z $ip
-        set ip ...
-    end
-    echo "旅 $ip"
-end
-
-function tmux-status-minikube
-    set minikube_ip (minikube ip ^ /dev/null)
-    if test -z $minikube_ip
-        set minikube_ip ...
-    end
-    echo "歷 $minikube_ip"
-end
