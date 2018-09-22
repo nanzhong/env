@@ -27,10 +27,4 @@
 ;;   :after magit
 ;;   :config (magit-todos-mode))
 
-;; currently disabled as it makes magit even slower :(
-;; (use-package magithub
-;;   :ensure t
-;;   :after magit
-;;   :config (magithub-feature-autoinject t))
-
 ;;; git.el ends here

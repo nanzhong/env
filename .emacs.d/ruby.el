@@ -36,8 +36,3 @@
 
 (use-package rinari
   :ensure t)
-
-;; (use-package rbenv
-;;   :ensure t
-;;   :config
-;;   (global-rbenv-mode))

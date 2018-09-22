@@ -83,54 +83,6 @@
                                    (company-dabbrev company-abbrev company-ispell)))
   (global-company-mode))
 
-;; (use-package company-quickhelp
-;;   :ensure t
-;;   :after company
-;;   :config
-;;   (setq company-quickhelp-delay 1)
-;;   (company-quickhelp-mode))
-
-;; (use-package company-box
-;;   :ensure t
-;;   :after company
-;;   :hook (company-mode . company-box-mode)
-;;   :config
-;;   (setq company-box-align-annotations t)
-;;   (setq company-box-icons-unknown 'fa_question_circle)
-;;   (setq company-box-icons-elisp
-;;         '((fa_tag :face font-lock-function-name-face) ;; Function
-;;           (fa_cog :face font-lock-variable-name-face) ;; Variable
-;;           (fa_cube :face font-lock-constant-face) ;; Feature
-;;           (md_color_lens :face font-lock-doc-face))) ;; Face
-;;   (setq company-box-icons-yasnippet 'fa_bookmark)
-;;   (setq company-box-icons-lsp
-;;         '((1 . fa_text_height) ;; Text
-;;           (2 . (fa_tags :face font-lock-function-name-face)) ;; Method
-;;           (3 . (fa_tag :face font-lock-function-name-face)) ;; Function
-;;           (4 . (fa_tag :face font-lock-function-name-face)) ;; Constructor
-;;           (5 . (fa_cog :foreground "#FF9800")) ;; Field
-;;           (6 . (fa_cog :foreground "#FF9800")) ;; Variable
-;;           (7 . (fa_cube :foreground "#7C4DFF")) ;; Class
-;;           (8 . (fa_cube :foreground "#7C4DFF")) ;; Interface
-;;           (9 . (fa_cube :foreground "#7C4DFF")) ;; Module
-;;           (10 . (fa_cog :foreground "#FF9800")) ;; Property
-;;           (11 . md_settings_system_daydream) ;; Unit
-;;           (12 . (fa_cog :foreground "#FF9800")) ;; Value
-;;           (13 . (md_storage :face font-lock-type-face)) ;; Enum
-;;           (14 . (md_closed_caption :foreground "#009688")) ;; Keyword
-;;           (15 . md_closed_caption) ;; Snippet
-;;           (16 . (md_color_lens :face font-lock-doc-face)) ;; Color
-;;           (17 . fa_file_text_o) ;; File
-;;           (18 . md_refresh) ;; Reference
-;;           (19 . fa_folder_open) ;; Folder
-;;           (20 . (md_closed_caption :foreground "#009688")) ;; EnumMember
-;;           (21 . (fa_square :face font-lock-constant-face)) ;; Constant
-;;           (22 . (fa_cube :face font-lock-type-face)) ;; Struct
-;;           (23 . fa_calendar) ;; Event
-;;           (24 . fa_square_o) ;; Operator
-;;           (25 . fa_arrows)) ;; TypeParameter
-;;         ))
-
 (use-package whitespace
   :config
   (setq whitespace-line-column 80)
@@ -145,11 +97,6 @@
   :ensure t
   :config
   (smartparens-global-mode t))
-
-(use-package alert
-  :ensure t
-  :config
-  (setq alert-default-style 'notifier))
 
 (use-package flx
   :ensure t)
@@ -166,28 +113,17 @@
              (setq-local ivy-display-functions-alist
                          (remq (assoc 'ivy-completion-in-region ivy-display-functions-alist)
                                ivy-display-functions-alist))))
+  :bind (("C-s" . search-forward)
+         ("M-s" . counsel-grep-or-swiper)
+         ("M-x" . counsel-M-x)
+         ("C-x C-f" . counsel-find-file))
   :config
   (ivy-mode 1)
   (setq ivy-use-selectable-prompt t)
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
   (setq ivy-re-builders-alist
-        '((t . ivy--regex-plus)))
-  (global-set-key (kbd "C-s") 'search-forward)
-  (global-set-key (kbd "M-s") 'counsel-grep-or-swiper)
-  (global-set-key (kbd "M-x") 'counsel-M-x)
-  (global-set-key (kbd "C-x C-f") 'counsel-find-file)
-  ;;(global-set-key (kbd "<f1> f") 'counsel-describe-function)
-  ;;(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
-  ;;(global-set-key (kbd "<f1> l") 'counsel-load-library)
-  ;;(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
-  ;;(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
-  (global-set-key (kbd "C-c g") 'counsel-git)
-  (global-set-key (kbd "C-c j") 'counsel-git-grep)
-  (global-set-key (kbd "C-c r") 'counsel-rg)
-  ;;(global-set-key (kbd "C-x l") 'counsel-locate)
-  ;;(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
-  )
+        '((t . ivy--regex-plus))))
 
 (use-package projectile
   :ensure t
@@ -203,12 +139,10 @@
 (use-package ibuffer-projectile
   :ensure t
   :after projectile
-  :config
-  (add-hook 'ibuffer-hook
-            (lambda ()
-              (ibuffer-projectile-set-filter-groups)
-              (unless (eq ibuffer-sorting-mode 'alphabetic)
-                (ibuffer-do-sort-by-alphabetic)))))
+  :hook ((ibuffer-mode . (lambda ()
+                           (ibuffer-projectile-set-filter-groups)
+                           (unless (eq ibuffer-sorting-mode 'alphabetic)
+                             (ibuffer-do-sort-by-alphabetic))))))
 
 (use-package shackle
   :ensure t
@@ -218,14 +152,13 @@
 
 (use-package avy
   :ensure t
-  :config
-  (global-set-key (kbd "C-.") 'avy-goto-char)
-  (global-set-key (kbd "C-,") 'avy-goto-char-2))
+  :bind (("C-." . avy-goto-char)
+         ("C-," . avy-goto-char-2)))
 
 (use-package ace-window
   :ensure t
+  :bind (("M-RET" . ace-window))
   :config
-  (global-set-key (kbd "M-RET") 'ace-window)
   (setq aw-keys '(?a ?o ?e ?u ?h ?t ?n ?s)))
 
 (use-package editorconfig

@@ -6,9 +6,8 @@
 
 (use-package flyspell
   :ensure t
-  :config
-  (add-hook 'text-mode-hook 'flyspell-mode)
-  (add-hook 'git-commit-mode-hook 'flyspell-mode)
-  (add-hook 'prog-mode-hook 'flyspell-prog-mode))
+  :hook ((text-mode . flyspell-mode)
+         (git-commit-mode . flyspell-mode)
+         (prog-mode . flyspell-mode)))
 
 ;;; spelling.el ends here
