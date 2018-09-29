@@ -1,9 +1,0 @@
-#!/bin/sh
-
-/usr/local/bin/notmuch new
-new=`~/bin/newmail nine27`
-
-if [ $new -gt 0 ]
-then
-    terminal-notifier -title 'offlineimap' -subtitle 'nan@nine27.com' -message "You have $new new email(s)!" -group offlineimap-nine27
-fi
