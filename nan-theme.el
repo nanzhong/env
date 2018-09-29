@@ -60,8 +60,8 @@
    `(warning ((t (:foreground ,orange))))
 
    ;; modeline
-   `(mode-line ((t (:background ,bg++ :box nil))))
-   `(mode-line-inactive ((t (:background ,bg+ :box nil))))
+   `(mode-line ((t (:background ,bg+ :box nil))))
+   `(mode-line-inactive ((t (:background ,bg :box nil))))
 
    ;; flycheck
    `(flycheck-info ((t :underline ,cyan)))
