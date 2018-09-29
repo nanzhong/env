@@ -52,7 +52,7 @@
   :config (setq highlight-indent-guides-method 'column))
 
 ;; Modeline
-(when window-system
+(if window-system
   (use-package moody
     :ensure t
     :config
@@ -60,6 +60,24 @@
     (setq moody-mode-line-height 24)
     (setq moody-slant-function #'moody-slant-apple-rgb)
     (moody-replace-mode-line-buffer-identification)
-    (moody-replace-vc-mode)))
+    (moody-replace-vc-mode))
+  (setq-default mode-line-format
+                '(
+                  "%e"
+                  ;;mode-line-front-space
+                  mode-line-mule-info
+                  ;;mode-line-client
+                  mode-line-modified
+                  mode-line-remote
+                  ;;mode-line-frame-identification
+                  ;;mode-line-buffer-identification
+                  "   "
+                  mode-line-position
+                  ;;'(vc-mode vc-mode)
+                  "  "
+                  minions-mode-line-modes
+                  mode-line-misc-info
+                  ;;mode-line-end-spaces
+                  )))
 
 ;;; appearance.el ends here
