@@ -88,6 +88,9 @@
    `(font-lock-variable-name-face ((t (:foreground ,orange))))
    `(font-lock-warning-face ((t (:foreground ,red :background ,bg+))))
 
+   ;; lsp-ui
+   `(lsp-ui-doc-background ((t (:background ,bg+))))
+
    ;; rainbow-delimiters
    `(rainbow-delimiters-depth-1-face ((t :foreground ,fg+)))
    `(rainbow-delimiters-depth-2-face ((t :foreground ,pink)))
