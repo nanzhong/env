@@ -40,6 +40,9 @@
 ;; Show line number
 (add-hook 'prog-mode-hook (lambda () (display-line-numbers-mode)))
 
+;; Enable column mode
+(column-number-mode 1)
+
 ;; Show trailing whitespace
 (add-hook 'prog-mode-hook (lambda ()
                             (interactive)
@@ -57,25 +60,25 @@
     :ensure t
     :config
     (setq x-underline-at-descent-line t)
-    (setq moody-mode-line-height 24)
-    (setq moody-slant-function #'moody-slant-apple-rgb)
+    (setq moody-mode-line-height 24)nnppnn
+    (setq moody-slant-function #'moody-slant-apple-rgb)n∑
     (moody-replace-mode-line-buffer-identification)
     (moody-replace-vc-mode))
   (setq-default mode-line-format
-                '(
+                `(
                   "%e"
-                  ;;mode-line-front-space
-                  mode-line-mule-info
-                  ;;mode-line-client
-                  mode-line-modified
-                  mode-line-remote
-                  ;;mode-line-frame-identification
-                  ;;mode-line-buffer-identification
-                  "   "
-                  mode-line-position
-                  ;;'(vc-mode vc-mode)
-                  "  "
+                  "⌈" mode-line-mule-info "⌋"
+                  " "
+                  "(" mode-line-modified mode-line-remote ")"
+                  "    "
+                  ,(propertized-buffer-identification "⌈%b⌋")
+                  " "
+                  (:propertize "⌈%l,%c⌋" face mode-line-position-face)
+                  "    "
                   minions-mode-line-modes
+                  "    "
+                  (vc-mode vc-mode)
+                  "    "
                   mode-line-misc-info
                   ;;mode-line-end-spaces
                   )))
