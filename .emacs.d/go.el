@@ -14,21 +14,25 @@
                       (setq compilation-read-command nil)))
          (before-save . gofmt-before-save)))
 
-(use-package go-eldoc
-  :ensure t
-  :after go-mode
-  :hook (go-mode . go-eldoc-setup))
-
 (use-package go-projectile
   :ensure t
   :after (go-mode projectile))
 
-(use-package company-go
+(use-package lsp-go
   :ensure t
-  :after (go-mode company)
-  :hook (go-mode . (lambda ()
-                     (set (make-local-variable 'company-backends)
-                          (cons 'company-go company-backends))))
-  :config (setq company-go-show-annotation t))
+  :hook (go-mode . lsp-go-enable))
+
+;; (use-package go-eldoc
+;;   :ensure t
+;;   :after go-mode
+;;   :hook (go-mode . go-eldoc-setup))
+
+;; (use-package company-go
+;;   :ensure t
+;;   :after (go-mode company)
+;;   :hook (go-mode . (lambda ()
+;;                      (set (make-local-variable 'company-backends)
+;;                           (cons 'company-go company-backends))))
+;;   :config (setq company-go-show-annotation t))
 
 ;;; go.el ends here
