@@ -58,6 +58,22 @@
   :config
   (exec-path-from-shell-initialize))
 
+(use-package lsp-mode
+  :ensure t
+  :config
+  (require 'lsp-imenu)
+  (add-hook 'lsp-after-open-hook 'lsp-enable-imenu))
+
+(use-package lsp-ui
+  :ensure t
+  :after lsp-mode
+  :hook (lsp-mode . lsp-ui-mode)
+  :config
+  (setq lsp-ui-doc-header t
+        lsp-ui-doc-include-signature t
+        lsp-ui-doc-max-width 100
+        lsp-ui-doc-use-childframe nil))
+
 ;; (use-package flycheck
 ;;   :ensure t
 ;;   :config
@@ -82,6 +98,12 @@
                 company-backends '((company-capf company-dabbrev-code company-etags company-keywords company-yasnippet company-files)
                                    (company-dabbrev company-abbrev company-ispell)))
   (global-company-mode))
+
+(use-package company-lsp
+  :ensure t
+  :after lsp-mode
+  :config
+  (push 'company-lsp company-backends))
 
 (use-package whitespace
   :config
