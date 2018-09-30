@@ -22,7 +22,8 @@
       (bg-    "#121212")
       (bg     "#262626")
       (bg+    "#303030")
-      (bg++   "#5f5f5f")
+      (bg++   "#3a3a3a")
+      (bg+++  "#5f5f5f")
 
       (fg---  "#4e4e4e")
       (fg--   "#6c6c6c")
@@ -48,20 +49,20 @@
    `(cursor ((t (:background ,fg+))))
    `(ffap ((t :foreground ,fg+)))
    `(fringe ((t (:background ,bg))))
-   `(highlight ((t (:background ,bg+))))
+   `(highlight ((t (:background ,bg++))))
    `(line-number ((t :foreground ,fg---)))
    `(lazy-highlight ((t (:background ,orange))))
    `(link ((t (:foreground ,blue :underline t))))
    `(minibuffer-prompt ((t :foreground ,pink)))
-   `(region ((t (:background ,bg++))))
+   `(region ((t (:background ,bg+++))))
    `(show-paren-match-face ((t (:background ,red))))
    `(trailing-whitespace ((t :foreground nil :background ,red)))
    `(vertical-border ((t (:foreground ,bg+ :background ,bg+))))
    `(warning ((t (:foreground ,orange))))
 
    ;; modeline
-   `(mode-line ((t (:background ,bg+ :box nil))))
-   `(mode-line-inactive ((t (:background ,bg :box nil))))
+   `(mode-line ((t (:background ,bg+ :foreground ,fg+ :box nil))))
+   `(mode-line-inactive ((t (:background ,bg+ :foreground ,fg- :box nil))))
 
    ;; flycheck
    `(flycheck-info ((t :underline ,cyan)))
