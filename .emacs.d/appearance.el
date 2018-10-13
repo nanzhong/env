@@ -73,7 +73,8 @@
                   "    "
                   ,(propertized-buffer-identification "⌈%b⌋")
                   " "
-                  (:propertize "⌈%l,%c⌋" face mode-line-position-face)
+                  ;;; (:propertize "⌈%l,%c⌋" face mode-line-position-face)
+                  "⌈%l,%c⌋"
                   "    "
                   minions-mode-line-modes
                   "    "
