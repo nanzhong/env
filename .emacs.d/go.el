@@ -6,13 +6,16 @@
 
 (use-package go-mode
   :ensure t
-  :bind (("C-c C-c" . compile))
-  :hook ((go-mode . (lambda ()
-                      (setq gofmt-command "goimports")
-                      (setq tab-width 2)
-                      (setq compile-command "go build -v; and go test -v; and go vet")
-                      (setq compilation-read-command nil)))
-         (before-save . gofmt-before-save)))
+  :mode "\\.go\\'"
+  :bind (:map go-mode-map
+              ("C-c C-c" . compile))
+  :config
+  (setq gofmt-command "goimports")
+  (add-hook 'go-mode-hook (lambda ()
+                            (setq-local compile-command "go build -v; and go test -v; and go vet")
+                            (setq-local compilation-read-command nil)
+                            (setq-local tab-width 2)))
+  (add-hook 'before-save-hook #'gofmt-before-save))
 
 (use-package go-projectile
   :ensure t
