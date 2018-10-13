@@ -39,6 +39,20 @@
 ;; Use ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
+(use-package direnv
+  :ensure t
+  :demand t
+  :config
+  (direnv-mode)
+  (setq direnv-always-show-summary nil))
+
+(use-package exec-path-from-shell
+  :ensure t
+  :after (direnv)
+  :demand t
+  :config
+  (exec-path-from-shell-initialize))
+
 (use-package dashboard
   :ensure t
   :config
@@ -51,15 +65,9 @@
   :config
   (minions-mode))
 
-(use-package exec-path-from-shell
-  :ensure t
-  :init
-  (setq exec-path-from-shell-check-startup-files nil)
-  :config
-  (exec-path-from-shell-initialize))
-
 (use-package lsp-mode
   :ensure t
+  :after (direnv exec-path-from-shell)
   :config
   (require 'lsp-imenu)
   (add-hook 'lsp-after-open-hook 'lsp-enable-imenu))
@@ -121,12 +129,14 @@
   (smartparens-global-mode t))
 
 (use-package flx
-  :ensure t)
+  :ensure t
+  :demand t)
 
 (add-to-list 'package-pinned-packages '(swiper . "melpa"))
 (add-to-list 'package-pinned-packages '(ivy . "melpa"))
 (use-package ivy
   :ensure t
+  :demand t
   :hook (eshell-mode
          . (lambda ()
              (define-key eshell-mode-map (kbd "<tab>") 'completion-at-point)
@@ -150,7 +160,7 @@
 (use-package projectile
   :ensure t
   :after (flx ivy)
-  :bind (("C-c p" . projectile-command-map))
+  :bind-keymap (("C-c p" . projectile-command-map))
   :config
   (projectile-mode +1))
 
@@ -188,12 +198,6 @@
 (use-package editorconfig
   :ensure t
   :config (editorconfig-mode 1))
-
-(use-package direnv
-  :ensure t
-  :config
-  (direnv-mode)
-  (setq direnv-always-show-summary nil))
 
 (use-package dtrt-indent
   :ensure t
