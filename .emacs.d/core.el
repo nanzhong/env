@@ -36,6 +36,16 @@
 ;; https://emacs.stackexchange.com/questions/28736/emacs-pointcursor-movement-lag/28746
 (setq auto-window-vscroll nil)
 
+;; Configure cpcat
+(global-set-key (kbd "M-W") (lambda ()
+                              (interactive)
+                              (message "cpcat copy...")
+                              (shell-command-on-region (region-beginning) (region-end) "cpcat copy")))
+(global-set-key (kbd "C-M-y") (lambda ()
+                                (interactive)
+                                (message "cpcat paste...")
+                                (insert (shell-command-to-string "cpcat paste"))))
+
 ;; Use ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
