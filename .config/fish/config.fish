@@ -2,8 +2,8 @@ alias n="nvim"
 alias e="emacsclient"
 
 if status is-interactive
-  set EDITOR 'e -t'
-  set VISUAL 'e -t'
+  set -gx EDITOR 'emacsclient -t'
+  set -gx VISUAL 'emacsclient -t'
 end
 
 if not set -q GOPATH
