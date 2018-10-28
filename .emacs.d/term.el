@@ -54,16 +54,6 @@ file to edit."
 
   (setq eshell-scroll-to-bottom-on-input t)
 
-  (add-hook 'eshell-mode-hook
-            (lambda ()
-              (setq-local global-hl-line-mode nil)
-              (setq-local xterm-color-preserve-properties t)
-              (make-local-variable 'eshell-preoutput-filter-functions)
-              (add-hook 'eshell-preoutput-filter-functions 'xterm-color-filter)
-              (setq-local eshell-output-filter-functions
-                          (remove 'eshell-handle-ansi-color
-                                  eshell-output-filter-functions))))
-
   (defmacro with-face (str &rest properties)
     `(propertize ,str 'face (list ,@properties)))
 
