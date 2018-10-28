@@ -89,7 +89,8 @@
   :config
   (setq lsp-ui-doc-header t
         lsp-ui-doc-include-signature t
-        lsp-ui-doc-max-width 100
+        lsp-ui-doc-max-width 80
+        lsp-ui-doc-max-height 20
         lsp-ui-doc-use-childframe nil))
 
 ;; (use-package flycheck
@@ -121,7 +122,8 @@
   :ensure t
   :after lsp-mode
   :config
-  (push 'company-lsp company-backends))
+  (push 'company-lsp company-backends)
+  (setq company-lsp-enable-recompletion t))
 
 (use-package whitespace
   :config
