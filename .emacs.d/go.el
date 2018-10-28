@@ -11,6 +11,7 @@
               ("C-c C-c" . compile))
   :config
   (setq gofmt-command "goimports")
+  (setq gofmt-args '("-local" "do"))
   (add-hook 'go-mode-hook (lambda ()
                             (setq-local compile-command "go build -v; and go test -v; and go vet")
                             (setq-local compilation-read-command nil)
