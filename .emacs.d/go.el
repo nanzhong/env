@@ -24,7 +24,10 @@
 
 (use-package lsp-go
   :ensure t
-  :hook (go-mode . lsp-go-enable))
+  :after direnv
+  :hook (go-mode . (lambda ()
+                     (direnv-update-environment)
+                     (lsp-go-enable))))
 
 ;; (use-package go-eldoc
 ;;   :ensure t
