@@ -4,10 +4,6 @@
 
 ;;; Code:
 
-;; Emacs server
-(require 'server)
-(unless (server-running-p) (server-start))
-
 ;; Increase gc threshold
 ;; (this value is a balancing act between overall performance and responsiveness)
 (setq gc-cons-threshold (* 1 1024 1024))
