@@ -5,12 +5,6 @@ set -e
 echo "Setting hostanme..."
 hostnamectl set-hostname "workstation"
 
-echo "Add my ssh keys..."
-curl -s https://api.github.com/users/nanzhong/keys | jq -r .[].key | while read key
-do
-  echo $key >> /root/.ssh/authorized_keys
-done
-
 echo "Upgrade to sid..."
 echo "deb http://deb.debian.org/debian unstable main contrib non-free
 deb-src http://deb.debian.org/debian unstable main contrib non-free" > /etc/apt/sources.list
@@ -68,3 +62,9 @@ cd ../
 # workaround for vpn cert issue
 mkdir -p /home/yyin/opensource/openssl/openssl-1.0.1t-build/ssl/certs
 ln -s /etc/ssl/certs/3513523f.0 /home/yyin/opensource/openssl/openssl-1.0.1t-build/ssl/certs/. > /dev/null 2>&1
+
+echo "Add my ssh keys..."
+curl -s https://api.github.com/users/nanzhong/keys | jq -r .[].key | while read key
+do
+  echo $key >> /root/.ssh/authorized_keys
+done
