@@ -27,6 +27,7 @@ apt-get update && \
             build-essential \
             git \
             mosh \
+            jq \
             docker-ce \
             libvirt-clients \
             libvirt-daemon-system \
@@ -36,6 +37,10 @@ echo "Fetching kubernetes dependencies..."
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.12.2/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
 curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.30.0/minikube-linux-amd64 && chmod +x minikube && mv minikube /usr/local/bin/
 curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && install docker-machine-driver-kvm2 /usr/local/bin/ && rm docker-machine-driver-kvm2
+
+echo "Configure custom ip block for docker..."
+echo '{"bip":"172.24.0.1/24","fixed-cidr":"172.24.0.0/24"}' > /etc/docker/daemon.json
+systemctl restart docker
 
 echo "Configure routes to preserve networking for vpn..."
 ip=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
