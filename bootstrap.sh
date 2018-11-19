@@ -31,7 +31,8 @@ apt-get update && \
             docker-ce \
             libvirt-clients \
             libvirt-daemon-system \
-            qemu-kvm
+            qemu-kvm \
+            dnsutils
 
 echo "Fetching kubernetes dependencies..."
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.12.2/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
