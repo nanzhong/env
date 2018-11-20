@@ -35,6 +35,8 @@ RUN git clone https://github.com/nanzhong/dotfiles.git /root/src/dotfiles
 RUN ln -s ~/src/dotfiles/.tmux.conf ~/.tmux.conf
 RUN ln -s ~/src/dotfiles/.config ~/.config
 RUN ln -s ~/src/dotfiles/.emacs.d ~/.emacs.d
+RUN ln -s ~/src/dotfiles/.gitconfig ~/.gitconfig
+RUN ln -s ~/src/dotfiles/.gitignore ~/.gitignore
 RUN cd /root/src/dotfiles && git remote set-url origin git@github.com:nanzhong/dotfiles.git
 
 RUN git clone https://github.com/nanzhong/emacs-nan-theme.git /root/src/emacs-nan-theme
@@ -58,9 +60,7 @@ RUN /root/.asdf/bin/asdf global ruby 2.5.1
 RUN fish -c "go get -u github.com/sourcegraph/go-langserver"
 RUN fish -c "go get -u github.com/mdempsky/gocode"
 RUN fish -c "go get -u golang.org/x/tools/cmd/..."
-
-# host volume is expected to be mounted at /root/host
-RUN ln -s /root/host/org /root/org
+RUN fish -c "go get -u github.com/aybabtme/humanlog/cmd/..."
 
 COPY session-init.sh /bin/session-init
 CMD ["/bin/session-init"]
