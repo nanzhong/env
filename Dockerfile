@@ -40,6 +40,8 @@ RUN cd /root/src/dotfiles && git remote set-url origin git@github.com:nanzhong/d
 RUN git clone https://github.com/nanzhong/emacs-nan-theme.git /root/src/emacs-nan-theme
 RUN cd /root/src/emacs-nan-theme && git remote set-url origin git@github.com:nanzhong/emacs-nan-theme.git
 
+RUN emacs --batch --load /root/.emacs.d/init.el --eval '(kill-emacs)'
+
 RUN git clone https://github.com/junegunn/fzf /root/.fzf
 RUN cd /root/.fzf && git remote set-url origin git@github.com:junegunn/fzf.git
 RUN /root/.fzf/install --bin --64 --no-bash --no-zsh --no-fish
