@@ -1,7 +1,6 @@
 #!/bin/sh
 
 docker run -it \
-       --name workstation \
        -h workstation \
        -e TZ=America/Toronto \
        -v /root:/root/host \
