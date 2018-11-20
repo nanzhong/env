@@ -13,7 +13,8 @@ fi
 
 echo "Checking ssh keys..."
 if [ -d ~/host/.ssh ]; then
-    cp -a ~/host/.ssh ~/.ssh
+    mkdir -p ~/.ssh
+    cp -a ~/host/.ssh/* ~/.ssh/.
 else
     eval $(~/bin/op signin my.1password.com nan@notanumber.io)
     echo "Setting up ssh key..."
