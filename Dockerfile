@@ -22,7 +22,7 @@ RUN curl -fsSL http://emacs.secretsauce.net/key.gpg | apt-key add -
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add
 
-RUN apt-get update && apt-get -y install emacs docker-ce
+RUN apt-get update && apt-get -y install emacs-snapshot docker-ce
 
 RUN chsh -s /usr/bin/fish
 RUN mkdir -p /root /root/src /root/bin /root/go/bin
@@ -52,6 +52,13 @@ RUN /root/.asdf/bin/asdf global golang 1.11.1
 RUN /root/.asdf/bin/asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 RUN /root/.asdf/bin/asdf install ruby 2.5.1
 RUN /root/.asdf/bin/asdf global ruby 2.5.1
+
+RUN fish -c "go get -u github.com/sourcegraph/go-langserver"
+RUN fish -c "go get -u github.com/mdempsky/gocode"
+RUN fish -c "go get -u golang.org/x/tools/cmd/..."
+
+# host volume is expected to be mounted at /root/host
+RUN ln -s /root/host/org /root/org
 
 COPY session-init.sh /bin/session-init
 CMD ["/bin/session-init"]
