@@ -59,6 +59,9 @@ RUN /root/.asdf/bin/asdf global golang 1.11.1
 RUN /root/.asdf/bin/asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 RUN /root/.asdf/bin/asdf install ruby 2.5.1
 RUN /root/.asdf/bin/asdf global ruby 2.5.1
+RUN /root/.asdf/bin/asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
+RUN /root/.asdf/bin/asdf install python 3.7.1
+RUN /root/.asdf/bin/asdf global python 3.7.1
 
 RUN fish -c "go get -u github.com/sourcegraph/go-langserver"
 RUN fish -c "go get -u github.com/mdempsky/gocode"
