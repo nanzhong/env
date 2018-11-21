@@ -31,6 +31,9 @@ RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.12.2/
 
 RUN curl -so op.zip https://cache.agilebits.com/dist/1P/op/pkg/v0.5.4/op_linux_amd64_v0.5.4.zip && unzip op.zip && mv op /root/bin/op && rm op.sig op.zip
 
+ENV KEYBASE_ALLOW_ROOT 1
+RUN curl -sO https://prerelease.keybase.io/keybase_amd64.deb && apt-get -y install ./keybase_amd64.deb && rm keybase_amd64.deb
+
 RUN git clone https://github.com/nanzhong/dotfiles.git /root/src/dotfiles
 RUN ln -s ~/src/dotfiles/.tmux.conf ~/.tmux.conf
 RUN ln -s ~/src/dotfiles/.config ~/.config
