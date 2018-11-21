@@ -12,9 +12,9 @@ if [ ! -d ~/host ]; then
 fi
 
 echo "Checking ssh keys..."
-if [ -d ~/host/.ssh ]; then
+if [ -d ~/host/root/.ssh ]; then
     mkdir -p ~/.ssh
-    cp -a ~/host/.ssh/* ~/.ssh/.
+    cp -a ~/host/root/.ssh/* ~/.ssh/.
 else
     eval $(~/bin/op signin my.1password.com nan@notanumber.io)
     echo "Setting up ssh key..."
@@ -26,8 +26,20 @@ else
     chmod 644 ~/.ssh/id_ed25519.pub
 fi
 
-if [ -d ~/host/src/org ]; then
-    ln -s ~/host/src/org ~/org
+echo "Checking gpg keys..."
+if [ -d ~/host/root/.gnupg ]; then
+    mkdir -p ~/.gnupg
+    cp -a ~/host/root/.gnupg/* ~/.gnupg/.
+else
+    echo "Importing key from keybase..."
+    keybase login
+    keybase pgp export -s | gpg --import
+    echo "Modify trust on key..."
+    gpg --edit-key nan@notanumber.io
+fi
+
+if [ -d ~/host/root/src/org ]; then
+    ln -s ~/host/root/src/org ~/org
 fi
 
 echo "Starting tmux session..."
