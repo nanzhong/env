@@ -4,6 +4,7 @@ RUN apt-get update && apt-get -qy upgrade
 RUN apt-get -qy install \
     build-essential apt-transport-https ca-certificates curl gnupg2 software-properties-common locales tzdata \
     libssl-dev libreadline-dev zlib1g-dev \
+    libffi-dev \
     mosh tmux fish curl git jq direnv unzip htop dnsutils
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
