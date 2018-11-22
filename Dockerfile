@@ -30,8 +30,6 @@ RUN mkdir -p /root /root/src /root/bin /root/go/bin
 
 RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.12.2/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
 
-RUN curl -so op.zip https://cache.agilebits.com/dist/1P/op/pkg/v0.5.4/op_linux_amd64_v0.5.4.zip && unzip op.zip && mv op /root/bin/op && rm op.sig op.zip
-
 ENV KEYBASE_ALLOW_ROOT 1
 RUN curl -sO https://prerelease.keybase.io/keybase_amd64.deb && apt-get -y install ./keybase_amd64.deb && rm keybase_amd64.deb
 

@@ -11,29 +11,27 @@ if [ ! -d ~/host ]; then
     exit 1
 fi
 
-echo "Checking ssh keys..."
-if [ -d ~/host/root/.ssh ]; then
-    mkdir -p ~/.ssh
-    cp -a ~/host/root/.ssh/* ~/.ssh/.
-else
-    eval $(~/bin/op signin my.1password.com nan@notanumber.io)
-    echo "Setting up ssh key..."
-    mkdir -p ~/.ssh
-    ~/bin/op get item "key.workstation.do" | jq -r .details.notesPlain > ~/.ssh/id_ed25519
-    chmod 700 ~/.ssh
-    chmod 600 ~/.ssh/id_ed25519
-    ssh-keygen -yf ~/.ssh/id_ed25519 > ~/.ssh/id_ed25519.pub
-    chmod 644 ~/.ssh/id_ed25519.pub
+echo "Checking if keybase is needed for keys..."
+if [ ! -d ~/host/root/.ssh ] || [ ! -d ~/host/root/.gnupg ]; then
+    run_keybase
+    keybase oneshot
 fi
 
-echo "Checking gpg keys..."
-if [ -d ~/host/root/.gnupg ]; then
-    mkdir -p ~/.gnupg
-    cp -a ~/host/root/.gnupg/* ~/.gnupg/.
+echo "Configuring ssh keys..."
+rm -rf ~/.ssh
+if [ -d ~/host/root/.ssh ] && ls ~/host/root/.ssh/id_* > /dev/null 2>&1; then
+    cp -a ~/host/root/.ssh ~/.
 else
-    echo "Importing key from keybase..."
-    keybase login
-    keybase pgp export -s | gpg --import
+    keybase fs cp -r /keybase/private/nan/.ssh ~/.
+fi
+
+echo "Configuring gpg keys..."
+rm -rf ~/.gnupg
+if [ -d ~/host/root/.gnupg ]; then
+    cp -a ~/host/root/.gnupg ~/.
+else
+    echo "Importing gpg keys from keybase..."
+    keybase pgp export -s | gpg --batch --import
     echo "Modify trust on key..."
     gpg --edit-key nan@notanumber.io
 fi
