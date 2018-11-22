@@ -2,7 +2,7 @@ FROM debian:sid
 
 RUN apt-get update && apt-get -qy upgrade
 RUN apt-get -qy install \
-    build-essential apt-transport-https ca-certificates curl gnupg2 software-properties-common locales tzdata \
+    build-essential apt-transport-https ca-certificates curl gnupg2 software-properties-common locales tzdata ispell mysql-client \
     libssl-dev libreadline-dev zlib1g-dev \
     libffi-dev \
     mosh tmux fish curl git jq direnv unzip htop dnsutils
