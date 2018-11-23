@@ -1,12 +1,12 @@
 # Workstation
 
-![Unique](unique.jpg)
-
 My portable development environment.
 
 This repository contains scripts to build a docker container that holds my development environment as well as scripts to bootstrap a new machine to serve as a container host.
 
-This is my daily driver setup that I use for both work @ [DigitalOcean](https://grnh.se/qmyvxul81) and for personal side projects, as such it may contain things that are irrelevant or unwanted for you and your needs.
+![Unique](unique.jpg)
+
+This is my daily driver that I use for both work @ [DigitalOcean](https://grnh.se/qmyvxul81) and for personal side projects. I work on an iPad Pro connected to a droplet that runs this setup. Because it's tailored specifically to me, it may contain things that are irrelevant or unwanted for you and your needs.
 
 ## Features
 
