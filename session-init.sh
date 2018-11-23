@@ -12,7 +12,7 @@ if [ ! -d ~/host ]; then
 fi
 
 echo "Checking if keybase is needed for keys..."
-if [ ! -d ~/host/root/.ssh ] || [ ! -d ~/host/root/.gnupg ]; then
+if [ ! -d ~/host/root/.ssh ] || ! ls ~/host/root/.ssh/id_* > /dev/null 2>&1 || [ ! -d ~/host/root/.gnupg ]; then
     # TODO actually verify that keybase is running instead of blindly sleeping
     run_keybase && sleep 3
     keybase oneshot
