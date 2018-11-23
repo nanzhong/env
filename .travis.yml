@@ -5,8 +5,8 @@ services:
 before_script:
 - docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
 script:
-- docker build -t nanzhong/workstation:latest .
+- docker build -t $DOCKER_IMAGE:latest .
 after_script:
-- docker tag nanzhong/workstation:latest nanzhong/workstation:$TRAVIS_COMMIT
-- docker push nanzhong/workstation:latest
-- docker push nanzhong/workstation:$TRAVIS_COMMIT
+- docker tag $DOCKER_IMAGE:latest $DOCKER_IMAGE:$TRAVIS_COMMIT
+- docker push $DOCKER_IMAGE:latest
+- docker push $DOCKER_IMAGE:$TRAVIS_COMMIT
