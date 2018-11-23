@@ -1,0 +1,57 @@
+# Workstation
+
+![Unique](unique.jpg)
+
+My portable development environment.
+
+This repository contains scripts to build a docker container that holds my development environment as well as scripts to bootstrap a new machine to serve as a container host.
+
+This is my daily driver setup that I use for both work @ [DigitalOcean](https://grnh.se/qmyvxul81) and for personal side projects, as such it may contain things that are irrelevant or unwanted for you and your needs.
+
+## Features
+
+- Based on Debian
+- Fish shell
+- Mosh
+- Tmux
+- Emacs
+- Language support for:
+  - Golang
+  - Ruby
+  - Python
+- Ready for Kubernetes development (Kubectl + Minikube)
+- Keybase
+- Globalprotect VPN (client + routes to preserve connection)
+
+## Usage
+
+### Setting up the docker host
+
+Provision your docker host machine however you want, and run:
+```
+./boostrap.sh
+```
+
+_Note: The `boostrap.sh` script assumes a version of debian._
+
+### Building the docker container
+
+Nothing special is needed to build the container, just:
+
+```
+docker build -t <name> .
+```
+
+### Running the container
+
+Included in the repo is a `run.sh` script that is an example of how the container can be run.
+
+## Todo
+
+- [ ] Pull out things specific to me into configurable/optional parts
+  - [ ] authorized keys in bootstrap.sh
+  - [ ] globalprotect vpn client
+  - [ ] keybase related ssh and gpg key management specific to me
+- [ ] update `run.sh` to support flags for:
+  - [ ] conditionally use host network
+  - [ ] conditionally mount host docker socket
