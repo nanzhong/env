@@ -2,8 +2,9 @@ language: minimal
 sudo: required
 services:
 - docker
-script:
+before_script:
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+script:
 - docker build -t nanzhong/workstation:latest .
 - docker tag nanzhong/workstation:latest "nanzhong/workstation:$TRAVIS_COMMIT"
 - docker push nanzhong/workstation:latest
