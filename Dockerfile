@@ -16,7 +16,7 @@ ENV LC_ALL=en_US.UTF-8
 # for correct colours is tmux
 ENV TERM screen-256color
 
-# temporary until debian sid has emacs 26
+# temporary until debian sid has emacs 26+
 RUN add-apt-repository "deb [arch=amd64] http://emacs.secretsauce.net unstable main"
 RUN curl -fsSL http://emacs.secretsauce.net/key.gpg | apt-key add -
 # use buster because no repo exists for sid
