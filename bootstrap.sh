@@ -28,7 +28,7 @@ apt-get update && \
             git \
             mosh \
             jq \
-            docker-ce==18.06.1~ce~3-0~debian \
+            docker-ce=18.06.1~ce~3-0~debian \
             libvirt-clients \
             libvirt-daemon-system \
             qemu-kvm \
