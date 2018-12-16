@@ -5,7 +5,7 @@ RUN apt-get -qy install \
     build-essential apt-transport-https ca-certificates curl gnupg2 software-properties-common locales tzdata ispell mysql-client \
     libssl-dev libreadline-dev zlib1g-dev \
     libffi-dev \
-    mosh tmux fish curl git jq direnv unzip htop dnsutils
+    mosh tmux fish wget git jq direnv unzip htop dnsutils
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 RUN locale-gen en_US.UTF-8 
@@ -13,10 +13,10 @@ ENV LANG=en_US.UTF-8
 ENV LC_CTYPE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
-# for correct colours is tmux
+# for correct colours in tmux
 ENV TERM screen-256color
 
-# temporary until debian sid has emacs 26+
+# TODO temporary until debian sid has emacs 26+
 RUN add-apt-repository "deb [arch=amd64] http://emacs.secretsauce.net unstable main"
 RUN curl -fsSL http://emacs.secretsauce.net/key.gpg | apt-key add -
 # use buster because no repo exists for sid
