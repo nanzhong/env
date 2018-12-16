@@ -78,14 +78,13 @@
 (use-package lsp-mode
   :ensure t
   :after (direnv exec-path-from-shell)
+  :hook (prog-mode . lsp)
   :config
-  (require 'lsp-imenu)
-  (add-hook 'lsp-after-open-hook 'lsp-enable-imenu))
+  (require 'lsp-clients))
 
 (use-package lsp-ui
   :ensure t
   :after lsp-mode
-  :hook (lsp-mode . lsp-ui-mode)
   :config
   (setq lsp-ui-doc-header t
         lsp-ui-doc-include-signature t
@@ -121,9 +120,10 @@
 (use-package company-lsp
   :ensure t
   :after lsp-mode
-  :config
-  (push 'company-lsp company-backends)
-  (setq company-lsp-enable-recompletion t))
+  ;; :config
+  ;; (push 'company-lsp company-backends)
+  ;; (setq company-lsp-enable-recompletion t)
+  )
 
 (use-package whitespace
   :config
