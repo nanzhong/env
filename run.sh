@@ -8,4 +8,6 @@ docker run -it \
        -v /var/run/docker.sock:/var/run/docker.sock \
        --detach-keys "ctrl-^,d" \
        --net host \
+       --name workstation \
+       --rm \
        nanzhong/workstation
