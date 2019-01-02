@@ -21,6 +21,10 @@
   :hook (magit-post-refresh . diff-hl-magit-post-refresh)
   :config (setq magit-process-popup-time 0))
 
+(use-package forge
+  :ensure t
+  :after magit)
+
 ;; don't use until there is a way to ignore folders...
 ;; (use-package magit-todos
 ;;   :ensure t
