@@ -5,7 +5,8 @@ RUN apt-get -qy install \
     build-essential apt-transport-https ca-certificates curl gnupg2 software-properties-common locales tzdata ispell mysql-client \
     libssl-dev libreadline-dev zlib1g-dev \
     libffi-dev \
-    mosh tmux fish wget git jq direnv unzip htop dnsutils
+    mosh tmux fish wget git jq direnv unzip htop dnsutils \
+    emacs
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 RUN locale-gen en_US.UTF-8 
@@ -16,14 +17,11 @@ ENV LC_ALL=en_US.UTF-8
 # for correct colours in tmux
 ENV TERM screen-256color
 
-# TODO temporary until debian sid has emacs 26+
-RUN add-apt-repository "deb [arch=amd64] http://emacs.secretsauce.net unstable main"
-RUN curl -fsSL http://emacs.secretsauce.net/key.gpg | apt-key add -
 # use buster because no repo exists for sid
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add
 
-RUN apt-get update && apt-get -y install emacs-snapshot docker-ce
+RUN apt-get update && apt-get -y install docker-ce
 
 RUN chsh -s /usr/bin/fish
 RUN mkdir -p /root /root/src /root/bin /root/go/bin
