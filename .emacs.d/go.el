@@ -22,14 +22,6 @@
   :ensure t
   :after (go-mode projectile))
 
-(use-package lsp-go
-  :ensure t
-  :after direnv
-  ;; :hook (go-mode . (lambda ()
-  ;;                    (direnv-update-environment)
-  ;;                    (lsp-go-enable)))
-  )
-
 ;; (use-package go-eldoc
 ;;   :ensure t
 ;;   :after go-mode
