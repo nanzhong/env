@@ -78,7 +78,9 @@
 (use-package lsp-mode
   :ensure t
   :after (direnv exec-path-from-shell)
-  :hook (prog-mode . lsp)
+  :hook (prog-mode . (lambda ()
+                       (direnv-update-environment)
+                       (lsp)))
   :config
   (require 'lsp-clients))
 
