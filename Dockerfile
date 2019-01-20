@@ -55,8 +55,8 @@ RUN curl https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/ma
 RUN git clone https://github.com/asdf-vm/asdf /root/.asdf
 RUN cd /root/.asdf && git remote set-url origin git@github.com:asdf-vm/asdf.git
 RUN /root/.asdf/bin/asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
-RUN /root/.asdf/bin/asdf install golang 1.11.1
-RUN /root/.asdf/bin/asdf global golang 1.11.1
+RUN /root/.asdf/bin/asdf install golang 1.11.4
+RUN /root/.asdf/bin/asdf global golang 1.11.4
 RUN /root/.asdf/bin/asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
 RUN /root/.asdf/bin/asdf install ruby 2.5.1
 RUN /root/.asdf/bin/asdf global ruby 2.5.1
