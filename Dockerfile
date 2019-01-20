@@ -48,6 +48,10 @@ RUN git clone https://github.com/junegunn/fzf /root/.fzf
 RUN cd /root/.fzf && git remote set-url origin git@github.com:junegunn/fzf.git
 RUN /root/.fzf/install --bin --64 --no-bash --no-zsh --no-fish
 
+# kubectl fish completion until natively support
+RUN mkdir -p /root/.config/fish/completions
+RUN curl https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/kubectl.fish > ~/.config/fish/completions/kubectl.fish
+
 RUN git clone https://github.com/asdf-vm/asdf /root/.asdf
 RUN cd /root/.asdf && git remote set-url origin git@github.com:asdf-vm/asdf.git
 RUN /root/.asdf/bin/asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
