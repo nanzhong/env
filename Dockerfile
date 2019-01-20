@@ -26,7 +26,7 @@ RUN apt-get update && apt-get -y install docker-ce
 RUN chsh -s /usr/bin/fish
 RUN mkdir -p /root /root/src /root/bin /root/go/bin
 
-RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.12.2/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
+RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.13.2/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
 
 ENV KEYBASE_ALLOW_ROOT 1
 RUN curl -sO https://prerelease.keybase.io/keybase_amd64.deb && apt-get -y install ./keybase_amd64.deb && rm keybase_amd64.deb
