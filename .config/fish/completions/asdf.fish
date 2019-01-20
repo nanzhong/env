@@ -1,1 +1,0 @@
-../../../../../.asdf/completions/asdf.fish
