@@ -1,12 +1,12 @@
 FROM debian:sid
 
-RUN apt-get update && apt-get -qy upgrade
-RUN apt-get -qy install \
+RUN apt-get update && apt-get -qy upgrade && apt-get -qy install \
     build-essential apt-transport-https ca-certificates curl gnupg2 software-properties-common locales tzdata ispell mysql-client procps \
     libssl-dev libreadline-dev zlib1g-dev \
     libffi-dev \
     mosh tmux fish wget git jq direnv unzip htop dnsutils git-crypt \
-    emacs
+    emacs \
+    golang ruby python
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 RUN locale-gen en_US.UTF-8 
@@ -52,17 +52,6 @@ RUN /root/.fzf/install --bin --64 --no-bash --no-zsh --no-fish
 RUN mkdir -p /root/.config/fish/completions
 RUN curl https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/kubectl.fish > ~/.config/fish/completions/kubectl.fish
 
-RUN git clone https://github.com/asdf-vm/asdf /root/.asdf
-RUN cd /root/.asdf && git remote set-url origin git@github.com:asdf-vm/asdf.git
-RUN /root/.asdf/bin/asdf plugin-add golang https://github.com/kennyp/asdf-golang.git
-RUN /root/.asdf/bin/asdf install golang 1.11.4
-RUN /root/.asdf/bin/asdf global golang 1.11.4
-RUN /root/.asdf/bin/asdf plugin-add ruby https://github.com/asdf-vm/asdf-ruby.git
-RUN /root/.asdf/bin/asdf install ruby 2.5.1
-RUN /root/.asdf/bin/asdf global ruby 2.5.1
-RUN /root/.asdf/bin/asdf plugin-add python https://github.com/tuvistavie/asdf-python.git
-RUN /root/.asdf/bin/asdf install python 3.7.1
-RUN /root/.asdf/bin/asdf global python 3.7.1
 
 RUN fish -c "go get -u github.com/sourcegraph/go-langserver"
 RUN fish -c "go get -u github.com/mdempsky/gocode"
