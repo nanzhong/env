@@ -6,7 +6,8 @@ RUN apt-get update && apt-get -qy upgrade && apt-get -qy install \
     libffi-dev \
     mosh tmux fish wget git jq direnv unzip htop dnsutils git-crypt \
     emacs \
-    golang ruby python
+    golang ruby python \
+    default-jre graphviz plantuml
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 RUN locale-gen en_US.UTF-8 
