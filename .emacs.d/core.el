@@ -192,18 +192,18 @@
                            (unless (eq ibuffer-sorting-mode 'alphabetic)
                              (ibuffer-do-sort-by-alphabetic))))))
 
-(use-package shackle
-  :ensure t
-  :demand t
-  :config
-  (setq shackle-rules '((compilation-mode              :select t   :align right :size 0.3)
+;; (use-package shackle
+;;   :ensure t
+;;   :demand t
+;;   :config
+;;   (setq shackle-rules '((compilation-mode              :select t   :align right :size 0.3)
 
-                        ("*Org Select*"                :select t   :align above :size 0.2)
-                        ("^CAPTURE.*\\.org$" :regexp t :select t   :align above :size 0.25)
+;;                         ("*Org Select*"                :select t   :align above :size 0.2)
+;;                         ("^CAPTURE.*\\.org$" :regexp t :select t   :align above :size 0.25)
 
-                        ("magit-process"     :regexp t             :align below :size 0.3)
-                        ("magit"             :regexp t             :align right :size 0.4)))
-  (shackle-mode))
+;;                         ("magit-process"     :regexp t             :align below :size 0.3)
+;;                         ("magit"             :regexp t             :align right :size 0.4)))
+;;   (shackle-mode))
 
 (use-package avy
   :ensure t
