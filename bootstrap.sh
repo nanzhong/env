@@ -16,8 +16,7 @@ apt-get -qy install \
         ca-certificates \
         curl \
         gnupg2 \
-        software-properties-common \
-        openconnect
+        software-properties-common
 
 curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add
 # use buster because no repo exists for sid
@@ -59,6 +58,16 @@ grep -q '# routing rules for vpn' /etc/network/interfaces || {
     echo "	post-up ip route add table 128 to $subnet dev eth0" >> /etc/network/interfaces
     echo "	post-up ip route add table 128 default via $gateway" >> /etc/network/interfaces
 }
+
+echo "Installing vpn..."
+mkdir vpn && cd vpn
+curl -Lo vpn.tgz https://security.nyc3.digitaloceanspaces.com/VPN/PanGPLinux-4.1.6-c3.tgz
+tar -zxvf vpn.tgz
+apt-get install -qy ./GlobalProtect_deb-4.1.6.0-3.deb
+cd ../
+# workaround for vpn cert issue
+mkdir -p /home/yyin/opensource/openssl/openssl-1.0.1t-build/ssl/certs
+ln -s /etc/ssl/certs/3513523f.0 /home/yyin/opensource/openssl/openssl-1.0.1t-build/ssl/certs/. > /dev/null 2>&1
 
 echo "Add my ssh keys..."
 curl -s https://api.github.com/users/nanzhong/keys | jq -r .[].key | while read key
