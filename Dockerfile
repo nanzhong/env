@@ -53,6 +53,11 @@ RUN /root/.fzf/install --bin --64 --no-bash --no-zsh --no-fish
 RUN mkdir -p /root/.config/fish/completions
 RUN curl https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/kubectl.fish > ~/.config/fish/completions/kubectl.fish
 
+# sourcegraph/go-langsever no longer maintained, bingo is the alternative that
+# lsp-mode supports now
+RUN mkdir -p /root/go/src/github.com/saibing/bingo && \
+   git clone https://github.com/saibing/bingo /root/go/src/github.com/saibing/bingo && \
+   fish -c "cd /root/go/src/github.com/saibing/bingo; env GO111MODULE=on go install"
 
 RUN fish -c "go get -u github.com/sourcegraph/go-langserver"
 RUN fish -c "go get -u github.com/mdempsky/gocode"
