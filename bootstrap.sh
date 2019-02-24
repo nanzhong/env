@@ -32,7 +32,8 @@ apt-get update && \
             libvirt-clients \
             libvirt-daemon-system \
             qemu-kvm \
-            dnsutils
+            dnsutils \
+            tigervnc-standalone-server firefox wmctrl
 
 echo "Fetching kubernetes dependencies..."
 curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.3/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
