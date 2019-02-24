@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -qy upgrade && apt-get -qy install \
     libffi-dev \
     mosh tmux fish wget git jq direnv unzip htop dnsutils git-crypt \
     emacs \
-    golang ruby python \
+    golang ruby python lua5.3 \
     default-jre graphviz plantuml
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
@@ -48,6 +48,9 @@ RUN emacs --batch --load /root/.emacs.d/init.el --eval '(kill-emacs)'
 RUN git clone https://github.com/junegunn/fzf /root/.fzf
 RUN cd /root/.fzf && git remote set-url origin git@github.com:junegunn/fzf.git
 RUN /root/.fzf/install --bin --64 --no-bash --no-zsh --no-fish
+
+RUN git clone https://github.com/skywind3000/z.lua /root/src/z.lua
+RUN cd /root/src/z.lua && git remote set-url origin git@github.com:skywind3000/z.lua.git
 
 # kubectl fish completion until natively support
 RUN mkdir -p /root/.config/fish/completions
