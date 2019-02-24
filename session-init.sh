@@ -41,5 +41,13 @@ if [ -d ~/host/root/src/org ]; then
     ln -s ~/host/root/src/org ~/org
 fi
 
+echo "Configure kubectl + minikube..."
+if [ -d ~/host/root/.kube ]; then
+    ln -s ~/host/root/.kube ~/kube
+fi
+if [ -d ~/host/root/.minikube ]; then
+    ln -s ~/host/root/.minikube ~/.minikube
+fi
+
 echo "Starting tmux session..."
 /usr/bin/tmux new
