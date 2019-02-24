@@ -43,7 +43,7 @@ fi
 
 echo "Configure kubectl + minikube..."
 if [ -d ~/host/root/.kube ]; then
-    ln -s ~/host/root/.kube ~/kube
+    ln -s ~/host/root/.kube ~/.kube
 fi
 if [ -d ~/host/root/.minikube ]; then
     ln -s ~/host/root/.minikube ~/.minikube
