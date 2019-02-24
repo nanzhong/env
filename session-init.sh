@@ -49,5 +49,10 @@ if [ -d ~/host/root/.minikube ]; then
     ln -s ~/host/root/.minikube ~/.minikube
 fi
 
+echo "Symlinking src repos..."
+if [ -d ~/host/root/src ]; then
+    ln -s ~/host/root/src/* ~/src/.
+fi
+
 echo "Starting tmux session..."
 /usr/bin/tmux new
