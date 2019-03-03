@@ -58,13 +58,7 @@ RUN cd /root/src/z.lua && git remote set-url origin git@github.com:skywind3000/z
 RUN mkdir -p /root/.config/fish/completions
 RUN curl https://raw.githubusercontent.com/evanlucas/fish-kubectl-completions/master/kubectl.fish > ~/.config/fish/completions/kubectl.fish
 
-# sourcegraph/go-langsever no longer maintained, bingo is the alternative that
-# lsp-mode supports now
-RUN mkdir -p /root/go/src/github.com/saibing/bingo && \
-   git clone https://github.com/saibing/bingo /root/go/src/github.com/saibing/bingo && \
-   fish -c "cd /root/go/src/github.com/saibing/bingo; env GO111MODULE=on go install"
-
-RUN fish -c "go get -u github.com/sourcegraph/go-langserver"
+RUN fish -c "go get -u github.com/saibing/bingo"
 RUN fish -c "go get -u github.com/mdempsky/gocode"
 RUN fish -c "go get -u golang.org/x/tools/cmd/..."
 RUN fish -c "go get -u github.com/aybabtme/humanlog/cmd/..."
