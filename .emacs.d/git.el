@@ -23,22 +23,26 @@
   (add-to-list 'display-buffer-alist
                `("magit:.*"
                  (display-buffer-in-side-window)
-                 (slot          . 0)
-                 (side          . right)
-                 (window-width . fit-window-to-buffer)))
+                 (slot         . 0)
+                 (side         . right)
+                 (window-width . 0.35)))
   (add-to-list 'display-buffer-alist
                `("magit-diff:.*"
                  (display-buffer-in-side-window)
-                 (slot          . 1)
-                 (side          . right)
-                 (window-width . fit-window-to-buffer)))
+                 (slot         . 1)
+                 (side         . right)
+                 (window-width . 0.35)
+                 (window-height . 0.3)))
   (add-to-list 'display-buffer-alist
                `("magit-process:.*"
                  (display-buffer-in-side-window)
-                 (slot          . 2)
-                 (side          . right)
-                 (window-width . fit-window-to-buffer)))
+                 (slot         . 2)
+                 (side         . right)
+                 (window-width . 0.35)
+                 (window-height . 0.3)))
   :config (setq magit-process-popup-time 0))
+
+(setq display-buffer-alist nil)
 
 (use-package forge
   :ensure t
