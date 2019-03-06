@@ -19,6 +19,25 @@
   :after diff-hl
   :bind (("C-x g" . magit-status))
   :hook (magit-post-refresh . diff-hl-magit-post-refresh)
+  :init
+  (add-to-list 'display-buffer-alist
+               `("magit:.*"
+                 (display-buffer-in-side-window)
+                 (slot          . 0)
+                 (side          . right)
+                 (window-height . fit-window-to-buffer)))
+  (add-to-list 'display-buffer-alist
+               `("magit-diff:.*"
+                 (display-buffer-in-side-window)
+                 (slot          . 1)
+                 (side          . right)
+                 (window-height . fit-window-to-buffer)))
+  (add-to-list 'display-buffer-alist
+               `("magit-diff:.*"
+                 (display-buffer-in-side-window)
+                 (slot          . 2)
+                 (side          . right)
+                 (window-height . fit-window-to-buffer)))
   :config (setq magit-process-popup-time 0))
 
 (use-package forge

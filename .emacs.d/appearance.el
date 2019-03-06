@@ -28,6 +28,9 @@
 ;; Maximum styles
 (setq font-lock-maximum-decoration t)
 
+;; Allow fitting window width
+(setq fit-window-to-buffer-horizontally t)
+
 ;; Bar cursor
 (setq-default cursor-type 'bar)
 
