@@ -106,7 +106,7 @@
 (use-package company
   :ensure t
   :config
-  (setq-default company-idle-delay 0.1
+  (setq-default company-idle-delay 0.25
                 company-echo-delay 0
                 company-tooltip-align-annotations t
                 company-dabbrev-downcase nil
@@ -117,9 +117,8 @@
 (use-package company-lsp
   :ensure t
   :after lsp-mode
-  ;; :config
-  ;; (push 'company-lsp company-backends)
-  ;; (setq company-lsp-enable-recompletion t)
+  :config
+  (setq company-lsp-cache-candidates 'auto)
   )
 
 (use-package whitespace
