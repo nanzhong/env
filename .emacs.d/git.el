@@ -33,7 +33,7 @@
                  (side          . right)
                  (window-height . fit-window-to-buffer)))
   (add-to-list 'display-buffer-alist
-               `("magit-diff:.*"
+               `("magit-process:.*"
                  (display-buffer-in-side-window)
                  (slot          . 2)
                  (side          . right)
