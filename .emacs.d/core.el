@@ -94,11 +94,6 @@
         lsp-ui-doc-max-height 20
         lsp-ui-doc-use-childframe nil))
 
-;; (use-package flycheck
-;;   :ensure t
-;;   :config
-;;   (add-hook 'after-init-hook 'global-flycheck-mode))
-
 (use-package yasnippet
   :ensure t
   :config
