@@ -23,7 +23,9 @@ RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 RUN add-apt-repository -su "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
 RUN apt-get -y install docker-ce
 
-RUN apt-get update && apt-get -y install docker-ce
+RUN curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | sudo apt-key add -
+RUN add-apt-repository -su "deb https://deb.nodesource.com/node_10.x sid main"
+RUN apt-get install nodejs
 
 RUN chsh -s /usr/bin/fish
 RUN mkdir -p /root /root/src /root/bin /root/go/bin
