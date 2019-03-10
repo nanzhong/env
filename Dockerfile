@@ -33,7 +33,7 @@ RUN mkdir -p /root /root/src /root/bin /root/go/bin
 RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.13.3/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
 
 ENV KEYBASE_ALLOW_ROOT 1
-RUN curl -sO https://prerelease.keybase.io/keybase_amd64.deb && apt-get -y install ./keybase_amd64.deb && rm keybase_amd64.deb
+RUN curl -sLO https://prerelease.keybase.io/keybase_amd64.deb && apt-get -y install ./keybase_amd64.deb && rm keybase_amd64.deb
 
 RUN curl -so fly https://github.com/concourse/concourse/releases/download/v4.2.3/fly_linux_amd64 && chmod +x fly && mv fly /usr/local/bin/.
 
