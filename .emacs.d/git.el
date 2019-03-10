@@ -42,8 +42,6 @@
                  (window-height . 0.3)))
   :config (setq magit-process-popup-time 0))
 
-(setq display-buffer-alist nil)
-
 (use-package forge
   :ensure t
   :after magit)
