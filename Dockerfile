@@ -19,8 +19,9 @@ ENV LC_ALL=en_US.UTF-8
 ENV TERM screen-256color
 
 # use buster because no repo exists for sid
-RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
-RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN add-apt-repository -su "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
+RUN apt-get -y install docker-ce
 
 RUN apt-get update && apt-get -y install docker-ce
 
