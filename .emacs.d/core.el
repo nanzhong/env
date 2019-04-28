@@ -118,8 +118,7 @@
   :ensure t
   :after lsp-mode
   :config
-  (setq company-lsp-cache-candidates 'auto)
-  )
+  (setq company-lsp-cache-candidates 'auto))
 
 (use-package whitespace
   :config
