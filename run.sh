@@ -8,6 +8,7 @@ docker run -it \
        -v /root/src:/root/src \
        -v /var/run/docker.sock:/var/run/docker.sock \
        --detach-keys "ctrl-^,d" \
+       --privileged
        --net host \
        --name workstation \
        --rm \
