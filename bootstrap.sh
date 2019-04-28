@@ -24,9 +24,6 @@ apt-get update && \
             mosh \
             jq \
             docker-ce \
-            libvirt-clients \
-            libvirt-daemon-system \
-            qemu-kvm \
             dnsutils \
             tigervnc-standalone-server firefox wmctrl
 
