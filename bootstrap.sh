@@ -5,22 +5,17 @@ set -e
 echo "Setting hostanme..."
 hostnamectl set-hostname "workstation"
 
-echo "Upgrade to sid..."
-echo "deb http://deb.debian.org/debian unstable main contrib non-free
-deb-src http://deb.debian.org/debian unstable main contrib non-free" > /etc/apt/sources.list
-apt-get update && apt-get -y dist-upgrade
-
 echo "Updating system and install dependencies..."
-apt-get -qy install \
-        apt-transport-https \
-        ca-certificates \
-        curl \
-        gnupg2 \
-        software-properties-common
+apt-get update && \
+    apt-get -qy install \
+            apt-transport-https \
+            ca-certificates \
+            curl \
+            gnupg-agent \
+            software-properties-common
 
-curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add
-# use buster because no repo exists for sid
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 
 apt-get update && \
     apt-get install -qy \
@@ -28,7 +23,7 @@ apt-get update && \
             git \
             mosh \
             jq \
-            docker-ce=18.06.1~ce~3-0~debian \
+            docker-ce \
             libvirt-clients \
             libvirt-daemon-system \
             qemu-kvm \
@@ -36,9 +31,7 @@ apt-get update && \
             tigervnc-standalone-server firefox wmctrl
 
 echo "Fetching kubernetes dependencies..."
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.13.3/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
-curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.34.1/minikube-linux-amd64 && chmod +x minikube && mv minikube /usr/local/bin/
-curl -LO https://storage.googleapis.com/minikube/releases/latest/docker-machine-driver-kvm2 && install docker-machine-driver-kvm2 /usr/local/bin/ && rm docker-machine-driver-kvm2
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.14.1/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
 
 echo "Configure custom ip block for docker..."
 echo '{"bip":"172.24.0.1/24","fixed-cidr":"172.24.0.0/24"}' > /etc/docker/daemon.json
@@ -66,9 +59,6 @@ curl -Lo vpn.tgz https://security.nyc3.digitaloceanspaces.com/VPN/PanGPLinux-4.1
 tar -zxvf vpn.tgz
 apt-get install -qy ./GlobalProtect_deb-4.1.6.0-3.deb
 cd ../
-# workaround for vpn cert issue
-mkdir -p /home/yyin/opensource/openssl/openssl-1.0.1t-build/ssl/certs
-ln -s /etc/ssl/certs/3513523f.0 /home/yyin/opensource/openssl/openssl-1.0.1t-build/ssl/certs/. > /dev/null 2>&1
 
 echo "Add my ssh keys..."
 curl -s https://api.github.com/users/nanzhong/keys | jq -r .[].key | while read key
