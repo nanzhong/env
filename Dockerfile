@@ -1,10 +1,12 @@
 FROM ubuntu:18.04
 
-RUN apt-get update && apt-get -qy install \
+RUN apt-get update && apt-get upgrade -qy
+RUN apt-get -qy install \
     software-properties-common \
-    build-essential \
+    automake pkg-config build-essential \
     ca-certificates \
     gnupg-agent \
+    locales \
     curl wget git
 
 RUN add-apt-repository ppa:kelleyk/emacs
@@ -13,18 +15,28 @@ RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
 
 RUN apt-get update && apt-get -qy install \
-    tmux fish jq direnv unzip htop dnsutils git-crypt \
+    locales \
+    fish jq direnv unzip htop dnsutils git-crypt \
     ispell mysql-client \
     emacs26 \
     golang ruby python lua5.3 \
     docker-ce
 
-# RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
-# RUN locale-gen en_US.UTF-8 
-# ENV LANG=en_US.UTF-8
-# ENV LC_CTYPE=en_US.UTF-8
-# ENV LC_ALL=en_US.UTF-8
+RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
+RUN locale-gen en_US.UTF-8
+ENV LANG=en_US.UTF-8
+ENV LC_CTYPE=en_US.UTF-8
+ENV LC_ALL=en_US.UTF-8
 
+# build tmux from source for 2.9
+RUN apt-get -qy install \
+    libevent-dev \
+    libncurses-dev
+RUN curl -sLO https://github.com/tmux/tmux/releases/download/2.9/tmux-2.9.tar.gz && \
+    tar xzvf tmux-2.9.tar.gz && \
+    cd tmux-2.9 && \
+    ./configure && make install && \
+    cd ../ && rm -rf tmux-2.9*
 # for correct colours in tmux
 ENV TERM screen-256color
 

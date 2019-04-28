@@ -3,7 +3,7 @@
 set -e
 
 echo "Attach to existing tmux session if it exists..."
-/usr/bin/tmux attach || true
+/usr/local/bin/tmux attach || true
 
 echo "Checking for host volume..."
 if [ ! -d ~/host ]; then
@@ -47,4 +47,4 @@ if [ -d ~/host/root/.kube ]; then
 fi
 
 echo "Starting tmux session..."
-/usr/bin/tmux new
+/usr/local/bin/tmux new
