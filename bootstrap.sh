@@ -58,7 +58,7 @@ mkdir vpn && cd vpn
 curl -Lo vpn.tgz https://security.nyc3.digitaloceanspaces.com/VPN/PanGPLinux-4.1.6-c3.tgz
 tar -zxvf vpn.tgz
 apt-get install -qy ./GlobalProtect_deb-4.1.6.0-3.deb
-cd ../
+cd ../ && rm -rf vpn
 
 echo "Add my ssh keys..."
 curl -s https://api.github.com/users/nanzhong/keys | jq -r .[].key | while read key
