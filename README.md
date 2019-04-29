@@ -10,16 +10,16 @@ This is my daily driver that I use for both work @ [DigitalOcean](https://grnh.s
 
 ## Features
 
-- Based on Debian
-- Fish shell
+- Based on Ubuntu 18.04
+- Fish shell 3.0
 - Mosh
-- Tmux
-- Emacs
+- Tmux 2.9
+- Emacs 26.2
 - Language support for:
   - Golang
   - Ruby
   - Python
-- Ready for Kubernetes development (Kubectl + Minikube)
+- Ready for Kubernetes development (Kubectl)
 - Keybase
 - Globalprotect VPN (client + routes to preserve connection)
 
@@ -32,7 +32,7 @@ Provision your docker host machine however you want, and run:
 ./boostrap.sh
 ```
 
-_Note: The `boostrap.sh` script assumes a version of debian._
+_Note: The `boostrap.sh` script assumes Ubuntu 18.04._
 
 ### Building the docker container
 
