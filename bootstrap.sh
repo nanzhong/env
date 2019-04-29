@@ -38,17 +38,23 @@ echo "Configure routes to preserve networking for vpn..."
 ip=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 subnet=$(ip route | grep -Po '^\d+(.\d+){3}/\d+(?= dev eth0)')
 gateway=$(ip route | grep -Po '(?<=default via )[.\d]+')
-ip rule add from $ip table 128 > /dev/null 2>&1 || true
-ip route add table 128 to $subnet dev eth0 > /dev/null 2>&1 || true
-ip route add table 128 default via $gateway > /dev/null 2>&1 || true
 
+echo "network:
+  version: 2
+  ethernets:
+    eth0:
+      routing-policy:
+        - from: $ip
+          table: 128
+      routes:
+        - to: $subnet
+          via: $gateway
+          table: 128
+        - to: 0.0.0.0/0
+          via: $gateway
+          table: 128" > /etc/netplan/99-vpn.yaml
 echo "128	mgmt" > /etc/iproute2/rt_tables.d/mgmt.conf
-grep -q '# routing rules for vpn' /etc/network/interfaces || {
-    echo "	# routing rules for vpn" >> /etc/network/interfaces
-    echo "	post-up ip rule add from $ip table 128" >> /etc/network/interfaces
-    echo "	post-up ip route add table 128 to $subnet dev eth0" >> /etc/network/interfaces
-    echo "	post-up ip route add table 128 default via $gateway" >> /etc/network/interfaces
-}
+netplan apply
 
 echo "Installing vpn..."
 mkdir vpn && cd vpn
