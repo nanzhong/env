@@ -16,7 +16,7 @@ RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubunt
 
 RUN apt-get update && apt-get -qy install \
     locales \
-    fish jq direnv unzip htop dnsutils git-crypt \
+    fish jq direnv unzip htop iproute2 dnsutils git-crypt \
     ispell mysql-client \
     emacs26 \
     golang ruby python lua5.3 \
