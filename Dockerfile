@@ -67,6 +67,7 @@ RUN emacs --batch --load /root/.emacs.d/init.el --eval '(kill-emacs)'
 RUN git clone https://github.com/junegunn/fzf /root/.fzf
 RUN cd /root/.fzf && git remote set-url origin git@github.com:junegunn/fzf.git
 RUN /root/.fzf/install --bin --64 --no-bash --no-zsh --no-fish
+RUN cp /root/.fzf/shell/key-bindings.fish ~/.config/fish/functions/fzf_key_bindings.fish
 
 RUN git clone https://github.com/skywind3000/z.lua /root/.z.lua
 RUN cd /root/.z.lua && git remote set-url origin git@github.com:skywind3000/z.lua.git
