@@ -6,7 +6,7 @@ COMMIT ?= $(shell git rev-parse HEAD)
 all: docker-push
 
 docker-build:
-	docker build -t $(IMAGE_NAME):$(COMMIT) .
+	docker build -t $(IMAGE_NAME):$(COMMIT) --no-cache .
 	docker tag $(IMAGE_NAME):$(COMMIT) $(IMAGE_NAME):latest
 
 docker-push: docker-build

@@ -28,17 +28,17 @@ ENV LANG=en_US.UTF-8
 ENV LC_CTYPE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
-# build tmux from source for 2.9
+# build tmux from source for 2.9a
 RUN apt-get -qy install \
     libevent-dev \
     libncurses-dev
-RUN curl -sLO https://github.com/tmux/tmux/releases/download/2.9/tmux-2.9.tar.gz && \
-    tar xzvf tmux-2.9.tar.gz && \
-    cd tmux-2.9 && \
+RUN curl -sLO https://github.com/tmux/tmux/releases/download/2.9a/tmux-2.9a.tar.gz && \
+    tar xzvf tmux-2.9a.tar.gz && \
+    cd tmux-2.9a && \
     ./configure && make install && \
-    cd ../ && rm -rf tmux-2.9*
+    cd ../ && rm -rf tmux-2.9a*
 # for correct colours in tmux
-ENV TERM screen-256color
+ENV TERM xterm-256color
 
 RUN chsh -s /usr/bin/fish
 RUN mkdir -p /root /root/bin /root/go/bin
