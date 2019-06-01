@@ -42,6 +42,7 @@ ENV TERM xterm-256color
 
 RUN chsh -s /usr/bin/fish
 RUN mkdir -p /root /root/bin /root/go/bin
+ENV PATH="/root/bin:${PATH}"
 
 RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.14.1/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
 
