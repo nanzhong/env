@@ -39,12 +39,7 @@
 ;; Configure cpcat
 (global-set-key (kbd "M-W") (lambda ()
                               (interactive)
-                              (message "cpcat copy...")
-                              (shell-command-on-region (region-beginning) (region-end) "cpcat copy")))
-(global-set-key (kbd "C-M-y") (lambda ()
-                                (interactive)
-                                (message "cpcat paste...")
-                                (insert (shell-command-to-string "cpcat paste"))))
+                              (shell-command-on-region (region-beginning) (region-end) "cpcat > (tmux run-shell 'echo #{pane_tty}')")))
 
 ;; Use ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
