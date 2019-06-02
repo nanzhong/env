@@ -15,7 +15,13 @@
   (add-hook 'go-mode-hook (lambda ()
                             (setq-local compile-command "go build -v; and go test -v; and go vet")
                             (setq-local compilation-read-command nil)
-                            (setq-local tab-width 2)))
+                            (setq-local tab-width 2)
+                            (add-to-list 'display-buffer-alist
+                                         `("\\*compilation\\*"
+                                           (display-buffer-in-side-window)
+                                           (slot          . 0)
+                                           (side          . bottom)
+                                           (window-height . 0.35)))))
   (add-hook 'before-save-hook #'gofmt-before-save))
 
 (use-package go-projectile

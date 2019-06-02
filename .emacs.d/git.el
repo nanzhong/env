@@ -29,16 +29,16 @@
   (add-to-list 'display-buffer-alist
                `("magit-diff:.*"
                  (display-buffer-in-side-window)
-                 (slot         . 1)
-                 (side         . right)
-                 (window-width . 0.35)
+                 (slot          . 1)
+                 (side          . right)
+                 (window-width  . 0.35)
                  (window-height . 0.3)))
   (add-to-list 'display-buffer-alist
                `("magit-process:.*"
                  (display-buffer-in-side-window)
-                 (slot         . 2)
-                 (side         . right)
-                 (window-width . 0.35)
+                 (slot          . 2)
+                 (side          . right)
+                 (window-width  . 0.35)
                  (window-height . 0.3)))
   :config (setq magit-process-popup-time 0))
 
