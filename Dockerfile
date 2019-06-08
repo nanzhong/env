@@ -44,7 +44,7 @@ RUN chsh -s /usr/bin/fish
 RUN mkdir -p /root /root/bin /root/go/bin
 ENV PATH="/root/bin:${PATH}"
 
-RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.14.1/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
+RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.14.3/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
 
 ENV KEYBASE_ALLOW_ROOT 1
 RUN curl -sLO https://prerelease.keybase.io/keybase_amd64.deb && apt-get -y install ./keybase_amd64.deb && rm keybase_amd64.deb
