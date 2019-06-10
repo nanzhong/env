@@ -19,7 +19,7 @@ RUN apt-get update && apt-get -qy install \
     fish jq direnv unzip htop iproute2 dnsutils git-crypt \
     ispell mysql-client \
     emacs26 \
-    golang ruby python lua5.3 \
+    golang python lua5.3 \
     docker-ce
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
@@ -80,6 +80,12 @@ RUN fish -c "go get -u github.com/aybabtme/humanlog/cmd/..."
 
 # until saibing's changes are included upstream...
 RUN fish -c "git clone -b bingo https://github.com/saibing/tools.git /tmp/tools && cd /tmp/tools/cmd/gopls && go install && cd / && rm -rf /tmp/tools"
+
+RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+RUN mkdir -p ~/.rbenv/plugins
+RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+RUN apt-get install -qy libssl-dev libreadline-dev zlib1g-dev
+RUN fish -c "rbenv install 2.6.3 && rbenv global 2.6.3"
 
 COPY session-init.sh /bin/session-init
 CMD ["/bin/session-init"]
