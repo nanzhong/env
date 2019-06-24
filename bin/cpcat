@@ -1,0 +1,35 @@
+#!/bin/sh
+
+set -eu
+
+save() {
+    content=$1
+
+    max_size=74994
+    content_size=$(printf $content | wc -c)
+    if [ $content_size -gt $max_size ]; then
+        echo "$0: content too long for OSC 52 clipboard" >&2
+    fi
+    escaped_content="\e]52;c;$(printf "%s" "$content" | head -c $max_size | base64 | tr -d "\r\n")\a"
+
+    if [ -n $TMUX ]; then
+        # save to the tmux buffer
+        tmux set-buffer "$content"
+
+        # if in a tmux session, use the DCS sequence with the tmux prefix to
+        # allow tmux to handle the OSC 52 correctly. All \e ESC chars must be
+        # doubled after the DCS
+        escaped_content="\ePtmux;\e$escaped_content\e\\"
+    fi
+
+    printf "$escaped_content"
+}
+
+in=$(cat $@)
+
+# always clear the clipboard first with \0
+# mosh currently has a bug where it will not allow copying the same value twice
+# in a row
+save "\0"
+
+save "$in"
