@@ -7,7 +7,7 @@ RUN apt-get -qy install \
     ca-certificates \
     gnupg-agent \
     locales \
-    curl wget git
+    curl wget git bzr mercurial
 
 RUN add-apt-repository ppa:kelleyk/emacs
 RUN apt-add-repository ppa:fish-shell/release-3
