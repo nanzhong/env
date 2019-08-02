@@ -1,3 +1,4 @@
+
 FROM ubuntu:18.04
 
 RUN apt-get update && apt-get upgrade -qy
@@ -43,6 +44,8 @@ ENV TERM xterm-256color
 RUN chsh -s /usr/bin/fish
 RUN mkdir -p /root /root/bin /root/go/bin
 ENV PATH="/root/bin:${PATH}"
+
+RUN curl -sLo docker-compose "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64" && chmod +x docker-compose && mv docker-compose /usr/local/bin/docker-compose
 
 RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.14.3/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
 
