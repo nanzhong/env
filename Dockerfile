@@ -47,7 +47,7 @@ ENV PATH="/root/bin:${PATH}"
 
 RUN curl -sLo docker-compose "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64" && chmod +x docker-compose && mv docker-compose /usr/local/bin/docker-compose
 
-RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.14.3/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
+RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.15.2/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
 
 ENV KEYBASE_ALLOW_ROOT 1
 RUN curl -sLO https://prerelease.keybase.io/keybase_amd64.deb && apt-get -y install ./keybase_amd64.deb && rm keybase_amd64.deb
