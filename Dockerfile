@@ -76,7 +76,7 @@ RUN git clone https://github.com/skywind3000/z.lua /root/.z.lua
 RUN cd /root/.z.lua && git remote set-url origin git@github.com:skywind3000/z.lua.git
 RUN lua5.3 /root/.z.lua/z.lua --init fish > ~/.config/fish/conf.d/z.fish
 
-RUN fish -c "go get golang.org/dl/go1.12.4 && go1.12.4 download && ln -s (which go1.12.4) /root/bin/go"
+RUN fish -c "go get golang.org/dl/go1.12.9 && go1.12.9 download && ln -s (which go1.12.9) /root/bin/go"
 RUN fish -c "go get -u github.com/mdempsky/gocode"
 RUN fish -c "go get -u golang.org/x/tools/cmd/..."
 RUN fish -c "go get -u github.com/aybabtme/humanlog/cmd/..."
