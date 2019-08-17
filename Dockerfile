@@ -49,9 +49,6 @@ RUN curl -sLo docker-compose "https://github.com/docker/compose/releases/downloa
 
 RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.15.2/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
 
-ENV KEYBASE_ALLOW_ROOT 1
-RUN curl -sLO https://prerelease.keybase.io/keybase_amd64.deb && apt-get -y install ./keybase_amd64.deb && rm keybase_amd64.deb
-
 RUN curl -sLo fly https://github.com/concourse/concourse/releases/download/v4.2.3/fly_linux_amd64 && chmod +x fly && mv fly /usr/local/bin/.
 
 RUN git clone https://github.com/nanzhong/dotfiles.git /root/dotfiles
@@ -61,6 +58,9 @@ RUN ln -s ~/dotfiles/.emacs.d ~/.emacs.d
 RUN ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 RUN ln -s ~/dotfiles/.gitignore ~/.gitignore
 RUN cd /root/dotfiles && git remote set-url origin git@github.com:nanzhong/dotfiles.git
+
+ENV KEYBASE_ALLOW_ROOT 1
+RUN curl -sLO https://prerelease.keybase.io/keybase_amd64.deb && apt-get -y install ./keybase_amd64.deb && rm keybase_amd64.deb
 
 RUN git clone https://github.com/nanzhong/emacs-nan-theme.git /root/.emacs.d/emacs-nan-theme
 RUN cd /root/.emacs.d/emacs-nan-theme && git remote set-url origin git@github.com:nanzhong/emacs-nan-theme.git
