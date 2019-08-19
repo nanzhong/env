@@ -77,6 +77,9 @@
                        (direnv-update-environment)
                        (lsp)))
   :config
+  (setq lsp-enable-indentation nil
+        lsp-enable-on-type-formatting nil
+        lsp-enable-symbol-highlighting nil)
   (require 'lsp-clients))
 
 (use-package lsp-ui
