@@ -40,7 +40,8 @@
                  (side          . right)
                  (window-width  . 0.35)
                  (window-height . 0.3)))
-  :config (setq magit-process-popup-time 0))
+  :config (setq magit-process-popup-time 0
+                magit-bury-buffer-function 'magit-mode-quit-window))
 
 (use-package forge
   :ensure t
