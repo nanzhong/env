@@ -6,7 +6,7 @@
 
 ;; Increase gc threshold
 ;; (this value is a balancing act between overall performance and responsiveness)
-(setq gc-cons-threshold (* 1 1024 1024))
+;; (setq gc-cons-threshold (* 1 1024 1024))
 
 ;; Setup packages
 (require 'package)
