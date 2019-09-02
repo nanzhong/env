@@ -47,7 +47,7 @@ ENV PATH="/root/bin:${PATH}"
 
 RUN curl -sLo docker-compose "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64" && chmod +x docker-compose && mv docker-compose /usr/local/bin/docker-compose
 
-RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.15.2/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
+RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.15.3/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
 
 RUN curl -sLo fly https://github.com/concourse/concourse/releases/download/v4.2.3/fly_linux_amd64 && chmod +x fly && mv fly /usr/local/bin/.
 
