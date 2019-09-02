@@ -18,7 +18,8 @@
                             (setq-local tab-width 2)
                             (add-to-list 'display-buffer-alist
                                          `("\\*compilation\\*"
-                                           (display-buffer-in-side-window)
+                                           (display-buffer-reuse-window
+                                            display-buffer-in-side-window)
                                            (slot          . 0)
                                            (side          . bottom)
                                            (window-height . 0.35)))))
@@ -27,18 +28,5 @@
 (use-package go-projectile
   :ensure t
   :after (go-mode projectile))
-
-;; (use-package go-eldoc
-;;   :ensure t
-;;   :after go-mode
-;;   :hook (go-mode . go-eldoc-setup))
-
-;; (use-package company-go
-;;   :ensure t
-;;   :after (go-mode company)
-;;   :hook (go-mode . (lambda ()
-;;                      (set (make-local-variable 'company-backends)
-;;                           (cons 'company-go company-backends))))
-;;   :config (setq company-go-show-annotation t))
 
 ;;; go.el ends here
