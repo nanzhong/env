@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-nan-theme")
+(add-to-list 'custom-theme-load-path "~/.config/.emacs.d/emacs-nan-theme")
 (load-theme 'nan t)
 
 (menu-bar-mode -1)
