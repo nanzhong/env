@@ -8,13 +8,6 @@
 ;; (this value is a balancing act between overall performance and responsiveness)
 (setq gc-cons-threshold (* 1 1024 1024))
 
-;; Setup packages
-(require 'package)
-(package-initialize)
-(setq package-enable-at-startup nil)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
-
 ;; Bootstrap use-package
 (unless (package-installed-p 'use-package)
   (package-refresh-contents)
