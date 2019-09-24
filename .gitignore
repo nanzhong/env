@@ -2,8 +2,5 @@
 .config/direnv
 .config/hub
 .config/doctl
-.emacs.d/projectile.cache
-.emacs.d/recentf
-.emacs.d/var
 .offlineimap/Account-*
 .offlineimap/Repository-*
