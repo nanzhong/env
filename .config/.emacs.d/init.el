@@ -8,17 +8,8 @@
 ;; (this value is a balancing act between overall performance and responsiveness)
 (setq gc-cons-threshold (* 1 1024 1024))
 
-;; Bootstrap use-package
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
 ;; icons-in-terminal
 (add-to-list 'load-path "~/src/icons-in-terminal/build")
-
-;; Common lisp extensions
-(use-package cl
-  :ensure t)
 
 ;; Load configs
 (load (expand-file-name "core.el" user-emacs-directory))
