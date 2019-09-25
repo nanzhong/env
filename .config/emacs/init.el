@@ -8,6 +8,12 @@
 ;; (this value is a balancing act between overall performance and responsiveness)
 (setq gc-cons-threshold (* 1 1024 1024))
 
+;; Bootstrap use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
+
 ;; icons-in-terminal
 (add-to-list 'load-path "~/src/icons-in-terminal/build")
 

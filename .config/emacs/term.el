@@ -5,7 +5,6 @@
 ;;; Code:
 
 (use-package eshell
-  :ensure t
   :config
   (defun eshell-new ()
     "Open a new eshell."

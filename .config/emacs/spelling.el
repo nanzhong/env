@@ -5,7 +5,6 @@
 ;;; Code:
 
 (use-package flyspell
-  :ensure t
   :hook ((text-mode . flyspell-mode)
          (git-commit-mode . flyspell-mode)
          (prog-mode . flyspell-prog-mode)))
