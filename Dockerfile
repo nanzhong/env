@@ -69,11 +69,11 @@ RUN go get -u golang.org/x/tools/cmd/...
 RUN go get -u github.com/aybabtme/humanlog/cmd/...
 RUN GO111MODULE=on go get golang.org/x/tools/gopls@latest
 
-# RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
-# RUN mkdir -p ~/.rbenv/plugins
-# RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-# RUN apt-get install -qy libssl-dev libreadline-dev zlib1g-dev
-# RUN fish -c "rbenv install 2.6.3 && rbenv global 2.6.3"
+RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+RUN mkdir -p ~/.rbenv/plugins
+RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+RUN apt-get install -qy libssl-dev libreadline-dev zlib1g-dev
+RUN fish -c "rbenv install 2.6.5 && rbenv global 2.6.5"
 
 RUN chsh -s /usr/bin/fish
 # allow keybase to be used
