@@ -48,6 +48,7 @@ RUN ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 RUN ln -s ~/dotfiles/.config ~/.config
 RUN ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 RUN ln -s ~/dotfiles/.gitignore ~/.gitignore
+RUN ln -s ~/dotfiles/bin/cpcat ~/bin/cpcat
 
 RUN git clone https://github.com/nanzhong/emacs-nan-theme.git /root/dotfiles/.config/emacs/emacs-nan-theme
 RUN cd /root/.config/emacs/emacs-nan-theme && git remote set-url origin git@github.com:nanzhong/emacs-nan-theme.git
