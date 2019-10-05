@@ -56,7 +56,6 @@
    `(minibuffer-prompt ((t :foreground ,pink)))
    `(region ((t (:background ,bg+++))))
    `(show-paren-match-face ((t (:background ,red))))
-   `(trailing-whitespace ((t :foreground nil :background ,red)))
    `(vertical-border ((t (:foreground ,bg+ :background ,bg+))))
    `(warning ((t (:foreground ,orange))))
 
@@ -72,6 +71,9 @@
    `(flycheck-fringe-warning ((t :foreground ,orange)))
    `(flycheck-fringe-error ((t :foreground ,red)))
 
+   ;; flymake
+   `(flymake-error ((t (:background ,red))))
+
    ;; Syntax highlighting
    `(font-lock-builtin-face ((t (:foreground ,pink))))
    `(font-lock-comment-face ((t (:foreground ,fg-  :background ,bg :inherit italic))))
@@ -81,12 +83,12 @@
    `(font-lock-function-name-face ((t (:foreground ,green))))
    `(font-lock-keyword-face ((t (:foreground ,red))))
    `(font-lock-negation-face ((t (:foreground ,yellow))))
-   `(font-lock-preprocessor-face ((t (:foreground ,red))))
+   `(font-lock-preprocessor-face ((t (:foreground ,fg-))))
    `(font-lock-regexp-grouping-construct ((t (:foreground ,yellow))))
    `(font-lock-regexp-grouping-backslash ((t (:foreground ,purple))))
    `(font-lock-string-face ((t (:foreground ,yellow))))
-   `(font-lock-type-face ((t (:foreground ,blue))))
-   `(font-lock-variable-name-face ((t (:foreground ,orange))))
+   `(font-lock-type-face ((t (:foreground ,orange))))
+   `(font-lock-variable-name-face ((t (:foreground ,purple))))
    `(font-lock-warning-face ((t (:foreground ,red :background ,bg+))))
 
    ;; lsp-ui
@@ -170,6 +172,7 @@
    ;; whitespace
    `(whitespace-default ((t (:foreground ,fg-, :background ,bg))))
    `(whitespace-tab ((t (:foreground ,fg-- :inherit whitespace-default))))
+   `(whitespace-line ((t (:foreground nil :background ,bg++))))
 
    ;; RJSX mode
    `(rjsx-attr ((t :foreground ,orange :inherit italic)))
