@@ -63,15 +63,9 @@
    `(mode-line ((t (:background ,bg+ :foreground ,fg+ :box nil))))
    `(mode-line-inactive ((t (:background ,bg+ :foreground ,fg- :box nil))))
 
-   ;; flycheck
-   `(flycheck-info ((t :underline ,cyan)))
-   `(flycheck-warning ((t :underline ,orange)))
-   `(flycheck-error ((t :underline ,red)))
-   `(flycheck-fringe-info ((t :foreground ,cyan)))
-   `(flycheck-fringe-warning ((t :foreground ,orange)))
-   `(flycheck-fringe-error ((t :foreground ,red)))
-
    ;; flymake
+   `(flymake-note ((t :background ,cyan)))
+   `(flymake-warning ((t :background ,orange)))
    `(flymake-error ((t (:background ,red))))
 
    ;; Syntax highlighting
