@@ -13,8 +13,8 @@ This is my daily driver that I use for both work @ [DigitalOcean](https://grnh.s
 - Based on Ubuntu 18.04
 - Fish shell 3.0
 - Mosh
-- Tmux 2.9
-- Emacs 26.2
+- Tmux 2.9a (built from source)
+- Emacs 27 (built from source against HEAD of master)
 - Language support for:
   - Golang
   - Ruby
@@ -45,13 +45,3 @@ docker build -t <name> .
 ### Running the container
 
 Included in the repo is a `run.sh` script that is an example of how the container can be run.
-
-## Todo
-
-- [ ] Pull out things specific to me into configurable/optional parts
-  - [ ] authorized keys in bootstrap.sh
-  - [ ] globalprotect vpn client
-  - [ ] keybase related ssh and gpg key management specific to me
-- [ ] update `run.sh` to support flags for:
-  - [ ] conditionally use host network
-  - [ ] conditionally mount host docker socket
