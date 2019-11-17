@@ -64,9 +64,9 @@
    `(mode-line-inactive ((t (:background ,bg+ :foreground ,fg- :box nil))))
 
    ;; flymake
-   `(flymake-note ((t :background ,cyan)))
-   `(flymake-warning ((t :background ,orange)))
-   `(flymake-error ((t (:background ,red))))
+   `(flymake-note ((t :background ,cyan :foreground: ,fg)))
+   `(flymake-warning ((t :background ,orange :foreground: ,fg)))
+   `(flymake-error ((t (:background ,red :foreground: ,fg))))
 
    ;; Syntax highlighting
    `(font-lock-builtin-face ((t (:foreground ,pink))))
