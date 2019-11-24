@@ -70,6 +70,9 @@
   :config
   (minions-mode))
 
+(use-package flymake
+  :ensure t)
+
 (use-package lsp-mode
   :ensure t
   :after direnv
