@@ -30,7 +30,7 @@ RUN apt-get update && apt-get -qy install \
 
 RUN curl -sLo docker-compose "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64" && chmod +x docker-compose && mv docker-compose /usr/local/bin/docker-compose
 RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.16.2/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
-RUN curl -sL https://get.helm.sh/helm-v3.0.0-rc.3-linux-amd64.tar.gz | tar -zvx --strip-components=1 -C /usr/local/bin linux-amd64/helm
+RUN curl -sL https://get.helm.sh/helm-v3.0.0-linux-amd64.tar.gz | tar -zvx --strip-components=1 -C /usr/local/bin linux-amd64/helm
 RUN curl -sLo fly https://github.com/concourse/concourse/releases/download/v5.5.5/fly_linux_amd64 && chmod +x fly && mv fly /usr/local/bin/.
 RUN curl -sLO https://prerelease.keybase.io/keybase_amd64.deb && apt-get -y install ./keybase_amd64.deb && rm keybase_amd64.deb
 
