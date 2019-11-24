@@ -108,8 +108,9 @@
                 company-echo-delay 0
                 company-tooltip-align-annotations t
                 company-dabbrev-downcase nil
-                company-backends '((company-capf company-dabbrev-code company-etags company-keywords company-yasnippet company-files)
-                                   (company-dabbrev company-abbrev company-ispell)))
+                ;; company-backends '((company-capf company-dabbrev-code company-etags company-keywords company-yasnippet company-files)
+                ;;                    (company-dabbrev company-abbrev company-ispell))
+                )
   (global-company-mode))
 
 (use-package company-lsp
