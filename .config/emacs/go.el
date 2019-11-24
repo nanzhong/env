@@ -6,6 +6,7 @@
 
 (use-package go-mode
   :ensure t
+  :after (lsp-mode)
   :mode "\\.go\\'"
   :bind (:map go-mode-map
               ("C-c C-c" . compile))
@@ -20,9 +21,9 @@
                                             display-buffer-in-side-window)
                                            (slot          . 0)
                                            (side          . bottom)
-                                           (window-height . 0.35)))))
-  (add-hook 'before-save-hook #'lsp-format-buffer t t)
-  (add-hook 'before-save-hook #'lsp-organize-imports t t))
+                                           (window-height . 0.35)))
+                            (add-hook 'before-save-hook #'lsp-format-buffer nil t)
+                            (add-hook 'before-save-hook #'lsp-organize-imports nil t))))
 
 (use-package go-projectile
   :ensure t
