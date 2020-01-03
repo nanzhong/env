@@ -10,7 +10,7 @@ This is my daily driver that I use for both work @ [DigitalOcean](https://grnh.s
 
 ## Features
 
-- Based on Ubuntu 18.04
+- Based on Debian Unstable
 - Fish shell 3.0
 - Mosh
 - Tmux 2.9a (built from source)
@@ -32,14 +32,14 @@ Provision your docker host machine however you want, and run:
 ./boostrap.sh
 ```
 
-_Note: The `boostrap.sh` script assumes Ubuntu 18.04._
+_Note: The `boostrap.sh` script assumes Debian._
 
 ### Building the docker container
 
 Nothing special is needed to build the container, just:
 
 ```
-docker build -t <name> .
+make workstation
 ```
 
 ### Running the container
