@@ -35,9 +35,6 @@ symbol = " "
 [nodejs]
 symbol = " "
 
-[package]
-symbol = " "
-
 [python]
 symbol = " "
 
@@ -51,7 +48,7 @@ symbol = " "
 disabled = true
 
 [jobs]
-symbol = "[z]"
+symbol = ""
 
 [time]
 disabled = false
