@@ -4,7 +4,7 @@ prompt_order = [
   "git_branch",
   "git_commit",
   "git_state",
-  "git_status",
+#  "git_status", disabled because it's way too slow
   "golang",
   "ruby",
   "cmd_duration",
