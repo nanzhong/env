@@ -49,6 +49,9 @@ RUN ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 RUN ln -s ~/dotfiles/.gitignore ~/.gitignore
 RUN ln -s ~/dotfiles/bin/cpcat ~/bin/cpcat
 
+RUN curl -fsSL https://starship.rs/install.sh | bash
+RUN echo "starship init fish | source" > ~/.config/fish/conf.d/starship.fish
+
 RUN git clone https://github.com/nanzhong/emacs-nan-theme.git /root/dotfiles/.config/emacs/emacs-nan-theme
 RUN cd /root/.config/emacs/emacs-nan-theme && git remote set-url origin git@github.com:nanzhong/emacs-nan-theme.git
 
