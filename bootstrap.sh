@@ -1,9 +1,14 @@
 #!/bin/sh
 
-set -e
+set -ex
 
 echo "Setting hostanme..."
 hostnamectl set-hostname "workstation"
+
+echo "Upgrade to unstable..."
+echo "deb https://deb.debian.org/debian unstable main contrib non-free
+deb-src https://deb.debian.org/debian unstable main contrib non-free" > /etc/apt/sources.list
+apt-get update && apt-get -y dist-upgrade
 
 echo "Updating system and install dependencies..."
 apt-get update && \
@@ -11,50 +16,43 @@ apt-get update && \
             apt-transport-https \
             ca-certificates \
             curl \
-            gnupg-agent \
-            software-properties-common
-
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add
-add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-
-apt-get update && \
-    apt-get install -qy \
+            gnupg \
+            software-properties-common \
             build-essential \
             git \
             mosh \
             jq \
-            docker-ce \
-            dnsutils \
-            tigervnc-standalone-server firefox wmctrl
+            dnsutils
 
-echo "Fetching kubernetes dependencies..."
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.14.1/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
+echo "Installing docker"
+curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
+apt-get update && \
+    apt-get -qy install \
+            docker-ce
 
 echo "Configure custom ip block for docker..."
 echo '{"bip":"172.24.0.1/24","fixed-cidr":"172.24.0.0/24"}' > /etc/docker/daemon.json
 systemctl restart docker
 
+echo "Fetching kubernetes dependencies..."
+curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.17.0/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
+
 echo "Configure routes to preserve networking for vpn..."
 ip=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 subnet=$(ip route | grep -Po '^\d+(.\d+){3}/\d+(?= dev eth0)')
 gateway=$(ip route | grep -Po '(?<=default via )[.\d]+')
+ip rule add from $ip table 128 > /dev/null 2>&1 || true
+ip route add table 128 to $subnet dev eth0 > /dev/null 2>&1 || true
+ip route add table 128 default via $gateway > /dev/null 2>&1 || true
 
-echo "network:
-  version: 2
-  ethernets:
-    eth0:
-      routing-policy:
-        - from: $ip
-          table: 128
-      routes:
-        - to: $subnet
-          via: $gateway
-          table: 128
-        - to: 0.0.0.0/0
-          via: $gateway
-          table: 128" > /etc/netplan/99-vpn.yaml
-echo "128	mgmt" > /etc/iproute2/rt_tables.d/mgmt.conf
-netplan apply
+echo "128       mgmt" > /etc/iproute2/rt_tables.d/mgmt.conf
+grep -q '# routing rules for vpn' /etc/network/interfaces || {
+    echo "# routing rules for vpn" >> /etc/network/interfaces
+    echo "post-up ip rule add from $ip table 128" >> /etc/network/interfaces
+    echo "post-up ip route add table 128 to $subnet dev eth0" >> /etc/network/interfaces
+    echo "post-up ip route add table 128 default via $gateway" >> /etc/network/interfaces
+}
 
 echo "Installing vpn..."
 mkdir vpn && cd vpn

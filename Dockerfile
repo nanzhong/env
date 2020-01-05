@@ -1,17 +1,17 @@
 FROM nanzhong/emacs:latest AS emacs
 FROM nanzhong/tmux:2.9a AS tmux
 
-FROM ubuntu:18.04
+FROM debian:unstable
 RUN apt-get update && apt-get upgrade -qy && apt-get -qy install \
-    software-properties-common \
-    automake pkg-config build-essential \
+    software-properties-common automake pkg-config build-essential \
+    locales \
     ca-certificates \
     htop iproute2 dnsutils \
-    gnupg-agent \
-    locales \
-    rsync curl wget git bzr mercurial \
+    gnupg \
+    fish rsync curl wget git bzr mercurial \
     jq direnv unzip  git-crypt \
-    ispell mysql-client \
+    ispell \
+    mysql-client \
     golang python lua5.3
 
 RUN echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
@@ -20,13 +20,11 @@ ENV LANG=en_US.UTF-8
 ENV LC_CTYPE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
 
-RUN apt-add-repository ppa:fish-shell/release-3
-RUN curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add
-RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu bionic stable"
-
-RUN apt-get update && apt-get -qy install \
-    fish  \
-    docker-ce
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
+RUN apt-get update && \
+    apt-get -qy install \
+            docker-ce
 
 RUN curl -sLo docker-compose "https://github.com/docker/compose/releases/download/1.24.1/docker-compose-Linux-x86_64" && chmod +x docker-compose && mv docker-compose /usr/local/bin/docker-compose
 RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.16.2/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
@@ -76,6 +74,9 @@ RUN mkdir -p ~/.rbenv/plugins
 RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 RUN apt-get install -qy libssl-dev libreadline-dev zlib1g-dev
 RUN fish -c "rbenv install 2.6.5 && rbenv global 2.6.5"
+
+RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
+RUN apt-get install -y nodejs
 
 RUN chsh -s /usr/bin/fish
 # allow keybase to be used

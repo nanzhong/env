@@ -1,4 +1,4 @@
-FROM ubuntu:18.04
+FROM debian:unstable
 ARG gitref=master
 RUN apt-get update && apt-get -qy install \
     build-essential git autoconf pkg-config \
