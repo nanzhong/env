@@ -76,7 +76,7 @@ RUN git clone https://github.com/rbenv/rbenv.git ~/.rbenv
 RUN mkdir -p ~/.rbenv/plugins
 RUN git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
 RUN apt-get install -qy libssl-dev libreadline-dev zlib1g-dev
-RUN fish -c "rbenv install 2.6.5 && rbenv global 2.6.5"
+RUN fish -c "rbenv install 2.7.0 && rbenv global 2.7.0"
 
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
 RUN apt-get install -y nodejs
