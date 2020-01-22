@@ -82,7 +82,10 @@
   :config
   (setq lsp-enable-indentation nil
         lsp-enable-on-type-formatting nil
-        lsp-enable-symbol-highlighting nil)
+        lsp-enable-symbol-highlighting nil
+        lsp-idle-delay 1.0
+        lsp-keep-workspace-alive nil
+        lsp-lens-debounce-interval 1.0)
   (require 'lsp-clients))
 
 (use-package lsp-ui
