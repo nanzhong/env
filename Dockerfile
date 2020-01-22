@@ -50,7 +50,7 @@ RUN ln -s ~/dotfiles/.gitignore ~/.gitignore
 RUN ln -s ~/dotfiles/.terminfo ~/.terminfo
 RUN ln -s ~/dotfiles/bin/cpcat ~/bin/cpcat
 
-RUN curl -fsSL https://starship.rs/install.sh | bash
+RUN curl -fsSL https://starship.rs/install.sh | bash -s -- --yes
 RUN echo "starship init fish | source" > ~/.config/fish/conf.d/starship.fish
 
 RUN git clone https://github.com/nanzhong/emacs-nan-theme.git /root/dotfiles/.config/emacs/emacs-nan-theme
