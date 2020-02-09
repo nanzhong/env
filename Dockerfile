@@ -19,6 +19,11 @@ RUN locale-gen en_US.UTF-8
 ENV LANG=en_US.UTF-8
 ENV LC_CTYPE=en_US.UTF-8
 ENV LC_ALL=en_US.UTF-8
+# for correct colours in tmux
+ENV TERM xterm-24bit
+
+RUN mkdir -p /root/bin
+ENV PATH="/root/bin:${PATH}"
 
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian buster stable"
@@ -31,15 +36,14 @@ RUN curl -sLO https://storage.googleapis.com/kubernetes-release/release/v1.17.2/
 RUN curl -sL https://get.helm.sh/helm-v3.0.0-linux-amd64.tar.gz | tar -zvx --strip-components=1 -C /usr/local/bin linux-amd64/helm
 RUN curl -sLo fly https://github.com/concourse/concourse/releases/download/v5.8.0/fly_linux_amd64 && chmod +x fly && mv fly /usr/local/bin/.
 RUN curl -sLO https://prerelease.keybase.io/keybase_amd64.deb && apt-get -y install ./keybase_amd64.deb && rm keybase_amd64.deb
+# allow keybase to be used
+ENV KEYBASE_ALLOW_ROOT 1
 
 COPY --from=emacs /tmp/emacs /tmp/emacs
 RUN rsync -a /tmp/emacs/ / && rm -rf /tmp/nemacs
 
 COPY --from=tmux /tmp/tmux /tmp/tmux
 RUN rsync -a /tmp/tmux/ / && rm -rf /tmp/tmux
-
-RUN mkdir -p /root/bin
-ENV PATH="/root/bin:${PATH}"
 
 RUN git clone https://github.com/nanzhong/dotfiles.git /root/dotfiles
 RUN cd /root/dotfiles && git remote set-url origin git@github.com:nanzhong/dotfiles.git
@@ -83,10 +87,6 @@ RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
 RUN apt-get install -y nodejs
 
 RUN chsh -s /usr/bin/fish
-# allow keybase to be used
-ENV KEYBASE_ALLOW_ROOT 1
-# for correct colours in tmux
-ENV TERM xterm-24bit
 
 COPY session-init.sh /bin/session-init
 CMD ["/bin/session-init"]
