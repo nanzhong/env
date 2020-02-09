@@ -86,7 +86,7 @@ RUN chsh -s /usr/bin/fish
 # allow keybase to be used
 ENV KEYBASE_ALLOW_ROOT 1
 # for correct colours in tmux
-ENV TERM xterm-256color
+ENV TERM xterm-24bit
 
 COPY session-init.sh /bin/session-init
 CMD ["/bin/session-init"]
