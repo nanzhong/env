@@ -5,19 +5,15 @@
 ;;; Code:
 
 (setq org-directory "~/org")
-(setq org-default-notes-file "~/org/notes.org")
+(setq org-default-notes-file "~/org/nan.org")
 
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c a") 'org-agenda)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "C-c b") 'org-switchb)
 
-(setq org-agenda-files (list (concat org-directory "/notes.org")
-                             (concat org-directory "/eva.org")
-                             (concat org-directory "/todo.org")
-                             (concat org-directory "/cal/do.org")
-                             (concat org-directory "/cal/nan.org")
-                             (concat org-directory "/cal/icloud.org")))
+(setq org-agenda-files (list( concat org-directory "/nan.org")
+                             (concat org-directory "/do.org")))
 
 (setq org-refile-targets (quote ((nil :maxlevel . 9)
                                  (org-agenda-files :maxlevel . 9))))
@@ -27,21 +23,11 @@
 (setq org-capture-templates
       `(("t" "Task templates")
         ("tp" "Personal task"
-         entry (file+headline ,(concat org-directory "/todo.org") "Personal")
+         entry (file+headline ,(concat org-directory "/nan.org") "Personal")
          "* %?")
         ("td" "DigitalOcean task"
-         entry (file+headline ,(concat org-directory "/todo.org") "DigitalOcean")
-         "* %?")
-
-        ("n" "Note"
-         entry (file ,(concat org-directory "/notes.org"))
-         "* %?\n%U")
-
-        ("e" "Eva related templates")
-        ("et" "Eva tracking"
-         entry (file+headline ,(concat org-directory "/eva.org") "Tracking")
-         "* %?\n:PROPERTIES:\n:Application: %^{Application|Google Doc|OneNote|n/a}\n:END:\n%T"
-         :empty-lines 1)))
+         entry (file+headline ,(concat org-directory "/do.org") "DigitalOcean")
+         "* %?")))
 
 ;; Re-define org-switch-to-buffer-other-window to NOT use org-no-popups.
 ;; Primarily for compatibility with shackle.
