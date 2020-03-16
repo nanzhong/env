@@ -85,6 +85,7 @@ RUN fish -c "rbenv install 2.7.0 && rbenv global 2.7.0"
 
 RUN curl -sL https://deb.nodesource.com/setup_13.x | bash -
 RUN apt-get install -y nodejs
+RUN npm install -g typescript typescript-language-server
 
 RUN chsh -s /usr/bin/fish
 
