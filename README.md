@@ -10,16 +10,16 @@ This is my daily driver that I use for both work @ [DigitalOcean](https://grnh.s
 
 ## Features
 
-- Based on Debian Unstable
+- Based on Archlinux
 - Fish shell 3.0
 - Mosh
-- Tmux 2.9a (built from source)
-- Emacs 27 (built from source against HEAD of master)
+- Tmux
+- Emacs
 - Language support for:
   - Golang
   - Ruby
-  - Python
-- Ready for Kubernetes development (Kubectl)
+  - NodeJS
+- Kubectl
 - Keybase
 - Globalprotect VPN (client + routes to preserve connection)
 
@@ -39,7 +39,7 @@ _Note: The `boostrap.sh` script assumes Debian._
 Nothing special is needed to build the container, just:
 
 ```
-make workstation
+make build
 ```
 
 ### Running the container

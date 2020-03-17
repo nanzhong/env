@@ -3,16 +3,16 @@
 set -e
 
 echo "Attach to existing tmux session if it exists..."
-/usr/local/bin/tmux attach || true
+/usr/bin/tmux attach || true
 
 echo "Checking for host volume..."
-if [ ! -d ~/host ]; then
-    echo "~/host not attached!"
+if [ ! -d /mnt/host ]; then
+    echo "/mnt/host not attached!"
     exit 1
 fi
 
 echo "Checking if keybase is needed for keys..."
-if [ ! -d ~/host/root/.ssh ] || ! ls ~/host/root/.ssh/id_* > /dev/null 2>&1 || [ ! -d ~/host/root/.gnupg ]; then
+if [ ! -d /mnt/shared/.ssh ] || [ ! -d /mnt/shared/.gnupg ]; then
     # TODO actually verify that keybase is running instead of blindly sleeping
     run_keybase && sleep 3
     keybase oneshot
@@ -20,31 +20,37 @@ fi
 
 echo "Configuring ssh keys..."
 rm -rf ~/.ssh
-if [ -d ~/host/root/.ssh ] && ls ~/host/root/.ssh/id_* > /dev/null 2>&1; then
-    cp -a ~/host/root/.ssh ~/.
-else
-    keybase fs cp -r /keybase/private/nan/.ssh ~/.
+if [ ! -d /mnt/shared/.ssh ]; then
+    keybase fs cp -r /keybase/private/nan/.ssh /mnt/shared/.
 fi
+ln -s /mnt/shared/.ssh ~/.
 
 echo "Configuring gpg keys..."
 rm -rf ~/.gnupg
-if [ -d ~/host/root/.gnupg ]; then
-    cp -a ~/host/root/.gnupg ~/.
-else
+if [ ! -d /mnt/shared/.gnupg ]; then
+    homedir=/mnt/shared/.gnupg
+    mkdir $homedir
     echo "Importing gpg keys from keybase..."
-    keybase pgp export -s | gpg --batch --import
+    keybase pgp export -s | gpg --homedir $homedir --batch --import
     echo "Modify trust on key..."
-    gpg --edit-key nan@notanumber.io
+    gpg --homedir $homedir --edit-key nan@notanumber.io
+fi
+ln -s /mnt/shared/.gnupg ~/.
+
+if [ -d /mnt/shared/src/org ]; then
+    ln -s /mnt/shared/src/org ~/org
 fi
 
-if [ -d ~/host/root/src/org ]; then
-    ln -s ~/host/root/src/org ~/org
+echo "Configure kubectl..."
+if [ ! -d /mnt/shared/.kube ]; then
+    mkdir /mnt/shared/.kube
 fi
+ln -s /mnt/shared/.kube ~/.kube
 
-echo "Configure kubectl + minikube..."
-if [ -d ~/host/root/.kube ]; then
-    ln -s ~/host/root/.kube ~/.kube
+if [ ! -d /mnt/shared/src ]; then
+    echo "Configure src..."
+    ln -s /mnt/shared/src ~/src
 fi
 
 echo "Starting tmux session..."
-/usr/local/bin/tmux new
+/usr/bin/tmux new

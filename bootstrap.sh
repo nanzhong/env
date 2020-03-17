@@ -35,9 +35,6 @@ echo "Configure custom ip block for docker..."
 echo '{"bip":"172.24.0.1/24","fixed-cidr":"172.24.0.0/24"}' > /etc/docker/daemon.json
 systemctl restart docker
 
-echo "Fetching kubernetes dependencies..."
-curl -LO https://storage.googleapis.com/kubernetes-release/release/v1.17.0/bin/linux/amd64/kubectl && chmod +x kubectl && mv kubectl /usr/local/bin/kubectl
-
 echo "Configure routes to preserve networking for vpn..."
 ip=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
 subnet=$(ip route | grep -Po '^\d+(.\d+){3}/\d+(?= dev eth0)')
