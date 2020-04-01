@@ -15,7 +15,7 @@ RUN pacman -Syyu --noconfirm \
     docker sudo openssh \
     iproute dnsutils inetutils htop \
     tmux fish curl wget rsync jq unzip ispell tree \
-    git bzr mercurial \
+    git git-crypt bzr mercurial \
     go python lua
 
 # Additional dependencies
