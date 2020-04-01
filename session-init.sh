@@ -47,7 +47,7 @@ if [ ! -d /mnt/shared/.kube ]; then
 fi
 ln -s /mnt/shared/.kube ~/.kube
 
-if [ ! -d /mnt/shared/src ]; then
+if [ -d /mnt/shared/src ]; then
     echo "Configure src..."
     ln -s /mnt/shared/src ~/src
 fi
