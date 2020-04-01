@@ -57,7 +57,7 @@ RUN ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 RUN ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 RUN ln -s ~/dotfiles/.gitignore ~/.gitignore
 RUN ln -s ~/dotfiles/.terminfo ~/.terminfo
-RUN ln -s ~/dotfiles/bin/cpcat ~/bin/cpcat
+RUN sudo ln -s ~/dotfiles/bin/cpcat /usr/local/bin/cpcat
 
 ## Configure prompt
 RUN ls -la ~/
