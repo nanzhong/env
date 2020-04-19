@@ -1,5 +1,5 @@
 function tmux-status-vpn
-    set addr (ip addr show gpd0 2> /dev/null)
+    set addr (ip addr show tun0 2> /dev/null)
     if echo $addr | grep -q "state DOWN"
         echo " ..."
         return 1
