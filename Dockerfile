@@ -14,6 +14,7 @@ RUN pacman -Syyu --noconfirm \
     base-devel \
     docker sudo openssh \
     iproute dnsutils inetutils htop \
+    mariadb-clients \
     tmux fish curl wget rsync jq unzip ispell tree \
     git git-crypt bzr mercurial \
     go python lua
