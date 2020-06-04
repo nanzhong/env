@@ -34,8 +34,7 @@
 
 ;(load (expand-file-name "do.el" user-emacs-directory))
 
-;; Custom file
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+(setq custom-file "~/.config/emacs/custom.el")
 (load custom-file)
 
 ;; disabled commands
