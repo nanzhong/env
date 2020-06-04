@@ -6,27 +6,35 @@
   ];
 
   home.packages = with pkgs; [
-    curl wget rsync
-    jq
-    unzip
-    tree
-    ispell
-    htop
-    dnsutils inetutils
-    git git-crypt breezy mercurial
-    gnupg
-    go
-    python
-    lua
-    ruby
-    nodejs
+    breezy
+    curl
+    direnv
+    dnsutils
     docker-compose
-    kubectl kubernetes-helm
     doctl
     fly
     fzf
+    git
+    git-crypt
+    gnumake
+    gnupg
+    go
+    htop
+    inetutils
+    ispell
+    jq
+    kubectl
+    kubernetes-helm
+    lua
+    mercurial
+    nodejs
+    python
+    rsync
+    ruby
     starship
-    direnv
+    tree
+    unzip
+    wget
   ];
 
   programs.emacs = {
