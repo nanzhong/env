@@ -51,12 +51,11 @@
   (direnv-mode)
   (setq direnv-always-show-summary nil))
 
-;; (use-package exec-path-from-shell
-;;   :ensure t
-;;   :after (direnv)
-;;   :demand t
-;;   :config
-;;   (exec-path-from-shell-initialize))
+(use-package exec-path-from-shell
+  :ensure t
+  :demand t
+  :config
+  (exec-path-from-shell-initialize))
 
 (use-package dashboard
   :ensure t
