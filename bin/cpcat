@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/usr/bin/env sh
 
-set -eu
+set -e
 
 save() {
     content=$1
