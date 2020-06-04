@@ -1,0 +1,13 @@
+emacs-nan-theme
+.lsp-session-v1
+auto-save-list
+backups
+elpa
+eshell/history
+eshell/lastdir
+projectile-bookmarks.eld
+projectile.cache
+recentf
+tramp
+var
+transient/*

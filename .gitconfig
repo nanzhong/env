@@ -1,0 +1,6 @@
+[user]
+	name = Nan Zhong
+	email = me@nanzho.ng
+	signingkey = A2ED35D3
+[core]
+	editor = emacsclient
