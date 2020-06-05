@@ -28,6 +28,7 @@
     lua
     mercurial
     nodejs
+    openssl
     python
     rsync
     ruby
