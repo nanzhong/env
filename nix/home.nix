@@ -7,35 +7,27 @@
 
   home.packages = with pkgs; [
     breezy
-    curl
     direnv
-    dnsutils
     docker-compose
     doctl
     fly
     fzf
-    git
     git-crypt
     gnumake
     gnupg
     go
-    htop
-    inetutils
     ispell
-    jq
     kubectl
     kubernetes-helm
     lua
+    mariadb-client
     mercurial
     nodejs
-    openssl
+    openconnect
     python
-    rsync
     ruby
     starship
-    tree
     unzip
-    wget
   ];
 
   programs.emacs = {

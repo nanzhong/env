@@ -18,12 +18,19 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
-    mosh
-    tmux
+    curl
+    dnsutils
     docker
-    openconnect
     fish
     git
+    htop
+    inetutils
+    jq
+    mosh
+    openssl
+    tmux
+    tree
+    wget
   ];
   
   programs = {
