@@ -1,0 +1,6 @@
+.config/fish/fishd.*
+.config/direnv
+.config/hub
+.config/doctl
+.offlineimap/Account-*
+.offlineimap/Repository-*

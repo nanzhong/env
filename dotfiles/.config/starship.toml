@@ -1,0 +1,54 @@
+prompt_order = [
+  "kubernetes",
+  "directory",
+  "git_branch",
+  "git_commit",
+  "git_state",
+#  "git_status", disabled because it's way too slow
+  "golang",
+  "ruby",
+  "cmd_duration",
+  "line_break",
+  "jobs",
+  "time",
+  "character",
+]
+
+[character]
+symbol = "›"
+
+[username]
+disabled = true
+
+[hostname]
+ssh_only = true
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[kubernetes]
+disabled = true
+
+[jobs]
+symbol = ""
+
+[time]
+disabled = false
