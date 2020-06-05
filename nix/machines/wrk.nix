@@ -1,13 +1,7 @@
-{ config, pkgs, ... }: {
-  imports = [
-    /etc/nixos/hardware-configuration.nix
-    /etc/nixos/networking.nix # generated at runtime by nixos-infect
-
-    <home-manager/nixos>
-
-    ./common.nix
-  ];
-
+{ config, pkgs, ... }:
+let
+  keys = import ../keys.nix;
+in {
   networking.hostName = "wrk";
 
   networking.localCommands = ''
@@ -26,9 +20,7 @@
       description = "Nan Zhong";
       extraGroups = [ "wheel" "docker" ];
       shell = pkgs.fish;
-      openssh.authorizedKeys.keys = [
-        "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPRVyHqcSWD8nhiniAfDlV3UIua0/mkINp1XbmcwGHVc nan@ipad" 
-      ];
+      openssh.authorizedKeys.keys = keys.sshPub;
     };
   };
 

@@ -1,5 +1,8 @@
-{ pkgs, ... }: {
-  time.timeZone = "America/New_York";
+{ pkgs, ... }:
+let
+  keys = import ../keys.nix;
+in {
+  time.timeZone = "America/Toronto";
 
   boot.cleanTmpDir = true;
   
@@ -13,7 +16,6 @@
   nixpkgs.overlays = [
     (import ../overlays/mosh.nix)
   ];
-
 
   environment.systemPackages = with pkgs; [
     mosh
@@ -36,8 +38,6 @@
   users.mutableUsers = false;
   
   users.users.root = {
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPRVyHqcSWD8nhiniAfDlV3UIua0/mkINp1XbmcwGHVc nan@ipad" 
-    ];
+    openssh.authorizedKeys.keys = keys.sshPub;
   };
 }
