@@ -13,3 +13,5 @@ if not set -q GOPATH
 end
 
 set -U fish_user_paths $HOME/bin $GOPATH/bin
+
+starship init fish | source
