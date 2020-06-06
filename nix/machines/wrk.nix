@@ -2,6 +2,10 @@
 let
   keys = import ../keys.nix;
 in {
+  imports = [
+    ./common.nix
+  ];
+
   networking.hostName = "wrk";
 
   networking.localCommands = ''
@@ -23,6 +27,4 @@ in {
       openssh.authorizedKeys.keys = keys.sshPub;
     };
   };
-
-  home-manager.users.nzhong = import ../home.nix;
 }

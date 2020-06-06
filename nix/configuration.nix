@@ -11,7 +11,7 @@ in {
 
     "${home-manager}/nixos"
 
-    ./machines/common.nix
     ./machines/current.nix
+    ./homes/current.nix
   ];
 }

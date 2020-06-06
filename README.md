@@ -10,9 +10,10 @@ This repository contains all the configuration needed to bootstrap my full devel
 
 ### nixos
 
-First determine the machine that needs to be bootstrapped and configure the `current.nix` symlink. 
+First determine the machine and home that needs to be bootstrapped and configure the `current.nix` symlinks. 
 ```
-ln -s ./wrk.nix ./nix/machines/current.nix
+ln -s ./dev.nix ./nix/machines/current.nix
+ln -s ./dev.nix ./nix/homes/current.nix
 ```
 
 Create the symlink for `/etc/nixos/configuration.nix`.
