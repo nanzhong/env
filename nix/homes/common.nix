@@ -14,6 +14,7 @@ user: { pkgs, ... }: {
       gnumake
       gnupg
       go
+      gopls
       ispell
       kubectl
       kubernetes-helm
