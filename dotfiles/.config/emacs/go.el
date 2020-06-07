@@ -15,6 +15,7 @@
                             (setq-local compile-command "go build -v; and go test -v; and go vet")
                             (setq-local compilation-read-command nil)
                             (setq-local tab-width 2)
+                            (setq-local lsp-gopls-build-flags ["-tags=integration"])
                             (add-to-list 'display-buffer-alist
                                          `("\\*compilation\\*"
                                            (display-buffer-reuse-window
