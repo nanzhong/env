@@ -15,3 +15,9 @@ end
 set -U fish_user_paths $HOME/bin $GOPATH/bin
 
 starship init fish | source
+
+source (z --init fish enhanced | psub)
+alias zz="z -c"
+alias zi="z -i"
+alias zf="z -I"
+alias zb="z -b"

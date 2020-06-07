@@ -25,6 +25,7 @@ user: { pkgs, ... }: {
       ruby
       starship
       unzip
+      z-lua
     ];
     
     programs.emacs = {
