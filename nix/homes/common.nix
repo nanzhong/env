@@ -7,6 +7,7 @@ user: { pkgs, ... }: {
 
   home-manager.users."${user}" = {    
     home.packages = with pkgs; [
+      bat
       direnv
       docker-compose
       doctl
