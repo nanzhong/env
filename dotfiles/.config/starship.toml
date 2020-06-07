@@ -1,3 +1,5 @@
+add_newline = false
+
 prompt_order = [
   "kubernetes",
   "directory",
@@ -49,6 +51,3 @@ disabled = true
 
 [jobs]
 symbol = ""
-
-[time]
-disabled = false
