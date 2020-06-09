@@ -4,8 +4,13 @@ let
 in {
   time.timeZone = "America/Toronto";
 
-  boot.cleanTmpDir = true;
-  
+  boot = {
+    cleanTmpDir = true;
+    kernel.sysctl = {
+      "fs.inotify.max_user_watches" = "1048576";
+    };
+  };
+
   security.sudo.wheelNeedsPassword = false;
   
   networking.firewall = {
