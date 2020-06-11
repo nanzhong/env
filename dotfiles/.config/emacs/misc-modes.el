@@ -41,4 +41,8 @@
 (use-package protobuf-mode
   :ensure t)
 
+(use-package nix-mode
+  :ensure t
+  :mode "\\.nix\\'")
+
 ;;; misc-modes.el ends here
