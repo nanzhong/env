@@ -7,6 +7,8 @@ in {
     ( common user )
   ];
   home-manager.users."${user}" = {
-    home.packages = with pkgs; [];
+    home.packages = with pkgs; [
+      fontforge
+    ];
   };
 }
