@@ -21,7 +21,7 @@
 (let ((bg--   "#000000")
       (bg-    "#01060E")
       (bg     "#0F1419")
-      (bg+    "#1F2430")
+      (bg+    "#141925")
       (bg++   "#232834")
       (bg+++  "#3D424D")
 
@@ -65,12 +65,12 @@
    `(minibuffer-prompt ((t :foreground ,pink)))
    `(region ((t (:background "#33415E"))))
    `(show-paren-match-face ((t (:background ,red))))
-   `(vertical-border ((t (:foreground "#101521" :background "#101521"))))
+   `(vertical-border ((t (:foreground ,bg+ :background ,bg+))))
    `(warning ((t (:foreground ,orange))))
 
    ;; modeline
-   `(mode-line ((t (:background "#232834" :foreground ,fg+ :box nil))))
-   `(mode-line-inactive ((t (:background "#101521" :foreground ,fg- :box nil))))
+   `(mode-line ((t (:background ,bg++ :foreground ,fg+ :box nil))))
+   `(mode-line-inactive ((t (:background ,bg+ :foreground ,fg- :box nil))))
 
    ;; flymake
    `(flymake-note ((t :background "#5CCFE6" :foreground: ,fg)))
