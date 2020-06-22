@@ -14,5 +14,11 @@ in {
       mercurial
       openconnect
     ];
+
+    home.file = {
+      ".gitconfig" = {
+        source = ../../dotfiles/.gitconfig.nzhong;
+      };
+    };
   };
 }

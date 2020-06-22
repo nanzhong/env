@@ -10,5 +10,11 @@ in {
     home.packages = with pkgs; [
       fontforge
     ];
+
+    home.file = {
+      ".gitconfig" = {
+        source = ../../dotfiles/.gitconfig.nan;
+      };
+    };
   };
 }

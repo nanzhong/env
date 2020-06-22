@@ -1,0 +1,14 @@
+[user]
+	name = Nan Zhong
+	email = nzhong@digitalocean.com
+	signingkey = A2ED35D3
+[core]
+	editor = emacsclient
+[url "git@github.internal.digitalocean.com:"]
+	insteadOf = git://github.internal.digitalocean.com/
+	insteadOf = https://github.internal.digitalocean.com/
+	insteadOf = http://github.internal.digitalocean.com/
+
+[url "git@github.com:"]
+	insteadOf = git://github.com/
+	insteadOf = https://github.com/
