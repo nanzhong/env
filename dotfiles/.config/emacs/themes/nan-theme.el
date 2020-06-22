@@ -73,8 +73,8 @@
    `(mode-line-inactive ((t (:background ,bg+ :foreground ,fg- :box nil))))
 
    ;; flymake
-   `(flymake-note ((t :background "#5CCFE6" :foreground: ,fg)))
-   `(flymake-warning ((t :background "#FFE6B3" :foreground: ,fg)))
+   `(flymake-note ((t :background "#5CCFE6" :foreground: ,bg)))
+   `(flymake-warning ((t :background "#FFE6B3" :foreground: ,bg)))
    `(flymake-error ((t (:background "#FF3333" :foreground: ,fg))))
 
    ;; Syntax highlighting
