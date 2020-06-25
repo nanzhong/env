@@ -54,8 +54,8 @@ user: { pkgs, ... }: {
         recursive = true;
       };
 
-      bin = {
-        source = ../../bin;
+      "bin/cpcat" = {
+        source = ../../bin/cpcat;
       };
     };
   };

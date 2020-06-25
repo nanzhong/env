@@ -19,6 +19,13 @@ in {
       ".gitconfig" = {
         source = ../../dotfiles/.gitconfig.nzhong;
       };
+
+      "bin/do-vpn.sh" = {
+        source = ../../bin/do-vpn.sh;
+      };
+      "bin/hipreport.sh" = {
+        source = ../../bin/hipreport.sh;
+      };
     };
   };
 }
