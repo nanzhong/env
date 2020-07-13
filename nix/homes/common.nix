@@ -24,6 +24,7 @@ user: { pkgs, ... }: {
       nodejs
       python
       ruby
+      shellcheck
       starship
       unzip
       z-lua
