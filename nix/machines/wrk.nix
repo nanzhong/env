@@ -18,7 +18,7 @@ in {
     ip route add table 128 default via $gateway
   '';
 
-  networking.nameservers = [ "10.30.0.7" "10.30.0.8" ];
+  networking.nameservers = [ "10.254.0.3" ];
   networking.search = [ "internal.digitalocean.com" "consul" ];
 
   users.users = {
