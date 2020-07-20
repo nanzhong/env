@@ -13,9 +13,9 @@ in {
     subnet=$(ip route | grep -Po '^\d+(.\d+){3}/\d+(?= dev eth0)')
     gateway=$(ip route | grep -Po '(?<=default via )[.\d]+')
     ip rule delete from $ip table 128 || true
-    ip rule add from $ip table 128
-    ip route add table 128 to $subnet dev eth0
-    ip route add table 128 default via $gateway
+    ip rule add from $ip table 128 || true
+    ip route add table 128 to $subnet dev eth0 || true
+    ip route add table 128 default via $gateway || true
   '';
 
   networking.nameservers = [ "10.254.0.3" ];
