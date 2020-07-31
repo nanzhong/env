@@ -28,6 +28,7 @@ in {
     dnsutils
     docker
     fish
+    gcc
     git
     htop
     inetutils
