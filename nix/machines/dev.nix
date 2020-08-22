@@ -7,7 +7,7 @@ in {
   ];
 
   networking.hostName = "dev";
-  networking.firewall.allowedTCPPorts = [ 3000 8080 ];
+  networking.firewall.allowedTCPPorts = [ 3000 3001 8080 ];
 
   users.users = {
     nan = {
