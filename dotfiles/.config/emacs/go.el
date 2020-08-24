@@ -16,13 +16,6 @@
                             (setq-local compilation-read-command nil)
                             (setq-local tab-width 2)
                             (setq-local lsp-gopls-build-flags ["-tags=integration"])
-                            (add-to-list 'display-buffer-alist
-                                         `("\\*compilation\\*"
-                                           (display-buffer-reuse-window
-                                            display-buffer-in-side-window)
-                                           (slot          . 0)
-                                           (side          . bottom)
-                                           (window-height . 0.35)))
                             (add-hook 'before-save-hook #'lsp-format-buffer nil t)
                             (add-hook 'before-save-hook #'lsp-organize-imports nil t))))
 
