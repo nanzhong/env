@@ -41,6 +41,7 @@ in {
     jq
     mosh
     openssl
+    tailscale
     tmux
     tree
     wget
@@ -52,7 +53,7 @@ in {
   };
 
   services.openssh.enable = true;
-
+  services.tailscale.enable = true;
   virtualisation.docker.enable = true;
 
   users.mutableUsers = false;
