@@ -41,6 +41,7 @@ in {
     jq
     mosh
     openssl
+    samba
     tailscale
     tmux
     tree
