@@ -13,7 +13,6 @@ in {
   services.samba = {
     enable = true;
     extraConfig = ''
-    log level = 2
     ea support = yes
     vfs objects = fruit streams_xattr
     fruit:metadata = stream
