@@ -10,6 +10,11 @@ in {
   networking.firewall.allowedUDPPorts = [ 137 138 ];
   networking.firewall.allowedTCPPorts = [ 139 445 3000 3001 8080 ];
 
+  environment.systemPackages = with pkgs; [
+    tailscale
+  ];
+
+  services.tailscale.enable = true;
   services.samba = {
     enable = true;
     extraConfig = ''
