@@ -19,7 +19,7 @@ in {
     ip route add table 128 default via $gateway || true
   '';
 
-  networking.nameservers = [ "10.254.0.3" ];
+  networking.nameservers = [ "10.124.57.141" ];
   networking.search = [ "internal.digitalocean.com" "consul" ];
 
   services.samba = {
