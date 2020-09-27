@@ -11,9 +11,9 @@
                        (direnv-update-environment)
                        (lsp)))
   :config
-  (setq lsp-enable-indentation true
+  (setq lsp-enable-indentation t
         lsp-enable-on-type-formatting nil
-        lsp-enable-symbol-highlighting true
+        lsp-enable-symbol-highlighting t
         lsp-idle-delay 1.0
         lsp-keep-workspace-alive nil
         lsp-lens-debounce-interval 1.0))
