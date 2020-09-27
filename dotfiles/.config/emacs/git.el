@@ -24,7 +24,12 @@
 
 (use-package forge
   :ensure t
-  :after magit)
+  :after magit
+  :config
+  (setq forge-database-file "~/.cache/forge-database.sqlite")
+  (push '("github.internal.digitalocean.com" "github.internal.digitalocean.com/api/v3"
+          "github.internal.digitalocean.com" forge-github-repository)
+        forge-alist))
 
 ;; don't use until there is a way to ignore folders...
 ;; (use-package magit-todos
