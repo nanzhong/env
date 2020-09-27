@@ -68,6 +68,11 @@
    `(vertical-border ((t (:foreground ,bg+ :background ,bg+))))
    `(warning ((t (:foreground ,orange))))
 
+   ;; tty-menu
+   `(tty-menu-enabled-face ((t (:foreground ,fg :background ,bg+))))
+   `(tty-menu-disabled-face ((t (:foreground ,fg- :background ,bg+))))
+   `(tty-menu-selected-face ((t (:foreground ,fg+ :background ,bg++ :weight bold))))
+
    ;; modeline
    `(mode-line ((t (:background ,bg++ :foreground ,fg+ :box nil))))
    `(mode-line-inactive ((t (:background ,bg+ :foreground ,fg- :box nil))))
