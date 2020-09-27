@@ -41,7 +41,7 @@ in {
     jq
     mosh
     openssl
-    samba
+    syncthing
     tmux
     tree
     wget
@@ -53,6 +53,11 @@ in {
   };
 
   services.openssh.enable = true;
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
+
   virtualisation.docker.enable = true;
 
   users.mutableUsers = false;

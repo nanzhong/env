@@ -15,29 +15,17 @@ in {
   ];
 
   services.tailscale.enable = true;
-  services.samba = {
-    enable = true;
-    extraConfig = ''
-    ea support = yes
-    vfs objects = fruit streams_xattr
-    fruit:metadata = stream
-    fruit:model = MacSamba
-    fruit:posix_rename = yes
-    fruit:veto_appledouble = no
-    fruit:wipe_intentionally_left_blank_rfork = yes
-    fruit:delete_empty_adfiles = yes
-    '';
-    shares = {
-      nan = {
-        comment = "/home/nan";
-        path = "/home/nan";
-        "vfs objects" = "fruit streams_xattr";
-        "read only" = "no";
-        "guest ok" = "no";
-        "create mask" = "0644";
-        "directory mask" = "0755";
-        "force user" = "nan";
-        "force group" = "users";
+
+  services.syncthing = {
+    user = "nan";
+    group = "users";
+    dataDir = "/home/nan/.syncthing";
+    configDir = "/home/nan/.syncthing/config";
+    declarative = {
+      folders = {
+        "/home/nan/org" = {
+          id = "org";
+        };
       };
     };
   };

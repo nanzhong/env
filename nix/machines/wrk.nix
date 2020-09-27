@@ -22,33 +22,19 @@ in {
   networking.nameservers = [ "10.124.57.141" ];
   networking.search = [ "internal.digitalocean.com" "consul" ];
 
-  # services.samba = {
-  #   enable = true;
-  #   extraConfig = ''
-  #   log level = 2
-  #   ea support = yes
-  #   vfs objects = fruit streams_xattr
-  #   fruit:metadata = stream
-  #   fruit:model = MacSamba
-  #   fruit:posix_rename = yes
-  #   fruit:veto_appledouble = no
-  #   fruit:wipe_intentionally_left_blank_rfork = yes
-  #   fruit:delete_empty_adfiles = yes
-  #   '';
-  #   shares = {
-  #     nzhong = {
-  #       comment = "/home/nzhong";
-  #       path = "/home/nzhong";
-  #       "vfs objects" = "fruit streams_xattr";
-  #       "read only" = "no";
-  #       "guest ok" = "no";
-  #       "create mask" = "0644";
-  #       "directory mask" = "0755";
-  #       "force user" = "nzhong";
-  #       "force group" = "users";
-  #     };
-  #   };
-  # };
+  services.syncthing = {
+    user = "nzhong";
+    group = "users";
+    dataDir = "/home/nzhong/.syncthing";
+    configDir = "/home/nzhong/.syncthing/config";
+    declarative = {
+      folders = {
+        "/home/nzhong/org" = {
+          id = "org";
+        };
+      };
+    };
+  };
 
   users.users = {
     nzhong = {
