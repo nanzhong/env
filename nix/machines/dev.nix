@@ -25,6 +25,14 @@ in {
       folders = {
         "/home/nan/org" = {
           id = "org";
+          devices = [ "wrk" ];
+        };
+      };
+      devices = {
+        wrk = {
+          id = "AAXYZU5-H55OQVP-JWGZJDL-EZZ4RUQ-S2F37L4-WTKNTVP-FF5TQZN-GGPOPAB";
+          name = "wrk";
+          introducer = true;
         };
       };
     };
