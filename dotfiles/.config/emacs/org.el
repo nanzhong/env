@@ -42,11 +42,11 @@
            "* %?"
            :jump-to-captured t)
           ("t" "Tasks")
-          ("tp" "Personal Task"
-           entry (file+headline ,(concat org-directory "/nan.org") "Personal")
+          ("tn" "Personal Task"
+           entry (file+headline ,(concat org-directory "/nan.org") "Tasks")
            "* TODO %?")
           ("td" "DigitalOcean Task"
-           entry (file+headline ,(concat org-directory "/do.org") "DigitalOcean")
+           entry (file+headline ,(concat org-directory "/do.org") "Tasks")
            "* TODO %?")
 
           ("r" "Review")
