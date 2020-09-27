@@ -72,30 +72,6 @@
 (use-package flymake
   :ensure t)
 
-(use-package lsp-mode
-  :ensure t
-  :after direnv
-  :hook (prog-mode . (lambda ()
-                       (direnv-update-environment)
-                       (lsp)))
-  :config
-  (setq lsp-enable-indentation nil
-        lsp-enable-on-type-formatting nil
-        lsp-enable-symbol-highlighting nil
-        lsp-idle-delay 1.0
-        lsp-keep-workspace-alive nil
-        lsp-lens-debounce-interval 1.0)
-  (require 'lsp-clients))
-
-(use-package lsp-ui
-  :ensure t
-  :after lsp-mode
-  :config
-  (setq lsp-ui-doc-header t
-        lsp-ui-doc-include-signature t
-        lsp-ui-doc-max-width 80
-        lsp-ui-doc-max-height 20
-        lsp-ui-doc-use-childframe nil))
 
 (use-package yasnippet
   :ensure t
@@ -112,17 +88,8 @@
   (setq-default company-idle-delay 0.25
                 company-echo-delay 0
                 company-tooltip-align-annotations t
-                company-dabbrev-downcase nil
-                ;; company-backends '((company-capf company-dabbrev-code company-etags company-keywords company-yasnippet company-files)
-                ;;                    (company-dabbrev company-abbrev company-ispell))
-                )
+                company-dabbrev-downcase nil)
   (global-company-mode))
-
-(use-package company-lsp
-  :ensure t
-  :after lsp-mode
-  :config
-  (setq company-lsp-cache-candidates 'auto))
 
 (use-package whitespace
   :config

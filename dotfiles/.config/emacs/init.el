@@ -18,8 +18,10 @@
 (add-to-list 'load-path "~/src/icons-in-terminal/build")
 
 ;; Load configs
-(load (expand-file-name "core.el" user-emacs-directory))
 (load (expand-file-name "appearance.el" user-emacs-directory))
+(load (expand-file-name "core.el" user-emacs-directory))
+(load (expand-file-name "lsp.el" user-emacs-directory))
+(load (expand-file-name "treemacs.el" user-emacs-directory))
 (load (expand-file-name "org.el" user-emacs-directory))
 (load (expand-file-name "elisp.el" user-emacs-directory))
 (load (expand-file-name "ruby.el" user-emacs-directory))
