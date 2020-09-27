@@ -7,11 +7,6 @@ in {
     ( common user )
   ];
   home-manager.users."${user}" = {
-    home.packages = with pkgs; [
-      hugo
-      fontforge
-    ];
-
     home.file = {
       ".gitconfig" = {
         source = ../../dotfiles/.gitconfig.nan;

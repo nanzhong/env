@@ -21,6 +21,9 @@ in {
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [
     (import ../overlays/mosh.nix)
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+    }))
   ];
 
   nix.gc = {
@@ -30,21 +33,42 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
+    bat
     curl
+    direnv
     dnsutils
     docker
+    docker-compose
+    doctl
     fish
+    fzf
     gcc
     git
+    gnumake
+    gnupg
+    go
+    gopls
     htop
     inetutils
+    ispell
     jq
+    kubectl
+    kubernetes-helm
+    lua
+    mariadb-client
     mosh
+    nodejs
     openssl
+    python
+    ruby
+    shellcheck
+    starship
     syncthing
     tmux
     tree
+    unzip
     wget
+    z-lua
   ];
 
   programs = {
@@ -52,6 +76,10 @@ in {
     mosh.enable = true;
   };
 
+  services.emacs = {
+    enable = true;
+    package = pkgs.emacsGit-nox;
+  };
   services.openssh.enable = true;
   services.syncthing = {
     enable = true;
@@ -61,7 +89,6 @@ in {
   virtualisation.docker.enable = true;
 
   users.mutableUsers = false;
-
   users.users.root = {
     openssh.authorizedKeys.keys = keys.sshPub;
   };

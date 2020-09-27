@@ -11,6 +11,8 @@ in {
   networking.firewall.allowedTCPPorts = [ 139 445 3000 3001 8080 ];
 
   environment.systemPackages = with pkgs; [
+    hugo
+    fontforge
     tailscale
   ];
 

@@ -6,6 +6,14 @@ in {
     ./common.nix
   ];
 
+  environment.systemPackages = with pkgs; [
+    breezy
+    fly
+    git-crypt
+    mercurial
+    openconnect
+  ];
+
   networking.hostName = "wrk";
   networking.firewall.allowedUDPPorts = [ 137 138 ];
   networking.firewall.allowedTCPPorts = [ 139 445 3000 ];
