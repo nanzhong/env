@@ -121,6 +121,29 @@
    `(company-scrollbar-fg ((t (:background ,fg))))
    `(company-template-field ((t (:foreground ,blue))))
 
+   ;; org-mode
+   `(org-level-1 ((t (:foreground "#FFB454" :weight bold))))
+   `(org-level-2 ((t (:foreground "#C2D94C" :weight bold))))
+   `(org-level-3 ((t (:foreground "#95E6CB" :weight bold))))
+   `(org-level-4 ((t (:foreground "#59C2FF" :weight bold))))
+   `(org-level-5 ((t (:foreground "#F2AE49" :weight bold))))
+   `(org-level-6 ((t (:foreground "#86B300" :weight bold))))
+   `(org-level-7 ((t (:foreground "#4CBF99" :weight bold))))
+   `(org-level-8 ((t (:foreground "#55B4D4" :weight bold))))
+
+   `(org-todo ((t (:foreground "#77A8D9" :weight bold))))
+   `(org-done ((t (:foreground "#A6CC70" :weight bold))))
+
+   `(org-agenda-structure ((t (:foreground "#626A73"))))
+   `(org-agenda-date-today ((t (:foreground ,fg+ :weight bold))))
+   `(org-scheduled ((t (:foreground ,fg))))
+   `(org-scheduled-previously ((t (:foreground "#F27983"))))
+   `(org-scheduled-today ((t (:foreground ,fg))))
+
+   `(org-drawer ((t (:foreground "#5C6773"))))
+   `(org-special-keyword ((t (:foreground "#D4BFFF" :weight bold))))
+   `(org-tag ((t (:foreground "#FF9940" :weight bold))))
+
    ;; diff-hl
    `(diff-hl-insert ((t :foreground ,green :background ,green)))
    `(diff-hl-change ((t :foreground ,orange :background ,orange)))
