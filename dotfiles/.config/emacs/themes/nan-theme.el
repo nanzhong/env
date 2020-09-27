@@ -101,6 +101,7 @@
 
    ;; lsp-ui
    `(lsp-ui-doc-background ((t (:background ,bg+))))
+   `(lsp-ui-sideline-code-action ((t (:foreground "#C2D94C" :background ,bg+))))
 
    ;; rainbow-delimiters
    `(rainbow-delimiters-depth-1-face ((t :foreground ,fg+)))
