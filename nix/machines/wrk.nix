@@ -31,6 +31,14 @@ in {
       folders = {
         "/home/nzhong/org" = {
           id = "org";
+          devices = [ "dev" ];
+        };
+      };
+      devices = {
+        dev = {
+          id = "X73IBJW-6SZ6EMC-XMXXRFA-RIUBY7L-HF3WNCZ-N2UYZKL-7V3TALA-ZFEN6QE";
+          name = "dev";
+          introducer = true;
         };
       };
     };
