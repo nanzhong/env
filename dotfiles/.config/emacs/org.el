@@ -50,14 +50,14 @@
            "* TODO %?")
 
           ("r" "Review")
-          ("rn" "Weekly review - Personal"
+          ("rn" "Weekly Review - Personal"
            entry (file+olp+datetree ,(concat org-directory "/nan-review.org"))
            "* %?"
            :treetype week
            :jump-to-captured t)
           ("rd" "Weekly Review - DigitalOcean"
            entry (file+olp+datetree ,(concat org-directory "/do-review.org"))
-           "* %?"
+           "* Good\n%?\n* Bad\n* Change\n* Tasks\n** Completed\n** Next\n"
            :treetype week
            :jump-to-captured t))))
 
