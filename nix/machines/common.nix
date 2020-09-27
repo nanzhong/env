@@ -60,6 +60,7 @@ in {
     nodejs
     openssl
     python
+    python3
     ruby
     shellcheck
     starship
