@@ -48,7 +48,7 @@
            "* TODO %?")
           ("td" "DigitalOcean Task"
            entry (file+headline ,(concat org-directory "/do.org") "Tasks")
-           "* TODO %?")
+           "* TODO %?\n:PROPERTIES:\n:JIRA: %^{Jira}\n:END:\n")
 
           ("r" "Review")
           ("rn" "Weekly Review - Personal"
