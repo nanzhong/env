@@ -38,9 +38,9 @@
         org-cycle-separator-lines 1
         org-capture-templates
         `(("h" "Health")
-          ("he" "Weight"
+          ("hw" "Weight"
            plain (file+function ,(concat org-directory "/health.org") ,(org-find-heading-in-datetree "Weight"))
-           ":PROPERTIES:\n:VALUE: %^{Weight (kg)}\n:END:\n%?"
+           ":PROPERTIES:\n:VALUE: %^{Weight}\n:END:\n%?"
            :jump-to-captured t)
           ("hf" "Food Log"
            entry (file+function ,(concat org-directory "/health.org") ,(org-find-heading-in-datetree "Food"))
