@@ -28,7 +28,7 @@
                                (concat org-directory "/do.org"))
         org-refile-targets (quote ((nil :maxlevel . 9)
                                    (org-agenda-files :maxlevel . 9)))
-        org-todo-keywords '((sequence "TODO(t)" "BLOCKED(b@/!)" "|" "DONE(d!)" "REJECTED(r@)"))
+        org-todo-keywords '((sequence "TODO(t)" "BLOCKED(b@/!)" "REVIEW(r!)" "|" "DONE(d/!)" "REJECTED(r@)"))
         org-log-into-drawer "LOGBOOK"
         org-startup-indented t
         org-id-link-to-org-use-id t
