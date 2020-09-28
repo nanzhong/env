@@ -31,6 +31,7 @@
         org-todo-keywords '((sequence "TODO(t)" "BLOCKED(b@/!)" "|" "DONE(d!)" "REJECTED(r@)"))
         org-log-into-drawer "LOGBOOK"
         org-startup-indented t
+        org-id-link-to-org-use-id t
         org-capture-templates
         `(("h" "Health")
           ("he" "Weight"
