@@ -32,6 +32,8 @@
         org-log-into-drawer "LOGBOOK"
         org-startup-indented t
         org-id-link-to-org-use-id t
+        org-catch-invisible-edits 'smart
+        org-cycle-separator-lines 1
         org-capture-templates
         `(("h" "Health")
           ("he" "Weight"
