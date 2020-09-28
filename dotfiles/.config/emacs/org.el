@@ -30,7 +30,7 @@
                                (concat org-directory "/do.org"))
         org-refile-targets (quote ((nil :maxlevel . 9)
                                    (org-agenda-files :maxlevel . 9)))
-        org-todo-keywords '((sequence "TODO(t)" "BLOCKED(b@/!)" "REVIEW(r!)" "|" "DONE(d/!)" "REJECTED(r@)"))
+        org-todo-keywords '((sequence "TODO(t)" "REVIEW(r!)" "BLOCKED(b@/!)" "|" "DONE(d/!)" "REJECTED(k@)"))
         org-log-into-drawer "LOGBOOK"
         org-startup-indented t
         org-id-link-to-org-use-id t
@@ -71,6 +71,11 @@
   :commands org-agenda
   :config
   (setq org-agenda-property-list '("LOCATION")))
+
+(use-package org-bullets
+  :ensure t
+  :after org
+  :hook (org-mode . org-bullets-mode))
 
 ;; (use-package org-jira
 ;;   :ensure t
