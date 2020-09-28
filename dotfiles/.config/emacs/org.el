@@ -9,7 +9,9 @@
   :bind (("C-c c" . org-capture)
          ("C-c a" . org-agenda)
          ("C-c b" . org-switchb)
-         ("C-c l" . org-store-link))
+         ("C-c l" . org-store-link)
+         ("C-c C-x C-i" . org-clock-in)
+         ("C-c C-x C-o" . org-clock-out))
   :init
   (add-hook 'org-mode-hook 'visual-line-mode)
   :config
