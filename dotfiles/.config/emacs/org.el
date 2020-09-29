@@ -22,8 +22,7 @@
       (when (not (re-search-forward
                   (format org-complex-heading-regexp-format
                           (regexp-quote heading)) nil t))
-        (insert (concat "\n**** " heading "\n")))
-      (goto-char (point-at-eol))))
+        (insert (concat "\n**** " heading)))))
   (setq org-directory "~/org"
         org-default-notes-file "~/org/nan.org"
         org-agenda-files (list (concat org-directory "/nan.org")
