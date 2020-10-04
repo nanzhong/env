@@ -123,8 +123,7 @@
              (setq-local ivy-display-functions-alist
                          (remq (assoc 'ivy-completion-in-region ivy-display-functions-alist)
                                ivy-display-functions-alist))))
-  :bind (("C-s" . search-forward)
-         ("M-s" . counsel-grep-or-swiper)
+  :bind (("C-s" . swiper-isearch)
          ("M-x" . counsel-M-x)
          ("C-x C-f" . counsel-find-file))
   :config
