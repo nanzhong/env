@@ -40,6 +40,7 @@ in {
     docker
     docker-compose
     doctl
+    file
     fish
     fzf
     gcc
