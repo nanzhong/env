@@ -58,33 +58,24 @@
   :config (setq highlight-indent-guides-method 'column))
 
 ;; Modeline
-(if window-system
-  (use-package moody
-    :ensure t
-    :config
-    (setq x-underline-at-descent-line t)
-    (setq moody-mode-line-height 24)nnppnn
-    (setq moody-slant-function #'moody-slant-apple-rgb)n∑
-    (moody-replace-mode-line-buffer-identification)
-    (moody-replace-vc-mode))
-  (setq-default mode-line-format
-                `(
-                  "%e"
-                  "⌈" mode-line-mule-info "⌋"
-                  " "
-                  "(" mode-line-modified mode-line-remote ")"
-                  "    "
-                  ,(propertized-buffer-identification "⌈%b⌋")
-                  " "
+(setq-default mode-line-format
+              `(
+                "%e"
+                "⌈" mode-line-mule-info "⌋"
+                " "
+                "(" mode-line-modified mode-line-remote ")"
+                "    "
+                ,(propertized-buffer-identification "⌈%b⌋")
+                " "
                   ;;; (:propertize "⌈%l,%c⌋" face mode-line-position-face)
-                  "⌈%l,%c⌋"
-                  "    "
-                  minions-mode-line-modes
-                  "    "
-                  (vc-mode vc-mode)
-                  "    "
-                  mode-line-misc-info
-                  ;;mode-line-end-spaces
-                  )))
+                "⌈%l,%c⌋"
+                "    "
+                minions-mode-line-modes
+                "    "
+                (vc-mode vc-mode)
+                "    "
+                mode-line-misc-info
+                ;;mode-line-end-spaces
+                ))
 
 ;;; appearance.el ends here
