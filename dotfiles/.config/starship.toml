@@ -1,23 +1,23 @@
 add_newline = false
 
-prompt_order = [
-  "kubernetes",
-  "directory",
-  "git_branch",
-  "git_commit",
-  "git_state",
-#  "git_status", disabled because it's way too slow
-  "golang",
-  "ruby",
-  "cmd_duration",
-  "line_break",
-  "jobs",
-  "time",
-  "character",
-]
+format = """\
+  $kubernetes\
+  $directory\
+  $git_branch\
+  $git_commit\
+  $git_state\
+  $golang\
+  $ruby\
+  $cmd_duration\
+  $line_break\
+  $jobs\
+  $time\
+  $character\
+  """
 
 [character]
-symbol = "›"
+success_symbol = "[›](bold green)"
+error_symbol = "[›](bold red)"
 
 [username]
 disabled = true
