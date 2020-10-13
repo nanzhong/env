@@ -82,7 +82,10 @@ in {
     enable = true;
     package = pkgs.emacsGit-nox;
   };
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = false;
+  };
   services.syncthing = {
     enable = true;
     openDefaultPorts = true;
