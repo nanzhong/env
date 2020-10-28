@@ -10,6 +10,7 @@ in {
     breezy
     fly
     git-crypt
+    hugo
     mercurial
     openconnect
   ];
