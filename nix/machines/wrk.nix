@@ -31,6 +31,8 @@ in {
   networking.nameservers = [ "10.124.57.141" ];
   networking.search = [ "internal.digitalocean.com" "consul" ];
 
+  virtualisation.docker.extraOptions = "--registry-mirror=https://dockerhub-mirror.internal.digitalocean.com";
+
   services.syncthing = {
     user = "nzhong";
     group = "users";
