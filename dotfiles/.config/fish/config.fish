@@ -8,10 +8,6 @@ end
 
 eval (direnv hook fish)
 
-if not set -q GOPATH
-    set -gx GOPATH $HOME/go
-end
-
 set -U fish_user_paths $HOME/bin $GOPATH/bin
 
 starship init fish | source
