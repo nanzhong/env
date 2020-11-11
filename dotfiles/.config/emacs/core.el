@@ -162,7 +162,7 @@
 
 (use-package ace-window
   :ensure t
-  :bind (("M-RET" . ace-window))
+  :bind (("C-x o" . ace-window))
   :config
   (setq aw-keys '(?a ?o ?e ?u ?h ?t ?n ?s)))
 
