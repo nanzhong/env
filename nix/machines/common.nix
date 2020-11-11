@@ -36,6 +36,7 @@ in {
     bat
     curl
     direnv
+    dive
     dnsutils
     docker
     docker-compose
@@ -58,8 +59,10 @@ in {
     lua
     mariadb-client
     mosh
+    nix-index
     nodejs
     openssl
+    patchelf
     python
     python3
     ruby
