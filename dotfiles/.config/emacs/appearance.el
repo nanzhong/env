@@ -51,6 +51,9 @@
                             (interactive)
                             (setq show-trailing-whitespace 1)))
 
+;; Toggle truncate-lines
+(global-set-key (kbd "C-c $") 'toggle-truncate-lines)
+
 ;; Indent guides
 (use-package highlight-indent-guides
   :ensure t
