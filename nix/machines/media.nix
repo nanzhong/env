@@ -17,6 +17,12 @@ in {
     enable = true;
     openFirewall = true;
   };
+  services.openssh.extraConfig = ''
+    Match Group plex
+      ChrootDirectory /mnt/media
+      ForceCommand internal-sftp
+      AllowTcpForwarding no
+  '';
 
   users.users = {
     nan = {
