@@ -3,6 +3,7 @@ let
   keys = import ../keys.nix;
 in {
   imports = [
+    ./base.nix
     ./common.nix
   ];
 
@@ -34,7 +35,6 @@ in {
         wrk = {
           id = "AAXYZU5-H55OQVP-JWGZJDL-EZZ4RUQ-S2F37L4-WTKNTVP-FF5TQZN-GGPOPAB";
           name = "wrk";
-          introducer = true;
         };
       };
     };
