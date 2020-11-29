@@ -76,14 +76,31 @@
   :after org
   :hook (org-mode . org-bullets-mode))
 
-;; (use-package org-jira
-;;   :ensure t
-;;   :config
-;;   (setq jiralib-url "https://jira.internal.digitalocean.com"
-;;         org-jira-use-status-as-todo t
-;;         org-jira-working-dir "~/org/jira"
-;;         org-jira-done-states '("Closed" "Resolved" "Done"
-;;                                "Duplicate" "Rejected"
-;;                                "Working as Intended" "Cannot Reproduce" "Fix Verified")))
+(use-package org-roam
+  :ensure t
+  :hook
+  (after-init . org-roam-mode)
+  :config
+  (setq org-roam-directory "~/org/roam")
+  :bind (:map org-roam-mode-map
+              (("C-c r l" . org-roam)
+               ("C-c r f" . org-roam-find-file))
+              :map org-mode-map
+              (("C-c r i" . org-roam-insert))
+              (("C-c r I" . org-roam-insert-immediate))))
 
+(use-package org-roam-server
+  :ensure t
+  :config
+  (setq org-roam-server-host "127.0.0.1"
+        org-roam-server-port 9999
+        org-roam-server-authenticate nil
+        org-roam-server-export-inline-images t
+        org-roam-server-serve-files nil
+        org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
+        org-roam-server-network-poll t
+        org-roam-server-network-arrows nil
+        org-roam-server-network-label-truncate t
+        org-roam-server-network-label-truncate-length 60
+        org-roam-server-network-label-wrap-length 20))
 ;;; org.el ends here
