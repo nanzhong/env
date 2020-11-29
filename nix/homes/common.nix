@@ -6,10 +6,6 @@ user: { pkgs, ... }: {
         recursive = true;
       };
 
-      ".tmux.conf" = {
-        source = ../../dotfiles/.tmux.conf;
-      };
-
       ".gitignore" = {
         source = ../../dotfiles/.gitignore;
       };
