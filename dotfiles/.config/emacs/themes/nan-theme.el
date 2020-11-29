@@ -426,7 +426,7 @@
    `(line-number           ((t (:foreground ,fg-min))))
    `(lazy-highlight        ((t (:background ,B00))))
    `(link                  ((t (:foreground ,FBG2 :underline t))))
-   `(minibuffer-prompt     ((t (:foreground ,FV2))))
+   `(minibuffer-prompt     ((t (:foreground ,fg+max))))
    `(region                ((t (:background ,bg++))))
    `(show-paren-match-face ((t (:background ,B01))))
    `(vertical-border       ((t (:foreground ,bg+ :background ,bg+))))
@@ -521,6 +521,9 @@
    `(diff-hl-insert ((t :foreground ,G43 :background ,G43)))
    `(diff-hl-change ((t :foreground ,YR14 :background ,YR14)))
    `(diff-hl-delete ((t :foreground ,R43, :background ,R43)))
+
+   ;; git
+   `(git-commit-summary ((t (:foreground ,B16 :weight bold))))
 
    ;; magit
    `(magit-branch ((t (:foreground ,V17 :weight bold))))
