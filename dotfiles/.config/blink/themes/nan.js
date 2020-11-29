@@ -1,35 +1,34 @@
-black       = '#101521';
-lightBlack  = '#232834';
+black       = '#000000';
+brightBlack  = '#121416';
 
-white       = '#E9E9E9';
-lightWhite  = '#FFFFFF';
+white       = '#d9e0e4';
+brightWhite  = '#ffffff';
 
-red         = '#F0717B';
-lightRed    = '#F28779';
+red         = '#f25364';
+brightRed    = '#f57f82';
 
-green       = '#C2D94C';
-lightGreen  = '#BAE67E';
+green       = '#8fc676';
+brightGreen  = '#b0de7f';
 
-yellow      = '#FFB454';
-lightYellow = '#FFD580';
+yellow      = '#ffee39';
+brightYellow = '#f6e56f';
 
-blue        = '#59C2FF';
-lightBlue   = '#73D0FF';
+blue        = '#00ace2';
+brightBlue   = '#64c5e5';
 
-magenta     = '#A37ACC';
-lightMagenta= '#D4BFFF';
+magenta     = '#b3a1c7';
+brightMagenta= '#e0b6d1';
 
-cyan        = '#4CBF99';
-lightCyan   = '#95E6CB';
-
+cyan        = '#33b8d2';
+brightCyan   = '#9cd5e6';
 
 t.prefs_.set('color-palette-overrides', [
   black,      red,          green,      yellow,
   blue,       magenta,      cyan,       white,
-  lightBlack, lightRed,     lightGreen, lightYellow,
-  lightBlue,  lightMagenta, lightCyan,  lightWhite,
+  brightBlack, brightRed,     brightGreen, brightYellow,
+  brightBlue,  brightMagenta, brightCyan,  brightWhite,
 ]);
 
 t.prefs_.set('cursor-color', 'rgba(208, 208, 208, 0.5)');
-t.prefs_.set('foreground-color', '#E9E9E9');
-t.prefs_.set('background-color', '#0F1419');
+t.prefs_.set('foreground-color', '#d9e0e4');
+t.prefs_.set('background-color', '#121416');
