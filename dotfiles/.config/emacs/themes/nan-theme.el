@@ -524,8 +524,8 @@
 
    ;; magit
    `(magit-branch ((t (:foreground ,V17 :weight bold))))
-   `(magit-branch-local ((t (:foreground ,V06 :weight bold))))
-   `(magit-branch-remote ((t (:foreground ,V25 :weight bold))))
+   `(magit-branch-local ((t (:foreground ,RV09 :weight bold))))
+   `(magit-branch-remote ((t (:foreground ,R08 :weight bold))))
    `(magit-cherry-equivalent ((t (:foreground ,BG15 :weight bold))))
    `(magit-cherry-unmatched ((t (:foreground ,RV14 :weight bold))))
    `(magit-diff-added ((t (:foreground ,G43))))
@@ -562,9 +562,9 @@
    `(magit-reflog-rebase ((t (:foreground ,V17))))
    `(magit-reflog-remote ((t (:foreground ,V25))))
    `(magit-reflog-reset ((t (:foreground ,R05))))
-   `(magit-section-heading ((t (:foreground ,BG45 :weight bold))))
+   `(magit-section-heading ((t (:foreground ,BG07 :weight bold))))
    `(magit-section-highlight ((t (:background ,bg+))))
-   `(magit-section-title ((t (:foreground ,BG05 :weight bold))))
+   `(magit-section-title ((t (:foreground ,BG18 :weight bold))))
 
    ;; whitespace
    `(whitespace-default ((t (:foreground ,fg-, :background ,bg))))
