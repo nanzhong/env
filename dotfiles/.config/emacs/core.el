@@ -85,7 +85,8 @@
 (use-package company
   :ensure t
   :config
-  (setq-default company-idle-delay 0.25
+  (setq-default company-minimum-prefix-length 1
+                company-idle-delay 0.1
                 company-echo-delay 0
                 company-tooltip-align-annotations t
                 company-dabbrev-downcase nil)

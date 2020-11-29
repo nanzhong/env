@@ -404,7 +404,7 @@
        (red            R27)
        (bright-green   G03)
        (green          G07)
-       (bright-yellow  Y08)
+       (bright-yellow  Y26)
        (yellow         Y19)
        (bright-blue    B05)
        (blue           B06)

@@ -7,16 +7,23 @@
   :ensure t
   :after direnv
   :commands lsp
-  :hook (prog-mode . (lambda ()
-                       (direnv-update-environment)
-                       (lsp)))
+  :hook ((prog-mode . (lambda ()
+                        (direnv-update-environment)
+                        (lsp)))
+         (lsp-mode . (lambda ()
+                       (lsp-enable-which-key-integration)
+                       (lsp-modeline-diagnostics-mode)
+                       (lsp-modeline-code-actions-mode))))
+  :init
+  (setq lsp-keymap-prefix "C-l")
   :config
   (setq lsp-enable-indentation t
         lsp-enable-on-type-formatting nil
         lsp-enable-symbol-highlighting t
-        lsp-idle-delay 1.0
+        lsp-idle-delay 0.5
         lsp-keep-workspace-alive nil
-        lsp-lens-debounce-interval 1.0))
+        lsp-lens-debounce-interval 1.0
+        lsp-modeline-diagnostics-scope :file))
 
 (use-package lsp-ui
   :ensure t
