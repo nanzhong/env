@@ -11,6 +11,7 @@
     doctl
     go
     gopls
+    ispell
     kubectl
     kubernetes-helm
     lua
@@ -19,6 +20,7 @@
     python3
     ruby
     shellcheck
+    sqlite
     starship
     syncthing
     z-lua
