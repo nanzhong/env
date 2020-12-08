@@ -2,6 +2,7 @@
 let
   keys = import ../keys.nix;
 in {
+  imports = [ /etc/nixos/cachix.nix ];
   time.timeZone = "America/Toronto";
 
   boot = {
@@ -30,9 +31,8 @@ in {
   };
 
   environment.systemPackages = with pkgs; [
-    bat
+    cachix
     curl
-    direnv
     dnsutils
     docker
     docker-compose
