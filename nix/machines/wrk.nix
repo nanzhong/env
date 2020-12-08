@@ -18,7 +18,7 @@ in {
 
   networking.hostName = "wrk";
   networking.firewall.allowedUDPPorts = [ 137 138 ];
-  networking.firewall.allowedTCPPorts = [ 139 445 3000 ];
+  networking.firewall.allowedTCPPorts = [ 139 445 3000 8080 ];
   networking.localCommands = ''
     ip=$(ip addr show eth0 | grep -oP '(?<=inet\s)\d+(\.\d+){3}')
     subnet=$(ip route | grep -Po '^\d+(.\d+){3}/\d+(?= dev eth0)')
