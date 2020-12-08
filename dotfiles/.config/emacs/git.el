@@ -18,7 +18,8 @@
   :ensure t
   :after diff-hl
   :bind (("C-x g" . magit-status))
-  :hook (magit-post-refresh . diff-hl-magit-post-refresh)
+  :hook ((magit-pre-refresh . diff-hl-magit-pre-refresh)
+         (magit-post-refresh . diff-hl-magit-post-refresh))
   :config (setq magit-process-popup-time 0
                 magit-bury-buffer-function 'magit-mode-quit-window))
 
