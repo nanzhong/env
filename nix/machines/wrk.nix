@@ -8,7 +8,6 @@ in {
   ];
 
   environment.systemPackages = with pkgs; [
-    breezy
     fly
     git-crypt
     hugo
