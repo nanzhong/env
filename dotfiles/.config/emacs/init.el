@@ -6,7 +6,9 @@
 
 ;; Increase gc threshold
 ;; (this value is a balancing act between overall performance and responsiveness)
-(setq gc-cons-threshold (* 1 1024 1024))
+(setq gc-cons-threshold (* 10 1024 1024))
+;; language server responses are often much larger than the 4KB default
+(setq read-process-output-max (* 10 1024 1024))
 
 ;; Bootstrap use-package
 (unless (package-installed-p 'use-package)
