@@ -437,7 +437,10 @@
    `(tty-menu-disabled-face ((t (:foreground ,fg- :background ,bg+))))
    `(tty-menu-selected-face ((t (:foreground ,fg+ :background ,bg++ :weight bold))))
 
-   ;; modeline
+   ;; header-line
+   `(header-line ((t (:foreground ,fg :background ,bg+ :underline nil))))
+
+   ;; mode-line
    `(mode-line ((t (:background ,bg++ :foreground ,fg+ :box nil))))
    `(mode-line-inactive ((t (:background ,bg+ :foreground ,fg- :box nil))))
 
@@ -462,6 +465,21 @@
    `(font-lock-type-face ((t (:foreground ,FV2))))
    `(font-lock-variable-name-face ((t (:foreground ,FB2))))
    `(font-lock-warning-face ((t (:foreground ,R05))))
+
+   ;; lsp
+   ;; `(lsp-headerline-breadcrumb-path-face ((t (:foreground ,fg :background ,bg+ :underline nil))))
+   ;; `(lsp-headerline-breadcrumb-separator-face ((t (:foreground ,fg :background ,bg+ :underline nil))))
+   `(lsp-headerline-breadcrumb-path-error-face ((t (:inherit lsp-headerline-breadcrumb-path-face :foreground ,R08))))
+   `(lsp-headerline-breadcrumb-path-warning-face ((t (:inherit lsp-headerline-breadcrumb-path-face :foreground ,YR65))))
+   `(lsp-headerline-breadcrumb-path-info-face ((t (:inherit lsp-headerline-breadcrumb-path-face :foreground ,G09))))
+   `(lsp-headerline-breadcrumb-path-hint-face ((t (:inherit lsp-headerline-breadcrumb-path-face :foreground ,YG67))))
+   `(lsp-headerline-breadcrumb-project-prefix-face ((t (:inherit lsp-headerline-breadcrumb-path-face :foreground ,YG67 :weight bold))))
+   `(lsp-headerline-breadcrumb-unknown-project-prefix-face ((t (:inherit lsp-headerline-breadcrumb-project-prefix-face))))
+   `(lsp-headerline-breadcrumb-symbols-face ((t (:inherit lsp-headerline-breadcrumb-path-face :weight bold))))
+   `(lsp-headerline-breadcrumb-symbols-error-face ((t (:inherit lsp-headerline-breadcrumb-symbols-face :foreground ,R08))))
+   `(lsp-headerline-breadcrumb-symbols-warning-face ((t (:inherit lsp-headerline-breadcrumb-symbols-face :foreground ,YR65))))
+   `(lsp-headerline-breadcrumb-symbols-info-face ((t (:inherit lsp-headerline-breadcrumb-symbols-face :foreground ,G09))))
+   `(lsp-headerline-breadcrumb-symbols-hint-face ((t (:inherit lsp-headerline-breadcrumb-symbols-face :foreground ,YG67))))
 
    ;; lsp-ui
    `(lsp-ui-doc-background ((t (:background ,bg+))))
