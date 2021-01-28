@@ -16,6 +16,7 @@
     kubernetes-helm
     lua
     mariadb-client
+    nodejs
     python
     python3
     ruby
@@ -23,6 +24,7 @@
     sqlite
     starship
     syncthing
+    ttfautohint
     z-lua
   ];
 
