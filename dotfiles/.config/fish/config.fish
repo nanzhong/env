@@ -8,7 +8,7 @@ end
 
 eval (direnv hook fish)
 
-set -U fish_user_paths $HOME/bin $GOPATH/bin
+set -U fish_user_paths $HOME/bin (go env GOPATH)/bin
 
 starship init fish | source
 
