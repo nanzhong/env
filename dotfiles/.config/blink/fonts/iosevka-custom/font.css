@@ -1,0 +1,27 @@
+@font-face {
+        font-family: 'Iosevka Custom';
+        font-weight: normal;
+        font-style: normal;
+        src: url('https://raw.githubusercontent.com/nanzhong/workstation/master/dotfiles/.config/blink/fonts/iosevka-custom/woff/iosevka-custom-regular.woff2') format('woff2');
+}
+
+@font-face {
+        font-family: 'Iosevka Custom';
+        font-weight: normal;
+        font-style: italic;
+        src: url('https://raw.githubusercontent.com/nanzhong/workstation/master/dotfiles/.config/blink/fonts/iosevka-custom/woff/iosevka-custom-italic.woff2') format('woff2');
+}
+
+@font-face {
+        font-family: 'Iosevka Custom';
+        font-weight: bold;
+        font-style: normal;
+        src: url('https://raw.githubusercontent.com/nanzhong/workstation/master/dotfiles/.config/blink/fonts/iosevka-custom/woff/iosevka-custom-bold.woff2') format('woff2');
+}
+
+@font-face {
+        font-family: 'Iosevka Custom';
+        font-weight: bold;
+        font-style: italic;
+        src: url('https://raw.githubusercontent.com/nanzhong/workstation/master/dotfiles/.config/blink/fonts/iosevka-custom/woff/iosevka-custom-bolditalic.woff2') format('woff2');
+}
