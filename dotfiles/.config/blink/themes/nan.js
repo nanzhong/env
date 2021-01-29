@@ -1,5 +1,5 @@
 black       = '#000000';
-brightBlack  = '#121416';
+brightBlack  = '#171a1c';
 
 white       = '#d9e0e4';
 brightWhite  = '#ffffff';
@@ -31,4 +31,4 @@ t.prefs_.set('color-palette-overrides', [
 
 t.prefs_.set('cursor-color', 'rgba(208, 208, 208, 0.5)');
 t.prefs_.set('foreground-color', '#d9e0e4');
-t.prefs_.set('background-color', '#121416');
+t.prefs_.set('background-color', '#171a1c');
