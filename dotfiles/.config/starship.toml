@@ -1,19 +1,19 @@
 add_newline = false
 
-format = """\
-  $kubernetes\
-  $directory\
-  $git_branch\
-  $git_commit\
-  $git_state\
-  $golang\
-  $ruby\
-  $cmd_duration\
-  $line_break\
-  $jobs\
-  $time\
-  $character\
-  """
+# format = """\
+#   $kubernetes\
+#   $directory\
+#   $git_branch\
+#   $git_commit\
+#   $git_state\
+#   $golang\
+#   $ruby\
+#   $cmd_duration\
+#   $line_break\
+#   $jobs\
+#   $time\
+#   $character\
+#   """
 
 [character]
 success_symbol = "[›](bold green)"
@@ -26,28 +26,28 @@ disabled = true
 ssh_only = true
 
 [git_branch]
-symbol = " "
+symbol = " "
 
 [golang]
-symbol = " "
+symbol = "go "
 
 [hg_branch]
-symbol = " "
+symbol = " "
 
 [nodejs]
-symbol = " "
+symbol = "js "
 
 [python]
-symbol = " "
+symbol = "py "
 
 [ruby]
-symbol = " "
+symbol = "rb "
 
 [rust]
-symbol = " "
+symbol = "rs "
 
 [kubernetes]
 disabled = true
 
 [jobs]
-symbol = ""
+symbol = "⊕ "
