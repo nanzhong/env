@@ -22,17 +22,8 @@ error_symbol = "[›](bold red)"
 [username]
 disabled = true
 
-[hostname]
-ssh_only = true
-
-[git_branch]
-symbol = " "
-
 [golang]
 symbol = "go "
-
-[hg_branch]
-symbol = " "
 
 [nodejs]
 symbol = "js "
@@ -46,8 +37,9 @@ symbol = "rb "
 [rust]
 symbol = "rs "
 
-[kubernetes]
-disabled = true
-
 [jobs]
 symbol = "⊕ "
+
+[git_status]
+# Too slow at the moment... Reconsider in the future
+disabled = true
