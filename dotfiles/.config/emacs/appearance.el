@@ -87,7 +87,7 @@
   (let ((formatted-left (format-mode-line left))
         (formatted-right (format-mode-line right)))
     (concat formatted-left
-            (propertize " " 'display `((space :align-to (- right ,(length formatted-right)))))
+            (propertize " " 'display `((space :align-to (- (+ right right-fringe right-margin) ,(length formatted-right)))))
             formatted-right)))
 
 (defun nan-mode-line-buffer-name ()
@@ -127,6 +127,10 @@
   "mode-line segment for displaying process info."
   (string-trim (format-mode-line mode-line-process)))
 
+(defun nan-mode-line-modes ()
+  "mode-line segment for displaying modes."
+  (string-trim (format-mode-line minions-mode-line-modes)))
+
 (setq-default mode-line-format
               '((:eval (nan-mode-line-format
                         ;; Left
@@ -144,6 +148,6 @@
                           " "
                           (:eval (nan-mode-line-vc))
                           " "
-                          minions-mode-line-modes)))))
+                          (:eval (nan-mode-line-modes)))))))
 
 ;;; appearance.el ends here
