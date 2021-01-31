@@ -1,20 +1,5 @@
 add_newline = false
 
-# format = """\
-#   $kubernetes\
-#   $directory\
-#   $git_branch\
-#   $git_commit\
-#   $git_state\
-#   $golang\
-#   $ruby\
-#   $cmd_duration\
-#   $line_break\
-#   $jobs\
-#   $time\
-#   $character\
-#   """
-
 [character]
 success_symbol = "[›](bold green)"
 error_symbol = "[›](bold red)"
