@@ -67,7 +67,9 @@
 (use-package minions
   :ensure t
   :config
-  (minions-mode))
+  (minions-mode)
+  (setq minions-mode-line-lighter "☺"
+        minions-mode-line-delimiters '("" . "")))
 
 (use-package flymake
   :ensure t)

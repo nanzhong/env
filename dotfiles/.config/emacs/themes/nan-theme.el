@@ -444,6 +444,12 @@
    `(mode-line ((t (:background ,bg++ :foreground ,fg+ :box nil))))
    `(mode-line-inactive ((t (:background ,bg+ :foreground ,fg- :box nil))))
 
+   ;; nan-mode-line
+   `(nan-mode-line-buffer-name ((t (:foreground ,FBG2 :weight bold))))
+   `(nan-mode-line-buffer-modified ((t (:foreground ,FYG2))))
+   `(nan-mode-line-buffer-read-only ((t (:foreground ,FY1))))
+   `(nan-mode-line-vc ((t (:foreground ,FV2 :weight bold))))
+
    ;; flymake
    `(flymake-note ((t :background ,B05 :foreground ,bg)))
    `(flymake-warning ((t :background ,YR01 :foreground ,bg)))
