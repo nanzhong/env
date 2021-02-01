@@ -32,3 +32,4 @@ t.prefs_.set('color-palette-overrides', [
 t.prefs_.set('cursor-color', 'rgba(208, 208, 208, 0.5)');
 t.prefs_.set('foreground-color', '#d9e0e4');
 t.prefs_.set('background-color', '#171a1c');
+t.prefs_.set('environment', { TERM: 'xterm-24bit' })
