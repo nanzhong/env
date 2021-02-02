@@ -26,7 +26,7 @@ symbol = "rb "
 symbol = "rs "
 
 [jobs]
-symbol = "⊕ "
+symbol = "⊕"
 
 [git_status]
 # Too slow at the moment... Reconsider in the future
