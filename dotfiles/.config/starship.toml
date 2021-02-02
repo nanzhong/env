@@ -7,6 +7,9 @@ error_symbol = "[›](bold red)"
 [username]
 disabled = true
 
+[directory]
+read_only = ""
+
 [golang]
 symbol = "go "
 
