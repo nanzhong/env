@@ -591,7 +591,13 @@
    `(magit-reflog-reset ((t (:foreground ,R05))))
    `(magit-section-heading ((t (:foreground ,BG07 :weight bold))))
    `(magit-section-highlight ((t (:background ,bg+))))
-   `(magit-section-title ((t (:foreground ,BG18 :weight bold)))))
+   `(magit-section-title ((t (:foreground ,BG18 :weight bold))))
+
+   ;; whitespace
+   `(whitespace-default ((t (:foreground ,fg-, :background ,bg))))
+   `(whitespace-tab ((t (:foreground ,fg-- :inherit whitespace-default))))
+   `(whitespace-line ((t (:foreground nil :background ,bg++))))
+   )
 
   (custom-theme-set-variables
    'nan
