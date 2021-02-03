@@ -35,35 +35,35 @@
         org-id-link-to-org-use-id t
         org-catch-invisible-edits 'smart
         org-cycle-separator-lines 1
-        org-capture-templates
-        `(("h" "Health")
-          ("hw" "Weight"
-           plain (file+function ,(concat org-directory "/health.org") ,(org-find-heading-in-datetree "Weight"))
-           ":PROPERTIES:\n:VALUE: %^{Weight}\n:END:\n%?"
-           :jump-to-captured t)
-          ("hf" "Food Log"
-           entry (file+function ,(concat org-directory "/health.org") ,(org-find-heading-in-datetree "Food"))
-           "* %?"
-           :jump-to-captured t)
-          ("t" "Tasks")
-          ("tn" "Personal Task"
-           entry (file+headline ,(concat org-directory "/nan.org") "Tasks")
-           "* TODO %?")
-          ("td" "DigitalOcean Task"
-           entry (file+headline ,(concat org-directory "/do.org") "Tasks")
-           "* TODO %?\n:PROPERTIES:\n:JIRA: %^{Jira}\n:END:\n")
+        org-capture-templates `(("h" "Health")
+                                ("hw" "Weight"
+                                 plain (file+function ,(concat org-directory "/health.org") ,(org-find-heading-in-datetree "Weight"))
+                                 ":PROPERTIES:\n:VALUE: %^{Weight}\n:END:\n%?"
+                                 :jump-to-captured t)
+                                ("hf" "Food Log"
+                                 entry (file+function ,(concat org-directory "/health.org") ,(org-find-heading-in-datetree "Food"))
+                                 "* %?"
+                                 :jump-to-captured t)
+                                ("t" "Tasks")
+                                ("tn" "Personal Task"
+                                 entry (file+headline ,(concat org-directory "/nan.org") "Tasks")
+                                 "* TODO %?")
+                                ("td" "DigitalOcean Task"
+                                 entry (file+headline ,(concat org-directory "/do.org") "Tasks")
+                                 "* TODO %?\n:PROPERTIES:\n:JIRA: %^{Jira}\n:END:\n")
 
-          ("r" "Review")
-          ("rn" "Weekly Review - Personal"
-           entry (file+olp+datetree ,(concat org-directory "/nan-review.org"))
-           "* %?"
-           :treetype week
-           :jump-to-captured t)
-          ("rd" "Weekly Review - DigitalOcean"
-           entry (file+olp+datetree ,(concat org-directory "/do-review.org"))
-           "* Good\n%?\n* Bad\n* Change\n* Tasks\n** Completed\n** Next\n"
-           :treetype week
-           :jump-to-captured t))))
+                                ("r" "Review")
+                                ("rn" "Weekly Review - Personal"
+                                 entry (file+olp+datetree ,(concat org-directory "/nan-review.org"))
+                                 "* %?"
+                                 :treetype week
+                                 :jump-to-captured t)
+                                ("rd" "Weekly Review - DigitalOcean"
+                                 entry (file+olp+datetree ,(concat org-directory "/do-review.org"))
+                                 "* Good\n%?\n* Bad\n* Change\n* Tasks\n** Completed\n** Next\n"
+                                 :treetype week
+                                 :jump-to-captured t))
+        org-src-preserve-indentation t))
 
 (use-package org-agenda-property
   :ensure t
