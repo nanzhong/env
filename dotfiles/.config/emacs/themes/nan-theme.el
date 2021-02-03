@@ -594,9 +594,8 @@
    `(magit-section-title ((t (:foreground ,BG18 :weight bold))))
 
    ;; whitespace
-   `(whitespace-default ((t (:foreground ,fg-, :background ,bg))))
-   `(whitespace-tab ((t (:foreground ,fg-- :inherit whitespace-default))))
-   `(whitespace-line ((t (:foreground nil :background ,bg++))))
+   `(whitespace-tab ((t (:foreground ,fg--))))
+   `(whitespace-line ((t (:background ,bg++))))
    )
 
   (custom-theme-set-variables
