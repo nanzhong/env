@@ -103,4 +103,10 @@
         org-roam-server-network-label-truncate t
         org-roam-server-network-label-truncate-length 60
         org-roam-server-network-label-wrap-length 20))
+
+(use-package htmlize
+  :ensure t
+  :config
+  (setq org-html-htmlize-output-type 'css))
+
 ;;; org.el ends here
