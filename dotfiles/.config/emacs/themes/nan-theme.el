@@ -457,8 +457,8 @@
 
    ;; Syntax highlighting
    `(font-lock-builtin-face ((t (:foreground ,FYG2))))
-   `(font-lock-comment-face ((t (:foreground ,fg--- :background ,bg :inherit italic))))
-   `(font-lock-comment-delimiter-face ((t (:foreground ,fg--- :background ,bg :inherit italic))))
+   `(font-lock-comment-face ((t (:foreground ,fg--- :inherit italic))))
+   `(font-lock-comment-delimiter-face ((t (:foreground ,fg--- :inherit italic))))
    `(font-lock-constant-face ((t (:foreground ,FBG2))))
    `(font-lock-doc-face ((t (:foreground ,fg-- :inherit italic))))
    `(font-lock-function-name-face ((t (:foreground ,B05))))
