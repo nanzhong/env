@@ -10,6 +10,7 @@ self: super: {
     };
     patches = [
       "${super.path}/pkgs/tools/networking/mosh/ssh_path.patch"
+      "${super.path}/pkgs/tools/networking/mosh/mosh-client_path.patch"
       "${super.path}/pkgs/tools/networking/mosh/utempter_path.patch"
       "${super.path}/pkgs/tools/networking/mosh/bash_completion_datadir.patch"
     ];
