@@ -16,10 +16,9 @@
            (setq frame-title-format nil)
            (add-to-list 'default-frame-alist '(font . "Iosevka 11"))
            (tool-bar-mode -1)
-           (scroll-bar-mode -1))
-  (progn (xterm-mouse-mode 1)
-         (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
-         (global-set-key (kbd "<mouse-5>") 'scroll-up-line)))
+           (scroll-bar-mode -1)
+           (setq-default cursor-type 'bar))
+  (xterm-mouse-mode 1))
 
 ;; No bell
 (setq visible-bell t
@@ -30,9 +29,6 @@
 
 ;; Allow fitting window width
 (setq fit-window-to-buffer-horizontally t)
-
-;; Bar cursor
-(setq-default cursor-type 'bar)
 
 ;; Highlight current line
 (global-hl-line-mode 1)
