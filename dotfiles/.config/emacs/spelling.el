@@ -6,6 +6,7 @@
 
 (use-package flyspell
   :hook ((text-mode . flyspell-mode)
+         (org-mode . flyspell-mode)
          (git-commit-mode . flyspell-mode)
          (prog-mode . flyspell-prog-mode)))
 
