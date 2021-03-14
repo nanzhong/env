@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package treemacs
-  :ensure t
+  :straight t
   :defer t
   :init
   (with-eval-after-load 'winum
@@ -77,15 +77,15 @@
 
 (use-package treemacs-projectile
   :after treemacs projectile
-  :ensure t)
+  :straight t)
 
 (use-package treemacs-icons-dired
   :after treemacs dired
-  :ensure t
+  :straight t
   :config (treemacs-icons-dired-mode))
 
 (use-package treemacs-magit
   :after treemacs magit
-  :ensure t)
+  :straight t)
 
 ;;; treemacs.el ends here

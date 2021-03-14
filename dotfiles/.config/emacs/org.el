@@ -66,18 +66,18 @@
         org-src-preserve-indentation t))
 
 (use-package org-agenda-property
-  :ensure t
+  :straight t
   :commands org-agenda
   :config
   (setq org-agenda-property-list '("LOCATION")))
 
 (use-package org-bullets
-  :ensure t
+  :straight t
   :after org
   :hook (org-mode . org-bullets-mode))
 
 (use-package org-roam
-  :ensure t
+  :straight t
   :hook
   (after-init . org-roam-mode)
   :config
@@ -90,7 +90,7 @@
               (("C-c r I" . org-roam-insert-immediate))))
 
 (use-package org-roam-server
-  :ensure t
+  :straight t
   :config
   (setq org-roam-server-host "127.0.0.1"
         org-roam-server-port 9999
@@ -105,7 +105,7 @@
         org-roam-server-network-label-wrap-length 20))
 
 (use-package htmlize
-  :ensure t
+  :straight t
   :config
   (setq org-html-htmlize-output-type 'css))
 

@@ -1,6 +1,6 @@
 ;;; ruby.el --- ruby specific
 (use-package enh-ruby-mode
-  :ensure t
+  :straight t
   :config
   (add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
   (add-to-list 'auto-mode-alist '("\\.rake$" . enh-ruby-mode))
@@ -11,7 +11,7 @@
   (setq enh-ruby-deep-indent-paren nil))
 
 (use-package robe
-  :ensure t
+  :straight t
   :after (enh-ruby-mode company)
   :hook ((enh-ruby-mode-hook . robe-mode)
          (robe-mode . (lambda ()
@@ -19,20 +19,20 @@
                              (cons 'company-robe company-backends))))))
 
 (use-package inf-ruby
-  :ensure t
+  :straight t
   :after enh-ruby-mode
   :hook ((enh-ruby-mode . inf-ruby-minor-mode)
          (compilation-filter . inf-ruby-auto-enter)))
 
 (use-package rspec-mode
-  :ensure t
+  :straight t
   :after inf-ruby
   :hook (after-init-hook . inf-ruby-switch-setup))
 
 (use-package projectile-rails
-  :ensure t
+  :straight t
   :after projectile
   :hook (projectile-mode . projectile-rails-on))
 
 (use-package rinari
-  :ensure t)
+  :straight t)

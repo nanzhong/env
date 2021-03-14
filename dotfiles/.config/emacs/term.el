@@ -79,12 +79,12 @@ file to edit."
   (setq eshell-cmpl-cycle-completions nil))
 
 (use-package esh-autosuggest
-  :ensure t
+  :straight t
   :after eshell
   :hook (eshell-mode . esh-autosuggest-mode))
 
 (use-package multi-term
-  :ensure t
+  :straight t
   :config
   (setq multi-term-program "/usr/local/bin/fish")
   (setq multi-term-program-switches "--login")

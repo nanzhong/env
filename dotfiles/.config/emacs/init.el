@@ -10,11 +10,23 @@
 ;; language server responses are often much larger than the 4KB default
 (setq read-process-output-max (* 10 1024 1024))
 
+;; Boostrap straight.el
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+(setq straight-vc-git-default-protocol 'ssh)
+
 ;; Bootstrap use-package
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(require 'use-package)
+(straight-use-package 'use-package)
 
 ;; Load configs
 (load (expand-file-name "appearance.el" user-emacs-directory))
@@ -32,8 +44,6 @@
 (load (expand-file-name "term.el" user-emacs-directory))
 (load (expand-file-name "spelling.el" user-emacs-directory))
 (load (expand-file-name "misc-modes.el" user-emacs-directory))
-
-;(load (expand-file-name "do.el" user-emacs-directory))
 
 (setq custom-file "~/.config/emacs/custom.el")
 (load custom-file)

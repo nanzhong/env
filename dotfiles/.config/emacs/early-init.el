@@ -4,9 +4,7 @@
 
 ;;; Code:
 
-;; Setup packages
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/"))
+;; Disable package.el since we are using straight.el
+(setq package-enable-at-startup nil)
 
 ;;; early-init.el ends here

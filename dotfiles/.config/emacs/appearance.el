@@ -52,7 +52,7 @@
 
 ;; Indent guides
 (use-package highlight-indent-guides
-  :ensure t
+  :straight t
   :hook (prog-mode . highlight-indent-guides-mode)
   :config (setq highlight-indent-guides-method 'column))
 

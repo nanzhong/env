@@ -45,47 +45,47 @@
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (use-package direnv
-  :ensure t
+  :straight t
   :demand t
   :config
   (direnv-mode)
   (setq direnv-always-show-summary nil))
 
 (use-package exec-path-from-shell
-  :ensure t
+  :straight t
   :demand t
   :config
   (exec-path-from-shell-initialize))
 
 (use-package dashboard
-  :ensure t
+  :straight t
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-startup-banner 3
         initial-buffer-choice (lambda () (get-buffer "*dashboard*"))))
 
 (use-package minions
-  :ensure t
+  :straight t
   :config
   (minions-mode)
   (setq minions-mode-line-lighter "⍠"
         minions-mode-line-delimiters '("" . "")))
 
 (use-package flymake
-  :ensure t)
+  :straight t)
 
 
 (use-package yasnippet
-  :ensure t
+  :straight t
   :config
   (yas-global-mode 1))
 
 (use-package yasnippet-snippets
-  :ensure t
+  :straight t
   :after yasnippet)
 
 (use-package company
-  :ensure t
+  :straight t
   :config
   (setq-default company-minimum-prefix-length 1
                 company-idle-delay 0.1
@@ -101,22 +101,20 @@
   (global-whitespace-mode))
 
 (use-package rainbow-delimiters
-  :ensure t
+  :straight t
   :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package smartparens
-  :ensure t
+  :straight t
   :config
   (smartparens-global-mode t))
 
 (use-package flx
-  :ensure t
+  :straight t
   :demand t)
 
-(add-to-list 'package-pinned-packages '(swiper . "melpa"))
-(add-to-list 'package-pinned-packages '(ivy . "melpa"))
 (use-package ivy
-  :ensure t
+  :straight t
   :demand t
   :hook (eshell-mode
          . (lambda ()
@@ -138,20 +136,20 @@
         '((t . ivy--regex-plus))))
 
 (use-package projectile
-  :ensure t
+  :straight t
   :after (flx ivy)
   :bind-keymap (("C-c p" . projectile-command-map))
   :config
   (projectile-mode +1))
 
 (use-package counsel-projectile
-  :ensure t
+  :straight t
   :after (ivy projectile)
   :config
   (counsel-projectile-mode))
 
 (use-package ibuffer-projectile
-  :ensure t
+  :straight t
   :after projectile
   :hook ((ibuffer-mode . (lambda ()
                            (ibuffer-projectile-set-filter-groups)
@@ -159,26 +157,26 @@
                              (ibuffer-do-sort-by-alphabetic))))))
 
 (use-package avy
-  :ensure t
+  :straight t
   :bind (("C-." . avy-goto-char)
          ("C-," . avy-goto-char-2)))
 
 (use-package ace-window
-  :ensure t
+  :straight t
   :bind (("C-x q" . ace-window))
   :config
   (setq aw-keys '(?a ?o ?e ?u ?h ?t ?n ?s)))
 
 (use-package editorconfig
-  :ensure t
+  :straight t
   :config (editorconfig-mode 1))
 
 (use-package dtrt-indent
-  :ensure t
+  :straight t
   :config (dtrt-indent-global-mode))
 
 (use-package which-key
-  :ensure t
+  :straight t
   :config (which-key-mode))
 
 ;;; core.el ends here

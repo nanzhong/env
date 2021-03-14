@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package diff-hl
-  :ensure t
+  :straight t
   :demand
   :hook ((dired-mode . diff-hl-dired-mode-unless-remote)
          (diff-hl . diff-hl-flydiff-mode))
@@ -15,7 +15,7 @@
     (diff-hl-margin-mode)))
 
 (use-package magit
-  :ensure t
+  :straight t
   :after diff-hl
   :bind (("C-x g" . magit-status))
   :hook ((magit-pre-refresh . diff-hl-magit-pre-refresh)
@@ -24,7 +24,7 @@
                 magit-bury-buffer-function 'magit-mode-quit-window))
 
 ;; (use-package forge
-;;   :ensure t
+;;   :straight t
 ;;   :after magit
 ;;   :config
 ;;   (setq forge-database-file "~/.cache/forge-database.sqlite")
@@ -34,7 +34,7 @@
 
 ;; don't use until there is a way to ignore folders...
 ;; (use-package magit-todos
-;;   :ensure t
+;;   :straight t
 ;;   :after magit
 ;;   :config (magit-todos-mode))
 

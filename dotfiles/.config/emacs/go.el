@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package go-mode
-  :ensure t
+  :straight t
   :after (lsp-mode)
   :mode "\\.go\\'"
   :hook (go-mode . (lambda ()
@@ -19,7 +19,7 @@
               ("C-c C-c" . compile)))
 
 (use-package go-projectile
-  :ensure t
+  :straight t
   :after (go-mode projectile))
 
 ;;; go.el ends here

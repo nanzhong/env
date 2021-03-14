@@ -4,7 +4,7 @@
 
 ;;; Code:
 (use-package lsp-mode
-  :ensure t
+  :straight t
   :after direnv
   :commands lsp
   :hook ((prog-mode . (lambda ()
@@ -26,7 +26,7 @@
         lsp-modeline-diagnostics-scope :file))
 
 (use-package lsp-ui
-  :ensure t
+  :straight t
   :after lsp-mode
   :commands lsp-ui-mode
   :config
@@ -37,12 +37,12 @@
         lsp-ui-doc-use-childframe nil))
 
 (use-package lsp-ivy
-  :ensure t
+  :straight t
   :after lsp-mode ivy
   :commands lsp-ivy-workspace-symbol)
 
 (use-package lsp-treemacs
-  :ensure t
+  :straight t
   :after lsp-mode treemacs
   :commands lsp-treemacs-errors-list)
 
