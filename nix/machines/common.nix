@@ -13,8 +13,10 @@
     gh
     go
     gopls
+    hunspell
+    hunspellDicts.en-us
+    hunspellDicts.en-us-large
     inotify-tools
-    ispell
     kubectl
     kubernetes-helm
     lua
