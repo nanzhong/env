@@ -6,11 +6,14 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    cloc
     direnv
     dive
     doctl
+    gh
     go
     gopls
+    inotify-tools
     ispell
     kubectl
     kubernetes-helm
