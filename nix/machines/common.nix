@@ -6,6 +6,7 @@
   ];
 
   environment.systemPackages = with pkgs; [
+    bpytop
     cloc
     direnv
     dive
@@ -25,6 +26,7 @@
     python
     python3
     ruby
+    s3cmd
     shellcheck
     sqlite
     starship
