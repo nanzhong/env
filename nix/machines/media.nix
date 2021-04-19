@@ -26,6 +26,7 @@ in {
 
   users.users = {
     nan = {
+      isNormalUser = true;
       home = "/mnt/media";
       description = "Nan Zhong";
       group = "plex";
