@@ -12,6 +12,8 @@ in {
     git-crypt
     hugo
     mercurial
+    mongodb
+    mongodb-tools
     openconnect
   ];
 
