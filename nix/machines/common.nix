@@ -37,7 +37,7 @@
 
   services.emacs = {
     enable = true;
-    package = pkgs.emacsGit-nox;
+    package = (pkgs.emacsGit-nox.override { nativeComp = true; } );
   };
   services.syncthing = {
     enable = true;
