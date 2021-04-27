@@ -12,7 +12,7 @@ in {
     git-crypt
     hugo
     mercurial
-    mongodb
+    mongodb-4_2
     mongodb-tools
     openconnect
   ];
