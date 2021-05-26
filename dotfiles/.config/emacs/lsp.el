@@ -23,7 +23,10 @@
         lsp-idle-delay 0.5
         lsp-keep-workspace-alive nil
         lsp-lens-debounce-interval 1.0
-        lsp-modeline-diagnostics-scope :file))
+        lsp-modeline-diagnostics-scope :file
+        ;; need to disable this until icon support for terminal emacs is fixed.
+        lsp-headerline-breadcrumb-enable nil
+        lsp-headerline-breadcrumb-icons-enable nil))
 
 (use-package lsp-ui
   :straight t
