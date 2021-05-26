@@ -119,10 +119,6 @@
   "mode-line segment for displaying misc info."
   (string-trim (format-mode-line mode-line-misc-info)))
 
-(defun nan-mode-line-process ()
-  "mode-line segment for displaying process info."
-  (string-trim (format-mode-line mode-line-process)))
-
 (defun nan-mode-line-modes ()
   "mode-line segment for displaying modes."
   (string-trim (format-mode-line minions-mode-line-modes)))
@@ -139,8 +135,6 @@
                           (:eval (nan-mode-line-buffer-position)))
                         ;; Right
                         `((:eval (nan-mode-line-misc-info))
-                          " "
-                          (:eval (nan-mode-line-process))
                           " "
                           (:eval (nan-mode-line-vc))
                           " "
