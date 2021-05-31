@@ -24,9 +24,8 @@
                           (regexp-quote heading)) nil t))
         (insert (concat "\n**** " heading)))))
   (setq org-directory "~/org"
-        org-default-notes-file "~/org/nan.org"
-        org-agenda-files (list (concat org-directory "/nan.org")
-                               (concat org-directory "/do.org"))
+        org-default-notes-file "~/org/main.org"
+        org-agenda-files (list (concat org-directory "/main.org"))
         org-refile-targets (quote ((nil :maxlevel . 9)
                                    (org-agenda-files :maxlevel . 9)))
         org-todo-keywords '((sequence "TODO(t)" "REVIEW(r!)" "BLOCKED(b@/!)" "|" "DONE(d/!)" "REJECTED(k@)"))
@@ -34,32 +33,18 @@
         org-startup-indented t
         org-id-link-to-org-use-id t
         org-catch-invisible-edits 'smart
-        org-cycle-separator-lines 1
-        org-capture-templates `(("h" "Health")
-                                ("hw" "Weight"
-                                 plain (file+function ,(concat org-directory "/health.org") ,(org-find-heading-in-datetree "Weight"))
-                                 ":PROPERTIES:\n:VALUE: %^{Weight}\n:END:\n%?"
-                                 :jump-to-captured t)
-                                ("hf" "Food Log"
-                                 entry (file+function ,(concat org-directory "/health.org") ,(org-find-heading-in-datetree "Food"))
-                                 "* %?"
-                                 :jump-to-captured t)
-                                ("t" "Tasks")
+        org-cycle-separator-lines 2
+        org-capture-templates `(("t" "Tasks")
                                 ("tn" "Personal Task"
-                                 entry (file+headline ,(concat org-directory "/nan.org") "Tasks")
+                                 entry (file+olp ,(concat org-directory "/main.org") "Me" "Tasks")
                                  "* TODO %?")
                                 ("td" "DigitalOcean Task"
-                                 entry (file+headline ,(concat org-directory "/do.org") "Tasks")
+                                 entry (file+olp ,(concat org-directory "/main.org") "DigitalOcean" "Tasks")
                                  "* TODO %?\n:PROPERTIES:\n:JIRA: %^{Jira}\n:END:\n")
 
                                 ("r" "Review")
-                                ("rn" "Weekly Review - Personal"
-                                 entry (file+olp+datetree ,(concat org-directory "/nan-review.org"))
-                                 "* %?"
-                                 :treetype week
-                                 :jump-to-captured t)
-                                ("rd" "Weekly Review - DigitalOcean"
-                                 entry (file+olp+datetree ,(concat org-directory "/do-review.org"))
+                                ("rw" "Weekly Review"
+                                 entry (file+olp+datetree ,(concat org-directory "/review.org"))
                                  "* Good\n%?\n* Bad\n* Change\n* Tasks\n** Completed\n** Next\n"
                                  :treetype week
                                  :jump-to-captured t))
@@ -91,7 +76,11 @@
          ("C-c r s" . org-roam-db-sync))
   :config
   (setq org-roam-directory "~/org"
-        org-roam-file-extensions '("org"))
+        org-roam-file-extensions '("org")
+        org-roam-capture-templates '(("d" "default" plain "%?"
+                                      :if-new (file+head "${slug}.org"
+                                                         "#+title: ${title}\n")
+                                      :unnarrowed t)))
   (org-roam-setup))
 
 ;; (use-package org-roam-server
