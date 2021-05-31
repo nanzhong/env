@@ -77,17 +77,22 @@
   :hook (org-mode . org-bullets-mode))
 
 (use-package org-roam
-  :straight t
-  :hook
-  (after-init . org-roam-mode)
+  :straight (:host github :repo "org-roam/org-roam" :branch "v2")
+  :after org
+  :commands (org-roam-setup
+             org-roam-buffer
+             org-roam-capture
+             org-roam-node-find
+             org-roam-node-insert)
+  :bind (("C-c r f" . org-roam-node-find)
+         ("C-c r i" . org-roam-node-insert)
+         ("C-c r c" . org-roam-capture)
+         ("C-c r b" . org-roam-buffer-toggle)
+         ("C-c r s" . org-roam-db-sync))
   :config
-  (setq org-roam-directory "~/org/roam")
-  :bind (:map org-roam-mode-map
-              (("C-c r l" . org-roam)
-               ("C-c r f" . org-roam-find-file))
-              :map org-mode-map
-              (("C-c r i" . org-roam-insert))
-              (("C-c r I" . org-roam-insert-immediate))))
+  (setq org-roam-directory "~/org"
+        org-roam-file-extensions '("org"))
+  (org-roam-setup))
 
 ;; (use-package org-roam-server
 ;;   :straight t
