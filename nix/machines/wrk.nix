@@ -15,6 +15,7 @@ in {
     mongodb-4_2
     mongodb-tools
     openconnect
+    vault
   ];
 
   networking.hostName = "wrk";
