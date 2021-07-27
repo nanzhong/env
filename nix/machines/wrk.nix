@@ -12,7 +12,6 @@ in {
     git-crypt
     hugo
     mercurial
-    mongodb-4_2
     mongodb-tools
     openconnect
     vault
