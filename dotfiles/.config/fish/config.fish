@@ -1,6 +1,8 @@
 alias n="nvim"
 alias e="emacsclient"
 
+set -gx COLORTERM '24bit'
+
 if status is-interactive
   set -gx EDITOR 'emacsclient -t'
   set -gx VISUAL 'emacsclient -t'
