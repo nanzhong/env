@@ -4,6 +4,8 @@
 	signingkey = A2ED35D3
 [core]
 	editor = emacsclient
+[init]
+	defaultBranch = main
 [feature]
 	manyFiles = true
 [url "git@github.internal.digitalocean.com:"]
