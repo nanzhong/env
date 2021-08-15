@@ -36,16 +36,11 @@
 ;; Highlight matching parentheses when the point is on them.
 (show-paren-mode 1)
 
-;; Show line number
-(add-hook 'prog-mode-hook (lambda () (display-line-numbers-mode)))
-
 ;; Enable column mode
 (column-number-mode 1)
 
 ;; Show trailing whitespace
-(add-hook 'prog-mode-hook (lambda ()
-                            (interactive)
-                            (setq show-trailing-whitespace 1)))
+(setq-default show-trailing-whitespace 1)
 
 ;; Toggle truncate-lines
 (global-set-key (kbd "C-c $") 'toggle-truncate-lines)
@@ -53,8 +48,21 @@
 ;; Indent guides
 (use-package highlight-indent-guides
   :straight t
-  :hook (prog-mode . highlight-indent-guides-mode)
   :config (setq highlight-indent-guides-method 'column))
+
+(defconst prog-like-modes
+  '(prog-mode nix-mode conf-mode yaml-mode)
+  "Major modes that are programming like.")
+
+(defun setup-prog-env ()
+  "Setup prog like environment."
+  (display-line-numbers-mode)
+  ;; From highlight-indent-guides
+  (highlight-indent-guides-mode))
+
+(require 'derived)
+(dolist (hook (mapcar #'derived-mode-hook-name prog-like-modes))
+  (add-hook hook 'setup-prog-env))
 
 ;; Modeline
 
