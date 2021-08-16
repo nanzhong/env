@@ -36,11 +36,6 @@
 ;; https://emacs.stackexchange.com/questions/28736/emacs-pointcursor-movement-lag/28746
 (setq auto-window-vscroll nil)
 
-;; Configure cpcat
-(global-set-key (kbd "M-W") (lambda ()
-                              (interactive)
-                              (shell-command-on-region (region-beginning) (region-end) "cpcat > (tmux run-shell 'echo #{pane_tty}')")))
-
 ;; Use ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
@@ -178,5 +173,10 @@
 (use-package which-key
   :straight t
   :config (which-key-mode))
+
+(use-package clipetty
+  :straight t
+  :hook (after-init . global-clipetty-mode)
+  :bind ("M-w" . clipetty-kill-ring-save))
 
 ;;; core.el ends here
