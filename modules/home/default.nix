@@ -64,10 +64,10 @@ in {
         };
 
         "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {
-          source = ../../bin/do-vpn.sh;
+          source = ../../scripts/do-vpn.sh;
         };
         "bin/hipreport.sh" = mkIf cfg.includeDOVPN {
-          source = ../../bin/hipreport.sh;
+          source = ../../scripts/hipreport.sh;
         };
       };
     };
