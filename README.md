@@ -1,26 +1,22 @@
-# Workstation
+# env
 
-My development environment.
+This repository contains all the configuration needed to bootstrap my various machines and environments. It relies heavily on the nix ecosystem. This configuration manages my daily drivers that I use for both work @ [DigitalOcean](https://grnh.se/qmyvxul81) and for personal side projects, as well as the other machines that I use.
 
-This repository contains all the configuration needed to bootstrap my full development environment. It relies heavily on the nix ecosystem. This is my daily driver that I use for both work @ [DigitalOcean](https://grnh.se/qmyvxul81) and for personal side projects. I work on an iPad Pro connected to VMs that run this setup. Because it's tailored specifically to me, it may contain things that are irrelevant or unwanted for you and your needs.
+I mainly work on an iPad Pro connected to VMs that run this setup. Because it's tailored specifically to me, it likely contains things that are irrelevant or unwanted for you and your needs.
 
-![Unique](unique.jpg)
+## Machines
+
+| Hostname | System         | Description                                |
+|----------|----------------|--------------------------------------------|
+| `wrk`    | `x86_64-linux` | My workstation for DigitalOcean.           |
+| `dev`    | `x86_64-linux` | My workstation for personal side projects. |
+| `media`  | `x86_64-linux` | My media box.                              |
+
 
 ## Usage
 
-### nixos
+To build and activate the various configurations
 
-First determine the machine and home that needs to be bootstrapped and configure the `current.nix` symlinks. 
+```sh
+nixos-rebuild switch --flake <path to repo>#<hostname>
 ```
-ln -s ./dev.nix ./nix/machines/current.nix
-ln -s ./dev.nix ./nix/homes/current.nix
-```
-
-Create the symlink for `/etc/nixos/configuration.nix`.
-```
-ln -s (pwd -P)/nix/configuration.nix /etc/nixos/configuration.nix
-```
-
-### nix-darwin
-
-TODO
