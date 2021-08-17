@@ -1,12 +1,16 @@
-{ config, pkgs, ... }:
-let
-  keys = import ../keys.nix;
-in {
+{ self, pkgs, ... }: {
   imports = [
-    ./base.nix
+    ./hardware-configuration.nix
+    ./networking.nix
   ];
 
-  networking.hostName = "media";
+  nanzhong = {
+    common.enable = true;
+    home =  {
+      user = "nan";
+      group = "plex";
+    };
+  };
 
   environment.systemPackages = with pkgs; [
     plex
@@ -23,14 +27,4 @@ in {
       ForceCommand internal-sftp
       AllowTcpForwarding no
   '';
-
-  users.users = {
-    nan = {
-      isNormalUser = true;
-      home = "/mnt/media";
-      description = "Nan Zhong";
-      group = "plex";
-      openssh.authorizedKeys.keys = keys.sshPub;
-    };
-  };
 }
