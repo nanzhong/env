@@ -8,14 +8,24 @@ if status is-interactive
   set -gx VISUAL 'emacsclient -t'
 end
 
-eval (direnv hook fish)
+if type -q direnv
+  eval (direnv hook fish)
+end
 
-set -U fish_user_paths $HOME/bin (go env GOPATH)/bin
+if type -q go
+  set -U fish_user_paths $HOME/bin (go env GOPATH)/bin
+else
+  set -U fish_user_paths $HOME/bin
+end
 
-starship init fish | source
+if type -q starship
+  starship init fish | source
+end
 
-source (z --init fish enhanced | psub)
-alias zz="z -c"
-alias zi="z -i"
-alias zf="z -I"
-alias zb="z -b"
+if type -q z
+  source (z --init fish enhanced | psub)
+  alias zz="z -c"
+  alias zi="z -i"
+  alias zf="z -I"
+  alias zb="z -b"
+end
