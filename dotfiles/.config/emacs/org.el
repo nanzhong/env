@@ -62,7 +62,7 @@
   :hook (org-mode . org-bullets-mode))
 
 (use-package org-roam
-  :straight (:host github :repo "org-roam/org-roam" :branch "v2")
+  :straight t
   :after org
   :commands (org-roam-setup
              org-roam-buffer
@@ -73,7 +73,9 @@
          ("C-c r i" . org-roam-node-insert)
          ("C-c r c" . org-roam-capture)
          ("C-c r b" . org-roam-buffer-toggle)
-         ("C-c r s" . org-roam-db-sync))
+         ("C-c r s" . org-roam-db-sync)
+         ;; Dailies
+         ("C-c r d" . org-roam-dailies-capture-today))
   :config
   (setq org-roam-directory "~/org"
         org-roam-file-extensions '("org")
@@ -81,22 +83,17 @@
                                       :if-new (file+head "${slug}.org"
                                                          "#+title: ${title}\n")
                                       :unnarrowed t)))
-  (org-roam-setup))
+  (org-roam-db-autosync-mode))
 
-;; (use-package org-roam-server
-;;   :straight t
-;;   :config
-;;   (setq org-roam-server-host "127.0.0.1"
-;;         org-roam-server-port 9999
-;;         org-roam-server-authenticate nil
-;;         org-roam-server-export-inline-images t
-;;         org-roam-server-serve-files nil
-;;         org-roam-server-served-file-extensions '("pdf" "mp4" "ogv")
-;;         org-roam-server-network-poll t
-;;         org-roam-server-network-arrows nil
-;;         org-roam-server-network-label-truncate t
-;;         org-roam-server-network-label-truncate-length 60
-;;         org-roam-server-network-label-wrap-length 20))
+(use-package org-roam-ui
+  :straight (:host github :repo "org-roam/org-roam-ui" :branch "main" :files ("*.el" "out"))
+  :after org-roam
+  :hook (after-init . org-roam-ui-mode)
+  :config
+  (setq org-roam-ui-sync-theme t
+        org-roam-ui-follow t
+        org-roam-ui-update-on-save t
+        org-roam-ui-open-on-start nil))
 
 (use-package htmlize
   :straight t
