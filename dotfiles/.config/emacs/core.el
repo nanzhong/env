@@ -120,7 +120,6 @@
   :straight t
   :init
   (vertico-mode)
-  (setq vertico-resize t)
   (setq vertico-cycle t))
 
 (use-package orderless
