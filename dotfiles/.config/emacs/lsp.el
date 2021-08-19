@@ -39,11 +39,6 @@
         lsp-ui-doc-max-height 20
         lsp-ui-doc-use-childframe nil))
 
-(use-package lsp-ivy
-  :straight t
-  :after lsp-mode ivy
-  :commands lsp-ivy-workspace-symbol)
-
 (use-package lsp-treemacs
   :straight t
   :after lsp-mode treemacs

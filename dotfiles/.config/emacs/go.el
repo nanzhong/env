@@ -19,8 +19,4 @@
   :bind (:map go-mode-map
               ("C-c C-c" . compile)))
 
-(use-package go-projectile
-  :straight t
-  :after (go-mode projectile))
-
 ;;; go.el ends here

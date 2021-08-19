@@ -29,10 +29,5 @@
   :after inf-ruby
   :hook (after-init-hook . inf-ruby-switch-setup))
 
-(use-package projectile-rails
-  :straight t
-  :after projectile
-  :hook (projectile-mode . projectile-rails-on))
-
 (use-package rinari
   :straight t)
