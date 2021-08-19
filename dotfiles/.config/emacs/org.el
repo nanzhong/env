@@ -8,7 +8,6 @@
 (use-package org
   :bind (("C-c c" . org-capture)
          ("C-c a" . org-agenda)
-         ("C-c b" . org-switchb)
          ("C-c l" . org-store-link)
          ("C-c C-x C-i" . org-clock-in)
          ("C-c C-x C-o" . org-clock-out))
@@ -48,7 +47,9 @@
                                  "* Good\n%?\n* Bad\n* Change\n* Tasks\n** Completed\n** Next\n"
                                  :treetype week
                                  :jump-to-captured t))
-        org-src-preserve-indentation t))
+        org-src-preserve-indentation t
+        org-refile-use-outline-path 'file
+        org-outline-path-complete-in-steps nil))
 
 (use-package org-agenda-property
   :straight t

@@ -65,7 +65,6 @@
   (add-hook hook 'setup-prog-env))
 
 ;; Modeline
-
 (defface nan-mode-line-buffer-name
   '((t (:inherit mode-line-buffer-id)))
   "Face used for displaying the buffer name.")
