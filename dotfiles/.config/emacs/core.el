@@ -229,11 +229,6 @@
   ;; auto-updating embark collect buffer
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
-(use-package avy
-  :straight t
-  :bind (("C-." . avy-goto-char)
-         ("C-," . avy-goto-char-2)))
-
 (use-package ace-window
   :straight t
   :bind (("C-x q" . ace-window))
