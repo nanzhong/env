@@ -77,6 +77,8 @@
          ("C-c r s" . org-roam-db-sync)
          ;; Dailies
          ("C-c r d" . org-roam-dailies-capture-today))
+  :init
+  (setq org-roam-v2-ack t)
   :config
   (setq org-roam-directory "~/org"
         org-roam-file-extensions '("org")
