@@ -14,17 +14,9 @@
   :init
   (add-hook 'org-mode-hook 'visual-line-mode)
   :config
-  (defun org-find-heading-in-datetree (heading)
-    (lambda ()
-      (org-datetree-find-date-create (calendar-current-date))
-      (goto-char (point-at-eol))
-      (when (not (re-search-forward
-                  (format org-complex-heading-regexp-format
-                          (regexp-quote heading)) nil t))
-        (insert (concat "\n**** " heading)))))
   (setq org-directory "~/org"
-        org-default-notes-file "~/org/main.org"
-        org-agenda-files (list (concat org-directory "/main.org"))
+        org-default-notes-file "~/org/notes.org"
+        org-agenda-files '("~/org")
         org-refile-targets (quote ((nil :maxlevel . 9)
                                    (org-agenda-files :maxlevel . 9)))
         org-todo-keywords '((sequence "TODO(t)" "REVIEW(r!)" "BLOCKED(b@/!)" "|" "DONE(d/!)" "REJECTED(k@)"))
