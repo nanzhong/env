@@ -58,7 +58,6 @@
  ("orderless" . "1a7011ac9c476dbb083c5ead88462a5f520ef8aa")
  ("org" . "3664447eb2417b38f0053674f248d2b0f1592ff0")
  ("org-agenda-property" . "3b469f3e93de0036547f3631cd0366d53f7584c8")
- ("org-bullets" . "767f55feb58b840a5a04eabfc3fbbf0d257c4792")
  ("org-roam" . "f29a770af346025a959209768467bac495915e23")
  ("org-roam-ui" . "879f0516cc32006bc5d3d88c9b83e5a129b72617")
  ("pfuture" . "d7926de3ba0105a36cfd00811fd6278aea903eef")

@@ -47,11 +47,6 @@
   :config
   (setq org-agenda-property-list '("LOCATION")))
 
-(use-package org-bullets
-  :straight t
-  :after org
-  :hook (org-mode . org-bullets-mode))
-
 (use-package org-roam
   :straight t
   :after org
