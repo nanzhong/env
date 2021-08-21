@@ -76,16 +76,25 @@
          ("C-c r b" . org-roam-buffer-toggle)
          ("C-c r s" . org-roam-db-sync)
          ;; Dailies
-         ("C-c r d" . org-roam-dailies-capture-today))
+         ("C-c r d c" . org-roam-dailies-capture-today)
+         ("C-c r d t" . org-roam-dailies-find-today)
+         :map org-mode-map
+         ("M-n" . org-roam-dailies-find-next)
+         ("M-p" . org-roam-dailies-find-previous))
   :init
   (setq org-roam-v2-ack t)
   :config
   (setq org-roam-directory "~/org"
+        org-roam-dailies-directory "daily/"
         org-roam-file-extensions '("org")
         org-roam-capture-templates '(("d" "default" plain "%?"
                                       :if-new (file+head "${slug}.org"
                                                          "#+title: ${title}\n")
-                                      :unnarrowed t)))
+                                      :unnarrowed t))
+        org-roam-dailies-capture-templates '(("d" "default" entry
+                                              "* %?"
+                                              :if-new (file+head "%<%Y-%m-%d>.org"
+                                                                 "#+title: %<%Y-%m-%d>\n"))))
   (org-roam-db-autosync-mode))
 
 (use-package org-roam-ui
