@@ -21,10 +21,8 @@
                                    (org-agenda-files :maxlevel . 9)))
         org-todo-keywords '((sequence "TODO(t)" "REVIEW(r!)" "BLOCKED(b@/!)" "|" "DONE(d/!)" "REJECTED(k@)"))
         org-log-into-drawer "LOGBOOK"
-        org-startup-indented t
         org-id-link-to-org-use-id t
         org-catch-invisible-edits 'smart
-        org-cycle-separator-lines 2
         org-capture-templates `(("t" "Tasks")
                                 ("tn" "Personal Task"
                                  entry (file+olp ,(concat org-directory "/main.org") "Me" "Tasks")
