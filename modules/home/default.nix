@@ -58,11 +58,6 @@ in {
           source = ../../dotfiles/.gitignore;
         };
 
-        ".terminfo" = {
-          source = ../../dotfiles/.terminfo;
-          recursive = true;
-        };
-
         "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {
           source = ../../scripts/do-vpn.sh;
         };
