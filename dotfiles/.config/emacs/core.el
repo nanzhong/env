@@ -201,13 +201,25 @@
 
   ;; Use Consult to select xref locations with preview
   (setq xref-show-xrefs-function #'consult-xref
-        xref-show-definitions-function #'consult-xref))
+        xref-show-definitions-function #'consult-xref)
+
+  :config
+  (consult-customize consult-line consult-ripgrep consult-git-grep consult-grep
+                     consult-bookmark consult-recent-file consult-xref
+                     consult--source-file consult--source-project-file consult--source-bookmark
+                     :preview-key '(:debounce 0.5 any))
+
+  (consult-customize consult-theme
+                     :preview-key
+                     (list (kbd "M-.")
+                           :debounce 0.5 (kbd "<up>") (kbd "<down>")
+                           :debounce 1 any)))
 
 (use-package embark
   :straight t
   :bind (:map minibuffer-local-map
-              ("M-." . embark-act)         ;; pick some comfortable binding
-              ("M-," . embark-dwim)        ;; good alternative: M-.
+              ("M-." . embark-act)
+              ("M-," . embark-dwim)
               ("C-h B" . embark-bindings))
   :init
   ;; Optionally replace the key help with a completing-read interface
