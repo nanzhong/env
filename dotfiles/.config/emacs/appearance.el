@@ -7,16 +7,10 @@
 (add-to-list 'custom-theme-load-path "~/.config/emacs/themes")
 (load-theme 'nan t)
 
-(menu-bar-mode -1)
 (if window-system
     (progn (fringe-mode 5)
-           (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
-           ;; (add-to-list 'default-frame-alist '(ns-appearance . dark))
-           (add-to-list 'default-frame-alist '(ns-appearance . light))
            (setq frame-title-format nil)
-           (add-to-list 'default-frame-alist '(font . "Iosevka 11"))
-           (tool-bar-mode -1)
-           (scroll-bar-mode -1)
+           (add-to-list 'default-frame-alist '(font . "Iosevka 12"))
            (setq-default cursor-type 'bar))
   (xterm-mouse-mode 1))
 
