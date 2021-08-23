@@ -64,8 +64,8 @@
          ("C-c r d c" . org-roam-dailies-capture-today)
          ("C-c r d t" . org-roam-dailies-find-today)
          :map org-mode-map
-         ("M-n" . org-roam-dailies-find-next)
-         ("M-p" . org-roam-dailies-find-previous))
+         ("M-n" . org-roam-dailies-goto-next-note)
+         ("M-p" . org-roam-dailies-goto-previous-note))
   :init
   (setq org-roam-v2-ack t)
   :config
