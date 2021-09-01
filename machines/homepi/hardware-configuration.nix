@@ -1,4 +1,4 @@
-{ modulesPath, ... }: {
+{ pkgs, ... }: {
 
   hardware = {
     raspberry-pi."4".fkms-3d.enable = true;
@@ -15,4 +15,11 @@
   };
 
   powerManagement.cpuFreqGovernor = "ondemand";
+
+  users.users.homebridge = {
+    isNormalUser = true;
+    home = "/home/homebridge";
+    description = "User for homebridge";
+    shell = pkgs.fish;
+  };
 }
