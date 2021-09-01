@@ -4,6 +4,8 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nixos-hardware.url = "github:nixos/nixos-hardware/master";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,6 +49,7 @@
         wrk = mkSystem inputs.nixpkgs "x86_64-linux" "wrk";
         dev = mkSystem inputs.nixpkgs "x86_64-linux" "dev";
         media = mkSystem inputs.nixpkgs "x86_64-linux" "media";
+        homepi = mkSystem inputs.nixpkgs "aarch64-linux" "homepi";
       };
     };
 }
