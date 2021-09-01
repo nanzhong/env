@@ -20,6 +20,7 @@
     isNormalUser = true;
     home = "/home/homebridge";
     description = "User for homebridge";
+    extraGroups = [ "docker" ];
     shell = pkgs.fish;
   };
 }

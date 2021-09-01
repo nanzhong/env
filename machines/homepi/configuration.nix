@@ -26,8 +26,6 @@
     };
   };
 
-
-
   nanzhong = {
     common.enable = true;
     home =  {
