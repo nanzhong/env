@@ -2,11 +2,11 @@
   "nodes": {
     "emacs-overlay": {
       "locked": {
-        "lastModified": 1629250486,
-        "narHash": "sha256-L9izjLJUC9wzANrWAEYB1srD7Mf10XXtm3nv2XJHTcM=",
+        "lastModified": 1630514605,
+        "narHash": "sha256-zS2APzOFlInFZI0w8IBN1sb8nYtZ3L2mi8ltuq33VVU=",
         "owner": "nix-community",
         "repo": "emacs-overlay",
-        "rev": "203f890b687c2d981200130549bda4df65349789",
+        "rev": "f0873ab32f26a0d3a0d58794214e70b765e04a68",
         "type": "github"
       },
       "original": {
@@ -22,11 +22,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1629251063,
-        "narHash": "sha256-dtvlrgNqo/23Tsjsc4kittDvdymxVqAhODai8foZvTs=",
+        "lastModified": 1630428740,
+        "narHash": "sha256-394yJxkFjvg47vB0jK5WHCitLDilyGjO3HpuZkAM2GA=",
         "owner": "nix-community",
         "repo": "home-manager",
-        "rev": "ec260995e25a38be212b4ba807de2b763fee996d",
+        "rev": "21a2ff449620a9cb91802f9d1a9157b2ae8c6b39",
         "type": "github"
       },
       "original": {
@@ -35,13 +35,29 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1629975021,
+        "narHash": "sha256-+z4pK5yvoIKAIPGnyxt7I7Y9yX72HFP2krppGENpn6I=",
+        "owner": "nixos",
+        "repo": "nixos-hardware",
+        "rev": "342048461da7fc743e588ee744080c045613a226",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "master",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1629137058,
-        "narHash": "sha256-rOOLXq8/HcqlKNTJdSiPqB+kbYdcjBaGwqq6pP5IOfQ=",
+        "lastModified": 1630248577,
+        "narHash": "sha256-9d/yq96TTrnF7qjA6wPYk+rYjWAXwfUmwk3qewezSeg=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "23485f23ff8536592b5178a5d244f84da770bc87",
+        "rev": "8d8a28b47b7c41aeb4ad01a2bd8b7d26986c3512",
         "type": "github"
       },
       "original": {
@@ -55,6 +71,7 @@
       "inputs": {
         "emacs-overlay": "emacs-overlay",
         "home-manager": "home-manager",
+        "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs"
       }
     }
