@@ -96,16 +96,6 @@
                 company-dabbrev-downcase nil)
   (global-company-mode))
 
-(use-package whitespace
-  :config
-  (setq whitespace-line-column 80)
-  (setq whitespace-style '(face tabs tab-mark indentation lines-tail))
-  (global-whitespace-mode))
-
-(use-package rainbow-delimiters
-  :straight t
-  :hook (prog-mode . rainbow-delimiters-mode))
-
 (use-package smartparens
   :straight t
   :config

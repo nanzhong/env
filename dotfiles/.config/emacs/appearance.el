@@ -44,15 +44,26 @@
   :straight t
   :config (setq highlight-indent-guides-method 'column))
 
+(use-package whitespace
+  :config
+  (setq whitespace-line-column 80)
+  (setq whitespace-style '(face tabs tab-mark indentation lines-tail)))
+
+(use-package rainbow-delimiters
+  :straight t
+  :hook (prog-mode . rainbow-delimiters-mode))
+
 (defconst prog-like-modes
-  '(prog-mode nix-mode conf-mode yaml-mode)
+  '(prog-mode org-mode nix-mode conf-mode yaml-mode)
   "Major modes that are programming like.")
 
 (defun setup-prog-env ()
   "Setup prog like environment."
   (display-line-numbers-mode)
   ;; From highlight-indent-guides
-  (highlight-indent-guides-mode))
+  (highlight-indent-guides-mode)
+  ;; From whitespace
+  (whitespace-mode))
 
 (require 'derived)
 (dolist (hook (mapcar #'derived-mode-hook-name prog-like-modes))
