@@ -46,7 +46,10 @@ in {
       allowPing = true;
     };
 
-    virtualisation.docker.enable = true;
+    virtualisation = {
+      docker.enable = true;
+      podman.enable = true;
+    };
 
     users.mutableUsers = false;
 
@@ -69,6 +72,7 @@ in {
       nix-index
       openssl
       patchelf
+      podman
       tmux
       tree
       unzip
