@@ -33,7 +33,14 @@
     };
   };
 
+  nixpkgs = {
+    overlays = [
+      (import ../../overlays/ffmpeg-rpi.nix)
+    ];
+  };
+
   environment.systemPackages = with pkgs; [
+    ffmpeg
     libraspberrypi
     tailscale
   ];
