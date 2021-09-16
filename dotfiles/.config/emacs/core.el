@@ -45,6 +45,10 @@
 (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
 (setq enable-recursive-minibuffers t)
 
+(use-package comp
+  :config
+  (setq native-comp-async-report-warnings-errors nil))
+
 (use-package direnv
   :straight t
   :demand t
