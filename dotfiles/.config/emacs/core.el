@@ -131,7 +131,7 @@
   :straight t
   :after vertico
   :bind (:map minibuffer-local-map
-         ("M-A" . marginalia-cycle))
+              ("M-A" . marginalia-cycle))
   :init
   (marginalia-mode))
 
@@ -201,16 +201,7 @@
         xref-show-definitions-function #'consult-xref)
 
   :config
-  (consult-customize consult-line consult-ripgrep consult-git-grep consult-grep
-                     consult-bookmark consult-recent-file consult-xref
-                     consult--source-file consult--source-project-file consult--source-bookmark
-                     :preview-key '(:debounce 0.5 any))
-
-  (consult-customize consult-theme
-                     :preview-key
-                     (list (kbd "M-.")
-                           :debounce 0.5 (kbd "<up>") (kbd "<down>")
-                           :debounce 1 any)))
+  (setq consult-preview-key '(:debounce 0.5 any)))
 
 (use-package embark
   :straight t
