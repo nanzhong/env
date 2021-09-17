@@ -112,6 +112,9 @@
 
 (use-package vertico
   :straight t
+  :bind (:map vertico-map
+              ("C-M-j" . vertico-exit-input)
+              ("M-RET" . vertico-exit-input))
   :init
   (vertico-mode)
   (setq vertico-cycle t))
