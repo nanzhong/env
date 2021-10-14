@@ -62,13 +62,13 @@
   :config
   (exec-path-from-shell-initialize))
 
-(use-package dashboard
-  :straight t
-  :config
-  (dashboard-setup-startup-hook)
-  (setq dashboard-startup-banner 3
-        dashboard-center-content t
-        initial-buffer-choice (lambda () (get-buffer "*dashboard*"))))
+;; (use-package dashboard
+;;   :straight t
+;;   :config
+;;   (dashboard-setup-startup-hook)
+;;   (setq dashboard-startup-banner 3
+;;         dashboard-center-content t
+;;         initial-buffer-choice (lambda () (get-buffer "*dashboard*"))))
 
 (use-package minions
   :straight t
