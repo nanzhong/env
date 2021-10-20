@@ -7,6 +7,9 @@
 ;; Startup
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
+(setq initial-buffer-choice (lambda ()
+    (org-roam-dailies-find-today)
+    (get-buffer (format-time-string "%Y-%m-%d.org"))))
 
 ;; Make backups of files, even when they're in version control
 (setq vc-make-backup-files t)
