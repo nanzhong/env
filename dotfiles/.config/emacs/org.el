@@ -6,6 +6,8 @@
 ;;; Code:
 
 (use-package org
+  :straight t
+  :demand t
   :bind (("C-c c" . org-capture)
          ("C-c a" . org-agenda)
          ("C-c l" . org-store-link)
@@ -49,12 +51,15 @@
 
 (use-package org-roam
   :straight t
-  :after org
+  :requires org
+  :demand t
   :commands (org-roam-setup
              org-roam-buffer
              org-roam-capture
              org-roam-node-find
-             org-roam-node-insert)
+             org-roam-node-insert
+             org-roam-dailies-capture-today
+             org-roam-dailies-find-today)
   :bind (("C-c r f" . org-roam-node-find)
          ("C-c r i" . org-roam-node-insert)
          ("C-c r c" . org-roam-capture)
