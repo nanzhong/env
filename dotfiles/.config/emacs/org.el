@@ -38,7 +38,6 @@
                                  :treetype week
                                  :jump-to-captured t))
         org-src-preserve-indentation t
-        org-startup-indented t
         org-refile-use-outline-path 'file
         org-outline-path-complete-in-steps nil))
 
