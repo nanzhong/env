@@ -14,6 +14,9 @@
   (unless window-system
     (diff-hl-margin-mode)))
 
+(use-package git-modes
+  :straight t)
+
 (use-package magit
   :straight t
   :after diff-hl
