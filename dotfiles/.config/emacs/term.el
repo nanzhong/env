@@ -78,11 +78,6 @@ file to edit."
   (setq eshell-highlight-prompt nil)
   (setq eshell-cmpl-cycle-completions nil))
 
-(use-package esh-autosuggest
-  :straight t
-  :after eshell
-  :hook (eshell-mode . esh-autosuggest-mode))
-
 (use-package multi-term
   :straight t
   :config

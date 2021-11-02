@@ -34,10 +34,6 @@
 (use-package lua-mode
   :straight t)
 
-(use-package company-lua
-  :straight t
-  :after company)
-
 (use-package protobuf-mode
   :straight t)
 

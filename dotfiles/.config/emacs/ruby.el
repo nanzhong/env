@@ -10,14 +10,6 @@
   (add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
   (setq enh-ruby-deep-indent-paren nil))
 
-(use-package robe
-  :straight t
-  :after (enh-ruby-mode company)
-  :hook ((enh-ruby-mode-hook . robe-mode)
-         (robe-mode . (lambda ()
-                        (set (make-local-variable 'company-backends)
-                             (cons 'company-robe company-backends))))))
-
 (use-package inf-ruby
   :straight t
   :after enh-ruby-mode

@@ -93,16 +93,6 @@
   :straight t
   :after yasnippet)
 
-(use-package company
-  :straight t
-  :config
-  (setq-default company-minimum-prefix-length 1
-                company-idle-delay 0.25
-                company-echo-delay 0.1
-                company-tooltip-align-annotations t
-                company-dabbrev-downcase nil)
-  (global-company-mode))
-
 (use-package smartparens
   :straight t
   :config
@@ -140,6 +130,7 @@
 
 (use-package consult
   :straight t
+  :after vertico
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c h" . consult-history)
          ("C-c m" . consult-mode-command)
@@ -157,6 +148,7 @@
          ;; Other custom bindings
          ("M-y" . consult-yank-pop)                ;; orig. yank-pop
          ("<help> a" . consult-apropos)            ;; orig. apropos-command
+         ("M-<tab>" . completion-at-point)         ;; Trigger consult-completion-in-region via completion-at-point
          ;; M-g bindings (goto-map)
          ("M-g e" . consult-compile-error)
          ("M-g f" . consult-flymake)               ;; Alternative: consult-flycheck
@@ -181,7 +173,6 @@
          ;; Isearch integration
          ("M-s e" . consult-isearch)
          :map isearch-mode-map
-         ("M-e" . consult-isearch)                 ;; orig. isearch-edit-string
          ("M-s e" . consult-isearch)               ;; orig. isearch-edit-string
          ("M-s l" . consult-line)                  ;; needed by consult-line to detect isearch
          ("M-s L" . consult-line-multi))           ;; needed by consult-line to detect isearch
@@ -202,6 +193,11 @@
   ;; Use Consult to select xref locations with preview
   (setq xref-show-xrefs-function #'consult-xref
         xref-show-definitions-function #'consult-xref)
+
+  ;; Use consult/vertico for completion in region.
+  (setq completion-in-region-function
+      (lambda (&rest args)
+        (apply #'consult-completion-in-region args)))
 
   :config
   (setq consult-preview-key '(:debounce 0.5 any)))
