@@ -48,6 +48,9 @@
 (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
 (setq enable-recursive-minibuffers t)
 
+;; Change default tab behaviour to trigger completion-at-point as well.
+(setq tab-always-indent 'complete)
+
 (use-package comp
   :config
   (setq native-comp-async-report-warnings-errors nil))
@@ -148,7 +151,6 @@
          ;; Other custom bindings
          ("M-y" . consult-yank-pop)                ;; orig. yank-pop
          ("<help> a" . consult-apropos)            ;; orig. apropos-command
-         ("M-<tab>" . completion-at-point)         ;; Trigger consult-completion-in-region via completion-at-point
          ;; M-g bindings (goto-map)
          ("M-g e" . consult-compile-error)
          ("M-g f" . consult-flymake)               ;; Alternative: consult-flycheck
