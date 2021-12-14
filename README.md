@@ -6,11 +6,12 @@ I mainly work on an iPad Pro connected to VMs that run this setup. Because it's 
 
 ## Machines
 
-| Hostname | System         | Description                                |
-|----------|----------------|--------------------------------------------|
-| `wrk`    | `x86_64-linux` | My workstation for DigitalOcean.           |
-| `dev`    | `x86_64-linux` | My workstation for personal side projects. |
-| `media`  | `x86_64-linux` | My media box.                              |
+| Hostname | System          | Description                                |
+|----------|-----------------|--------------------------------------------|
+| `wrk`    | `x86_64-linux`  | My workstation for DigitalOcean.           |
+| `dev`    | `x86_64-linux`  | My workstation for personal side projects. |
+| `media`  | `x86_64-linux`  | My media box.                              |
+| `homepi` | `aarch64-linux` | My rpi at home.                            |
 
 
 ## Usage
