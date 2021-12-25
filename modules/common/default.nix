@@ -54,6 +54,7 @@ in {
     users.mutableUsers = false;
 
     environment.systemPackages = with pkgs; [
+      _1password
       curl
       dnsutils
       docker
