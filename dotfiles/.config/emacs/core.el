@@ -51,6 +51,9 @@
 ;; Change default tab behaviour to trigger completion-at-point as well.
 (setq tab-always-indent 'complete)
 
+;; Use ISO calendar date style
+(calendar-set-date-style 'iso)
+
 (use-package comp
   :config
   (setq native-comp-async-report-warnings-errors nil))
