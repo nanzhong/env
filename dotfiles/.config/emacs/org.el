@@ -19,6 +19,7 @@
   (setq org-directory "~/org"
         org-default-notes-file "~/org/notes.org"
         org-agenda-files '("~/org")
+        org-agenda-include-diary t
         org-refile-targets (quote ((nil :maxlevel . 9)
                                    (org-agenda-files :maxlevel . 9)))
         org-todo-keywords '((sequence "TODO(t)" "REVIEW(r!)" "BLOCKED(b@/!)" "|" "DONE(d/!)" "REJECTED(k@)"))
