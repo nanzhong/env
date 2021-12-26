@@ -33,9 +33,6 @@
 ;; Enable column mode
 (column-number-mode 1)
 
-;; Show trailing whitespace
-(setq-default show-trailing-whitespace 1)
-
 ;; Toggle truncate-lines
 (global-set-key (kbd "C-c $") 'toggle-truncate-lines)
 
@@ -63,7 +60,9 @@
   ;; From highlight-indent-guides
   (highlight-indent-guides-mode)
   ;; From whitespace
-  (whitespace-mode))
+  (whitespace-mode)
+  ;; Show trailing whitespace
+  (setq show-trailing-whitespace 1))
 
 (require 'derived)
 (dolist (hook (mapcar #'derived-mode-hook-name prog-like-modes))
