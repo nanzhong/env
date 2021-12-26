@@ -51,8 +51,11 @@
 ;; Change default tab behaviour to trigger completion-at-point as well.
 (setq tab-always-indent 'complete)
 
-;; Use ISO calendar date style
-(calendar-set-date-style 'iso)
+(use-package calendar
+  :mode ("\\(.+\\.\\)?diary\\'" . diary-mode)
+  :config
+  ;; Use ISO calendar date style
+  (calendar-set-date-style 'iso))
 
 (use-package comp
   :config
