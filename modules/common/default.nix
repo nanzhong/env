@@ -88,5 +88,8 @@ in {
       enable = true;
       passwordAuthentication = false;
     };
+    services.cron = {
+      enable = true;
+    };
   };
 }
