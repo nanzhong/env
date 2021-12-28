@@ -64,6 +64,9 @@ in {
         "bin/hipreport.sh" = mkIf cfg.includeDOVPN {
           source = ../../bin/hipreport.sh;
         };
+        "bin/ical2diary.fish" = {
+          source = ../../bin/ical2diary.fish;
+        };
       };
     };
   };
