@@ -27,20 +27,6 @@
         org-log-into-drawer "LOGBOOK"
         org-id-link-to-org-use-id t
         org-catch-invisible-edits 'smart
-        org-capture-templates `(("t" "Tasks")
-                                ("tn" "Personal Task"
-                                 entry (file+olp ,(concat org-directory "/main.org") "Me" "Tasks")
-                                 "* TODO %?")
-                                ("td" "DigitalOcean Task"
-                                 entry (file+olp ,(concat org-directory "/main.org") "DigitalOcean" "Tasks")
-                                 "* TODO %?\n:PROPERTIES:\n:JIRA: %^{Jira}\n:END:\n")
-
-                                ("r" "Review")
-                                ("rw" "Weekly Review"
-                                 entry (file+olp+datetree ,(concat org-directory "/review.org"))
-                                 "* Good\n%?\n* Bad\n* Change\n* Tasks\n** Completed\n** Next\n"
-                                 :treetype week
-                                 :jump-to-captured t))
         org-src-preserve-indentation t
         org-refile-use-outline-path 'file
         org-outline-path-complete-in-steps nil))
