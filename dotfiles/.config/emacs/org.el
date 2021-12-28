@@ -73,8 +73,6 @@
          :map org-mode-map
          ("M-n" . org-roam-dailies-goto-next-note)
          ("M-p" . org-roam-dailies-goto-previous-note))
-  :init
-  (setq org-roam-v2-ack t)
   :config
   (setq org-roam-directory "~/org"
         org-roam-dailies-directory "daily/"
