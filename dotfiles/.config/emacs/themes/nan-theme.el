@@ -425,7 +425,7 @@
    `(highlight             ((t (:background ,bg+))))
    `(line-number           ((t (:foreground ,bg+max))))
    `(lazy-highlight        ((t (:background ,B00))))
-   `(link                  ((t (:foreground ,FBG2 :underline t))))
+   `(link                  ((t (:foreground ,B05 :underline t))))
    `(minibuffer-prompt     ((t (:foreground ,YR68))))
    `(region                ((t (:background ,bg++))))
    `(show-paren-match-face ((t (:background ,B01))))
@@ -445,7 +445,7 @@
    `(mode-line-inactive ((t (:background ,bg+ :foreground ,fg- :box nil))))
 
    ;; nan-mode-line
-   `(nan-mode-line-buffer-name ((t (:foreground ,FBG2 :weight bold))))
+   `(nan-mode-line-buffer-name ((t (:foreground ,B05 :weight bold))))
    `(nan-mode-line-buffer-modified ((t (:foreground ,FYG2))))
    `(nan-mode-line-buffer-read-only ((t (:foreground ,FY1))))
    `(nan-mode-line-vc ((t (:foreground ,FV2 :weight bold))))
