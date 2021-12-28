@@ -18,7 +18,7 @@
   :config
   (setq org-directory "~/org"
         org-default-notes-file "~/org/notes.org"
-        org-agenda-files '("~/org")
+        org-agenda-files '("~/org" "~/org/dailies/")
         org-agenda-include-diary t
         org-startup-indented t
         org-refile-targets (quote ((nil :maxlevel . 9)
@@ -61,7 +61,7 @@
          ("M-p" . org-roam-dailies-goto-previous-note))
   :config
   (setq org-roam-directory "~/org"
-        org-roam-dailies-directory "daily/"
+        org-roam-dailies-directory "dailies/"
         org-roam-file-extensions '("org")
         org-roam-capture-templates '(("d" "default" plain "%?"
                                       :if-new (file+head "${slug}.org"
