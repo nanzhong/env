@@ -59,10 +59,10 @@ in {
         };
 
         "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {
-          source = ../../scripts/do-vpn.sh;
+          source = ../../bin/do-vpn.sh;
         };
         "bin/hipreport.sh" = mkIf cfg.includeDOVPN {
-          source = ../../scripts/hipreport.sh;
+          source = ../../bin/hipreport.sh;
         };
       };
     };
