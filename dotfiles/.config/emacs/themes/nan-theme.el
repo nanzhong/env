@@ -596,6 +596,14 @@
    ;; whitespace
    `(whitespace-tab ((t (:foreground ,fg--))))
    `(whitespace-line ((t (:background ,bg++))))
+
+   ;; widgets
+   `(widget-field ((t (:background ,bg+++ :foreground ,fg))))
+   `(widget-single-line-field ((t (:inherit widget-line))))
+   `(widget-button ((t (:background ,bg+max :foreground ,fg :weight bold))))
+   `(widget-button-pressed ((t (:background ,bg+++ :foreground ,fg- :weight bold))))
+   `(widget-documentation ((t (:foreground ,FYG2))))
+   `(widget-inactive ((t (:foreground ,fg--))))
    )
 
   (custom-theme-set-variables
