@@ -37,6 +37,21 @@
   :config
   (setq org-agenda-property-list '("LOCATION")))
 
+(use-package org-super-agenda
+  :straight t
+  :config
+  (setq org-super-agenda-groups '((:name "Today"
+                                         :time-grid t)
+                                  (:name "Overdue"
+                                         :deadline past)
+                                  (:name "Due Today"
+                                         :deadline today)
+                                  (:name "Due Soon"
+                                         :deadline future)
+                                  (:name "Scheduled"
+                                         :scheduled t)))
+  (org-super-agenda-mode))
+
 (use-package org-roam
   :straight t
   :requires org
