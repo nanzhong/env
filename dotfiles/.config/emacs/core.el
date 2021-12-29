@@ -249,7 +249,6 @@
 
 (use-package clipetty
   :straight t
-  :hook (after-init . global-clipetty-mode)
   :bind ("M-w" . clipetty-kill-ring-save))
 
 ;;; core.el ends here
