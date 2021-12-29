@@ -44,14 +44,14 @@
   :config
   (setq org-super-agenda-groups '((:name "Today"
                                          :time-grid t)
-                                  (:name "Overdue"
-                                         :deadline past)
-                                  (:name "Due Today"
-                                         :deadline today)
-                                  (:name "Due Soon"
-                                         :deadline future)
-                                  (:name "Scheduled"
-                                         :scheduled t)))
+                                  (:name "Important"
+                                         :priority "A")
+                                  (:name "Next"
+                                         :priority<= "B")
+                                  (:name "Blocked"
+                                         :todo "BLOCKED")
+                                  (:name "In Review"
+                                         :todo "REVIEW")))
   (org-super-agenda-mode))
 
 (use-package org-roam
