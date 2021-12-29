@@ -528,6 +528,10 @@
    `(org-todo ((t (:foreground ,YR04 :weight bold))))
    `(org-done ((t (:foreground ,G03 :weight bold))))
 
+   `(org-imminent-deadline ((t (:foreground ,R27))))
+   `(org-upcoming-deadline ((t (:foreground ,B95))))
+   `(org-upcoming-distant-deadline ((t (:foreground ,fg))))
+
    `(org-agenda-structure ((t (:foreground ,fg---))))
    `(org-agenda-date ((t (:foreground ,fg))))
    `(org-agenda-date-today ((t (:foreground ,fg+ :weight bold))))
