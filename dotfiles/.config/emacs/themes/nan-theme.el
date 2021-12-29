@@ -516,14 +516,14 @@
    `(company-template-field ((t (:foreground ,RV29))))
 
    ;; org-mode
-   `(org-level-1 ((t (:foreground ,G03 :weight bold))))
-   `(org-level-2 ((t (:foreground ,BG05 :weight bold))))
-   `(org-level-3 ((t (:foreground ,B04 :weight bold))))
-   `(org-level-4 ((t (:foreground ,BV02 :weight bold))))
-   `(org-level-5 ((t (:foreground ,RV04 :weight bold))))
-   `(org-level-6 ((t (:foreground ,R05 :weight bold))))
-   `(org-level-7 ((t (:foreground ,YR16 :weight bold))))
-   `(org-level-8 ((t (:foreground ,Y06 :weight bold))))
+   `(org-level-1 ((t (:foreground ,B06 :weight bold))))
+   `(org-level-2 ((t (:foreground ,BG07 :weight bold))))
+   `(org-level-3 ((t (:foreground ,G07 :weight bold))))
+   `(org-level-4 ((t (:foreground ,YG07 :weight bold))))
+   `(org-level-5 ((t (:foreground ,Y06 :weight bold))))
+   `(org-level-6 ((t (:foreground ,R08 :weight bold))))
+   `(org-level-7 ((t (:foreground ,RV06 :weight bold))))
+   `(org-level-8 ((t (:foreground ,V06 :weight bold))))
 
    `(org-todo ((t (:foreground ,YR04 :weight bold))))
    `(org-done ((t (:foreground ,G03 :weight bold))))
