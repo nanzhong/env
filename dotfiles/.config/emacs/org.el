@@ -21,7 +21,7 @@
         org-agenda-files '("~/org" "~/org/dailies/" "~/org/1x1")
         org-agenda-include-diary t
         org-agenda-custom-commands '(("d" "Daily agenda"
-                                      ((agenda "" ((org-agenda-overriding-header "My Day")
+                                      ((agenda "" ((org-agenda-overriding-header "")
                                                    (org-agenda-span 1)
                                                    (org-agenda-start-on-weekday nil)))
                                        (todo "BLOCKED" ((org-agenda-overriding-header "Blocked")))
