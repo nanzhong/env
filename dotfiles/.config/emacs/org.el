@@ -37,12 +37,6 @@
         org-refile-use-outline-path 'file
         org-outline-path-complete-in-steps nil))
 
-(use-package org-agenda-property
-  :straight t
-  :commands org-agenda
-  :config
-  (setq org-agenda-property-list '("LOCATION")))
-
 (use-package org-super-agenda
   :straight t
   :config
