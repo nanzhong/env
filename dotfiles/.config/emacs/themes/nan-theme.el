@@ -529,7 +529,13 @@
    `(org-done ((t (:foreground ,G03 :weight bold))))
 
    `(org-agenda-structure ((t (:foreground ,fg---))))
+   `(org-agenda-date ((t (:foreground ,fg))))
    `(org-agenda-date-today ((t (:foreground ,fg+ :weight bold))))
+   `(org-agenda-date-weekend ((t (:foreground ,fg-))))
+   `(org-agenda-diary ((t (:foreground ,B95))))
+
+   `(org-super-agenda-header ((t (:foreground ,B06 :weight bold))))
+
    `(org-scheduled ((t (:foreground ,fg))))
    `(org-scheduled-previously ((t (:foreground ,R05))))
    `(org-scheduled-today ((t (:foreground ,fg))))
