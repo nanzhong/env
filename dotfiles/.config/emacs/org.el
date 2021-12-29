@@ -43,7 +43,9 @@
   :straight t
   :config
   (setq org-super-agenda-groups '((:name "Today"
-                                         :time-grid t)
+                                         :time-grid t
+                                         :scheduled today
+                                         :deadline today)
                                   (:name "Important"
                                          :priority "A")
                                   (:name "Next"
