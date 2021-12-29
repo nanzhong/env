@@ -18,7 +18,7 @@
   :config
   (setq org-directory "~/org"
         org-default-notes-file "~/org/notes.org"
-        org-agenda-files '("~/org" "~/org/dailies/")
+        org-agenda-files '("~/org" "~/org/dailies/" "~/org/1x1")
         org-agenda-include-diary t
         org-agenda-skip-scheduled-if-done t
         org-agenda-skip-deadline-if-done t
