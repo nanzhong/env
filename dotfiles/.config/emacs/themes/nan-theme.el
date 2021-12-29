@@ -532,11 +532,13 @@
    `(org-upcoming-deadline ((t (:foreground ,B95))))
    `(org-upcoming-distant-deadline ((t (:foreground ,fg))))
 
-   `(org-agenda-structure ((t (:foreground ,fg---))))
+   `(org-agenda-structure ((t (:foreground ,fg+ :weight bold))))
    `(org-agenda-date ((t (:foreground ,fg))))
    `(org-agenda-date-today ((t (:foreground ,fg+ :weight bold))))
    `(org-agenda-date-weekend ((t (:foreground ,fg-))))
+   `(org-agenda-current-time ((t (:foreground ,FYG2))))
    `(org-agenda-diary ((t (:foreground ,B95))))
+   `(org-time-grid ((t (:foreground ,fg--))))
 
    `(org-super-agenda-header ((t (:foreground ,B06 :weight bold))))
 
