@@ -55,7 +55,9 @@
   :mode ("\\(.+\\.\\)?diary\\'" . diary-mode)
   :config
   ;; Use ISO calendar date style
-  (calendar-set-date-style 'iso))
+  (calendar-set-date-style 'iso)
+  (add-hook 'diary-list-entries-hook 'diary-include-other-diary-files)
+  (add-hook 'diary-mark-entries-hook 'diary-mark-included-diary-files))
 
 (use-package comp
   :config
