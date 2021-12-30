@@ -24,8 +24,9 @@
                                       ((agenda "" ((org-agenda-overriding-header "")
                                                    (org-agenda-span 1)
                                                    (org-agenda-start-on-weekday nil)))
-                                       (todo "BLOCKED" ((org-agenda-overriding-header "Blocked")))
-                                       (todo "REVIEW" ((org-agenda-overriding-header "In Review"))))))
+                                       (todo "REVIEW|BLOCKED" ((org-agenda-overriding-header "In Review or Blocked")))
+                                       (todo "" ((org-agenda-overriding-header "Unscheduled")
+                                                 (org-agenda-skip-function '(org-agenda-skip-entry-if 'timestamp)))))))
         org-startup-indented t
         org-refile-targets (quote ((nil :maxlevel . 9)
                                    (org-agenda-files :maxlevel . 9)))
