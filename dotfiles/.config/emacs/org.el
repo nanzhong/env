@@ -55,6 +55,10 @@
                                          :todo "REVIEW")))
   (org-super-agenda-mode))
 
+(use-package org-modern
+  :straight t
+  :hook (org-mode . org-modern-mode))
+
 (use-package org-roam
   :straight t
   :requires org
