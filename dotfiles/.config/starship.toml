@@ -1,5 +1,11 @@
 add_newline = false
 
+[hostname]
+format = "[$hostname]($style) "
+
+[localip]
+disabled = true
+
 [character]
 success_symbol = "[›](bold green)"
 error_symbol = "[›](bold red)"
