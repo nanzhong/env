@@ -198,12 +198,6 @@
   ;; Use Consult to select xref locations with preview
   (setq xref-show-xrefs-function #'consult-xref
         xref-show-definitions-function #'consult-xref)
-
-  ;; Use consult/vertico for completion in region.
-  (setq completion-in-region-function
-      (lambda (&rest args)
-        (apply #'consult-completion-in-region args)))
-
   :config
   (setq consult-preview-key '(:debounce 0.5 any)))
 
@@ -231,6 +225,24 @@
   ;; if you want to have consult previews as you move around an
   ;; auto-updating embark collect buffer
   :hook (embark-collect-mode . consult-preview-at-point-mode))
+
+(use-package popon
+  :straight (popon :type git :host nil :repo "https://codeberg.org/akib/emacs-popon.git"))
+
+(use-package corfu-popup
+  :straight (corfu-popup :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-popup.git")
+  :after (popon))
+
+(use-package corfu
+  :straight t
+  :after (corfu-popup)
+  :custom
+  (corfu-cycle t)
+  (corfu-auto t)
+  :init
+  (global-corfu-mode)
+  (unless (display-graphic-p)
+    (corfu-popup-mode +1)))
 
 (use-package ace-window
   :straight t

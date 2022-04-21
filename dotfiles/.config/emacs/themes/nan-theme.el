@@ -502,18 +502,11 @@
    `(rainbow-delimiters-depth-8-face ((t :foreground ,RV04)))
    `(rainbow-delimiters-unmatched-face ((t :foreground ,R05 :underline ,R05)))
 
-   ;; company
-   `(company-tooltip ((t (:foreground ,fg :background ,bg+ :bold t))))
-   `(company-tooltip-selection ((t (:foreground ,fg+ :background ,bg++ :bold t))))
-   `(company-tooltip-mouse ((t (:foreground ,fg+ :background ,bg+ :bold t))))
-   `(company-tooltip-common ((t (:foreground ,fg+))))
-   `(company-tooltip-common-selection ((t (:foreground ,fg++ :background ,bg++))))
-   `(company-tooltip-annotation ((t (:foreground ,YR07))))
-   `(company-preview ((t (:foreground ,fg :background ,bg :bold t))))
-   `(company-preview-common ((t (:foreground ,fg+ :background ,bg+ :bold t))))
-   `(company-scrollbar-bg ((t (:background ,bg))))
-   `(company-scrollbar-fg ((t (:background ,fg))))
-   `(company-template-field ((t (:foreground ,RV29))))
+   ;; corfu
+   `(corfu-default ((t (:foreground ,fg :background ,bg+))))
+   `(corfu-current ((t (:foreground ,fg+ :background ,bg++ :bold t))))
+   `(corfu-bar ((t (:background ,bg++))))
+   `(corfu-border ((t (:background ,bg++))))
 
    ;; org-mode
    `(org-level-1 ((t (:foreground ,B06 :weight bold))))
