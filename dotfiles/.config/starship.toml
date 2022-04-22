@@ -19,6 +19,9 @@ symbol = "go "
 [nodejs]
 symbol = "js "
 
+[nix_shell]
+symbol = "🞸 "
+
 [python]
 symbol = "py "
 
