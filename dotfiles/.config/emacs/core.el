@@ -39,6 +39,9 @@
 ;; https://emacs.stackexchange.com/questions/28736/emacs-pointcursor-movement-lag/28746
 (setq auto-window-vscroll nil)
 
+;; Don't litter buffer list with dired buffers
+(setq dired-kill-when-opening-new-dired-buffer t)
+
 ;; Enable auto-revert-mode
 (global-auto-revert-mode)
 
