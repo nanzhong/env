@@ -232,8 +232,8 @@
 (use-package popon
   :straight (popon :type git :host nil :repo "https://codeberg.org/akib/emacs-popon.git"))
 
-(use-package corfu-popup
-  :straight (corfu-popup :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-popup.git")
+(use-package corfu-terminal
+  :straight (corfu-terminal :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-terminal.git")
   :after (popon))
 
 (use-package corfu
