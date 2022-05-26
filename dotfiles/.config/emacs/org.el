@@ -27,7 +27,6 @@
                                        (todo "REVIEW|BLOCKED" ((org-agenda-overriding-header "In Review or Blocked")))
                                        (todo "" ((org-agenda-overriding-header "Unscheduled")
                                                  (org-agenda-skip-function '(org-agenda-skip-entry-if 'timestamp)))))))
-        org-startup-indented t
         org-refile-targets (quote ((nil :maxlevel . 9)
                                    (org-agenda-files :maxlevel . 9)))
         org-todo-keywords '((sequence "TODO(t)" "REVIEW(r!)" "BLOCKED(b@/!)" "|" "DONE(d/!)" "REJECTED(k@)"))
