@@ -236,6 +236,10 @@
   :straight (corfu-terminal :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-terminal.git")
   :after (popon))
 
+(use-package corfu-doc-terminal
+  :straight (corfu-doc-terminal :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-doc-terminal.git")
+  :after (corfu-terminal))
+
 (use-package corfu
   :straight t
   :after (corfu-popup)
@@ -245,7 +249,8 @@
   :init
   (global-corfu-mode)
   (unless (display-graphic-p)
-    (corfu-terminal-mode +1)))
+    (corfu-terminal-mode +1)
+    (corfu-doc-terminal-mode +1)))
 
 (use-package ace-window
   :straight t
