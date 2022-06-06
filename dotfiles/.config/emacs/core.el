@@ -245,7 +245,7 @@
   :init
   (global-corfu-mode)
   (unless (display-graphic-p)
-    (corfu-popup-mode +1)))
+    (corfu-terminal-mode +1)))
 
 (use-package ace-window
   :straight t
