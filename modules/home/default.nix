@@ -45,28 +45,31 @@ in {
     };
 
     home-manager.users."${cfg.user}" = {
-      home.file = {
-        ".config" = {
-          source = ../../dotfiles/.config;
-          recursive = true;
-        };
+      home = {
+        stateVersion = "22.05";
+        file = {
+          ".config" = {
+            source = ../../dotfiles/.config;
+            recursive = true;
+          };
 
-        ".gitconfig" = {
-          source = (../../dotfiles/.gitconfig. + "${cfg.user}");
-        };
+          ".gitconfig" = {
+            source = (../../dotfiles/.gitconfig. + "${cfg.user}");
+          };
 
-        ".gitignore" = {
-          source = ../../dotfiles/.gitignore;
-        };
+          ".gitignore" = {
+            source = ../../dotfiles/.gitignore;
+          };
 
-        "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {
-          source = ../../bin/do-vpn.sh;
-        };
-        "bin/hipreport.sh" = mkIf cfg.includeDOVPN {
-          source = ../../bin/hipreport.sh;
-        };
-        "bin/ical2diary.fish" = {
-          source = ../../bin/ical2diary.fish;
+          "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {
+            source = ../../bin/do-vpn.sh;
+          };
+          "bin/hipreport.sh" = mkIf cfg.includeDOVPN {
+            source = ../../bin/hipreport.sh;
+          };
+          "bin/ical2diary.fish" = {
+            source = ../../bin/ical2diary.fish;
+          };
         };
       };
     };
