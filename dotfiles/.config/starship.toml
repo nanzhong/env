@@ -37,3 +37,6 @@ symbol = "⊕"
 [git_status]
 # Too slow at the moment... Reconsider in the future
 disabled = true
+
+[hostname]
+ssh_symbol = "⎉ "
