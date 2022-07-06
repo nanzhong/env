@@ -26,6 +26,7 @@ in {
       kubernetes-helm
       lua
       mariadb-client
+      neovim
       nodejs
       python
       python3
