@@ -42,7 +42,10 @@ in {
 
     services.emacs = {
       enable = true;
-      package = (pkgs.emacsGit-nox.override { nativeComp = true; } );
+      package = (pkgs.emacsGit-nox.override {
+        nativeComp = true;
+        withSQLite3 = true;
+      } );
     };
     services.syncthing = {
       enable = true;
