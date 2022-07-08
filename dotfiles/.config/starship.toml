@@ -40,3 +40,6 @@ disabled = true
 
 [hostname]
 ssh_symbol = "⎉ "
+
+[lua]
+symbol = "⏾ "
