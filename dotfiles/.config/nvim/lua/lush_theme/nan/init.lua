@@ -5,8 +5,8 @@ local colours = require('lush_theme.nan.colours')
 local theme = require('lush')(function()
   return {
     ColorColumn  { bg = colours.bg_1 }, -- Columns set with 'colorcolumn'
-    Conceal      { fg = colours.fg_1}, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-    Cursor       { bg = colours.fg_3 }, -- Character under the cursor
+    Conceal      { fg = colours.fg_1 }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
+    Cursor       { bg = colours.bg_3, fg = colours.fg }, -- Character under the cursor
     -- lCursor      { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- Like Cursor, but used when in IME mode |CursorIM|
     CursorColumn { bg = colours.bg_2 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
