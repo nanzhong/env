@@ -6,6 +6,7 @@ set -gx COLORTERM '24bit'
 if status is-interactive
   set -gx EDITOR 'nvim'
   set -gx VISUAL 'nvim'
+  set -gx FZF_DEFAULT_COMMAND 'fd --hidden .'
 end
 
 if type -q direnv
