@@ -4,8 +4,8 @@ alias e="emacsclient"
 set -gx COLORTERM '24bit'
 
 if status is-interactive
-  set -gx EDITOR 'emacsclient -t'
-  set -gx VISUAL 'emacsclient -t'
+  set -gx EDITOR 'nvim'
+  set -gx VISUAL 'nvim'
 end
 
 if type -q direnv
@@ -29,3 +29,5 @@ if type -q z
   alias zf="z -I"
   alias zb="z -b"
 end
+
+fish_vi_key_bindings
