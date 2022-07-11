@@ -6,6 +6,10 @@ disabled = true
 [character]
 success_symbol = "[›](bold green)"
 error_symbol = "[›](bold red)"
+vicmd_symbol = "[‹](bold green)"
+vicmd_replace_one_symbol = "[‹](bold purple)"
+vicmd_replace_symbol = "[‹](bold purple)"
+vicmd_visual_symbol = "[‹](bold yellow)"
 
 [username]
 disabled = true
