@@ -15,6 +15,7 @@ in {
       direnv
       dive
       doctl
+      fd
       gh
       go
       gopls
@@ -30,6 +31,7 @@ in {
       nodejs
       python
       python3
+      ripgrep
       ruby
       s3cmd
       shellcheck
