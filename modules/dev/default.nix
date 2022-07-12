@@ -26,17 +26,24 @@ in {
       kubectl
       kubernetes-helm
       lua
+      luajit
       mariadb-client
       neovim
       nodejs
+      nodePackages.bash-language-server
+      nodePackages.typescript-language-server
+      nodePackages.vscode-langservers-extracted
       python
       python3
       ripgrep
+      rubyPackages.solargraph
       ruby
       s3cmd
       shellcheck
       sqlite
+      sqls
       starship
+      sumneko-lua-language-server
       syncthing
       ttfautohint
       z-lua
