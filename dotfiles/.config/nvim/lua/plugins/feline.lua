@@ -148,7 +148,7 @@ require('packer').use {
     local scroll_bar = {
       provider = 'scroll_bar',
       hl = {
-        fg = hsl_to_hex(colours.base_5)
+        fg = hsl_to_hex(colours.base_4)
       },
       opts = {
         reverse = true
