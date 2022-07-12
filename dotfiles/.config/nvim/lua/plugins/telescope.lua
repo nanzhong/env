@@ -5,21 +5,18 @@ require('packer').use {
     require('telescope').setup({
       pickers = {
         find_files = {
-          hidden = true,
-          mappings = {
-            n = {
-              ["cd"] = function(prompt_bufnr)
-                local selection = require("telescope.actions.state").get_selected_entry()
-                local dir = vim.fn.fnamemodify(selection.path, ":p:h")
-                require("telescope.actions").close(prompt_bufnr)
-                vim.cmd(string.format("silent cd %s", dir))
-              end
-            }
-          }
+          hidden = true
         }
       }
     })
-    vim.keymap.set('n', '<Leader>ff', require('telescope.builtin').find_files)
+
+    local function project_files()
+      local opts = {}
+      local ok = pcall(require('telescope.builtin').git_files, opts)
+      if not ok then require('telescope.builtin').find_files(opts) end
+    end
+
+    vim.keymap.set('n', '<Leader>ff', project_files)
     vim.keymap.set('n', '<Leader>fg', require('telescope.builtin').live_grep)
     vim.keymap.set('n', '<Leader>fb', require('telescope.builtin').buffers)
     vim.keymap.set('n', '<Leader>fh', require('telescope.builtin').help_tags)
