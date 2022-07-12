@@ -221,6 +221,11 @@ local theme = require('lush')(function()
     -- TSVariable           { } , -- Variable names that don't fit into other categories.
     -- TSVariableBuiltin    { } , -- Variable names defined by the language: `this` or `self` in Javascript.
 
+    -- GitSigns
+    GitSignsAdd    { bg = colours.bg_1, fg = colours.base_3 },
+    GitSignsChange { bg = colours.bg_1, fg = colours.base_1 },
+    GitSignsDelete { bg = colours.bg_1, fg = colours.base_0 },
+
     -- Telescope.nvim
     TelescopeNormal         { Normal },
     TelescopeTitle          { fg = colours.fg, gui = 'bold' },
