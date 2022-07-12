@@ -18,8 +18,13 @@ require('packer').use {
 
     vim.keymap.set('n', '<Leader>ff', project_files)
     vim.keymap.set('n', '<Leader>fg', require('telescope.builtin').live_grep)
+    vim.keymap.set('n', '<Leader>fs', require('telescope.builtin').grep_string)
     vim.keymap.set('n', '<Leader>fb', require('telescope.builtin').buffers)
     vim.keymap.set('n', '<Leader>fh', require('telescope.builtin').help_tags)
+    vim.keymap.set('n', '<Leader>gc', require('telescope.builtin').git_commits)
+    vim.keymap.set('n', '<Leader>gcb', require('telescope.builtin').git_bcommits)
+    vim.keymap.set('n', '<Leader>gb', require('telescope.builtin').git_branches)
+    vim.keymap.set('n', '<Leader>gs', require('telescope.builtin').git_status)
   end
 }
 
