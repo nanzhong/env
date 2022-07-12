@@ -19,12 +19,12 @@ packer.init()
 packer.reset()
 
 packer.use 'wbthomason/packer.nvim'
--- require 'plugins.feline'
 require 'plugins.treesitter'
 require 'plugins.colorizer'
 require 'plugins.telescope'
--- require 'plugins.dashboard-nvim'
 require 'plugins.lush'
+require 'plugins.gitsigns'
+require 'plugins.feline'
 
 if packer_bootstrap then
   packer.sync()
