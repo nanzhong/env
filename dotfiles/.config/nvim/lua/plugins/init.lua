@@ -25,9 +25,10 @@ require 'plugins.lspsaga'
 require 'plugins.telescope'
 require 'plugins.luasnip'
 require 'plugins.cmp'
+require 'plugins.gitsigns'
+require 'plugins.autopairs'
 require 'plugins.colorizer'
 require 'plugins.lush'
-require 'plugins.gitsigns'
 require 'plugins.feline'
 
 if packer_bootstrap then

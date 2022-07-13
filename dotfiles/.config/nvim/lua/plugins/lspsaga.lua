@@ -1,7 +1,9 @@
 require('packer').use {
   'glepnir/lspsaga.nvim',
   config = function ()
-    require('lspsaga').init_lsp_saga()
+    require('lspsaga').init_lsp_saga({
+      
+    })
 
     vim.keymap.set("n", "<C-f>", function()
       require('lspsaga.action').smart_scroll_with_saga(1)
