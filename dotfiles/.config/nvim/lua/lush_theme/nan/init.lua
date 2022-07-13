@@ -9,8 +9,8 @@ local theme = require('lush')(function()
     Cursor       { bg = colours.fg_3, fg = colours.fg }, -- Character under the cursor
     -- lCursor      { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
     -- CursorIM     { }, -- Like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn { bg = colours.bg_2 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine   { bg = colours.bg_2 }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorColumn { bg = colours.bg_1 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorLine   { bg = colours.bg_1 }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = colours.base_3 }, -- Directory names (and other special names in listings)
     DiffAdd      { fg = colours.base_3 }, -- Diff mode: Added line |diff.txt|
     DiffChange   { fg = colours.base_1 }, -- Diff mode: Changed line |diff.txt|
@@ -49,8 +49,8 @@ local theme = require('lush')(function()
     SpellCap     { fg = colours.base_2 }, -- Word that should start with a capital. |spell| Combined with the highlighting used otherwise.
     SpellLocal   { fg = colours.base_2 }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare    { fg = colours.base_2 }, -- Word that is recognized by the spellchecker as one that is hardly ever used. |spell| Combined with the highlighting used otherwise.
-    StatusLine   { bg = colours.bg_2 }, -- Status line of current window
-    StatusLineNC { bg = colours.bg_1 }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    StatusLine   { bg = colours.bg_1, fg = colours.fg }, -- Status line of current window
+    StatusLineNC { bg = colours.bg_1, fg = colours.fg_1 }, -- Status lines of not-current windows. Note: If this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
     TabLine      { bg = colours.bg_1 }, -- Tab pages line, not active tab page label
     TabLineFill  { bg = colours.bg }, -- Tab pages line, where there are no labels
     TabLineSel   { bg = colours.bg_2 }, -- Tab pages line, active tab page label

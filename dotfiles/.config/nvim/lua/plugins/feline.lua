@@ -14,11 +14,11 @@ require('packer').use {
 
     local vi_mode = {
       provider = 'vi_mode',
-      hl = function()
+      hl = function ()
         return {
           name = require('feline.providers.vi_mode').get_mode_highlight_name(),
           bg = require('feline.providers.vi_mode').get_mode_color(),
-          fg = hsl_to_hex(colours.bg_2),
+          fg = hsl_to_hex(colours.bg_1),
           style = 'bold'
         }
       end,
@@ -26,8 +26,22 @@ require('packer').use {
         padding = 'right',
       },
       icon = '',
-      left_sep = '',
-      right_sep = ''
+      left_sep = {
+        str = ' ',
+        hl = function ()
+          return {
+            bg = require('feline.providers.vi_mode').get_mode_color(),
+          }
+        end
+      },
+      right_sep = {
+        str = ' ',
+        hl = function ()
+          return {
+            bg = require('feline.providers.vi_mode').get_mode_color(),
+          }
+        end
+      }
     }
 
     local file_info = {
@@ -49,43 +63,107 @@ require('packer').use {
       hl = {
         fg = hsl_to_hex(colours.base_1),
       },
-      left_sep = ' '
+      right_sep = ' '
     }
 
     local lsp_diag_errors = {
       provider = 'diagnostic_errors',
       hl = {
-        fg = hsl_to_hex(colours.base_0)
+        bg = hsl_to_hex(colours.base_0),
+        fg = hsl_to_hex(colours.bg_1),
+        style = 'bold'
       },
       icon = '‼ ',
-      left_sep = ' '
+      left_sep = {
+        str = ' ',
+        hl = {
+          bg = hsl_to_hex(colours.base_0),
+        }
+      },
+      right_sep = {
+        {
+          str = ' ',
+          hl = {
+            bg = hsl_to_hex(colours.base_0),
+          },
+        },
+        ' ',
+      },
     }
 
     local lsp_diag_warnings = {
       provider = 'diagnostic_warnings',
       hl = {
-        fg = hsl_to_hex(colours.base_2)
+        bg = hsl_to_hex(colours.base_2),
+        fg = hsl_to_hex(colours.bg_1),
+        style = 'bold'
       },
       icon = '! ',
-      left_sep = ' '
+      left_sep = {
+        str = ' ',
+        hl = {
+          bg = hsl_to_hex(colours.base_2),
+        }
+      },
+      right_sep = {
+        {
+          str = ' ',
+          hl = {
+            bg = hsl_to_hex(colours.base_2),
+          },
+        },
+        ' ',
+      }
     }
 
     local lsp_diag_hints = {
       provider = 'diagnostic_hints',
       hl = {
-        fg = hsl_to_hex(colours.base_4)
+        bg = hsl_to_hex(colours.base_4),
+        fg = hsl_to_hex(colours.bg_1),
+        style = 'bold'
       },
       icon = '? ',
-      left_sep = ' '
+      left_sep = {
+        str = ' ',
+        hl = {
+          bg = hsl_to_hex(colours.base_4),
+        }
+      },
+      right_sep = {
+        {
+          str = ' ',
+          hl = {
+            bg = hsl_to_hex(colours.base_4),
+          },
+        },
+        ' ',
+      }
     }
 
     local lsp_diag_info = {
       provider = 'diagnostic_info',
       hl = {
-        fg = hsl_to_hex(colours.fg)
+        bg = hsl_to_hex(colours.fg),
+        fg = hsl_to_hex(colours.bg_1),
+        style = 'bold'
       },
       icon = '* ',
-      left_sep = ' '
+      left_sep = {
+        str = ' ',
+        hl = {
+          bg = hsl_to_hex(colours.fg),
+        }
+      }, 
+      right_sep = {
+        {
+          str = ' ',
+          hl = {
+            bg = hsl_to_hex(colours.fg),
+          },
+        },
+        ' ',
+      },
     }
 
     local git_branch = {
@@ -94,7 +172,7 @@ require('packer').use {
         fg = hsl_to_hex(colours.base_7)
       },
       icon = ' ',
-      right_sep = ' '
+      left_sep = ' '
     }
 
     local git_diff_added = {
@@ -103,7 +181,7 @@ require('packer').use {
         fg = hsl_to_hex(colours.base_3)
       },
       icon = '⊞ ',
-      right_sep = ' '
+      left_sep = ' '
     }
 
     local git_diff_changed = {
@@ -112,7 +190,7 @@ require('packer').use {
         fg = hsl_to_hex(colours.base_1)
       },
       icon = '⊡ ',
-      right_sep = ' '
+      left_sep = ' '
     }
 
     local git_diff_removed = {
@@ -121,7 +199,7 @@ require('packer').use {
         fg = hsl_to_hex(colours.base_0)
       },
       icon = '⊟ ',
-      right_sep = ' '
+      left_sep = ' '
     }
 
     local position = {
@@ -144,8 +222,21 @@ require('packer').use {
     }
 
     require('feline').setup({
-      default_bg = hsl_to_hex(colours.bg_1),
-      default_fg = hsl_to_hex(colours.fg),
+      theme = {
+        fg        = hsl_to_hex(colours.fg),
+        bg        = hsl_to_hex(colours.bg_1),
+        white     = hsl_to_hex(colours.white),
+        black	    = hsl_to_hex(colours.black),
+        red	      = hsl_to_hex(colours.base_0),
+        orange    = hsl_to_hex(colours.base_1),
+        yellow    = hsl_to_hex(colours.base_2),
+        green	    = hsl_to_hex(colours.base_3),
+        cyan	    = hsl_to_hex(colours.base_4),
+        skyblue	  = hsl_to_hex(colours.base_5),
+        oceanblue	= hsl_to_hex(colours.base_5),
+        violet	  = hsl_to_hex(colours.base_6),
+        magenta	  = hsl_to_hex(colours.base_7),
+      },
       components = {
         active = {
           -- Left
@@ -153,20 +244,20 @@ require('packer').use {
             left_banner,
             vi_mode,
             file_info,
-            lsp_client_names,
-            lsp_diag_errors,
-            lsp_diag_warnings,
-            lsp_diag_hints,
-            lsp_diag_info,
+            git_branch,
+            git_diff_added,
+            git_diff_changed,
+            git_diff_removed,
           },
           -- Mid
           {},
           -- Right
           {
-            git_branch,
-            git_diff_added,
-            git_diff_changed,
-            git_diff_removed,
+            lsp_client_names,
+            lsp_diag_errors,
+            lsp_diag_warnings,
+            lsp_diag_hints,
+            lsp_diag_info,
             position,
             scroll_bar,
           }
