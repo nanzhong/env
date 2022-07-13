@@ -1,19 +1,37 @@
 require('packer').use {
   'neovim/nvim-lspconfig',
+  requires = { 'hrsh7th/cmp-nvim-lsp' },
   config = function ()
     vim.fn.sign_define('DiagnosticSignError', { texthl = 'DiagnosticSignError', text = '‼⚑' })
     vim.fn.sign_define('DiagnosticSignWarn', { texthl = 'DiagnosticSignWarn', text = '!'  })
     vim.fn.sign_define('DiagnosticSignHint', { texthl = 'DiagnosticSignHint', text = '?' })
     vim.fn.sign_define('DiagnosticSignInfo', { texthl = 'DiagnosticSignInfo', text = '*' })
 
-    require('lspconfig')['bashls'].setup({})
-    require('lspconfig')['cssls'].setup({})
-    require('lspconfig')['gopls'].setup({})
-    require('lspconfig')['html'].setup({})
-    require('lspconfig')['jsonls'].setup({})
-    require('lspconfig')['rust_analyzer'].setup({})
-    require('lspconfig')['sqls'].setup({})
+    local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+    require('lspconfig')['bashls'].setup({
+      capabilities = capabilities,
+    })
+    require('lspconfig')['cssls'].setup({
+      capabilities = capabilities,
+    })
+    require('lspconfig')['gopls'].setup({
+      capabilities = capabilities,
+    })
+    require('lspconfig')['html'].setup({
+      capabilities = capabilities,
+    })
+    require('lspconfig')['jsonls'].setup({
+      capabilities = capabilities,
+    })
+    require('lspconfig')['rust_analyzer'].setup({
+      capabilities = capabilities,
+    })
+    require('lspconfig')['sqls'].setup({
+      capabilities = capabilities,
+    })
     require('lspconfig')['sumneko_lua'].setup({
+      capabilities = capabilities,
       settings = {
         Lua = {
           runtime = {
@@ -31,6 +49,8 @@ require('packer').use {
         },
       },
     })
-    require('lspconfig')['tsserver'].setup({})
+    require('lspconfig')['tsserver'].setup({
+      capabilities = capabilities,
+    })
   end
 }
