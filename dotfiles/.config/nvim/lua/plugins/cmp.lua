@@ -9,6 +9,7 @@ require('packer').use {
     'hrsh7th/cmp-nvim-lsp-signature-help',
     'hrsh7th/cmp-nvim-lsp-document-symbol',
     'L3MON4D3/LuaSnip',
+    'onsails/lspkind.nvim',
   },
   config = function ()
     local cmp = require('cmp')
@@ -36,7 +37,19 @@ require('packer').use {
         { name = 'nvim_lua' },
         { name = 'luasnip' },
         { name = 'buffer' },
-      })
+      }),
+      formatting = {
+        format = require('lspkind').cmp_format({
+          mode = 'symbol_text',
+          menu = ({
+            buffer = "[Buffer]",
+            nvim_lsp = "[LSP]",
+            nvim_lsp_signature_help = "[LSP Sig]",
+            luasnip = "[LuaSnip]",
+            nvim_lua = "[Lua]",
+          })
+        })
+      }
     })
 
     cmp.setup.cmdline('/', {
