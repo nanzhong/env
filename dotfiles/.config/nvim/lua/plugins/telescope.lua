@@ -25,6 +25,7 @@ require('packer').use {
     vim.keymap.set('n', '<Leader>gcb', require('telescope.builtin').git_bcommits)
     vim.keymap.set('n', '<Leader>gb', require('telescope.builtin').git_branches)
     vim.keymap.set('n', '<Leader>gs', require('telescope.builtin').git_status)
+    vim.keymap.set('n', '<Leader>ld', require('telescope.builtin').diagnostics)
   end
 }
 
