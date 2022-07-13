@@ -54,9 +54,6 @@ require('packer').use {
 
     local lsp_diag_errors = {
       provider = 'diagnostic_errors',
-      enabled = function ()
-        require('feline.providers.lsp').diagnostics_exist(vim.diagnostic.severity.ERROR)
-      end,
       hl = {
         fg = hsl_to_hex(colours.base_0)
       },
@@ -66,9 +63,6 @@ require('packer').use {
 
     local lsp_diag_warnings = {
       provider = 'diagnostic_warnings',
-      enabled = function ()
-        require('feline.providers.lsp').diagnostics_exist(vim.diagnostic.severity.WARN)
-      end,
       hl = {
         fg = hsl_to_hex(colours.base_2)
       },
@@ -78,9 +72,6 @@ require('packer').use {
 
     local lsp_diag_hints = {
       provider = 'diagnostic_hints',
-      enabled = function ()
-        require('feline.providers.lsp').diagnostics_exist(vim.diagnostic.severity.HINT)
-      end,
       hl = {
         fg = hsl_to_hex(colours.base_4)
       },
@@ -90,9 +81,6 @@ require('packer').use {
 
     local lsp_diag_info = {
       provider = 'diagnostic_info',
-      enabled = function ()
-        require('feline.providers.lsp').diagnostics_exist(vim.diagnostic.severity.INFO)
-      end,
       hl = {
         fg = hsl_to_hex(colours.fg)
       },
