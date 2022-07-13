@@ -60,7 +60,7 @@ require('packer').use {
       hl = {
         fg = hsl_to_hex(colours.base_0)
       },
-      icon = '⚑ ',
+      icon = '‼ ',
       left_sep = ' '
     }
 
@@ -72,7 +72,7 @@ require('packer').use {
       hl = {
         fg = hsl_to_hex(colours.base_2)
       },
-      icon = '⚐ ',
+      icon = '! ',
       left_sep = ' '
     }
 
@@ -84,7 +84,7 @@ require('packer').use {
       hl = {
         fg = hsl_to_hex(colours.base_4)
       },
-      icon = '☻ ',
+      icon = '? ',
       left_sep = ' '
     }
 
@@ -96,7 +96,7 @@ require('packer').use {
       hl = {
         fg = hsl_to_hex(colours.fg)
       },
-      icon = '☺ ',
+      icon = '* ',
       left_sep = ' '
     }
 
