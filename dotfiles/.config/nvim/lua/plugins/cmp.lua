@@ -41,6 +41,7 @@ require('packer').use {
       formatting = {
         format = require('lspkind').cmp_format({
           mode = 'symbol_text',
+          preset = 'codicons',
           menu = ({
             buffer = "[Buffer]",
             nvim_lsp = "[LSP]",
