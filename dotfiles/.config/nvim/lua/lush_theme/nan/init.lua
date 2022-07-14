@@ -245,6 +245,10 @@ local theme = require('lush')(function()
     LightBulbSign         { bg = colours.bg_1, fg = colours.fg } , -- Used for "Hint" signs in sign column.
 
     -- Neogit
+    NeogitFilePath             { fg = colours.base_6 },
+    NeogitCommitViewHeader     { bg = colours.bg_1, fg = colours.fg },
+    NeogitCommandCodeNormal    { fg = colours.base_3 },
+    NeogitCommandCodeError     { fg = colours.base_0 },
     NeogitNotificationInfo     { fg = colours.base_4 },
     NeogitNotificationWarning  { fg = colours.base_2 },
     NeogitNotificationError    { fg = colours.base_0 },
