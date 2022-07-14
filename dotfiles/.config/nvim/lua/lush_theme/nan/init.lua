@@ -254,9 +254,15 @@ local theme = require('lush')(function()
     NeogitNotificationError    { fg = colours.base_0 },
     NeogitDiffAddHighlight     { bg = colours.bg, fg = colours.base_3 },
     NeogitDiffDeleteHighlight  { bg = colours.bg, fg = colours.base_0 },
-    NeogitDiffContextHighlight { bg = colours.bg, fg = colours.fg },
+    NeogitDiffContextHighlight { bg = colours.bg, fg = colours.base_3 },
     NeogitHunkHeader           { bg = colours.bg_1, fg = colours.fg },
     NeogitHunkHeaderHighlight  { bg = colours.bg_2, fg = colours.fg },
+    NeogitOpen:hunk            { SignColumn },
+    NeogitOpen:item            { SignColumn },
+    NeogitOpened:section       { SignColumn },
+    NeogitClosed:hunk          { SignColumn },
+    NeogitClosed:item          { SignColumn },
+    NeogitClosed:section       { SignColumn },
   }
 end)
 

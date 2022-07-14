@@ -10,6 +10,11 @@ require('packer').use {
       commit_popup = {
         kind = 'floating',
       },
+      signs = {
+        section = { '▶', '▼' },
+        item = { '▶', '▼' },
+        hunk = { '', '' },
+      },
     }
 
     vim.keymap.set('n', '<leader>g', neogit.open, { silent = true, desc = 'Open neogit' })
