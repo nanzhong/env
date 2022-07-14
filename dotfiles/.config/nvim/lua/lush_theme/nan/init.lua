@@ -4,21 +4,21 @@ local colours = require('lush_theme.nan.colours')
 ---@diagnostic disable: undefined-global
 local theme = require('lush')(function()
   return {
-    ColorColumn          { bg = colours.bg_1 }, -- Columns set with 'colorcolumn'
-    Conceal              { fg = colours.fg_1 }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
-    Cursor               { bg = colours.fg_3, fg = colours.fg }, -- Character under the cursor
-    -- lCursor              { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
-    -- CursorIM             { }, -- Like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn         { bg = colours.bg_1 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine           { bg = colours.bg_1 }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
-    Directory            { fg = colours.base_3 }, -- Directory names (and other special names in listings)
-    DiffAdd              { fg = colours.base_3 }, -- Diff mode: Added line |diff.txt|
-    DiffChange           { fg = colours.base_1 }, -- Diff mode: Changed line |diff.txt|
-    DiffDelete           { fg = colours.base_0 }, -- Diff mode: Deleted line |diff.txt|
-    DiffText             { fg = colours.base_4 }, -- Diff mode: Changed text within a changed line |diff.txt|
-    EndOfBuffer          { fg = colours.fg_3 }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
-    -- TermCursor           { }, -- Cursor in a focused terminal
-    -- TermCursorNC         { }, -- Cursor in an unfocused terminal
+    ColorColumn         { bg = colours.bg_1 }, -- Columns set with 'colorcolumn'
+    Conceal             { fg = colours.fg_1 }, -- Placeholder characters substituted for concealed text (see 'conceallevel')
+    Cursor              { bg = colours.fg_3, fg = colours.fg }, -- Character under the cursor
+    -- lCursor             { }, -- Character under the cursor when |language-mapping| is used (see 'guicursor')
+    -- CursorIM            { }, -- Like Cursor, but used when in IME mode |CursorIM|
+    CursorColumn        { bg = colours.bg_1 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorLine          { bg = colours.bg_1 }, -- Screen-line at the cursor, when 'cursorline' is set. Low-priority if foreground (ctermfg OR guifg) is not set.
+    Directory           { fg = colours.base_3 }, -- Directory names (and other special names in listings)
+    DiffAdd             { fg = colours.base_3 }, -- Diff mode: Added line |diff.txt|
+    DiffChange          { fg = colours.base_1 }, -- Diff mode: Changed line |diff.txt|
+    DiffDelete          { fg = colours.base_0 }, -- Diff mode: Deleted line |diff.txt|
+    DiffText            { fg = colours.base_4 }, -- Diff mode: Changed text within a changed line |diff.txt|
+    EndOfBuffer         { fg = colours.fg_3 }, -- Filler lines (~) after the end of the buffer. By default, this is highlighted like |hl-NonText|.
+    -- TermCursor          { }, -- Cursor in a focused terminal
+    -- TermCursorNC        { }, -- Cursor in an unfocused terminal
     ErrorMsg            { bg = colours.base_0, fg = colours.white }, -- Error messages on the command line
     VertSplit           { bg = colours.bg, fg = colours.bg_2 }, -- Column separating vertically split windows
     Folded              { bg = colours.bg_1, fg = colours.fg_1 }, -- Line used for closed folds
@@ -37,6 +37,7 @@ local theme = require('lush')(function()
     Normal              { bg = colours.bg, fg = colours.fg }, -- Normal text
     NormalFloat         { Normal }, -- Normal text in floating windows.
     NormalNC            { Normal }, -- normal text in non-current windows
+    FloatTitle          { fg = colours.fg, gui = 'bold' },
     FloatShadow         { bg = colours.bg, fg = colours.bg_2 },
     FloatShadowThrough  { bg = colours.bg, fg = colours.bg_2 },
     Pmenu               { bg = colours.bg_1 }, -- Popup menu: Normal item.
