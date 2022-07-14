@@ -16,16 +16,20 @@ require('packer').use {
       if not ok then require('telescope.builtin').find_files(opts) end
     end
 
-    vim.keymap.set('n', '<Leader>ff', project_files)
-    vim.keymap.set('n', '<Leader>fg', require('telescope.builtin').live_grep)
-    vim.keymap.set('n', '<Leader>fs', require('telescope.builtin').grep_string)
-    vim.keymap.set('n', '<Leader>fb', require('telescope.builtin').buffers)
-    vim.keymap.set('n', '<Leader>fh', require('telescope.builtin').help_tags)
-    vim.keymap.set('n', '<Leader>gc', require('telescope.builtin').git_commits)
-    vim.keymap.set('n', '<Leader>gcb', require('telescope.builtin').git_bcommits)
-    vim.keymap.set('n', '<Leader>gb', require('telescope.builtin').git_branches)
-    vim.keymap.set('n', '<Leader>gs', require('telescope.builtin').git_status)
-    vim.keymap.set('n', '<Leader>ld', require('telescope.builtin').diagnostics)
+    vim.keymap.set('n', '<leader>ff', project_files)
+    vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep)
+    vim.keymap.set('n', '<leader>fs', require('telescope.builtin').grep_string)
+    vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers)
+    vim.keymap.set('n', '<leader>fh', require('telescope.builtin').help_tags)
+    vim.keymap.set('n', '<leader>gc', require('telescope.builtin').git_commits)
+    vim.keymap.set('n', '<leader>gcb', require('telescope.builtin').git_bcommits)
+    vim.keymap.set('n', '<leader>gb', require('telescope.builtin').git_branches)
+    vim.keymap.set('n', '<leader>gs', require('telescope.builtin').git_status)
+    vim.keymap.set('n', '<leader>le', require('telescope.builtin').diagnostics)
+    vim.keymap.set('n', '<leader>ld', require('telescope.builtin').lsp_definitions)
+    vim.keymap.set('n', '<leader>ldd', require('telescope.builtin').lsp_type_definitions)
+    vim.keymap.set('n', '<leader>li', require('telescope.builtin').lsp_implementations)
+    vim.keymap.set('n', '<leader>lr', require('telescope.builtin').lsp_references)
   end
 }
 
