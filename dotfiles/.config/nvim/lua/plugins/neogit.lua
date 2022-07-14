@@ -8,7 +8,7 @@ require('packer').use {
       disable_insert_on_commit = false,
       kind = 'floating',
       commit_popup = {
-        kind = 'floating',
+        kind = 'split',
       },
       signs = {
         section = { '▶', '▼' },
