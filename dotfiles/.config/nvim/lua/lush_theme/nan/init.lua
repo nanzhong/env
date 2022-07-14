@@ -38,8 +38,7 @@ local theme = require('lush')(function()
     NormalFloat         { Normal }, -- Normal text in floating windows.
     NormalNC            { Normal }, -- normal text in non-current windows
     FloatTitle          { fg = colours.fg, gui = 'bold' },
-    FloatShadow         { bg = colours.bg, fg = colours.bg_2 },
-    FloatShadowThrough  { bg = colours.bg, fg = colours.bg_2 },
+    FloatBorder         { fg = colours.bg_2 },
     Pmenu               { bg = colours.bg_1 }, -- Popup menu: Normal item.
     PmenuSel            { bg = colours.bg_3 }, -- Popup menu: Selected item.
     PmenuSbar           { bg = colours.bg_2 }, -- Popup menu: Scrollbar.
@@ -223,6 +222,11 @@ local theme = require('lush')(function()
     -- TSTypeBuiltin        { } , -- Built-in types: `i32` in Rust.
     -- TSVariable           { } , -- Variable names that don't fit into other categories.
     -- TSVariableBuiltin    { } , -- Variable names defined by the language: `this` or `self` in Javascript.
+
+    -- Cmp
+    CmpNormal    { Normal },
+    CmpSelection { fg = colours.fg, bg = colours.bg_3, gui = 'bold' },
+    CmpBorder    { FloatBorder },
 
     -- GitSigns
     GitSignsAdd    { bg = colours.bg_1, fg = colours.base_3 },

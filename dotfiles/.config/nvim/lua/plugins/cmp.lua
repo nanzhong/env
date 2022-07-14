@@ -24,9 +24,11 @@ require('packer').use {
         completion = cmp.config.window.bordered({
           col_offset = -1,
           side_padding = 1,
+          winhighlight = 'Normal:CmpNormal,FloatBorder:CmpBorder,CursorLine:CmpSelection,Search:None',
         }),
         documentation = cmp.config.window.bordered({
           side_padding = 1,
+          winhighlight = 'FloatBorder:CmpBorder',
         }),
       },
       mapping = cmp.mapping.preset.insert({
