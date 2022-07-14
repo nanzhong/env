@@ -1,7 +1,7 @@
 require('packer').use {
   'feline-nvim/feline.nvim',
   requires = { 'rktjmp/lush.nvim', 'kyazdani42/nvim-web-devicons' },
-  config = function ()
+  config = function()
     local hsl_to_hex = require('lush.hsl.convert').hsl_to_hex
     local colours = require('lush_theme.nan.colours')
 
@@ -14,7 +14,7 @@ require('packer').use {
 
     local vi_mode = {
       provider = 'vi_mode',
-      hl = function ()
+      hl = function()
         return {
           name = require('feline.providers.vi_mode').get_mode_highlight_name(),
           bg = require('feline.providers.vi_mode').get_mode_color(),
@@ -28,7 +28,7 @@ require('packer').use {
       icon = '',
       left_sep = {
         str = ' ',
-        hl = function ()
+        hl = function()
           return {
             bg = require('feline.providers.vi_mode').get_mode_color(),
           }
@@ -36,7 +36,7 @@ require('packer').use {
       },
       right_sep = {
         str = ' ',
-        hl = function ()
+        hl = function()
           return {
             bg = require('feline.providers.vi_mode').get_mode_color(),
           }
@@ -154,7 +154,7 @@ require('packer').use {
         hl = {
           bg = hsl_to_hex(colours.fg),
         }
-      }, 
+      },
       right_sep = {
         {
           str = ' ',
@@ -226,16 +226,16 @@ require('packer').use {
         fg        = hsl_to_hex(colours.fg),
         bg        = hsl_to_hex(colours.bg_1),
         white     = hsl_to_hex(colours.white),
-        black	    = hsl_to_hex(colours.black),
-        red	      = hsl_to_hex(colours.base_0),
+        black     = hsl_to_hex(colours.black),
+        red       = hsl_to_hex(colours.base_0),
         orange    = hsl_to_hex(colours.base_1),
         yellow    = hsl_to_hex(colours.base_2),
-        green	    = hsl_to_hex(colours.base_3),
-        cyan	    = hsl_to_hex(colours.base_4),
-        skyblue	  = hsl_to_hex(colours.base_5),
-        oceanblue	= hsl_to_hex(colours.base_5),
-        violet	  = hsl_to_hex(colours.base_6),
-        magenta	  = hsl_to_hex(colours.base_7),
+        green     = hsl_to_hex(colours.base_3),
+        cyan      = hsl_to_hex(colours.base_4),
+        skyblue   = hsl_to_hex(colours.base_5),
+        oceanblue = hsl_to_hex(colours.base_5),
+        violet    = hsl_to_hex(colours.base_6),
+        magenta   = hsl_to_hex(colours.base_7),
       },
       components = {
         active = {
@@ -267,12 +267,12 @@ require('packer').use {
           {
             left_banner,
             file_info,
+            git_branch,
           },
           -- Mid
           {},
           -- Right
           {
-            git_branch,
             position,
             scroll_bar,
           },
