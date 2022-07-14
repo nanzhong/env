@@ -25,6 +25,7 @@ in {
       inotify-tools
       kubectl
       kubernetes-helm
+      lazygit
       lua
       luajit
       mariadb-client
