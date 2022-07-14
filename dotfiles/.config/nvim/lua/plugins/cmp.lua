@@ -21,8 +21,13 @@ require('packer').use {
         end,
       },
       window = {
-        completion = cmp.config.window.bordered(),
-        documentation = cmp.config.window.bordered(),
+        completion = cmp.config.window.bordered({
+          col_offset = -1,
+          side_padding = 1,
+        }),
+        documentation = cmp.config.window.bordered({
+          side_padding = 1,
+        }),
       },
       mapping = cmp.mapping.preset.insert({
         ['<C-b>'] = cmp.mapping.scroll_docs(-4),
