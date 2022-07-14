@@ -236,6 +236,9 @@ local theme = require('lush')(function()
     TelescopeSelectionCaret { fg = colours.base_3 },
 		TelescopeSelection      { fg = colours.fg, bg = colours.bg_3, gui = 'bold' },
 		TelescopeMatching       { fg = colours.base_7 },
+
+    -- LightBulb
+    LightBulbSign         { bg = colours.bg_1, fg = colours.fg } , -- Used for "Hint" signs in sign column.
   }
 end)
 
