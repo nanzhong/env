@@ -13,7 +13,12 @@ require('packer').use {
     }
 
     local vi_mode = {
-      provider = 'vi_mode',
+      provider = {
+        name = 'vi_mode',
+        opts = {
+          padding = 'right',
+        }
+      },
       hl = function()
         return {
           name = require('feline.providers.vi_mode').get_mode_highlight_name(),
@@ -22,9 +27,6 @@ require('packer').use {
           style = 'bold'
         }
       end,
-      opts = {
-        padding = 'right',
-      },
       icon = '',
       left_sep = {
         str = ' ',
@@ -45,15 +47,17 @@ require('packer').use {
     }
 
     local file_info = {
-      provider = 'file_info',
+      provider = {
+        name = 'file_info',
+        opts = {
+          file_modified_icon = '●',
+          file_readonly_icon = ' ',
+          type = 'unique'
+        },
+      },
       hl = {
         fg = hsl_to_hex(colours.white),
         style = 'bold',
-      },
-      opts = {
-        file_modified_icon = '●',
-        file_readonly_icon = '',
-        type = 'unique'
       },
       left_sep = ' '
     }
