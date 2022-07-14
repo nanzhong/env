@@ -243,26 +243,6 @@ local theme = require('lush')(function()
 
     -- LightBulb
     LightBulbSign         { bg = colours.bg_1, fg = colours.fg } , -- Used for "Hint" signs in sign column.
-
-    -- Neogit
-    NeogitFilePath             { fg = colours.base_6 },
-    NeogitCommitViewHeader     { bg = colours.bg_1, fg = colours.fg },
-    NeogitCommandCodeNormal    { fg = colours.base_3 },
-    NeogitCommandCodeError     { fg = colours.base_0 },
-    NeogitNotificationInfo     { fg = colours.base_4 },
-    NeogitNotificationWarning  { fg = colours.base_2 },
-    NeogitNotificationError    { fg = colours.base_0 },
-    NeogitDiffAddHighlight     { bg = colours.bg, fg = colours.base_3 },
-    NeogitDiffDeleteHighlight  { bg = colours.bg, fg = colours.base_0 },
-    NeogitDiffContextHighlight { bg = colours.bg, fg = colours.base_3 },
-    NeogitHunkHeader           { bg = colours.bg_1, fg = colours.fg },
-    NeogitHunkHeaderHighlight  { bg = colours.bg_2, fg = colours.fg },
-    NeogitOpen:hunk            { SignColumn },
-    NeogitOpen:item            { SignColumn },
-    NeogitOpened:section       { SignColumn },
-    NeogitClosed:hunk          { SignColumn },
-    NeogitClosed:item          { SignColumn },
-    NeogitClosed:section       { SignColumn },
   }
 end)
 
