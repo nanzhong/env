@@ -22,7 +22,7 @@ require('packer').use {
     vim.keymap.set('n', ']e', vim.diagnostic.goto_next, opts)
     vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
-    local on_attach = function(client, bufnr)
+    local on_attach = function(_, bufnr)
       -- Mappings.
       -- See `:help vim.lsp.*` for documentation on any of the below functions
       local bufopts = { noremap = true, silent = true, buffer = bufnr }
