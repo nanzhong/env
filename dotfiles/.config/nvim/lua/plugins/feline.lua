@@ -13,12 +13,7 @@ require('packer').use {
     }
 
     local vi_mode = {
-      provider = {
-        name = 'vi_mode',
-        opts = {
-          padding = 'right',
-        }
-      },
+      provider = 'vi_mode',
       hl = function()
         return {
           name = require('feline.providers.vi_mode').get_mode_highlight_name(),
