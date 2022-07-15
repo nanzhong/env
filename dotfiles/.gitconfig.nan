@@ -3,6 +3,6 @@
 	email = me@nanzho.ng
 	signingkey = A2ED35D3
 [core]
-	editor = emacsclient
+	editor = nvim
 [init]
 	defaultBranch = main
