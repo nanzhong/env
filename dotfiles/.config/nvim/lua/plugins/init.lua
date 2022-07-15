@@ -1,6 +1,7 @@
 -- Automatically install packer
 local fn = vim.fn
 local install_path = fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
+local packer_bootstrap
 
 if fn.empty(fn.glob(install_path)) > 0 then
   packer_bootstrap = fn.system({
@@ -29,6 +30,7 @@ require 'plugins.cmp'
 require 'plugins.gitsigns'
 require 'plugins.autopairs'
 require 'plugins.whichkey'
+require 'plugins.toggleterm'
 require 'plugins.colorizer'
 require 'plugins.lush'
 require 'plugins.feline'
