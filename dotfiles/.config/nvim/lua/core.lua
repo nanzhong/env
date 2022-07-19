@@ -5,7 +5,7 @@ vim.opt.swapfile = false
 vim.g.mapleader = ' '
 
 -- visual
-vim.opt.cc = vim.opt.cc + { 80  }
+vim.opt.cc = vim.opt.cc + { 80 }
 vim.opt.number = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '_' }
 vim.opt.termguicolors = true
@@ -62,7 +62,7 @@ local function get_visual_selection()
     endText = string.sub(lines[#lines], 1, ecol)
   end
 
-  local selection = {startText}
+  local selection = { startText }
   if #lines > 2 then
     vim.list_extend(selection, vim.list_slice(lines, 2, #lines - 1))
   end
