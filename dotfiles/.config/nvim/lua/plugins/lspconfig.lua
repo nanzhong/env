@@ -49,35 +49,35 @@ require('packer').use {
 
     local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-    require('lspconfig')['bashls'].setup({
+    require('lspconfig')['bashls'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-    })
-    require('lspconfig')['cssls'].setup({
+    }
+    require('lspconfig')['cssls'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-    })
-    require('lspconfig')['gopls'].setup({
+    }
+    require('lspconfig')['gopls'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-    })
-    require('lspconfig')['html'].setup({
+    }
+    require('lspconfig')['html'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-    })
-    require('lspconfig')['jsonls'].setup({
+    }
+    require('lspconfig')['jsonls'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-    })
-    require('lspconfig')['rust_analyzer'].setup({
+    }
+    require('lspconfig')['rust_analyzer'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-    })
-    require('lspconfig')['sqls'].setup({
+    }
+    require('lspconfig')['sqls'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-    })
-    require('lspconfig')['sumneko_lua'].setup({
+    }
+    require('lspconfig')['sumneko_lua'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = {
@@ -96,10 +96,14 @@ require('packer').use {
           },
         },
       },
-    })
-    require('lspconfig')['tsserver'].setup({
+    }
+    require('lspconfig')['tsserver'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
-    })
+    }
+    require('lspconfig')['vuels'].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+    }
   end
 }
