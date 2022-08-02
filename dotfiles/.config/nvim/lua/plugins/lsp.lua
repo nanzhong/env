@@ -116,9 +116,10 @@ require('packer').use {
       capabilities = capabilities,
       on_attach = on_attach,
     }
-    require('lspconfig')['vuels'].setup {
+    require('lspconfig')['volar'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
+      filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
     }
   end
 }
