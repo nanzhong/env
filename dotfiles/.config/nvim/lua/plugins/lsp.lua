@@ -1,3 +1,18 @@
+local packer = require('packer')
+packer.use {
+  'williamboman/mason.nvim',
+  after = 'nvim-lspconfig',
+  config = function ()
+    require('mason').setup()
+  end
+}
+packer.use {
+  'williamboman/mason-lspconfig.nvim',
+  after = { 'nvim-lspconfig', 'mason.nvim' },
+  config = function ()
+    require('mason-lspconfig').setup()
+  end
+}
 require('packer').use {
   'neovim/nvim-lspconfig',
   requires = { 'hrsh7th/cmp-nvim-lsp' },

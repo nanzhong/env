@@ -17,6 +17,7 @@ in {
       doctl
       fd
       gh
+      git-filter-repo
       go
       gopls
       hunspell

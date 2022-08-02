@@ -21,7 +21,7 @@ packer.reset()
 
 packer.use 'wbthomason/packer.nvim'
 require 'plugins.treesitter'
-require 'plugins.lspconfig'
+require 'plugins.lsp'
 require 'plugins.lightbulb'
 require 'plugins.telescope'
 require 'plugins.dressing'
