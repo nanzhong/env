@@ -2,7 +2,7 @@
 vim.opt.autochdir = true
 vim.opt.mouse = 'a'
 vim.opt.swapfile = false
-vim.opt.timeoutlen = 100
+vim.opt.timeoutlen = 500
 vim.g.mapleader = ' '
 
 -- visual
