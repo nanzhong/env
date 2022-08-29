@@ -1,11 +1,11 @@
 alias n="nvim"
 alias e="emacsclient"
 
-set -gx COLORTERM '24bit'
+set -gx COLORTERM 'truecolor'
 
 if status is-interactive
-  set -gx EDITOR 'nvim'
-  set -gx VISUAL 'nvim'
+  set -gx EDITOR 'emacsclient -t'
+  set -gx VISUAL 'emacsclient -t'
   set -gx FZF_DEFAULT_COMMAND 'fd --hidden .'
 end
 
@@ -30,5 +30,3 @@ if type -q z
   alias zf="z -I"
   alias zb="z -b"
 end
-
-fish_vi_key_bindings
