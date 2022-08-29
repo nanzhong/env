@@ -4,8 +4,7 @@ require('packer').use {
   config = function()
     require('toggleterm').setup {
       direction = 'float',
-      open_mapping = '<leader>`',
-      insert_mappings = false,
+      open_mapping = '<A-:>',
       float_opts = {
         border = 'rounded',
       }
