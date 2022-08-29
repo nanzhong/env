@@ -30,5 +30,3 @@ if type -q z
   alias zf="z -I"
   alias zb="z -b"
 end
-
-fish_vi_key_bindings
