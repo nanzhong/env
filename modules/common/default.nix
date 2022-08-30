@@ -55,12 +55,15 @@ in {
 
     environment.systemPackages = with pkgs; [
       _1password
+      bat
       curl
       dnsutils
       docker
       docker-compose
       file
       fish
+      fishPlugins.forgit
+      fishPlugins.fzf-fish
       fzf
       gcc
       git
