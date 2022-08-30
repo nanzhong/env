@@ -16,6 +16,8 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.expandtab = true
 
+vim.keymap.set('n', '<CR>', '<Cmd>nohlsearch<CR>', { desc = 'Clear search highlight', noremap = true, silent = true })
+
 -- OSC52
 local function get_visual_selection()
   local modeInfo = vim.api.nvim_get_mode()
