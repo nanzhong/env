@@ -3,6 +3,9 @@ alias e="emacsclient"
 
 set -gx COLORTERM '24bit'
 
+set -gx FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*"'
+set -gx FORGIT_FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS
+
 if status is-interactive
   set -gx EDITOR 'nvim'
   set -gx VISUAL 'nvim'
