@@ -5,6 +5,8 @@
     ./networking.nix
   ];
 
+  system.stateVersion = "22.05";
+
   boot = {
     initrd.availableKernelModules = [ "usbhid" "usb_storage" ];
     # ttyAMA0 is the serial console broken out to the GPIO
@@ -22,7 +24,6 @@
         version = 4;
       };
       grub.enable = false;
-      generic-extlinux-compatible.enable = true;
     };
   };
 
