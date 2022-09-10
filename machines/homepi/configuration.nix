@@ -43,6 +43,7 @@
   environment.systemPackages = with pkgs; [
     ffmpeg
     libraspberrypi
+    rtorrent
     tailscale
   ];
 
