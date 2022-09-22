@@ -75,6 +75,11 @@ require('packer').use {
     require('lspconfig')['gopls'].setup {
       capabilities = capabilities,
       on_attach = on_attach,
+      settings = {
+        gopls = {
+          buildFlags = {"-tags=integration"}
+        }
+      }
     }
     require('lspconfig')['html'].setup {
       capabilities = capabilities,
