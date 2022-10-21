@@ -76,13 +76,13 @@
    `(ffap                  ((t (:foreground ,base-7))))
    `(fringe                ((t (:background ,bg+))))
    `(highlight             ((t (:background ,bg+))))
-   `(line-number           ((t (:foreground ,fg--- :background ,bg+))))
+   `(line-number           ((t (:foreground ,bg+++ :background ,bg))))
    `(lazy-highlight        ((t (:background ,base-4))))
    `(link                  ((t (:foreground ,base-4 :underline t))))
    `(minibuffer-prompt     ((t (:foreground ,base-1))))
    `(region                ((t (:background ,bg+++))))
    `(show-paren-match-face ((t (:background ,base-6))))
-   `(vertical-border       ((t (:foreground ,bg++ :background ,bg++))))
+   `(vertical-border       ((t (:foreground ,bg+ :background ,bg))))
    `(warning               ((t (:foreground ,base-0))))
 
    ;; tty-menu
@@ -221,7 +221,7 @@
    `(magit-diffstat-added ((t (:foreground ,base-3))))
    `(magit-diffstat-removed ((t (:foreground ,base-0))))
    `(magit-hash ((t (:foreground ,base-6))))
-   `(magit-head ((t (:foreground ,base-6)))
+   `(magit-head ((t (:foreground ,base-6))))
    `(magit-hunk-heading ((t (:foreground ,base-1))))
    `(magit-hunk-heading-highlight ((t (:foreground ,base-1 :background ,bg+))))
    `(magit-item-highlight ((t (:foreground ,base-1 :background ,bg+))))
@@ -278,7 +278,7 @@
    `(ansi-color-bright-yellow ((t (:foreground ,bright-yellow))))
    `(ansi-color-bright-blue ((t (:foreground ,bright-blue))))
    `(ansi-color-bright-magenta ((t (:foreground ,bright-magenta))))
-   `(ansi-color-bright-cyan ((t (:foreground ,bright-cyan)))))
+   `(ansi-color-bright-cyan ((t (:foreground ,bright-cyan))))
    )
 
   (custom-theme-set-variables
