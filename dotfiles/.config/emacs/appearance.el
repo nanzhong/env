@@ -24,6 +24,13 @@
 ;; Allow fitting window width
 (setq fit-window-to-buffer-horizontally t)
 
+;; Set a different character for the vertical border and wrap
+(add-hook 'window-configuration-change-hook
+          (lambda ()
+            (let ((display-table (or buffer-display-table standard-display-table)))
+              (set-display-table-slot display-table 'vertical-border ?│)
+              (set-display-table-slot display-table 'wrap ?↩))))
+
 ;; Highlight current line
 (global-hl-line-mode 1)
 
