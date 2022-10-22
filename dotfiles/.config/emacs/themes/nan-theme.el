@@ -125,25 +125,6 @@
    `(font-lock-variable-name-face ((t (:foreground ,base-4))))
    `(font-lock-warning-face ((t (:foreground ,base-0))))
 
-   ;; lsp
-   `(lsp-headerline-breadcrumb-path-face ((t (:foreground ,fg :background ,bg+ :underline nil))))
-   `(lsp-headerline-breadcrumb-separator-face ((t (:foreground ,fg :background ,bg+ :underline nil))))
-   `(lsp-headerline-breadcrumb-path-error-face ((t (:inherit lsp-headerline-breadcrumb-path-face :foreground ,base-0))))
-   `(lsp-headerline-breadcrumb-path-warning-face ((t (:inherit lsp-headerline-breadcrumb-path-face :foreground ,base-1))))
-   `(lsp-headerline-breadcrumb-path-info-face ((t (:inherit lsp-headerline-breadcrumb-path-face :foreground ,base-4))))
-   `(lsp-headerline-breadcrumb-path-hint-face ((t (:inherit lsp-headerline-breadcrumb-path-face :foreground ,base-5))))
-   `(lsp-headerline-breadcrumb-project-prefix-face ((t (:inherit lsp-headerline-breadcrumb-path-face :foreground ,base-7 :weight bold))))
-   `(lsp-headerline-breadcrumb-unknown-project-prefix-face ((t (:inherit lsp-headerline-breadcrumb-project-prefix-face))))
-   `(lsp-headerline-breadcrumb-symbols-face ((t (:inherit lsp-headerline-breadcrumb-path-face :weight bold))))
-   `(lsp-headerline-breadcrumb-symbols-error-face ((t (:inherit lsp-headerline-breadcrumb-symbols-face :foreground ,base-0))))
-   `(lsp-headerline-breadcrumb-symbols-warning-face ((t (:inherit lsp-headerline-breadcrumb-symbols-face :foreground ,base-1))))
-   `(lsp-headerline-breadcrumb-symbols-info-face ((t (:inherit lsp-headerline-breadcrumb-symbols-face :foreground ,base-4))))
-   `(lsp-headerline-breadcrumb-symbols-hint-face ((t (:inherit lsp-headerline-breadcrumb-symbols-face :foreground ,base-5))))
-
-   ;; lsp-ui
-   `(lsp-ui-doc-background ((t (:background ,bg+))))
-   `(lsp-ui-sideline-code-action ((t (:foreground ,base-4 :background ,bg+ :weight bold))))
-
    ;; rainbow-delimiters
    `(rainbow-delimiters-depth-1-face ((t :foreground ,base-0)))
    `(rainbow-delimiters-depth-2-face ((t :foreground ,base-1)))
@@ -251,8 +232,8 @@
    `(magit-section-title ((t (:foreground ,base-5 :weight bold))))
 
    ;; whitespace
-   `(whitespace-tab ((t (:foreground ,fg--))))
-   `(whitespace-line ((t (:background ,bg++))))
+   `(whitespace-tab ((t (:foreground ,bg+))))
+   `(whitespace-line ((t (:background ,bg+))))
 
    ;; widgets
    `(widget-field ((t (:background ,bg++ :foreground ,fg))))
