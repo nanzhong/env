@@ -46,9 +46,6 @@
 (load (expand-file-name "misc-modes.el" user-emacs-directory))
 
 (setq custom-file "~/.config/emacs/custom.el")
-(load custom-file)
-
-;; disabled commands
-(put 'downcase-region 'disabled nil)
+(if (file-exists-p custom-file) (load custom-file))
 
 ;;; init.el ends here
