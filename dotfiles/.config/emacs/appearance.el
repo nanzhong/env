@@ -117,7 +117,7 @@
 (defun nan-mode-line-buffer-position ()
   "mode-line segment for displaying the position in the buffer."
   (concat (propertize "@" 'face 'nan-mode-line-unimportant)
-          "%l:%c"
+          " %l:%c"
           ;; (propertize " %p%%" 'face 'nan-mode-line-unimportant)
           (propertize (format ":%d" (point)) 'face 'nan-mode-line-unimportant)))
 
