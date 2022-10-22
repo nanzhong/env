@@ -43,11 +43,6 @@
 ;; Toggle truncate-lines
 (global-set-key (kbd "C-c $") 'toggle-truncate-lines)
 
-;; Indent guides
-(use-package highlight-indent-guides
-  :straight t
-  :config (setq highlight-indent-guides-method 'column))
-
 (use-package whitespace
   :config
   (setq whitespace-line-column 80)
@@ -64,8 +59,6 @@
 (defun setup-prog-env ()
   "Setup prog like environment."
   (display-line-numbers-mode)
-  ;; From highlight-indent-guides
-  (highlight-indent-guides-mode)
   ;; From whitespace
   (whitespace-mode)
   ;; Show trailing whitespace
