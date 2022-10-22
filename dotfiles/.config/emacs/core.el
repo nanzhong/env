@@ -229,17 +229,6 @@
   ;; auto-updating embark collect buffer
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
-(use-package popon
-  :straight (popon :type git :host nil :repo "https://codeberg.org/akib/emacs-popon.git"))
-
-(use-package corfu-terminal
-  :straight (corfu-terminal :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-terminal.git")
-  :after (popon))
-
-(use-package corfu-doc-terminal
-  :straight (corfu-doc-terminal :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-doc-terminal.git")
-  :after (corfu-terminal))
-
 (use-package corfu
   :straight t
   :after (corfu-popup)
@@ -251,6 +240,26 @@
   (unless (display-graphic-p)
     (corfu-terminal-mode +1)
     (corfu-doc-terminal-mode +1)))
+
+(use-package corfu-doc
+  :straight t
+  :after (corfu)
+  :hook (corfu-mode . corfu-doc-mode)
+  :bind (:map corfu-map
+              ("M-d" . corfu-doc-toggle)
+              ("M-p" . corfu-doc-scroll-down)
+              ("M-n" . corfu-doc-scroll-up)))
+
+(use-package popon
+  :straight (popon :type git :host nil :repo "https://codeberg.org/akib/emacs-popon.git"))
+
+(use-package corfu-terminal
+  :straight (corfu-terminal :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-terminal.git")
+  :after (popon))
+
+(use-package corfu-doc-terminal
+  :straight (corfu-doc-terminal :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-doc-terminal.git")
+  :after (corfu-terminal corfu-doc))
 
 (use-package ace-window
   :straight t
