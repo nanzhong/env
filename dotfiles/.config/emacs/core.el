@@ -23,9 +23,6 @@
 ;; Prevent Extraneous Tabs
 (setq-default indent-tabs-mode nil)
 
-;; Disable bidirectional editing
-(setq-default bidi-display-reordering nil)
-
 ;; Keep tmp files out of the way
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
@@ -34,10 +31,6 @@
 
 ;; Disable lockfiles
 (setq create-lockfiles nil)
-
-;; Reduce scroll lag
-;; https://emacs.stackexchange.com/questions/28736/emacs-pointcursor-movement-lag/28746
-(setq auto-window-vscroll nil)
 
 ;; Don't litter buffer list with dired buffers
 (setq dired-kill-when-opening-new-dired-buffer t)
@@ -91,7 +84,6 @@
 
 (use-package flymake
   :straight t)
-
 
 (use-package yasnippet
   :straight t
