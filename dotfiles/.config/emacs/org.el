@@ -56,7 +56,8 @@
 
 (use-package org-modern
   :straight t
-  :hook (org-mode . org-modern-mode))
+  :config
+  (global-org-modern-mode))
 
 (use-package org-roam
   :straight t
