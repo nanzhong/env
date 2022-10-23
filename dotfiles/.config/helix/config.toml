@@ -1,0 +1,14 @@
+theme = "nan"
+
+[editor]
+rulers = [80]
+color-modes = true
+
+[editor.file-picker]
+hidden = false
+
+[editor.indent-guides]
+render = true
+
+[editor.whitespace]
+render = "none"

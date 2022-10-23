@@ -20,6 +20,7 @@ in {
       git-filter-repo
       go
       gopls
+      helix
       hunspell
       hunspellDicts.en-us
       hunspellDicts.en-us-large
