@@ -104,7 +104,7 @@
 
 (defun nan-mode-line-buffer-name ()
   "mode-line segment for displaying buffer name."
-  (propertize "⌈%b⌋" 'face 'nan-mode-line-buffer-name))
+  (propertize "⟮%b⟯" 'face 'nan-mode-line-buffer-name))
 
 (defun nan-mode-line-buffer-properties ()
   "mode-line segment for displaying buffer properties."
