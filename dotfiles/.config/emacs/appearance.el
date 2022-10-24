@@ -104,13 +104,13 @@
 
 (defun nan-mode-line-buffer-name ()
   "mode-line segment for displaying buffer name."
-  (propertize "⟮%b⟯" 'face 'nan-mode-line-buffer-name))
+  (propertize " %b " 'face 'nan-mode-line-buffer-name))
 
 (defun nan-mode-line-buffer-properties ()
   "mode-line segment for displaying buffer properties."
   (concat
    (if (buffer-modified-p) (propertize "█" 'face 'nan-mode-line-buffer-modified) "░")
-   (if (and (buffer-file-name) buffer-read-only) (propertize "" 'face 'nan-mode-line-buffer-read-only) " ")))
+   (if (and (buffer-file-name) buffer-read-only) (propertize "" 'face 'nan-mode-line-buffer-read-only) "")))
 
 (defun nan-mode-line-buffer-eol ()
   "mode-line segment for displaying the buffer's eol style."
@@ -148,11 +148,11 @@
                           " "
                           (:eval (nan-mode-line-buffer-eol))
                           " "
-                          (:eval (nan-mode-line-buffer-position)))
+                          (:eval (nan-mode-line-buffer-position))
+                          " "
+                          (:eval (nan-mode-line-vc)))
                         ;; Right
                         `((:eval (nan-mode-line-misc-info))
-                          " "
-                          (:eval (nan-mode-line-vc))
                           " "
                           (:eval (nan-mode-line-modes)))))))
 

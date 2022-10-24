@@ -93,7 +93,13 @@
   :straight t
   :bind (:map flymake-mode
               ("C-c e" . flymake-show-buffer-diagnostics))
-  :config (setq flymake-mode-line-counter-format ("⨂" flymake-mode-line-error-counter "⨁" flymake-mode-line-warning-counter "⨀" flymake-mode-line-note-counter)))
+  :config (setq flymake-suppress-zero-counters nil
+                flymake-mode-line-lighter ""
+                flymake-mode-line-counter-format `("["
+                                                   ,(propertize "⨂ " 'face 'compilation-error) ,(flymake--mode-line-counter :error t)
+                                                   ,(propertize " ⨁ " 'face 'compilation-warning) ,(flymake--mode-line-counter :warning t)
+                                                   ,(propertize " ⨀ " 'face 'compliation-info) ,(flymake--mode-line-counter :note t)
+                                                   "]")))
 
 (use-package yasnippet
   :straight t

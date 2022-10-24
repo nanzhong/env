@@ -98,15 +98,23 @@
    `(mode-line-inactive ((t (:background ,bg+ :foreground ,fg- :box nil))))
 
    ;; nan-mode-line
-   `(nan-mode-line-buffer-name ((t (:foreground ,base-4 :weight bold))))
    `(nan-mode-line-buffer-modified ((t (:foreground ,base-3))))
-   `(nan-mode-line-buffer-read-only ((t (:foreground ,base-2))))
-   `(nan-mode-line-vc ((t (:foreground ,base-6 :weight bold))))
+   `(nan-mode-line-buffer-read-only ((t (:foreground ,bg :background ,base-2))))
+   `(nan-mode-line-buffer-name ((t (:foreground ,bg :background ,base-4 :weight bold))))
+   `(nan-mode-line-vc ((t (:foreground ,base-7 :weight bold))))
+
+   ;; Minions
+   `(minions-mode-line-face ((t :background ,bg+++)))
 
    ;; flymake
    `(flymake-note ((t :background ,base-4 :foreground ,bg)))
    `(flymake-warning ((t :background ,base-2 :foreground ,bg)))
    `(flymake-error ((t (:background ,base-0 :foreground ,fg))))
+
+   ;; Compilation
+   `(compilation-info ((t :foreground ,base-4)))
+   `(compilation-warning ((t :foreground ,base-2)))
+   `(compilation-error ((t :foreground ,base-0)))
 
    ;; Syntax highlighting
    `(font-lock-builtin-face ((t (:foreground ,base-7))))
