@@ -105,7 +105,7 @@
 
    ;; flymake
    `(flymake-note ((t :background ,base-4 :foreground ,bg)))
-   `(flymake-warning ((t :background ,base-1 :foreground ,bg)))
+   `(flymake-warning ((t :background ,base-2 :foreground ,bg)))
    `(flymake-error ((t (:background ,base-0 :foreground ,fg))))
 
    ;; Syntax highlighting
