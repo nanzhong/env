@@ -59,10 +59,6 @@
   :straight t
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(defconst prog-like-modes
-  '(prog-mode org-mode nix-mode conf-mode yaml-mode)
-  "Major modes that are programming like.")
-
 (defun setup-prog-env ()
   "Setup prog like environment."
   (display-line-numbers-mode)

@@ -4,51 +4,57 @@
 
 ;;; Code:
 
-;; Startup
-(setq inhibit-splash-screen t)
-(setq inhibit-startup-message t)
-(setq initial-buffer-choice (lambda ()
-    (org-roam-dailies-find-today)
-    (get-buffer (format-time-string "%Y-%m-%d.org"))))
+(defconst prog-like-modes
+  '(prog-mode org-mode nix-mode conf-mode yaml-mode)
+  "Major modes that are programming like.")
 
-;; Make backups of files, even when they're in version control
-(setq vc-make-backup-files t)
+(use-package emacs
+  :config
+  ;; Startup
+  (setq inhibit-splash-screen t)
+  (setq inhibit-startup-message t)
+  (setq initial-buffer-choice (lambda ()
+                                (org-roam-dailies-find-today)
+                                (get-buffer (format-time-string "%Y-%m-%d.org"))))
 
-;; Delete selection on typing
-(delete-selection-mode 1)
+  ;; Make backups of files, even when they're in version control
+  (setq vc-make-backup-files t)
 
-;; Tab width
-(setq tab-width 2)
+  ;; Delete selection on typing
+  (delete-selection-mode 1)
 
-;; Prevent Extraneous Tabs
-(setq-default indent-tabs-mode nil)
+  ;; Tab width
+  (setq tab-width 2)
 
-;; Keep tmp files out of the way
-(setq backup-directory-alist
-      `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms
-      `((".*" ,temporary-file-directory t)))
+  ;; Prevent Extraneous Tabs
+  (setq-default indent-tabs-mode nil)
 
-;; Disable lockfiles
-(setq create-lockfiles nil)
+  ;; Keep tmp files out of the way
+  (setq backup-directory-alist
+        `((".*" . ,temporary-file-directory)))
+  (setq auto-save-file-name-transforms
+        `((".*" ,temporary-file-directory t)))
 
-;; Don't litter buffer list with dired buffers
-(setq dired-kill-when-opening-new-dired-buffer t)
+  ;; Disable lockfiles
+  (setq create-lockfiles nil)
 
-;; Enable auto-revert-mode
-(global-auto-revert-mode)
+  ;; Don't litter buffer list with dired buffers
+  (setq dired-kill-when-opening-new-dired-buffer t)
 
-;; Use ibuffer
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+  ;; Enable auto-revert-mode
+  (global-auto-revert-mode)
 
-;; Minibuffer
-(setq minibuffer-prompt-properties
-      '(read-only t cursor-intangible t face minibuffer-prompt))
-(add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
-(setq enable-recursive-minibuffers t)
+  ;; Use ibuffer
+  (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-;; Change default tab behaviour to trigger completion-at-point as well.
-(setq tab-always-indent 'complete)
+  ;; Minibuffer
+  (setq minibuffer-prompt-properties
+        '(read-only t cursor-intangible t face minibuffer-prompt))
+  (add-hook 'minibuffer-setup-hook #'cursor-intangible-mode)
+  (setq enable-recursive-minibuffers t)
+
+  ;; Change default tab behaviour to trigger completion-at-point as well.
+  (setq tab-always-indent 'complete))
 
 (use-package calendar
   :mode ("\\(.+\\.\\)?diary\\'" . diary-mode)
