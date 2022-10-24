@@ -11,6 +11,7 @@
                      (setq compile-command "go build -v && go test -race -cover -v && go vet")
                      (setq compilation-read-command nil)
                      (setq tab-width 2)
+                     (eglot-ensure)
                      (add-hook 'before-save-hook #'eglot-format nil t)))
   :bind (:map go-mode-map
               ("C-c C-c" . compile)))
