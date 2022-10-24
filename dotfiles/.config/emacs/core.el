@@ -291,7 +291,7 @@
   :straight t
   :bind ("M-w" . clipetty-kill-ring-save)
   :config
-  (setq clipetty-tmux-ssh-tty "tmux show-environment SSH_TTY"))
+  (setq clipetty-tmux-ssh-tty "echo 'SSH_TTY=/dev/tty'"))
 
 (use-package tree-sitter
   :straight t
