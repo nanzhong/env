@@ -46,7 +46,9 @@
 ;; Indent guides
 (use-package highlight-indent-guides
   :straight t
-  :config (setq highlight-indent-guides-method 'column))
+  :config (setq highlight-indent-guides-method 'column
+                highlight-indent-guides-auto-odd-face-perc 30
+                highlight-indent-guides-auto-even-face-perc 25))
 
 (use-package whitespace
   :config
