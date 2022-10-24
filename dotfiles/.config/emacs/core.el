@@ -292,7 +292,7 @@
   :bind (:map universal-argument-map
               ("C-w" . clipetty-kill-ring-save))
   :config
-  (setq clipetty-tmux-ssh-tty "echo 'SSH_TTY=/dev/tty'"))
+  (setq clipetty-tmux-ssh-tty "echo \"SSH_TTY=$(tmux display-message -p '#{pane_tty}')\""))
 
 (use-package tree-sitter
   :straight t
