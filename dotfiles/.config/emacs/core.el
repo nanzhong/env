@@ -86,10 +86,14 @@
   :config
   (minions-mode)
   (setq minions-mode-line-lighter "⍠"
-        minions-mode-line-delimiters '("" . "")))
+        minions-mode-line-delimiters '("" . "")
+        minions-prominent-modes '(flymake-mode)))
 
 (use-package flymake
-  :straight t)
+  :straight t
+  :bind (:map flymake-mode
+              ("C-c e" . flymake-show-buffer-diagnostics))
+  :config (setq flymake-mode-line-counter-format ("⨂" flymake-mode-line-error-counter "⨁" flymake-mode-line-warning-counter "⨀" flymake-mode-line-note-counter)))
 
 (use-package yasnippet
   :straight t
