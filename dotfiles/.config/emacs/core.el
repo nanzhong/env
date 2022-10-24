@@ -289,7 +289,8 @@
 
 (use-package clipetty
   :straight t
-  :bind ("M-w" . clipetty-kill-ring-save)
+  :bind (:map universal-argument-map
+              ("C-w" . clipetty-kill-ring-save))
   :config
   (setq clipetty-tmux-ssh-tty "echo 'SSH_TTY=/dev/tty'"))
 
