@@ -290,7 +290,7 @@
 (use-package clipetty
   :straight t
   :bind (:map universal-argument-map
-              ("C-w" . clipetty-kill-ring-save))
+              ("M-w" . clipetty-kill-ring-save))
   :config
   (setq clipetty-tmux-ssh-tty "echo \"SSH_TTY=$(tmux display-message -p '#{pane_tty}')\""))
 
