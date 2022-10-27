@@ -49,10 +49,9 @@
 ;;           "github.internal.digitalocean.com" forge-github-repository)
 ;;         forge-alist))
 
-;; don't use until there is a way to ignore folders...
-;; (use-package magit-todos
-;;   :straight t
-;;   :after magit
-;;   :config (magit-todos-mode))
+(use-package magit-todos
+  :straight t
+  :after magit
+  :config (magit-todos-mode))
 
 ;;; git.el ends here
