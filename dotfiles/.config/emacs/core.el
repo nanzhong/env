@@ -1,12 +1,9 @@
+;;; -*- lexical-binding: t; -*-
 ;;; core.el --- core configuration
 
 ;;; Commentary:
 
 ;;; Code:
-
-(defconst prog-like-modes
-  '(prog-mode org-mode nix-mode conf-mode yaml-mode)
-  "Major modes that are programming like.")
 
 (use-package emacs
   :config
@@ -54,7 +51,37 @@
   (setq enable-recursive-minibuffers t)
 
   ;; Change default tab behaviour to trigger completion-at-point as well.
-  (setq tab-always-indent 'complete))
+  (setq tab-always-indent 'complete)
+
+  ;; Manual buffer switching should also obey display action rules.
+  (setq switch-to-buffer-obey-display-actions t
+        switch-to-buffer-in-dedicated-window 'pop)
+  (defun make-display-buffer-matcher-function (major-modes)
+    (lambda (buffer-name action)
+      (with-current-buffer buffer-name (apply #'derived-mode-p major-modes))))
+  (setq display-buffer-alist
+        `(("\\*compilation\\*"
+           (display-buffer-reuse-window display-buffer-in-side-window)
+           (window-width . 80)
+           (dedicated . t)
+           (side . right)
+           (slot . 0))
+          ("\\*apropos\\*"
+           (display-buffer-reuse-window display-buffer-in-side-window)
+           (window-width . 80)
+           (dedicated . t)
+           (side . right)
+           (slot . 0))
+          ("\\*help\\*"
+           (display-buffer-reuse-window display-buffer-in-side-window)
+           (window-width . 80)
+           (dedicated . t)
+           (side . right)
+           (slot . 1))))
+
+  (defconst prog-like-modes
+    '(prog-mode org-mode nix-mode conf-mode yaml-mode)
+    "Major modes that are programming like."))
 
 (use-package calendar
   :mode ("\\(.+\\.\\)?diary\\'" . diary-mode)
