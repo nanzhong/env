@@ -110,7 +110,7 @@
   "mode-line segment for displaying buffer properties."
   (concat
    (if (buffer-modified-p) (propertize "█" 'face 'nan-mode-line-buffer-modified) "░")
-   (if (and (buffer-file-name) buffer-read-only) (propertize "" 'face 'nan-mode-line-buffer-read-only) "")))
+   (if (and (buffer-file-name) buffer-read-only) (propertize " " 'face 'nan-mode-line-buffer-read-only) "")))
 
 (defun nan-mode-line-buffer-eol ()
   "mode-line segment for displaying the buffer's eol style."
