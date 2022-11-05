@@ -25,9 +25,6 @@ in {
 
     nixpkgs = {
       config.allowUnfree = true;
-      overlays = [
-        (import ../../overlays/mosh.nix)
-      ];
     };
 
     time.timeZone = "America/Toronto";
