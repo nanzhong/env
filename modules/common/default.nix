@@ -53,6 +53,7 @@ in {
     environment.systemPackages = with pkgs; [
       _1password
       bat
+      cachix
       curl
       dnsutils
       docker
