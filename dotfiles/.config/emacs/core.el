@@ -125,7 +125,7 @@
                 flymake-mode-line-counter-format `("["
                                                    ,(propertize "⨂ " 'face 'compilation-error) ,(flymake--mode-line-counter :error t)
                                                    ,(propertize " ⨁ " 'face 'compilation-warning) ,(flymake--mode-line-counter :warning t)
-                                                   ,(propertize " ⨀ " 'face 'compliation-info) ,(flymake--mode-line-counter :note t)
+                                                   ,(propertize " ⨀ " 'face 'compilation-info) ,(flymake--mode-line-counter :note t)
                                                    "]")))
 
 (use-package yasnippet
