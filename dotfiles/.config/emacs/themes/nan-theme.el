@@ -245,7 +245,7 @@
 
    ;; widgets
    `(widget-field ((t (:background ,bg++ :foreground ,fg))))
-   `(widget-single-line-field ((t (:inherit widget-line))))
+   `(widget-single-line-field ((t (:inherit widget-field))))
    `(widget-button ((t (:background ,bg+++ :foreground ,fg :weight bold))))
    `(widget-button-pressed ((t (:background ,bg++ :foreground ,fg- :weight bold))))
    `(widget-documentation ((t (:foreground ,base-3))))
