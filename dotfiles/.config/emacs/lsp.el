@@ -4,11 +4,13 @@
 
 ;;; Code:
 (use-package eglot
+  :demand t
   :bind (:map eglot-mode-map
               ("C-l r" . eglot-rename)
               ("C-l f" . eglot-format)
               ("C-l a" . eglot-code-actions))
   :config
-  (setq eglot-autoshutdown t))
+  (setq eglot-autoshutdown t
+        eglot-confirm-server-initiated-edits nil))
 
 ;;; lsp.el ends here
