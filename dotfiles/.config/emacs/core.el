@@ -266,35 +266,17 @@
 
 (use-package corfu
   :straight t
-  :after (corfu-popup)
   :custom
   (corfu-cycle t)
   (corfu-auto t)
   :init
-  (global-corfu-mode)
-  (unless (display-graphic-p)
-    (corfu-terminal-mode +1)
-    (corfu-doc-terminal-mode +1)))
-
-(use-package corfu-doc
-  :straight t
-  :after (corfu)
-  :hook (corfu-mode . corfu-doc-mode)
-  :bind (:map corfu-map
-              ("M-d" . corfu-doc-toggle)
-              ("M-p" . corfu-doc-scroll-down)
-              ("M-n" . corfu-doc-scroll-up)))
-
-(use-package popon
-  :straight (popon :type git :host nil :repo "https://codeberg.org/akib/emacs-popon.git"))
+  (global-corfu-mode))
 
 (use-package corfu-terminal
   :straight (corfu-terminal :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-terminal.git")
-  :after (popon))
-
-(use-package corfu-doc-terminal
-  :straight (corfu-doc-terminal :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-doc-terminal.git")
-  :after (corfu-terminal corfu-doc))
+  :config
+  (unless (display-graphic-p)
+    (corfu-terminal-mode +1)))
 
 (use-package ace-window
   :straight t
