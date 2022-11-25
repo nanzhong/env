@@ -123,9 +123,9 @@
   :config (setq flymake-suppress-zero-counters nil
                 flymake-mode-line-lighter ""
                 flymake-mode-line-counter-format `("["
-                                                   ,(propertize "⨂ " 'face 'compilation-error) ,(flymake--mode-line-counter :error t)
-                                                   ,(propertize " ⨁ " 'face 'compilation-warning) ,(flymake--mode-line-counter :warning t)
-                                                   ,(propertize " ⨀ " 'face 'compilation-info) ,(flymake--mode-line-counter :note t)
+                                                   ,(propertize "⨂ " 'face 'compilation-error) (:eval (flymake--mode-line-counter :error t))
+                                                   ,(propertize " ⨁ " 'face 'compilation-warning) (:eval (flymake--mode-line-counter :warning t))
+                                                   ,(propertize " ⨀ " 'face 'compilation-info) (:eval (flymake--mode-line-counter :note t))
                                                    "]")))
 
 (use-package yasnippet
