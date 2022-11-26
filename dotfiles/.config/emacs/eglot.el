@@ -1,4 +1,4 @@
-;;; lsp.el --- lsp configuration
+;;; eglot.el --- eglot configuration
 
 ;;; Commentary:
 
@@ -13,4 +13,4 @@
   (setq eglot-autoshutdown t
         eglot-confirm-server-initiated-edits nil))
 
-;;; lsp.el ends here
+;;; eglot.el ends here
