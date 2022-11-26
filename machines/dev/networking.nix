@@ -39,4 +39,13 @@
     ATTR{address}=="66:b5:37:2d:94:2c", NAME="eth0"
     ATTR{address}=="f6:4a:89:f9:42:26", NAME="eth1"
   '';
+
+  boot = {
+    kernel = {
+      sysctl = {
+        "net.ipv4.conf.all.forwarding" = true;
+        "net.ipv6.conf.all.forwarding" = true;
+      };
+    };
+  };
 }
