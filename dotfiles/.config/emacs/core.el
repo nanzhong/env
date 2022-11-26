@@ -278,6 +278,15 @@
   (unless (display-graphic-p)
     (corfu-terminal-mode +1)))
 
+(use-package kind-icon
+  :straight t
+  :after corfu
+  :custom
+  (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
+  (kind-icon-use-icons nil)
+  :config
+  (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+
 (use-package ace-window
   :straight t
   :bind (("C-x q" . ace-window))
