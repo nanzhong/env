@@ -10,7 +10,7 @@ in {
   config =  mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       asciinema
-      bpytop
+      btop
       cloc
       direnv
       dive
@@ -36,7 +36,6 @@ in {
       nodePackages.bash-language-server
       nodePackages.typescript-language-server
       nodePackages.vscode-langservers-extracted
-      python
       python3
       ripgrep
       rubyPackages.solargraph
