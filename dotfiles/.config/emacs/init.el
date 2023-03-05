@@ -10,6 +10,8 @@
 ;; language server responses are often much larger than the 4KB default
 (setq read-process-output-max (* 10 1024 1024))
 
+(setq native-comp-deferred-compilation-deny-list nil)
+
 ;; Boostrap straight.el
 (defvar bootstrap-version)
 (let ((bootstrap-file
