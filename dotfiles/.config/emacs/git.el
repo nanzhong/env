@@ -5,8 +5,7 @@
 ;;; Code:
 
 (use-package diff-hl
-  :straight t
-  :demand
+  :demand t
   :hook ((dired-mode . diff-hl-dired-mode-unless-remote)
          (diff-hl . diff-hl-flydiff-mode))
   :config
@@ -15,10 +14,10 @@
     (diff-hl-margin-mode)))
 
 (use-package git-modes
-  :straight t)
+  :demand t)
 
 (use-package magit
-  :straight t
+  :demand t
   :bind (("C-x g" . magit-status))
   :hook ((magit-pre-refresh . diff-hl-magit-pre-refresh)
          (magit-post-refresh . diff-hl-magit-post-refresh))
@@ -41,7 +40,7 @@
                  (slot . -1))))
 
 ;; (use-package forge
-;;   :straight t
+;;   :demand t
 ;;   :after magit
 ;;   :config
 ;;   (setq forge-database-file "~/.cache/forge-database.sqlite")
@@ -50,7 +49,7 @@
 ;;         forge-alist))
 
 (use-package magit-todos
-  :straight t
+  :demand t
   :after magit
   :config (magit-todos-mode))
 

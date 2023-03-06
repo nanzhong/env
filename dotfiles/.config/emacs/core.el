@@ -6,13 +6,11 @@
 ;;; Code:
 
 (use-package emacs
+  :elpaca nil
   :config
   ;; Startup
   (setq inhibit-splash-screen t)
   (setq inhibit-startup-message t)
-  (setq initial-buffer-choice (lambda ()
-                                (org-roam-dailies-find-today)
-                                (get-buffer (format-time-string "%Y-%m-%d.org"))))
 
   ;; Make backups of files, even when they're in version control
   (setq vc-make-backup-files t)
@@ -84,6 +82,7 @@
     "Major modes that are programming like."))
 
 (use-package calendar
+  :elpaca nil
   :mode ("\\(.+\\.\\)?diary\\'" . diary-mode)
   :config
   ;; Use ISO calendar date style
@@ -92,32 +91,23 @@
   (add-hook 'diary-mark-entries-hook 'diary-mark-included-diary-files))
 
 (use-package comp
+  :elpaca nil
   :config
   (setq native-comp-async-report-warnings-errors nil))
 
 (use-package direnv
-  :straight t
   :demand t
   :config
   (direnv-mode)
   (setq direnv-always-show-summary nil))
 
 (use-package exec-path-from-shell
-  :straight t
   :demand t
   :config
   (exec-path-from-shell-initialize))
 
-(use-package minions
-  :straight t
-  :config
-  (minions-mode)
-  (setq minions-mode-line-lighter "⍠"
-        minions-mode-line-delimiters '("" . "")
-        minions-prominent-modes '(flymake-mode)))
-
 (use-package flymake
-  :straight t
+  :demand t
   :bind (:map flymake-mode
               ("C-c e" . flymake-show-buffer-diagnostics))
   :config (setq flymake-suppress-zero-counters nil
@@ -129,26 +119,26 @@
                                                    "]")))
 
 (use-package yasnippet
-  :straight t
+  :demand t
   :config
   (yas-global-mode 1))
 
 (use-package yasnippet-snippets
-  :straight t
+  :demand t
   :after yasnippet)
 
 (use-package smartparens
-  :straight t
+  :demand t
   :config
   (smartparens-global-mode t))
 
 (use-package savehist
-  :straight t
+  :elpaca nil
   :init
   (savehist-mode))
 
 (use-package vertico
-  :straight t
+  :demand t
   :bind (:map vertico-map
               ("C-M-j" . vertico-exit-input)
               ("M-RET" . vertico-exit-input))
@@ -157,7 +147,7 @@
   (setq vertico-cycle t))
 
 (use-package orderless
-  :straight t
+  :demand t
   :after vertico
   :init
   (setq completion-styles '(orderless)
@@ -165,7 +155,7 @@
         completion-category-overrides '((file (styles basic partial-completion)))))
 
 (use-package marginalia
-  :straight t
+  :demand t
   :after vertico
   :bind (:map minibuffer-local-map
               ("M-A" . marginalia-cycle))
@@ -173,7 +163,7 @@
   (marginalia-mode))
 
 (use-package consult
-  :straight t
+  :demand t
   :after vertico
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c h" . consult-history)
@@ -240,7 +230,7 @@
   (setq consult-preview-key '(:debounce 0.5 any)))
 
 (use-package embark
-  :straight t
+  :demand t
   :bind (:map minibuffer-local-map
               ("M-." . embark-act)
               ("M-," . embark-dwim)
@@ -257,15 +247,14 @@
                  (window-parameters (mode-line-format . none)))))
 
 (use-package embark-consult
-  :straight t
+  :demand t
   :after (embark consult)
-  :demand t ; only necessary if you have the hook below
   ;; if you want to have consult previews as you move around an
   ;; auto-updating embark collect buffer
   :hook (embark-collect-mode . consult-preview-at-point-mode))
 
 (use-package corfu
-  :straight t
+  :demand t
   :custom
   (corfu-cycle t)
   (corfu-auto t)
@@ -273,13 +262,14 @@
   (global-corfu-mode))
 
 (use-package corfu-terminal
-  :straight (corfu-terminal :type git :host nil :repo "https://codeberg.org/akib/emacs-corfu-terminal.git")
+  :elpaca (corfu-terminal :host codeberg :repo "akib/emacs-corfu-terminal")
+  :demand t
   :config
   (unless (display-graphic-p)
     (corfu-terminal-mode +1)))
 
 (use-package kind-icon
-  :straight t
+  :demand t
   :after corfu
   :custom
   (kind-icon-default-face 'corfu-default) ; to compute blended backgrounds correctly
@@ -288,37 +278,37 @@
   (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
 
 (use-package ace-window
-  :straight t
+  :demand t
   :bind (("C-x q" . ace-window))
   :config
   (setq aw-keys '(?a ?o ?e ?u ?h ?t ?n ?s)))
 
 (use-package editorconfig
-  :straight t
+  :demand t
   :config (editorconfig-mode 1))
 
 (use-package dtrt-indent
-  :straight t
+  :demand t
   :config (dtrt-indent-global-mode))
 
 (use-package which-key
-  :straight t
+  :demand t
   :config (which-key-mode))
 
 (use-package clipetty
-  :straight t
+  :demand t
   :bind (:map universal-argument-map
               ("M-w" . clipetty-kill-ring-save))
   :config
   (setq clipetty-tmux-ssh-tty "echo \"SSH_TTY=$(tmux display-message -p '#{pane_tty}')\""))
 
 (use-package tree-sitter
-  :straight t
+  :demand t
   :config
   (global-tree-sitter-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
 (use-package tree-sitter-langs
-  :straight t)
+  :demand t)
 
 ;;; core.el ends here

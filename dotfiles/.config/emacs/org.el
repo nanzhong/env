@@ -6,7 +6,6 @@
 ;;; Code:
 
 (use-package org
-  :straight t
   :demand t
   :bind (("C-c c" . org-capture)
          ("C-c a" . org-agenda)
@@ -38,7 +37,7 @@
         org-outline-path-complete-in-steps nil))
 
 (use-package org-super-agenda
-  :straight t
+  :demand t
   :config
   (setq org-super-agenda-groups '((:name "Today"
                                          :time-grid t
@@ -55,14 +54,13 @@
   (org-super-agenda-mode))
 
 (use-package org-modern
-  :straight t
+  :demand t
   :config
   (global-org-modern-mode))
 
 (use-package org-roam
-  :straight t
-  :requires org
   :demand t
+  :requires org
   :commands (org-roam-setup
              org-roam-buffer
              org-roam-capture
@@ -95,8 +93,13 @@
                                                                  "#+title: %<%Y-%m-%d>\n"))))
   (org-roam-db-autosync-mode))
 
+(use-package org-roam-daily-initial-buffer
+  :elpaca nil
+  :demand t
+  :after org-roam)
+
 (use-package org-roam-ui
-  :straight (:host github :repo "org-roam/org-roam-ui" :branch "main" :files ("*.el" "out"))
+  :demand t
   :after org-roam
   :config
   (setq org-roam-ui-sync-theme t
@@ -105,7 +108,7 @@
         org-roam-ui-open-on-start nil))
 
 (use-package htmlize
-  :straight t
+  :demand t
   :config
   (setq org-html-htmlize-output-type 'css))
 

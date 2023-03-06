@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package web-mode
-  :straight t
+  :demand t
   :after eglot
   :hook (web-mode . (lambda ()
                       (eglot-ensure)))

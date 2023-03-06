@@ -5,16 +5,16 @@
 ;;; Code:
 
 (use-package treemacs
-  :straight t
+  :demand t
   :defer t)
 
 (use-package treemacs-icons-dired
   :after treemacs dired
-  :straight t
+  :demand t
   :config (treemacs-icons-dired-mode))
 
 (use-package treemacs-magit
   :after treemacs magit
-  :straight t)
+  :demand t)
 
 ;;; treemacs.el ends here

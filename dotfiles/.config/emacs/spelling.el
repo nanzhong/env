@@ -5,6 +5,7 @@
 ;;; Code:
 
 (use-package flyspell
+  :elpaca nil
   :hook ((text-mode . flyspell-mode)
          (org-mode . flyspell-mode)
          (git-commit-mode . flyspell-mode)

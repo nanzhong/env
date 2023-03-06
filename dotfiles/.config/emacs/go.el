@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package go-mode
-  :straight t
+  :demand t
   :after eglot
   :mode "\\.go\\'"
   :hook (go-mode . (lambda ()

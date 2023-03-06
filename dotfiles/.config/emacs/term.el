@@ -5,6 +5,7 @@
 ;;; Code:
 
 (use-package eshell
+  :elpaca nil
   :config
   (defun eshell-new ()
     "Open a new eshell."
@@ -79,7 +80,7 @@ file to edit."
   (setq eshell-cmpl-cycle-completions nil))
 
 (use-package multi-term
-  :straight t
+  :demand t
   :config
   (setq multi-term-program "/usr/local/bin/fish")
   (setq multi-term-program-switches "--login")
