@@ -302,13 +302,4 @@
   :config
   (setq clipetty-tmux-ssh-tty "echo \"SSH_TTY=$(tmux display-message -p '#{pane_tty}')\""))
 
-(use-package tree-sitter
-  :demand t
-  :config
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
-
-(use-package tree-sitter-langs
-  :demand t)
-
 ;;; core.el ends here
