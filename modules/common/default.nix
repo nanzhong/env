@@ -30,7 +30,7 @@ in {
     time.timeZone = "America/Toronto";
 
     boot = {
-      cleanTmpDir = true;
+      tmp.cleanOnBoot = true;
       kernel.sysctl = {
         "fs.inotify.max_user_watches" = "1048576";
         "net.ipv4.ip_forward" = "1";
