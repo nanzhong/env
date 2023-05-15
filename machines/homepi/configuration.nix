@@ -38,14 +38,8 @@
     };
   };
 
-  nixpkgs = {
-    overlays = [
-      (import ../../overlays/ffmpeg-rpi.nix)
-    ];
-  };
-
   environment.systemPackages = with pkgs; [
-    ffmpeg
+    ffmpeg_6-full
     libraspberrypi
     rtorrent
     tailscale
