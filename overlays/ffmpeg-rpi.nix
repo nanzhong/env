@@ -1,7 +1,7 @@
 self: super: {
   ffmpeg = (super.ffmpeg.overrideAttrs (old: rec {
-    configureFlags = old.configureFlags ++ [ "--enable-omx-rpi --enable-nonfree" ];
+    configureFlags = old.configureFlags ++ [ "--enable-omx-rpi" ];
   })).override {
-    nonfreeLicensing = true;
+    withUnfree = true;
   };
 }
