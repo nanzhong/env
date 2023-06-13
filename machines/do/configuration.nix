@@ -1,0 +1,25 @@
+{ self, pkgs, ... }: {
+  nanzhong = {
+    common.enable = true;
+    dev.enable = true;
+    home =  {
+      user = "nzhong";
+      group = "staff";
+    };
+  };
+
+  nixpkgs = {
+    overlays = [
+      (import ../../overlays/alacritty.nix)
+    ];
+  };
+
+  environment.shells = [ pkgs.fish ];
+  environment.systemPackages = with pkgs; [
+    tailscale
+  ];
+
+  services.tailscale.enable = true;
+  services.nix-daemon.enable = true;
+  system.checks.verifyBuildUsers = false;
+}

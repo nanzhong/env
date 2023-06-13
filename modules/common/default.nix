@@ -11,14 +11,16 @@ in {
 
   config = mkIf cfg.enable {
     nix = {
-      package = pkgs.nixUnstable;
       extraOptions = ''
-        experimental-features = nix-command flakes
+        experimental-features = nix-command flakes auto-allocate-uids
+        auto-allocate-uids = true
       '';
+
+      package = pkgs.nixUnstable;
 
       gc = {
         automatic = true;
-        dates = "weekly";
+        interval = { Weekday = 0; Hour = 0; Minute = 0; };
         options = "--delete-older-than 30d";
       };
     };
@@ -28,27 +30,6 @@ in {
     };
 
     time.timeZone = "America/Toronto";
-
-    boot = {
-      tmp.cleanOnBoot = true;
-      kernel.sysctl = {
-        "fs.inotify.max_user_watches" = "1048576";
-        "net.ipv4.ip_forward" = "1";
-      };
-    };
-
-    security.sudo.wheelNeedsPassword = false;
-
-    networking.firewall = {
-      allowPing = true;
-    };
-
-    virtualisation = {
-      docker.enable = true;
-      podman.enable = true;
-    };
-
-    users.mutableUsers = false;
 
     environment.systemPackages = with pkgs; [
       _1password
@@ -83,14 +64,6 @@ in {
 
     programs = {
       fish.enable = true;
-      mosh.enable = true;
-    };
-    services.openssh = {
-      enable = true;
-      settings.PasswordAuthentication = false;
-    };
-    services.cron = {
-      enable = true;
     };
   };
 }

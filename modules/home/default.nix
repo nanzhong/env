@@ -29,21 +29,6 @@ in {
   };
 
   config = {
-    users.users = {
-      "${cfg.user}" = {
-        isNormalUser = true;
-        home = "/home/${cfg.user}";
-        description = "Nan Zhong";
-        extraGroups = [ "wheel" "docker" ];
-        shell = pkgs.fish;
-        openssh.authorizedKeys.keys = keys;
-      };
-
-      root = {
-        openssh.authorizedKeys.keys = keys;
-      };
-    };
-
     home-manager.users."${cfg.user}" = {
       home = {
         stateVersion = "22.05";

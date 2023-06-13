@@ -15,6 +15,7 @@ in {
       direnv
       dive
       doctl
+#      emacs-git
       fd
       gh
       git-filter-repo
@@ -24,12 +25,12 @@ in {
       hunspell
       hunspellDicts.en-us
       hunspellDicts.en-us-large
-      inotify-tools
+#      inotify-tools
       kubectl
       kubernetes-helm
       lazygit
-      lua
-      luajit
+#      lua
+#      luajit
       mariadb-client
       neovim
       nodejs
@@ -47,20 +48,17 @@ in {
       starship
       sumneko-lua-language-server
       syncthing
-      ttfautohint
+#      ttfautohint
       z-lua
     ];
 
-    services.emacs = {
-      enable = true;
-      package = (pkgs.emacsGit-nox.override {
-        nativeComp = true;
-        withSQLite3 = true;
-      } );
-    };
-    services.syncthing = {
-      enable = true;
-      openDefaultPorts = true;
-    };
+#    services.emacs = {
+#      enable = true;
+#      package = pkgs.emacs-git;
+#    };
+#    services.syncthing = {
+#      enable = true;
+#      openDefaultPorts = true;
+#    };
   };
 }
