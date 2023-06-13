@@ -15,7 +15,6 @@ in {
       direnv
       dive
       doctl
-#      emacs-git
       fd
       gh
       git-filter-repo
@@ -52,10 +51,6 @@ in {
       z-lua
     ];
 
-#    services.emacs = {
-#      enable = true;
-#      package = pkgs.emacs-git;
-#    };
 #    services.syncthing = {
 #      enable = true;
 #      openDefaultPorts = true;

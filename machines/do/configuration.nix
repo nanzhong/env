@@ -17,7 +17,6 @@
   environment.shells = [ pkgs.fish ];
   environment.systemPackages = with pkgs; [
     alacritty
-    tailscale
   ];
 
   services.tailscale.enable = true;
