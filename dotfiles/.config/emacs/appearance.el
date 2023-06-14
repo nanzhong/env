@@ -11,12 +11,13 @@
   (add-to-list 'custom-theme-load-path "~/.config/emacs/themes")
   (load-theme 'nan t)
 
-  (if window-system
-      (progn (fringe-mode 5)
-             (setq frame-title-format nil)
-             (add-to-list 'default-frame-alist '(font . "Iosevka 12"))
-             (setq-default cursor-type 'bar))
-    (xterm-mouse-mode 1))
+  ;; GUI
+  (fringe-mode 5)
+  (setq frame-title-format nil)
+  (setq-default cursor-type 'bar)
+
+  ;; TTY
+  (xterm-mouse-mode 1)
 
   ;; No bell
   (setq visible-bell t
