@@ -85,6 +85,9 @@
    `(vertical-border       ((t (:foreground ,bg+ :background ,bg))))
    `(warning               ((t (:foreground ,base-0))))
 
+   ;; menu
+   `(menu ((t (:foreground ,fg-- :background ,bg+))))
+
    ;; tty-menu
    `(tty-menu-enabled-face ((t (:foreground ,fg :background ,bg+))))
    `(tty-menu-disabled-face ((t (:foreground ,fg- :background ,bg+))))
