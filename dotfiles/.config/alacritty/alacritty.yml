@@ -1,3 +1,6 @@
+env:
+  TERM: alacritty-direct
+
 window:
   padding:
     x: 5
