@@ -17,6 +17,7 @@ with lib;
           "with-tree-sitter"
           "with-modern-icon-elrumo1"
         ];
+        restart_service = "changed";
       }
     ];
   };
