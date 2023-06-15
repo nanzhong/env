@@ -11,6 +11,10 @@ font:
   normal:
     family: Iosevka Custom
 
+key_bindings:
+  - { key: Q, mods: Control, chars: "\x11" }
+  - { key: Slash, mods: Control, chars: "\x1f" }
+
 colors:
   primary:
     background: '#161a1d'
