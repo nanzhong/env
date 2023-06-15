@@ -14,6 +14,8 @@ in {
       extraOptions = ''
         experimental-features = nix-command flakes auto-allocate-uids
         auto-allocate-uids = true
+        bash-prompt-prefix = (nix:$name)\040
+        extra-nix-path = nixpkgs=flake:nixpkgs
       '';
 
       package = pkgs.nixUnstable;
