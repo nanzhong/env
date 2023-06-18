@@ -7,7 +7,6 @@
   system.stateVersion = "22.05";
 
   nanzhong = {
-    common.enable = true;
     dev.enable = true;
     home =  {
       user = "nan";

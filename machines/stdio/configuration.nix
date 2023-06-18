@@ -1,6 +1,7 @@
-{ self, pkgs, ... }: {
+{ self, lib, pkgs, ... }:
+with lib;
+{
   nanzhong = {
-    common.enable = true;
     dev.enable = true;
     home =  {
       user = "nan";
@@ -20,6 +21,5 @@
   ];
 
   services.tailscale.enable = true;
-  services.nix-daemon.enable = true;
   system.checks.verifyBuildUsers = false;
 }

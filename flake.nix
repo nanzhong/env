@@ -20,6 +20,11 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    mkAlias = {
+      url = "github:reckenrode/mkAlias";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, darwin, ... }@inputs:
@@ -62,17 +67,17 @@
               ];
             }
           ];
-          specialArgs = { inherit inputs; };
+          specialArgs = { inherit inputs system; };
         };
     in {
       nixosModules = builtins.listToAttrs (map (m: {
         name = m;
-        value = import (./modules-nixos + "/${m}");
-      }) (builtins.attrNames (builtins.readDir ./modules-nixos)));
+        value = import (./modules/nixos + "/${m}");
+      }) (builtins.attrNames (builtins.readDir ./modules/nixos)));
       darwinModules = builtins.listToAttrs (map (m: {
         name = m;
-        value = import (./modules-darwin + "/${m}");
-      }) (builtins.attrNames (builtins.readDir ./modules-darwin)));
+        value = import (./modules/darwin + "/${m}");
+      }) (builtins.attrNames (builtins.readDir ./modules/darwin)));
 
       nixosConfigurations = {
         wrk = mkLinuxSystem inputs.nixpkgs "x86_64-linux" "wrk";

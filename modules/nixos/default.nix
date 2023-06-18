@@ -1,11 +1,9 @@
 { lib, config, pkgs, ... }:
 with lib;
-let
-  cfg = config.nanzhong.common;
-in {
-  imports = [ ../../modules/common/default.nix ];
-  config = mkIf cfg.enable {
-    boot = mkIf pkgs.stdenv.isLinux {
+{
+  imports = [ ../common/default.nix ];
+  config = {
+    boot = {
       tmp.cleanOnBoot = true;
       kernel.sysctl = {
         "fs.inotify.max_user_watches" = "1048576";

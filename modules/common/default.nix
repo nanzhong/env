@@ -1,19 +1,10 @@
 { lib, config, pkgs, ... }:
 with lib;
-let
-  cfg = config.nanzhong.common;
-in {
-  options = {
-    nanzhong.common = {
-      enable = mkEnableOption "Common configuration";
-    };
-  };
-
-  config = mkIf cfg.enable {
+{
+  config = {
     nix = {
       extraOptions = ''
-        experimental-features = nix-command flakes auto-allocate-uids
-        auto-allocate-uids = true
+        experimental-features = nix-command flakes
         bash-prompt-prefix = (nix:$name)\040
         extra-nix-path = nixpkgs=flake:nixpkgs
       '';
@@ -35,32 +26,23 @@ in {
 
     environment.systemPackages = with pkgs; [
       _1password
-      bat
       cachix
       curl
       dnsutils
-      docker
-      docker-compose
       file
       fish
       fishPlugins.forgit
       fishPlugins.fzf-fish
       fzf
-      gcc
       git
-      gnumake
       gnupg
-      htop
       inetutils
-      jq
       mosh
       nix-index
       openssl
-      patchelf
       podman
       tmux
       tree
-      unzip
       wget
     ];
 

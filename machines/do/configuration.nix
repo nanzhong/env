@@ -1,6 +1,5 @@
 { self, pkgs, ... }: {
   nanzhong = {
-    common.enable = true;
     dev.enable = true;
     home =  {
       user = "nzhong";
