@@ -6,18 +6,15 @@ I mainly work on an iPad Pro connected to VMs that run this setup. Because it's 
 
 ## Machines
 
-| Hostname | System          | Description                                |
-|----------|-----------------|--------------------------------------------|
-| `wrk`    | `x86_64-linux`  | My workstation for DigitalOcean.           |
-| `dev`    | `x86_64-linux`  | My workstation for personal side projects. |
-| `media`  | `x86_64-linux`  | My media box.                              |
-| `homepi` | `aarch64-linux` | My rpi at home.                            |
-
+| Hostname | System           | Description                                      |
+|----------|------------------|--------------------------------------------------|
+| `wrk`    | `x86_64-linux`   | Cloud workstation vm for DigitalOcean.           |
+| `dev`    | `x86_64-linux`   | Cloud Workstation vm for personal side projects. |
+| `media`  | `x86_64-linux`   | Cloud media box.                                 |
+| `homepi` | `aarch64-linux`  | rpi at home.                                     |
+| `do`     | `x86_64-darwin`  | DigitalOcean Macbook Pro.                        |
+| `stdio`  | `aarch64-darwin` | M2 Ultra Mac Studio.                             |
 
 ## Usage
 
-To build and activate the various configurations
-
-```sh
-nixos-rebuild switch --flake <path to repo>#<hostname>
-```
+TODO
