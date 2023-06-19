@@ -44,10 +44,6 @@ in {
             recursive = true;
           };
 
-          ".gitconfig" = {
-            source = (../../../dotfiles/.gitconfig. + "${cfg.user}");
-          };
-
           ".gitignore" = {
             source = ../../../dotfiles/.gitignore;
           };

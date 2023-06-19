@@ -1,8 +1,9 @@
 [user]
-	name = Nan Zhong
-	email = me@nanzho.ng
-	signingkey = A2ED35D3
+  name = Nan Zhong
+  email = me@nanzho.ng
+
 [core]
-	editor = nvim
+  editor = emacsclient
+
 [init]
-	defaultBranch = main
+  defaultBranch = main

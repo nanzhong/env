@@ -19,5 +19,13 @@ in {
         openssh.authorizedKeys.keys = cfg.keys;
       };
     };
+
+    home-manager.users."${cfg.user}" = {
+      home.file.".gitconfig" = {
+          ".gitconfig" = {
+            source = (../../../dotfiles/.gitconfig. + "${cfg.user}");
+          };
+      }
+    };
   };
 }
