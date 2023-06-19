@@ -74,7 +74,7 @@
    `(italic                ((t (:italic t))))
    `(cursor                ((t (:background ,fg---))))
    `(ffap                  ((t (:foreground ,base-7))))
-   `(fringe                ((t (:background ,bg+))))
+   `(fringe                ((t (:background ,bg))))
    `(highlight             ((t (:background ,bg+))))
    `(line-number           ((t (:foreground ,bg+++ :background ,bg))))
    `(lazy-highlight        ((t (:background ,base-4))))
