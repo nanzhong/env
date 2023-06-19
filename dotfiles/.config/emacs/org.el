@@ -56,7 +56,8 @@
 (use-package org-modern
   :demand t
   :config
-  (global-org-modern-mode))
+  (global-org-modern-mode)
+  (setq org-modern-label-border 1))
 
 (use-package org-roam
   :demand t
