@@ -31,9 +31,9 @@ in
       emacs-custom
     ];
 
-    # services.emacs = {
-    #   enable = true;
-    #   package = emacs-custom;
-    # };
+    services.emacs = {
+      enable = true;
+      package = emacs-custom;
+    };
   };
 }
