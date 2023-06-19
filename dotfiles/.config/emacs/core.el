@@ -265,8 +265,10 @@
   :elpaca (corfu-terminal :host codeberg :repo "akib/emacs-corfu-terminal")
   :demand t
   :config
-  (unless (display-graphic-p)
-    (corfu-terminal-mode +1)))
+  (add-hook 'after-make-frame-functions
+            (lambda ()
+              (unless (display-graphic-p)
+                (corfu-terminal-mode +1)))))
 
 (use-package kind-icon
   :demand t
