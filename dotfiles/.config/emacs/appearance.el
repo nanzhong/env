@@ -12,7 +12,7 @@
   (load-theme 'nan t)
 
   ;; GUI
-  (fringe-mode 5)
+  (fringe-mode 10)
   (setq frame-title-format nil)
   (setq-default cursor-type 'bar)
 
