@@ -1,4 +1,6 @@
-{ self, pkgs, ... }: {
+{ self, lib, pkgs, ... }:
+with lib;
+{
   nanzhong = {
     dev.enable = true;
     home =  {
@@ -19,6 +21,5 @@
   ];
 
   services.tailscale.enable = true;
-  services.nix-daemon.enable = true;
   system.checks.verifyBuildUsers = false;
 }

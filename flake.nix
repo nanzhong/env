@@ -88,7 +88,7 @@
 
       darwinConfigurations = {
         stdio = mkDarwinSystem inputs.nixpkgs "aarch64-darwin" "stdio";
-        do = mkDarwinSystem inputs.nixpkgs "x86_64-darwin" "do";
+        do = mkDarwinSystem inputs.nixpkgs "aarch64-darwin" "do";
       };
     };
 }
