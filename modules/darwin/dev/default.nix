@@ -27,9 +27,13 @@ in
 {
   imports = [ ../../common/dev/default.nix ];
   config = {
-    environment.systemPackages = with pkgs; [
-      emacs-custom
-    ];
+    environment = {
+      systemPackages = with pkgs; [
+        emacs-custom
+      ];
+
+      pathsToLink = [ "/share/hunspell" ];
+    };
 
     services.emacs = {
       enable = true;

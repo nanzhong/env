@@ -22,7 +22,7 @@ in {
       go
       gopls
       hunspell
-      hunspellDicts.en-us
+      hunspellDicts.en-ca-large
       hunspellDicts.en-us-large
       kubectl
       kubernetes-helm
