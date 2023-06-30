@@ -1,6 +1,5 @@
 { lib, config, pkgs, ...}:
 with lib;
-in
 {
   imports = [ ../../common/dev/default.nix ];
   config = {
