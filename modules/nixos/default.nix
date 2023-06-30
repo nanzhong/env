@@ -11,6 +11,8 @@ with lib;
       };
     };
 
+    nix.gc.dates = "weekly";
+
     networking.firewall = {
       allowPing = true;
     };

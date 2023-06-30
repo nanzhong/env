@@ -6,6 +6,7 @@ in {
   imports = [ ../common/default.nix ];
   config = {
     nix.useDaemon = true;
+    nix.gc.interval = { Weekday = 0; Hour = 0; Minute = 0; };
 
     # This fixes the inpcorrect path ordering
     programs.fish.loginShellInit = ''for p in (string split " " $NIX_PROFILES); fish_add_path --prepend --move $p/bin; end'';
