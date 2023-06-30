@@ -1,8 +1,11 @@
 { lib, config, pkgs, ...}:
 with lib;
-{
+let
+  cfg = config.nanzhong.dev;
+in {
   imports = [ ../../common/dev/default.nix ];
-  config = {
+
+  config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       emacs-git-nox
       syncthing

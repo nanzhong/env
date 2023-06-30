@@ -7,7 +7,7 @@ in {
     enable = mkEnableOption "Dev configuration";
   };
 
-  config =  mkIf cfg.enable {
+  config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       asciinema
       bat

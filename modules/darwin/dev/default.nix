@@ -1,6 +1,7 @@
 { lib, config, pkgs, ... }:
 with lib;
 let
+  cfg = config.nanzhong.dev;
   emacs-custom = (pkgs.emacs-git.override {
     withNS = true;
     withX = false;
@@ -26,7 +27,7 @@ let
 in
 {
   imports = [ ../../common/dev/default.nix ];
-  config = {
+  config = mkIf cfg.enable {
     environment = {
       systemPackages = with pkgs; [
         emacs-custom

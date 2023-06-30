@@ -4,6 +4,8 @@
     ./networking.nix
   ];
 
+  system.stateVersion = "23.11";
+
   nanzhong = {
     home =  {
       user = "nan";
