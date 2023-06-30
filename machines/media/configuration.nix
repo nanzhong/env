@@ -5,7 +5,6 @@
   ];
 
   nanzhong = {
-    common.enable = true;
     home =  {
       user = "nan";
       group = "plex";
