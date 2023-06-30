@@ -22,9 +22,7 @@ in {
 
     home-manager.users."${cfg.user}" = {
       home.file.".gitconfig" = {
-        ".gitconfig" = {
-          source = (../../../dotfiles/.gitconfig. + "${cfg.user}");
-        };
+        source = (../../../dotfiles/.gitconfig. + "${cfg.user}");
       };
     };
   };
