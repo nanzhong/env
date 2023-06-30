@@ -16,7 +16,7 @@ with lib;
 
       emacs = {
         enable = true;
-        package = emacs-git-nox;
+        package = pkgs.emacs-git-nox;
       };
     };
   };
