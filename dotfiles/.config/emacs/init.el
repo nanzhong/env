@@ -70,6 +70,7 @@
 (load (expand-file-name "eglot.el" user-emacs-directory))
 (load (expand-file-name "treemacs.el" user-emacs-directory))
 (load (expand-file-name "org.el" user-emacs-directory))
+(load (expand-file-name "lisp.el" user-emacs-directory))
 (load (expand-file-name "elisp.el" user-emacs-directory))
 (load (expand-file-name "ruby.el" user-emacs-directory))
 (load (expand-file-name "go.el" user-emacs-directory))
