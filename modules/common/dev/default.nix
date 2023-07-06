@@ -30,6 +30,7 @@ in {
       ripgrep
       ruby
       s3cmd
+      sbcl
       shellcheck
       sqlite
       starship
