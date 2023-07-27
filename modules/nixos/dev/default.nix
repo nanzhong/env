@@ -7,6 +7,8 @@ in {
 
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
+      docker
+      docker-compose
       emacs-git-nox
       syncthing
     ];

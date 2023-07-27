@@ -13,8 +13,6 @@ in {
       bat
       btop
       direnv
-      docker
-      docker-compose
       fd
       jq
       gcc
