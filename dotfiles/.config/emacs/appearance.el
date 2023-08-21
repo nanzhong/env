@@ -15,6 +15,9 @@
   (fringe-mode 10)
   (setq frame-title-format nil)
   (setq-default cursor-type 'bar)
+  (when (eq system-type 'darwin)
+    (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+    (add-to-list 'default-frame-alist '(ns-appearance . dark)))
 
   ;; TTY
   (xterm-mouse-mode 1)
