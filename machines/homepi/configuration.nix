@@ -32,7 +32,6 @@
   };
 
   nanzhong = {
-    common.enable = true;
     home =  {
       user = "nan";
     };
