@@ -42,6 +42,8 @@
     libraspberrypi
     rtorrent
     tailscale
+    docker
+    docker-compose
   ];
 
   services.tailscale.enable = true;
