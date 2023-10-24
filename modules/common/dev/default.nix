@@ -32,7 +32,6 @@ in {
       sbcl
       shellcheck
       sqlite
-      starship
       unzip
       z-lua
     ];

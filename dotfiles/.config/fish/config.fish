@@ -22,10 +22,6 @@ else
   set -U fish_user_paths $HOME/bin
 end
 
-if type -q starship
-  starship init fish | source
-end
-
 if type -q z
   source (z --init fish enhanced | psub)
   alias zz="z -c"
