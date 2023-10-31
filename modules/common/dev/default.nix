@@ -19,6 +19,7 @@ in {
       gnumake
       go
       gopls
+      helix
       hunspell
       hunspellDicts.en-ca-large
       hunspellDicts.en-us-large
