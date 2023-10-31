@@ -12,6 +12,7 @@ with lib;
   nixpkgs = {
     overlays = [
       (import ../../overlays/alacritty.nix)
+      (import ../../overlays/fzf-fish.nix)
     ];
   };
 
