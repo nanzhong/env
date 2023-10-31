@@ -8,8 +8,19 @@ in {
     nix.useDaemon = true;
     nix.gc.interval = { Weekday = 0; Hour = 0; Minute = 0; };
 
-    # This fixes the inpcorrect path ordering
-    programs.fish.loginShellInit = ''for p in (string split " " $NIX_PROFILES); fish_add_path --prepend --move $p/bin; end'';
+    # This fixes the inpcorrect path ordering from https://github.com/LnL7/nix-darwin/issues/122#issuecomment-1659465635
+    programs.fish.loginShellInit =
+      let
+        # This naive quoting is good enough in this case. There shouldn't be any
+        # double quotes in the input string, and it needs to be double quoted in case
+        # it contains a space (which is unlikely!)
+        dquote = str: "\"" + str + "\"";
+
+        makeBinPathList = map (path: path + "/bin");
+      in ''
+      fish_add_path --move --prepend --path ${lib.concatMapStringsSep " " dquote (makeBinPathList config.environment.profiles)}
+      set fish_user_paths $fish_user_paths
+    '';
 
     # This is a workaround to setup finder aliases for gui applications so that spotlight can find them
     system.activationScripts.applications.text = mkForce ''
