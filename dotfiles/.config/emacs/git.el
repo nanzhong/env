@@ -53,4 +53,7 @@
   :after magit
   :config (magit-todos-mode))
 
+(use-package git-link
+  :elpaca (git-link :host github :repo "sshaw/git-link")
+  :bind (("C-c g l" . git-link)))
 ;;; git.el ends here
