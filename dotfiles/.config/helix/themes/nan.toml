@@ -1,20 +1,20 @@
-attribute = "base_6"
-comment = "fg_2"
-constant = "base_1"
-constructor = "base_0"
-function = "base_4"
-keyword = "base_7"
-label = "base_7"
-namespace = "base_6"
-operator = "base_7"
-punctuation = "base_0"
-string = "fg"
+"attribute" = "base_6"
+"comment" = "fg_2"
+"constant" = "base_1"
+"constructor" = "base_0"
+"function" = "base_4"
+"keyword" = "base_7"
+"label" = "base_7"
+"namespace" = "base_6"
+"operator" = "base_7"
+"punctuation" = "base_0"
+"string" = "fg"
 "string.regex" = "base_4"
 "string.special" = "base_1"
-tag = "base_7"
-type = "base_3"
+"tag" = "base_7"
+"type" = "base_3"
 "type.builtin" = "base_0"
-variable = "base_5"
+"variable" = "base_5"
 "variable.bultin" = "base_6"
 
 "markup.bold" = { modifiers = ["bold"] }
@@ -27,73 +27,74 @@ variable = "base_5"
 
 "ui.background" = { bg = "bg" }
 "ui.background.separator" = { fg = "bg+" }
-"ui.background" = { bg = "bg" }
 "ui.cursor" = { bg = "bg++" }
 "ui.cursor.match" = { bg = "bg+" }
 "ui.cursor.primary" = { bg = "bg+++" }
-"ui.linenr" = { fg = "fg---", bg = "bg" }
-"ui.linenr.selected" = { fg = "fg---", bg = "bg+" }
+"ui.linenr" = { fg = "fg---", bg = "bg+" }
+"ui.linenr.selected" = { fg = "fg--", bg = "bg+", modifiers = ["bold"] }
+"ui.gutter" = { fg = "fg---", bg = "bg+" }
+"ui.gutter.selected" = { fg = "fg--", bg = "bg+", modifiers = ["bold"] }
 "ui.statusline" = { fg = "fg", bg = "bg+" }
-"ui.statusline.inactive" = { fg = "fg-", bg = "bg+" }
+"ui.statusline.inactive" = { fg = "fg--", bg = "bg+" }
 "ui.statusline.normal" = { fg = "bg", bg = "base_3", modifiers = ["bold"] }
 "ui.statusline.select" = { fg = "bg", bg = "base_7", modifiers = ["bold"] }
 "ui.statusline.insert" = { fg = "bg", bg = "base_4", modifiers = ["bold"] }
-"ui.popup" = { fg = "bg++", bg = "bg" }
-"ui.popup.info" = { fg = "fg-", bg = "bg" }
-"ui.window" = { fg = "bg+", bg = "bg" }
-"ui.help" = { fg = "fg-", bg = "bg" }
+"ui.popup" = { fg = "bg++" }
+"ui.popup.info" = { fg = "fg-" }
+"ui.window" = { fg = "bg+" }
+"ui.help" = { fg = "fg-" }
 "ui.text" = { fg = "fg-" }
-"ui.text.focus" = { fg = "fg" }
-"ui.text.info" = { fg = "fg" }
+"ui.text.focus" = { fg = "fg-", modifiers = ["bold"] }
+"ui.text.info" = { fg = "fg-" }
 "ui.virtual.ruler" = { bg = "bg+" }
 "ui.virtual.whitespace" = { fg = "bg++" }
-"ui.virtual.indent-guide" = { bg = "bg++" }
-"ui.menu" = { fg = "fg-", bg = "bg+" }
-"ui.menu.selected" = { fg = "fg", bg = "bg++" }
-"ui.menu.scroll" = { fg = "bg++", bg = "bg+" }
+"ui.virtual.indent-guide" = { fg = "bg+" }
+"ui.menu" = { fg = "fg-" }
+"ui.menu.selected" = { fg = "base_7", modifiers = ["bold"] }
+"ui.menu.scroll" = { fg = "bg++" }
 "ui.selection" = { bg = "bg+++" }
-"ui.selection.primary" = { bg = "fg---" }
+"ui.selection.primary" = { bg = "fg---", modifiers = ["bold"] }
 "ui.cursorline" = { bg = "bg" }
 "ui.cursorline.primary" = { bg = "bg" }
 
-warning = { fg = "base_2", modifiers = ["bold"] }
-error = { fg = "base_0", modifiers = ["bold"] }
-info = { fg = "base_4", modifiers = ["bold"] }
-hint = { fg = "base_3", modifiers = ["bold"] }
+"warning" = { fg = "base_2", modifiers = ["bold"] }
+"error" = { fg = "base_0", modifiers = ["bold"] }
+"info" = { fg = "base_4", modifiers = ["bold"] }
+"hint" = { fg = "base_3", modifiers = ["bold"] }
 
-diagnostic = { modifiers = ["underlined"] }
+"diagnostic" = { modifiers = ["underlined"] }
 "diagnostic.warning" = { fg = "base_2", modifiers = ["underlined"] }
 "diagnostic.error" = { fg = "base_0", modifiers = ["underlined"] }
 "diagnostic.info" = { fg = "base_4", modifiers = ["underlined"] }
 "diagnostic.hint" = { fg = "base_3", modifiers = ["underlined"] }
 
 [palette]
-black = "#000000"
-white = "#ffffff"
+"black" = "#000000"
+"white" = "#ffffff"
 
-bg      = "#161a1d"
+"bg"    = "#161a1d"
 "bg+"   = "#1e2529"
 "bg++"  = "#272f35"
 "bg+++" = "#303a41"
 
-fg      = "#e2e6e9"
+"fg"    = "#e2e6e9"
 "fg-"   = "#a7b4be"
 "fg--"  = "#6c8393"
 "fg---" = "#414e58"
 
-base_0    = "#ed6a5e"
+"base_0"  = "#ed6a5e"
 "base_0+" = "#f66355"
-base_1    = "#ed8e5e"
+"base_1"  = "#ed8e5e"
 "base_1+" = "#f68b55"
-base_2    = "#edd55e"
+"base_2"  = "#edd55e"
 "base_2+" = "#f6db55"
-base_3    = "#b2ed5e"
+"base_3"  = "#b2ed5e"
 "base_3+" = "#b3f655"
-base_4    = "#5ebeed"
+"base_4"  = "#5ebeed"
 "base_4+" = "#55c1f6"
-base_5    = "#5e76ed"
+"base_5"  = "#5e76ed"
 "base_5+" = "#5570f6"
-base_6    = "#8e5eed"
+"base_6"  = "#8e5eed"
 "base_6+" = "#8b55f6"
-base_7    = "#ed5ea6"
+"base_7"  = "#ed5ea6"
 "base_7+" = "#f655a6"
