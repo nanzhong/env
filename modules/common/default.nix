@@ -43,6 +43,7 @@ with lib;
       tmux
       tree
       wget
+      zoxide
     ];
 
     programs = {

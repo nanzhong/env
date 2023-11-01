@@ -22,10 +22,6 @@ else
   set -U fish_user_paths $HOME/bin
 end
 
-if type -q z
-  source (z --init fish enhanced | psub)
-  alias zz="z -c"
-  alias zi="z -i"
-  alias zf="z -I"
-  alias zb="z -b"
+if type -q zoxide
+  zoxide init fish | source
 end

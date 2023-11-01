@@ -33,7 +33,6 @@ in {
       shellcheck
       sqlite
       unzip
-      z-lua
     ];
   };
 }
