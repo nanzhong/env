@@ -57,6 +57,12 @@ in {
           "bin/ical2diary.fish" = {
             source = ../../../bin/ical2diary.fish;
           };
+          "bin/helix-git-blame" = {
+            source = ../../../bin/helix-git-blame;
+          };
+          "bin/helix-gh-browse" = {
+            source = ../../../bin/helix-gh-browse;
+          };
         };
       };
     };
