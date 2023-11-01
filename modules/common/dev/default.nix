@@ -31,6 +31,7 @@ in {
       s3cmd
       sbcl
       shellcheck
+      sshuttle
       sqlite
       unzip
     ];
