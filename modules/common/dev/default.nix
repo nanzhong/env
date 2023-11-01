@@ -12,10 +12,12 @@ in {
       asciinema
       bat
       btop
+      choose
       direnv
       fd
       jq
       gcc
+      gh
       gnumake
       go
       gopls
