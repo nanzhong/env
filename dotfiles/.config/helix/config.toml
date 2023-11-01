@@ -3,6 +3,7 @@ theme = "nan"
 [editor]
 rulers = [80]
 color-modes = true
+insert-final-newline = false
 
 [editor.file-picker]
 hidden = false
@@ -12,3 +13,7 @@ render = true
 
 [editor.whitespace]
 render = "none"
+
+[keys.normal]
+C-b = ":pipe-to tmux split-window -v helix-git-blame"
+C-l = ":pipe-to tmux split-window -v helix-gh-browse"

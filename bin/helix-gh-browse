@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+# Select Original pane 
+ORIGINAL_PANE=$(tmux select-pane -U)
+
+# Capture the output of the original pane
+PANE_OUTPUT=$(tmux capture-pane -p -t $ORIGINAL_PANE)
+
+# Extract file and line information
+RES=$(echo "$PANE_OUTPUT" | rg -e "(?:NOR|INS|SEL)\s+(\S*)\s[^│]* (\d+):*.*" -o --replace '$1 $2')
+FILE=$(echo $RES | choose 0)
+LINE=$(echo $RES | choose 1)
+
+gh browse "$FILE:$LINE" --no-browser | pbcopy
