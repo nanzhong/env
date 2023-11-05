@@ -25,27 +25,33 @@
       url = "github:reckenrode/mkAlias";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    zig = {
+      url = "github:mitchellh/zig-overlay";
+    };
   };
 
   outputs = { self, darwin, ... }@inputs:
     with inputs;
     let
+      commonModules = {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+        };
+
+        nixpkgs.overlays = [
+          inputs.emacs-overlay.overlay
+          inputs.zig.overlays.default
+        ];
+      };
       mkLinuxSystem = pkgs: system: machine:
         pkgs.lib.nixosSystem {
           system = system;
           modules = builtins.attrValues self.nixosModules ++ [
             (./machines + "/${machine}/configuration.nix")
             home-manager.nixosModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-              };
-
-              nixpkgs.overlays = [
-                inputs.emacs-overlay.overlay
-              ];
-            }
+            commonModules
           ];
           specialArgs = { inherit inputs; };
         };
@@ -56,16 +62,7 @@
           modules = builtins.attrValues self.darwinModules ++ [
             (./machines + "/${machine}/configuration.nix")
             home-manager.darwinModules.home-manager
-            {
-              home-manager = {
-                useGlobalPkgs = true;
-                useUserPackages = true;
-              };
-
-              nixpkgs.overlays = [
-                inputs.emacs-overlay.overlay
-              ];
-            }
+            commonModules
           ];
           specialArgs = { inherit inputs system; };
         };

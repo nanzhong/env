@@ -36,6 +36,8 @@ in {
       sshuttle
       sqlite
       unzip
+
+      zigpkgs.master
     ];
   };
 }
