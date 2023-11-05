@@ -1,0 +1,3 @@
+[[language]]
+name = "go"
+indent = { tab-width = 2, unit = "  " }
