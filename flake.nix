@@ -21,6 +21,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    helix = {
+      url = "github:helix-editor/helix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     mkAlias = {
       url = "github:reckenrode/mkAlias";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -43,6 +48,7 @@
         nixpkgs.overlays = [
           inputs.emacs-overlay.overlay
           inputs.zig.overlays.default
+          inputs.helix.overlays.default
         ];
       };
       mkLinuxSystem = pkgs: system: machine:
