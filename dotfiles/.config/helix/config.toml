@@ -15,6 +15,11 @@ render = true
 [editor.whitespace]
 render = "none"
 
+[editor.statusline]
+left = ["mode", "spacer", "spinner", "file-name", "read-only-indicator", "file-modification-indicator"]
+center = ["diagnostics"]
+right = ["version-control", "spacer", "separator", "selections", "register", "position", "file-encoding"]
+
 [keys.normal]
 C-b = ":pipe-to tmux split-window -v helix-git-blame"
 C-l = ":pipe-to tmux split-window -v helix-gh-browse"
