@@ -4,6 +4,7 @@ theme = "nan"
 rulers = [80]
 color-modes = true
 insert-final-newline = false
+popup-border = "all"
 
 [editor.file-picker]
 hidden = false
