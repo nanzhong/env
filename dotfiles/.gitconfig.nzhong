@@ -3,7 +3,7 @@
   email = nzhong@digitalocean.com
 
 [core]
-  editor = emacsclient
+  editor = hx
 
 [init]
   defaultBranch = main

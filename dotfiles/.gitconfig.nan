@@ -3,7 +3,7 @@
   email = me@nanzho.ng
 
 [core]
-  editor = emacsclient
+  editor = hx
 
 [init]
   defaultBranch = main
