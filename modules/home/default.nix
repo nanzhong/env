@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 with lib;
 let
   keys = [
@@ -35,33 +35,37 @@ in {
   };
 
   config = {
-    home-manager.users."${cfg.user}" = {
-      home = {
-        stateVersion = "22.05";
-        file = {
-          ".config" = {
-            source = ../../../dotfiles/.config;
-            recursive = true;
-          };
+    home-manager = {
+      useGlobalPkgs = true;
+      useUserPackages = true;
+      users."${cfg.user}" = {
+        home = {
+          stateVersion = "22.05";
+          file = {
+            ".config" = {
+              source = ../../dotfiles/.config;
+              recursive = true;
+            };
 
-          ".gitignore" = {
-            source = ../../../dotfiles/.gitignore;
-          };
+            ".gitignore" = {
+              source = ../../dotfiles/.gitignore;
+            };
 
-          "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {
-            source = ../../../bin/do-vpn.sh;
-          };
-          "bin/hipreport.sh" = mkIf cfg.includeDOVPN {
-            source = ../../../bin/hipreport.sh;
-          };
-          "bin/ical2diary.fish" = {
-            source = ../../../bin/ical2diary.fish;
-          };
-          "bin/helix-git-blame" = {
-            source = ../../../bin/helix-git-blame;
-          };
-          "bin/helix-gh-browse" = {
-            source = ../../../bin/helix-gh-browse;
+            "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {
+              source = ../../bin/do-vpn.sh;
+            };
+            "bin/hipreport.sh" = mkIf cfg.includeDOVPN {
+              source = ../../bin/hipreport.sh;
+            };
+            "bin/ical2diary.fish" = {
+              source = ../../bin/ical2diary.fish;
+            };
+            "bin/helix-git-blame" = {
+              source = ../../bin/helix-git-blame;
+            };
+            "bin/helix-gh-browse" = {
+              source = ../../bin/helix-gh-browse;
+            };
           };
         };
       };

@@ -1,7 +1,7 @@
 { lib, config, pkgs, ... }:
 with lib;
 {
-  imports = [ ../common/default.nix ];
+  imports = [ ./default.nix ];
   config = {
     boot = {
       tmp.cleanOnBoot = true;

@@ -3,7 +3,7 @@ with lib;
 let
   mkalias = inputs.mkAlias.outputs.apps.${system}.default.program;
 in {
-  imports = [ ../common/default.nix ];
+  imports = [ ./default.nix ];
   config = {
     nix.useDaemon = true;
     nix.gc.interval = { Weekday = 0; Hour = 0; Minute = 0; };

@@ -1,9 +1,13 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 with lib;
 let
   cfg = config.nanzhong.home;
 in {
-  imports = [ ../../common/home/default.nix ];
+  imports = [ 
+    inputs.home-manager.darwinModules.home-manager  
+    ./default.nix
+  ];
+
   config = {
     users.users = {
       "${cfg.user}" = {
@@ -15,11 +19,11 @@ in {
 
     home-manager.users."${cfg.user}" = {
       home.file.".gitconfig" = {
-        source = ../../../dotfiles/.gitconfig. + "${cfg.user}" + ".darwin";
+        source = ../../dotfiles/.gitconfig. + "${cfg.user}" + ".darwin";
       };
 
       home.file.".terminfo" = {
-        source = ../../../dotfiles/.terminfo;
+        source = ../../dotfiles/.terminfo;
       };
     };
   };

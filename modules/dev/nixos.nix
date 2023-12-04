@@ -3,13 +3,11 @@ with lib;
 let
   cfg = config.nanzhong.dev;
 in {
-  imports = [ ../../common/dev/default.nix ];
-
+  imports = [ ./default.nix ];
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       docker
       docker-compose
-      emacs-git-nox
       syncthing
     ];
 
@@ -17,11 +15,6 @@ in {
       syncthing = {
         enable = true;
         openDefaultPorts = true;
-      };
-
-      emacs = {
-        enable = true;
-        package = pkgs.emacs-git-nox;
       };
     };
   };

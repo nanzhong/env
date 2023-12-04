@@ -1,4 +1,4 @@
-{ lib, config, pkgs, ... }:
+{ lib, config, pkgs, inputs, ... }:
 with lib;
 let
   cfg = config.nanzhong.dev;
@@ -8,6 +8,14 @@ in {
   };
 
   config = mkIf cfg.enable {
+    nixpkgs.overlays = [
+      inputs.helix.overlays.default
+      (final: prev: {
+        zig = inputs.zig.packages.${prev.system}.master;
+        zls = inputs.zls.packages.${prev.system}.zls;
+      })
+    ];
+
     environment.systemPackages = with pkgs; [
       asciinema
       bat
@@ -36,8 +44,8 @@ in {
       sshuttle
       sqlite
       unzip
-
-      zigpkgs.master
+      zig
+      zls
     ];
   };
 }

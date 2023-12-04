@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     nixos-hardware.url = "github:nixos/nixos-hardware/master";
 
     darwin = {
@@ -16,13 +15,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     helix = {
       url = "github:nanzhong/helix/custom";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     mkAlias = {
@@ -33,54 +28,38 @@
     zig = {
       url = "github:mitchellh/zig-overlay";
     };
+
+    zls = {
+      url = "github:zigtools/zls";
+    };
   };
 
-  outputs = { self, darwin, ... }@inputs:
-    with inputs;
+  outputs = { self, ... }@inputs:
     let
-      commonModules = {
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-        };
-
-        nixpkgs.overlays = [
-          inputs.emacs-overlay.overlay
-          inputs.zig.overlays.default
-          inputs.helix.overlays.default
-        ];
-      };
       mkLinuxSystem = pkgs: system: machine:
         pkgs.lib.nixosSystem {
           system = system;
-          modules = builtins.attrValues self.nixosModules ++ [
+          modules = [
+            ./modules/common/nixos.nix
+            ./modules/dev/nixos.nix
+            ./modules/home/nixos.nix
             (./machines + "/${machine}/configuration.nix")
-            home-manager.nixosModules.home-manager
-            commonModules
           ];
           specialArgs = { inherit inputs; };
         };
 
       mkDarwinSystem = pkgs: system: machine:
-        darwin.lib.darwinSystem {
+        inputs.darwin.lib.darwinSystem {
           system = system;
-          modules = builtins.attrValues self.darwinModules ++ [
+          modules = [
+            ./modules/common/darwin.nix
+            ./modules/dev/darwin.nix
+            ./modules/home/darwin.nix
             (./machines + "/${machine}/configuration.nix")
-            home-manager.darwinModules.home-manager
-            commonModules
           ];
           specialArgs = { inherit inputs system; };
         };
     in {
-      nixosModules = builtins.listToAttrs (map (m: {
-        name = m;
-        value = import (./modules/nixos + "/${m}");
-      }) (builtins.attrNames (builtins.readDir ./modules/nixos)));
-      darwinModules = builtins.listToAttrs (map (m: {
-        name = m;
-        value = import (./modules/darwin + "/${m}");
-      }) (builtins.attrNames (builtins.readDir ./modules/darwin)));
-
       nixosConfigurations = {
         wrk = mkLinuxSystem inputs.nixpkgs "x86_64-linux" "wrk";
         dev = mkLinuxSystem inputs.nixpkgs "x86_64-linux" "dev";
