@@ -1,5 +1,5 @@
-function go_org_imports(timeout)
-  local clients = vim.lsp.buf_get_clients()
+local function go_org_imports(timeout)
+  local clients = vim.lsp.get_clients()
   for _, client in pairs(clients) do
 
     local params = vim.lsp.util.make_range_params(nil, client.offset_encoding)

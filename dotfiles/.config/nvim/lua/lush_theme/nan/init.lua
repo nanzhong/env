@@ -26,8 +26,8 @@ local theme = require('lush')(function(injected_functions)
     Folded              { bg = colours.bg_1, fg = colours.fg_1 }, -- Line used for closed folds
     FoldColumn          { bg = colours.bg_1, fg = colours.fg_1 }, -- 'foldcolumn'
     SignColumn          { bg = colours.bg_1, fg = colours.fg_2 }, -- Column where |signs| are displayed
-    IncSearch           { bg = colours.base_2 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
-    Substitute          { bg = colours.base_7}, -- |:substitute| replacement text highlighting
+    IncSearch           { bg = colours.bg_3, fg = colours.base_2 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
+    Substitute          { bg = colours.bg_3, fg = colours.base_7 }, -- |:substitute| replacement text highlighting
     LineNr              { bg = colours.bg_1, fg = colours.fg_3 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNrAbove         { }, -- Line number for when the 'relativenumber' option is set, above the cursor line
     -- LineNrBelow         { }, -- Line number for when the 'relativenumber' option is set, below the cursor line
@@ -67,8 +67,8 @@ local theme = require('lush')(function(injected_functions)
     TabLineFill         { bg = colours.bg }, -- Tab pages line, where there are no labels
     TabLineSel          { bg = colours.bg_2 }, -- Tab pages line, active tab page label
     Title               { fg = colours.base_3, gui = "bold" }, -- Titles for output from ":set all", ":autocmd" etc.
-    Visual              { bg = colours.bg_3 }, -- Visual mode selection
-    VisualNOS           { bg = colours.bg_3, gui = "bold" }, -- Visual mode selection when vim is "Not Owning the Selection".
+    Visual              { bg = colours.bg_3, fg = colours.base_1 }, -- Visual mode selection
+    VisualNOS           { bg = colours.bg_3, fg = colours.base_0,  gui = "bold" }, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg          { fg = colours.base_2 }, -- Warning messages
     Whitespace          { fg = colours.fg_3 }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     Winseparator        { bg = colours.bg, fg = colours.bg_2 }, -- Separator between window splits. Inherts from |hl-VertSplit| by default, which it will replace eventually.
@@ -87,14 +87,14 @@ local theme = require('lush')(function(injected_functions)
     Comment        { fg = colours.fg_2 }, -- Any comment
 
     Constant       { fg = colours.base_1 }, -- (*) Any constant
-    -- String         { }, --   A string constant: "this is a string"
-    -- Character      { }, --   A character constant: 'c', '\n'
-    -- Number         { }, --   A number constant: 234, 0xff
-    -- Boolean        { }, --   A boolean constant: TRUE, false
-    -- Float          { }, --   A floating point constant: 2.3e10
+    String         { fg = colours.fg_1 }, --   A string constant: "this is a string"
+    Character      { fg = colours.fg_1 }, --   A character constant: 'c', '\n'
+    Number         { fg = colours.base_4 }, --   A number constant: 234, 0xff
+    Boolean        { fg = colours.base_3 }, --   A boolean constant: TRUE, false
+    Float          { fg = colours.base_4}, --   A floating point constant: 2.3e10
 
     Identifier     { fg = colours.base_4 }, -- (*) Any variable name
-    -- Function       { }, --   Function name (also: methods for classes)
+    Function       { fg = colours.base_6 }, --   Function name (also: methods for classes)
 
     Statement      { fg = colours.base_7 }, -- (*) Any statement
     -- Conditional    { }, --   if, then, else, endif, switch, etc.
@@ -124,8 +124,8 @@ local theme = require('lush')(function(injected_functions)
 
     Underlined     { gui = "underline" }, -- Text that stands out, HTML links
     -- Ignore         { }, -- Left blank, hidden |hl-Ignore| (NOTE: May be invisible here in template)
-    Error          { bg = colours.base_0 }, -- Any erroneous construct
-    Todo           { bg = colours.base_2 }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
+    Error          { bg = colours.base_0, fg = colours.fg_3 }, -- Any erroneous construct
+    Todo           { bg = colours.base_2, fg = colours.fg_3 }, -- Anything that needs extra attention; mostly the keywords TODO FIXME and XXX
 
     -- These groups are for the native LSP client and diagnostic system. Some
     -- other LSP clients may use these groups, or use their own. Consult your
@@ -144,9 +144,9 @@ local theme = require('lush')(function(injected_functions)
     --
     DiagnosticError            { fg = colours.base_0 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     DiagnosticWarn             { fg = colours.base_2 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticInfo             { fg = colours.base_4 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    DiagnosticHint             { fg = colours.fg } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
-    -- DiagnosticOk               { } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticInfo             { fg = colours.fg_2 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticHint             { fg = colours.fg_3 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
+    DiagnosticOk               { fg = colours.base_3 } , -- Used as the base highlight group. Other Diagnostic highlights link to this by default (except Underline)
     -- DiagnosticVirtualTextError { } , -- Used for "Error" diagnostic virtual text.
     -- DiagnosticVirtualTextWarn  { } , -- Used for "Warn" diagnostic virtual text.
     -- DiagnosticVirtualTextInfo  { } , -- Used for "Info" diagnostic virtual text.
@@ -154,19 +154,19 @@ local theme = require('lush')(function(injected_functions)
     -- DiagnosticVirtualTextOk    { } , -- Used for "Ok" diagnostic virtual text.
     DiagnosticUnderlineError   { fg = colours.base_0, gui = 'underline' } , -- Used to underline "Error" diagnostics.
     DiagnosticUnderlineWarn    { fg = colours.base_2, gui = 'underline' } , -- Used to underline "Warn" diagnostics.
-    DiagnosticUnderlineInfo    { fg = colours.base_4, gui = 'underline' } , -- Used to underline "Info" diagnostics.
-    DiagnosticUnderlineHint    { fg = colours.fg, gui = 'underline' } , -- Used to underline "Hint" diagnostics.
-    -- DiagnosticUnderlineOk      { } , -- Used to underline "Ok" diagnostics.
-    -- DiagnosticFloatingError    { } , -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
-    -- DiagnosticFloatingWarn     { } , -- Used to color "Warn" diagnostic messages in diagnostics float.
-    -- DiagnosticFloatingInfo     { } , -- Used to color "Info" diagnostic messages in diagnostics float.
-    -- DiagnosticFloatingHint     { } , -- Used to color "Hint" diagnostic messages in diagnostics float.
-    -- DiagnosticFloatingOk       { } , -- Used to color "Ok" diagnostic messages in diagnostics float.
+    DiagnosticUnderlineInfo    { fg = colours.fg_2, gui = 'underline' } , -- Used to underline "Info" diagnostics.
+    DiagnosticUnderlineHint    { fg = colours.fg_3, gui = 'underline' } , -- Used to underline "Hint" diagnostics.
+    DiagnosticUnderlineOk      { fg = colours.base_3, gui = 'underline' } , -- Used to underline "Ok" diagnostics.
+    DiagnosticFloatingError    { fg = colours.base_0 } , -- Used to color "Error" diagnostic messages in diagnostics float. See |vim.diagnostic.open_float()|
+    DiagnosticFloatingWarn     { fg = colours.base_2 } , -- Used to color "Warn" diagnostic messages in diagnostics float.
+    DiagnosticFloatingInfo     { fg = colours.fg_2 } , -- Used to color "Info" diagnostic messages in diagnostics float.
+    DiagnosticFloatingHint     { fg = colours.fg_3 } , -- Used to color "Hint" diagnostic messages in diagnostics float.
+    DiagnosticFloatingOk       { fg = colours.base_3 } , -- Used to color "Ok" diagnostic messages in diagnostics float.
     DiagnosticSignError        { bg = colours.bg_1, fg = colours.base_0 } , -- Used for "Error" signs in sign column.
     DiagnosticSignWarn         { bg = colours.bg_1, fg = colours.base_2 } , -- Used for "Warn" signs in sign column.
-    DiagnosticSignInfo         { bg = colours.bg_1, fg = colours.base_4 } , -- Used for "Info" signs in sign column.
-    DiagnosticSignHint         { bg = colours.bg_1, fg = colours.fg } , -- Used for "Hint" signs in sign column.
-    -- DiagnosticSignOk           { } , -- Used for "Ok" signs in sign column.
+    DiagnosticSignInfo         { bg = colours.bg_1, fg = colours.fg_2 } , -- Used for "Info" signs in sign column.
+    DiagnosticSignHint         { bg = colours.bg_1, fg = colours.fg_3 } , -- Used for "Hint" signs in sign column.
+    DiagnosticSignOk           { bg = colours.bg_1, fg = colours.base_3 } , -- Used for "Ok" signs in sign column.
 
     -- Tree-Sitter syntax groups.
     --

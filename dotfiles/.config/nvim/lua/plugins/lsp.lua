@@ -8,25 +8,25 @@ return {
         local hl = 'DiagnosticSign' .. type
         vim.fn.sign_define(hl, { text = icon, texthl = hl })
       end
-  
+
       vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
         border = 'rounded',
       })
-  
+
       vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
         border = 'rounded',
       })
-  
+
       local function with_desc(opts, desc)
         return vim.tbl_extend('force', opts, { desc = desc })
       end
-  
+
       local opts = { noremap = true, silent = true }
       vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, with_desc(opts, 'Open diagnostic float'))
       vim.keymap.set('n', '[e', vim.diagnostic.goto_prev, with_desc(opts, 'Goto prev diagnostic'))
       vim.keymap.set('n', ']e', vim.diagnostic.goto_next, with_desc(opts, 'Goto next diagnostic'))
       vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, with_desc(opts, 'Open diagnastic loclist'))
-  
+
       local on_attach = function(_, bufnr)
         -- Mappings.
         -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -47,9 +47,9 @@ return {
         vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, with_desc(bufopts, 'Code actions'))
         vim.keymap.set('n', '<leader>f', vim.lsp.buf.formatting, with_desc(bufopts, 'Format'))
       end
-  
+
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
-  
+
       local lspconfig = require('lspconfig')
       lspconfig.bashls.setup {
         capabilities = capabilities,
