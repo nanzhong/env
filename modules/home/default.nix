@@ -102,6 +102,10 @@ in {
               source = ../../bin/helix-gh-browse;
             };
           };
+
+          activation.lazy-nvim-lock = ''
+            cp ${../../dotfiles/.config/nvim/lazy-lock.json.snapshot} ~/.config/nvim/lazy-lock.json
+          '';
         };
       };
     };
