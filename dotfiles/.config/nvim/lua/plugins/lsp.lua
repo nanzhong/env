@@ -121,9 +121,9 @@ return {
         capabilities = capabilities,
         filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
       }
-      lspconfig.zig.setup {
+      lspconfig.zls.setup {
         capabilities = capabilities,
-        filetyes = { "zig", "zir", "zon" }
+        filetypes = { "zig", "zir", "zon" }
       }
     end
   }
