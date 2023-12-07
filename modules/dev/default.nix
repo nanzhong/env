@@ -11,6 +11,7 @@ in {
     nixpkgs.overlays = [
       inputs.helix.overlays.default
       (final: prev: {
+        neovim = inputs.neovim.packages.${prev.system}.neovim;
         zig = inputs.zig.packages.${prev.system}.master;
         zls = inputs.zls.packages.${prev.system}.zls;
       })
@@ -35,6 +36,7 @@ in {
       hunspellDicts.en-us-large
       kubectl
       kubernetes-helm
+      neovim
       patchelf
       ripgrep
       ruby
