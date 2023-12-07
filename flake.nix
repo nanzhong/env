@@ -39,7 +39,7 @@
     };
   };
 
-  outputs = { self, ... }@inputs:
+  outputs = { self, nixpkgs, ... }@inputs:
     let
       mkLinuxSystem = pkgs: system: machine:
         pkgs.lib.nixosSystem {
@@ -64,6 +64,14 @@
           ];
           specialArgs = { inherit inputs system; };
         };
+
+      forEachSystem = fn:
+        nixpkgs.lib.genAttrs [
+          "x86_64-linux" "aarch64-linux"
+          "x86_64-darwin" "aarch64-darwin"
+        ] (system: fn {
+          pkgs = import nixpkgs { inherit system; };
+        });
     in {
       nixosConfigurations = {
         wrk = mkLinuxSystem inputs.nixpkgs "x86_64-linux" "wrk";
@@ -76,5 +84,13 @@
         stdio = mkDarwinSystem inputs.nixpkgs "aarch64-darwin" "stdio";
         do = mkDarwinSystem inputs.nixpkgs "aarch64-darwin" "do";
       };
+
+      devShells = forEachSystem ({ pkgs, ... }: {
+        default = pkgs.mkShell {
+          buildInputs = with pkgs; [
+            lua-language-server
+          ];
+        };
+      });
     };
 }
