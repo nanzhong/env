@@ -9,6 +9,35 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJUk2KrM+qnxbNxxeux+liBV9EbAlnNodzDwb8v8GbE+ me@nanzho.ng"
   ];
   cfg = config.nanzhong.home;
+  treesitterWithGrammars = (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: [
+    p.bash
+    p.comment
+    p.css
+    p.dockerfile
+    p.fish
+    p.gitattributes
+    p.gitignore
+    p.go
+    p.gomod
+    p.gowork
+    p.hcl
+    p.javascript
+    p.jq
+    p.json
+    p.lua
+    p.make
+    p.markdown
+    p.nix
+    p.python
+    p.ruby
+    p.rust
+    p.toml
+    p.typescript
+    p.vue
+    p.yaml
+    p.zig
+  ]));
+
 in {
   options = {
     nanzhong.home = {
@@ -41,6 +70,7 @@ in {
       users."${cfg.user}" = {
         home = {
           stateVersion = "22.05";
+
           file = {
             ".config" = {
               source = ../../dotfiles/.config;
@@ -49,6 +79,11 @@ in {
 
             ".gitignore" = {
               source = ../../dotfiles/.gitignore;
+            };
+
+            ".local/share/nvim/nix/nvim-treesitter/" = {
+              recursive = true;
+              source = treesitterWithGrammars;
             };
 
             "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {

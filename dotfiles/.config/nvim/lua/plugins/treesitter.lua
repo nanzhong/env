@@ -1,10 +1,10 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    -- build = ':TSUpdate',
+    dev = true,
     config = function ()
       require('nvim-treesitter.configs').setup {
-        ensure_installed = 'all',
+
         highlight = {
           enable = true
         },
