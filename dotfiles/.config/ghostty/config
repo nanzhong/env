@@ -1,0 +1,33 @@
+background = 161a1d
+foreground= e2e6e9
+
+font-family = "Iosevka Custom"
+font-size = 11
+
+keybind = ctrl+z=close_surface
+keybind = ctrl+d=new_split:right
+
+# black
+palette = 0=#000000
+palette = 8=#161a1d
+# red
+palette = 1=#ed6a5e
+palette = 9=#f66355
+# green
+palette = 2=#b2ed5e
+palette = 10=#b3f655
+# yellow
+palette = 3=#edd55e
+palette = 11=#f6db55
+# blue
+palette = 4=#5e76ed
+palette = 12=#5570f6
+# purple
+palette = 5=#8e5eed
+palette = 13=#8b55f6
+# aqua
+palette = 6=#5ebeed
+palette = 14=#55c1f6
+# white
+palette = 7=#e2e6e9
+palette = 15=#ffffff
