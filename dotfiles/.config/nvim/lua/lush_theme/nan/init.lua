@@ -31,7 +31,7 @@ local theme = require('lush')(function(injected_functions)
     LineNr              { bg = colours.bg_1, fg = colours.fg_3 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNrAbove         { }, -- Line number for when the 'relativenumber' option is set, above the cursor line
     -- LineNrBelow         { }, -- Line number for when the 'relativenumber' option is set, below the cursor line
-    CursorLineNr        { bg = colours.bg_2, fg = colours.fg_2 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
+    CursorLineNr        { bg = colours.bg_1, fg = colours.fg_2 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
     -- CursorLineFold      { }, -- Like FoldColumn when 'cursorline' is set for the cursor line
     -- CursorLineSign      { }, -- Like SignColumn when 'cursorline' is set for the cursor line
     MatchParen          { fg = colours.base_7, gui = "bold" }, -- Character under the cursor or just before it, if it is a paired bracket, and its match. |pi_paren.txt|
