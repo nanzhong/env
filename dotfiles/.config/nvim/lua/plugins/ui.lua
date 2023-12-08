@@ -9,6 +9,11 @@ return {
     end
 	},
   {
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    opts = {},
+  },
+  {
     'nvim-lualine/lualine.nvim',
     lazy = false,
     dependencies = { 'rktjmp/lush.nvim' },
