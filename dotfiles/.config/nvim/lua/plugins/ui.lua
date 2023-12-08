@@ -26,7 +26,12 @@ return {
   {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
-    opts = {},
+    opts = {
+      indent = {
+        char = '│',
+        highlight = 'IndentGuide',
+      },
+    },
   },
   {
     'lewis6991/gitsigns.nvim',

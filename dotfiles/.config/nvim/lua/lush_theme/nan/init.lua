@@ -28,7 +28,7 @@ local theme = require('lush')(function(injected_functions)
     SignColumn          { bg = colours.bg_1, fg = colours.fg_2 }, -- Column where |signs| are displayed
     IncSearch           { bg = colours.bg_3, fg = colours.base_2 }, -- 'incsearch' highlighting; also used for the text replaced with ":s///c"
     Substitute          { bg = colours.bg_3, fg = colours.base_7 }, -- |:substitute| replacement text highlighting
-    LineNr              { bg = colours.bg_1, fg = colours.fg_3 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
+    LineNr              { bg = colours.bg_1, fg = colours.bg_3 }, -- Line number for ":number" and ":#" commands, and when 'number' or 'relativenumber' option is set.
     -- LineNrAbove         { }, -- Line number for when the 'relativenumber' option is set, above the cursor line
     -- LineNrBelow         { }, -- Line number for when the 'relativenumber' option is set, below the cursor line
     CursorLineNr        { bg = colours.bg_1, fg = colours.fg_2 }, -- Like LineNr when 'cursorline' or 'relativenumber' is set for the cursor line.
@@ -251,6 +251,9 @@ local theme = require('lush')(function(injected_functions)
 
     -- LightBulb
     LightBulbSign         { bg = colours.bg_1, fg = colours.fg } , -- Used for "Hint" signs in sign column.
+
+    -- Indent-Blankline.nvim
+    IndentGuide { bg = colours.bg, fg = colours.bg_1 },
   }
 end)
 
