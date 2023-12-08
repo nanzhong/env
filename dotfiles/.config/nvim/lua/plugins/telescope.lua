@@ -11,14 +11,6 @@ return {
         },
         defaults = {
           layout_strategy = 'flex',
-          layout_config = {
-            vertical = {
-              prompt_position = 'top',
-            },
-            horizontal = {
-              prompt_position = 'top',
-            },
-          },
         },
       })
 
