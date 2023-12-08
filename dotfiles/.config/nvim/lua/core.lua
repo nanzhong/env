@@ -10,6 +10,7 @@ vim.opt.cc = vim.opt.cc + { 80 }
 vim.opt.number = true
 vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "_" }
 vim.opt.termguicolors = true
+vim.opt.cursorline = true
 
 -- tab settings
 vim.opt.shiftwidth = 2
