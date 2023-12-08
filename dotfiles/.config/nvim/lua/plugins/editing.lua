@@ -14,7 +14,7 @@ return {
     },
     config = function ()
       local cmp = require('cmp')
- 
+
       cmp.setup({
         snippet = {
           expand = function(args)
@@ -60,7 +60,7 @@ return {
           })
         }
       })
-  
+
       cmp.setup.cmdline('/', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
@@ -68,7 +68,7 @@ return {
           { name = 'buffer' }
         }
       })
-  
+
       cmp.setup.cmdline(':', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({
@@ -78,5 +78,21 @@ return {
           })
       })
     end
-  }
+  },
+  {
+    'windwp/nvim-autopairs',
+    config = function ()
+      require('nvim-autopairs').setup({})
+    end
+  },
+  {
+    'numToStr/Comment.nvim',
+    lazy = false,
+    opts = {},
+  },
+  {
+    'L3MON4D3/LuaSnip',
+    version = 'v2.*',
+	  build = 'make install_jsregexp',
+  },
 }
