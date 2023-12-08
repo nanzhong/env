@@ -1,14 +1,25 @@
 return {
-  {  
+  {
     'nvim-telescope/telescope.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
     config = function()
       require('telescope').setup({
         pickers = {
           find_files = {
-            hidden = true
-          }
-        }
+            hidden = true,
+          },
+        },
+        defaults = {
+          layout_strategy = 'flex',
+          layout_config = {
+            vertical = {
+              prompt_position = 'top',
+            },
+            horizontal = {
+              prompt_position = 'top',
+            },
+          },
+        },
       })
 
       local function project_files()
@@ -18,6 +29,7 @@ return {
       end
 
       vim.keymap.set('n', '<leader>ff', project_files, { desc = 'Open project file' })
+      vim.keymap.set('n', '<leader>fa', require('telescope.builtin').find_files, { desc = 'Open file' })
       vim.keymap.set('n', '<leader>fg', require('telescope.builtin').live_grep, { desc = 'Search for string' })
       vim.keymap.set('n', '<leader>fs', require('telescope.builtin').grep_string, { desc = 'Search for string under cursor' })
       vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, { desc = 'Open buffer' })
