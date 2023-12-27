@@ -8,6 +8,7 @@ in {
     environment.systemPackages = with pkgs; [
       docker
       docker-compose
+      emacs-git-nox
       syncthing
     ];
 
@@ -15,6 +16,11 @@ in {
       syncthing = {
         enable = true;
         openDefaultPorts = true;
+      };
+
+      emacs = {
+        enable = true;
+        package = pkgs.emacs-git-nox;
       };
     };
   };

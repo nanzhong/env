@@ -9,6 +9,7 @@ in {
 
   config = mkIf cfg.enable {
     nixpkgs.overlays = [
+      inputs.emacs.overlay
       (final: prev: {
         neovim = inputs.neovim.packages.${prev.system}.neovim;
         zig = inputs.zig.packages.${prev.system}.master;

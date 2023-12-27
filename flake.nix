@@ -15,6 +15,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    emacs = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     neovim = {
       url = "github:neovim/neovim/master?dir=contrib";
       inputs.nixpkgs.follows = "nixpkgs";

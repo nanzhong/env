@@ -3,7 +3,7 @@
   email = nzhong@digitalocean.com
 
 [core]
-  editor = nvim
+  editor = emacsclient
 
 [init]
   defaultBranch = main
