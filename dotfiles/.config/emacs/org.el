@@ -56,8 +56,7 @@
 (use-package org-modern
   :demand t
   :config
-  (global-org-modern-mode)
-  (setq org-modern-label-border 1))
+  (global-org-modern-mode))
 
 (use-package org-roam
   :demand t
@@ -93,11 +92,6 @@
                                               :if-new (file+head "%<%Y-%m-%d>.org"
                                                                  "#+title: %<%Y-%m-%d>\n"))))
   (org-roam-db-autosync-mode))
-
-(use-package org-roam-daily-initial-buffer
-  :elpaca nil
-  :demand t
-  :after org-roam)
 
 (use-package org-roam-ui
   :demand t
