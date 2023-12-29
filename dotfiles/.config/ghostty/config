@@ -8,6 +8,8 @@ window-padding-x = 5
 window-padding-y = 5
 window-padding-balance = true
 
+macos-option-as-alt = left
+
 # black
 palette = 0=#000000
 palette = 8=#161a1d
