@@ -76,6 +76,7 @@
 (load (expand-file-name "elisp.el" user-emacs-directory))
 (load (expand-file-name "ruby.el" user-emacs-directory))
 (load (expand-file-name "go.el" user-emacs-directory))
+(load (expand-file-name "zig.el" user-emacs-directory))
 (load (expand-file-name "swift.el" user-emacs-directory))
 (load (expand-file-name "js.el" user-emacs-directory))
 (load (expand-file-name "web.el" user-emacs-directory))
