@@ -4,6 +4,7 @@
 
 ;;; Code:
 (use-package eglot
+  :elpaca nil
   :demand t
   :bind (:map eglot-mode-map
               ("C-l r" . eglot-rename)
