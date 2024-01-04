@@ -24,21 +24,8 @@
          (magit-post-refresh . diff-hl-magit-post-refresh))
   :config
   (setq magit-process-popup-time 0
-        magit-bury-buffer-function 'magit-mode-quit-window
-        magit-display-buffer-function #'display-buffer)
-  (add-to-list 'display-buffer-alist
-               `(,(make-display-buffer-matcher-function '(magit-mode))
-                 (display-buffer-reuse-mode-window display-buffer-in-side-window)
-                 (mode magit-mode)
-                 (window-width . 100)
-                 (dedicated . t)
-                 (side . left)
-                 (slot . 0)))
-  (add-to-list 'display-buffer-alist
-               '(".*COMMIT_EDITMSG"
-                 (display-buffer-in-side-window)
-                 (side . left)
-                 (slot . -1))))
+        magit-bury-buffer-function #'magit-restore-window-configuration
+        magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1))
 
 ;; (use-package forge
 ;;   :demand t
