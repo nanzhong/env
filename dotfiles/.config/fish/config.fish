@@ -1,5 +1,5 @@
 alias n="nvim"
-alias e="emacsclient"
+alias e="emacsclient --alternate-editor=''"
 
 set -gx COLORTERM 'truecolor'
 
