@@ -27,6 +27,11 @@ in {
         default = false;
       };
 
+      includeDirenv = mkOption {
+        type = types.bool;
+        default = false;
+      };
+
       keys = mkOption {
         type = types.listOf types.str;
         default = keys;
@@ -66,6 +71,15 @@ in {
               source = ../../bin/helix-gh-browse;
             };
           };
+        };
+
+        programs = {
+          direnv = mkIf cfg.includeDirenv {
+            enable = true;
+            nix-direnv.enable = true;
+          };
+
+          fish.enable = true;
         };
       };
     };

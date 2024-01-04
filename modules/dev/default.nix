@@ -22,6 +22,7 @@ in {
       btop
       choose
       direnv
+      nix-direnv
       fd
       jq
       gcc

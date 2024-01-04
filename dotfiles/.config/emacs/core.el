@@ -98,8 +98,7 @@
 (use-package direnv
   :demand t
   :config
-  (direnv-mode)
-  (setq direnv-always-show-summary nil))
+  (direnv-mode))
 
 (use-package exec-path-from-shell
   :demand t

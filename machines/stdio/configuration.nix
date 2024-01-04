@@ -6,6 +6,7 @@ with lib;
     home =  {
       user = "nan";
       group = "staff";
+      includeDirenv = true;
     };
   };
 

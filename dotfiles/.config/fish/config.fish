@@ -12,10 +12,6 @@ if status is-interactive
   set -gx TERMINFO_DIRS $HOME/.terminfo $TERMINFO_DIRS
 end
 
-if type -q direnv
-  eval (direnv hook fish)
-end
-
 if type -q go
   set -U fish_user_paths $HOME/bin (go env GOPATH)/bin
 else
