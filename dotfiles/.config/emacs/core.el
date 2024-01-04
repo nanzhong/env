@@ -107,7 +107,7 @@
   (exec-path-from-shell-initialize))
 
 (use-package flymake
-  :demand t
+  :elpaca nil
   :bind (:map flymake-mode
               ("C-c e" . flymake-show-buffer-diagnostics))
   :config (setq flymake-suppress-zero-counters nil

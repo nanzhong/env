@@ -22,7 +22,7 @@
                               :files (:defaults "elpaca-test.el" (:exclude "extensions"))
                               :build (:not elpaca--activate-package)))
 ;; Emacs built from emacs-overlay does not include build time info, we manually set it to the current date
-(defvar elpaca--core-date (list (string-to-number (format-time-string "%Y%m%d"))))
+(defvar elpaca-core-date (list (string-to-number (format-time-string "%Y%m%d"))))
 (let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
        (build (expand-file-name "elpaca/" elpaca-builds-directory))
        (order (cdr elpaca-order))
@@ -74,7 +74,8 @@
 (load (expand-file-name "org.el" user-emacs-directory))
 (load (expand-file-name "lisp.el" user-emacs-directory))
 (load (expand-file-name "elisp.el" user-emacs-directory))
-(load (expand-file-name "ruby.el" user-emacs-directory))
+;; TODO The ruby language config is woefully out of date and causing some dependency issues.
+;;(load (expand-file-name "ruby.el" user-emacs-directory))
 (load (expand-file-name "go.el" user-emacs-directory))
 (load (expand-file-name "zig.el" user-emacs-directory))
 (load (expand-file-name "swift.el" user-emacs-directory))
