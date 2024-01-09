@@ -32,6 +32,8 @@
         org-log-into-drawer "LOGBOOK"
         org-id-link-to-org-use-id t
         org-catch-invisible-edits 'smart
+        org-startup-indented t
+        org-indent-indentation-per-level 3
         org-src-preserve-indentation t
         org-refile-use-outline-path 'file
         org-outline-path-complete-in-steps nil))
