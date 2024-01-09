@@ -33,7 +33,6 @@
         org-id-link-to-org-use-id t
         org-catch-invisible-edits 'smart
         org-startup-indented t
-        org-indent-indentation-per-level 3
         org-src-preserve-indentation t
         org-refile-use-outline-path 'file
         org-outline-path-complete-in-steps nil))
@@ -58,7 +57,9 @@
 (use-package org-modern
   :demand t
   :config
-  (global-org-modern-mode))
+  (global-org-modern-mode)
+  ;; Disable hiding stars and it clashes with org-indent-mode
+  (setq org-modern-hide-stars nil))
 
 (use-package org-roam
   :demand t
