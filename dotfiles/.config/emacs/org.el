@@ -76,6 +76,8 @@
          ("C-c r c" . org-roam-capture)
          ("C-c r b" . org-roam-buffer-toggle)
          ("C-c r s" . org-roam-db-sync)
+         ("C-c r t a" . org-roam-tag-add)
+         ("C-c r t r" . org-roam-tag-remove)
          ;; Dailies
          ("C-c r d c" . org-roam-dailies-capture-today)
          ("C-c r d t" . org-roam-dailies-find-today)
