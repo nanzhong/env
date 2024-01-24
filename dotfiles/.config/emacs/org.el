@@ -73,6 +73,7 @@
              org-roam-dailies-find-today)
   :bind (("C-c r f" . org-roam-node-find)
          ("C-c r i" . org-roam-node-insert)
+         ("C-c r r" . org-roam-refile)
          ("C-c r c" . org-roam-capture)
          ("C-c r b" . org-roam-buffer-toggle)
          ("C-c r s" . org-roam-db-sync)
