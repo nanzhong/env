@@ -16,7 +16,7 @@
   (add-hook 'org-mode-hook 'visual-line-mode)
   :config
   (setq org-directory "~/org"
-        org-default-notes-file "~/org/notes.org"
+        org-default-notes-file "~/org/inbox.org"
         org-agenda-files '("~/org" "~/org/dailies/" "~/org/1x1")
         org-agenda-include-diary t
         org-agenda-custom-commands '(("d" "Daily agenda"
