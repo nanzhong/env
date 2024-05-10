@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package emacs
-  :elpaca nil
+  :ensure nil
   :after (minions highlight-indent-guides)
   :config
   (add-to-list 'custom-theme-load-path "~/.config/emacs/themes")
@@ -53,12 +53,12 @@
   (global-set-key (kbd "C-c $") 'toggle-truncate-lines))
 
 (use-package nan-prog-env
-  :elpaca nil
+  :ensure nil
   :demand t
   :after (whitespace highlight-indent-guides))
 
 (use-package nan-mode-line
-  :elpaca nil
+  :ensure nil
   :after minions
   :demand t)
 
@@ -71,7 +71,7 @@
         minions-prominent-modes '(flymake-mode)))
 
 (use-package whitespace
-  :elpaca nil
+  :ensure nil
   :demand t
   :config
   (setq whitespace-line-column 80

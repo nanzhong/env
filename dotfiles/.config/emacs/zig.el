@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package zig-mode
-  :elpaca (zig-mode :host github :repo "nanzhong/zig-mode" :branch "tree-sitter")
+  :ensure (zig-mode :host github :repo "nanzhong/zig-mode" :branch "tree-sitter")
   :demand t
   :mode (("\\.zig\\'" . zig-ts-mode)
          ("\\.zon\\'" . zig-ts-mode))

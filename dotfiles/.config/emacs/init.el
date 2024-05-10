@@ -13,12 +13,12 @@
 (setq native-comp-deferred-compilation-deny-list nil)
 
 ;; Bootstrap elpaca
-(defvar elpaca-installer-version 0.6)
+(defvar elpaca-installer-version 0.7)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
 (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
 (defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
 (defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
-                              :ref nil
+                              :ref nil :depth 1
                               :files (:defaults "elpaca-test.el" (:exclude "extensions"))
                               :build (:not elpaca--activate-package)))
 ;; Emacs built from emacs-overlay does not include build time info, we manually set it to the current date
@@ -33,8 +33,10 @@
     (when (< emacs-major-version 28) (require 'subr-x))
     (condition-case-unless-debug err
         (if-let ((buffer (pop-to-buffer-same-window "*elpaca-bootstrap*"))
-                 ((zerop (call-process "git" nil buffer t "clone"
-                                       (plist-get order :repo) repo)))
+                 ((zerop (apply #'call-process `("git" nil ,buffer t "clone"
+                                                 ,@(when-let ((depth (plist-get order :depth)))
+                                                     (list (format "--depth=%d" depth) "--no-single-branch"))
+                                                 ,(plist-get order :repo) ,repo))))
                  ((zerop (call-process "git" nil buffer t "checkout"
                                        (or (plist-get order :ref) "--"))))
                  (emacs (concat invocation-directory invocation-name))

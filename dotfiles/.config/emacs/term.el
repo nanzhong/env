@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package eshell
-  :elpaca nil
+  :ensure nil
   :config
   (defun eshell-new ()
     "Open a new eshell."

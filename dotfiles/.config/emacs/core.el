@@ -6,7 +6,7 @@
 ;;; Code:
 
 (use-package emacs
-  :elpaca nil
+  :ensure nil
   :config
   ;; Startup
   (setq inhibit-splash-screen t)
@@ -82,7 +82,7 @@
     "Major modes that are programming like."))
 
 (use-package calendar
-  :elpaca nil
+  :ensure nil
   :mode ("\\(.+\\.\\)?diary\\'" . diary-mode)
   :config
   ;; Use ISO calendar date style
@@ -91,7 +91,7 @@
   (add-hook 'diary-mark-entries-hook 'diary-mark-included-diary-files))
 
 (use-package comp
-  :elpaca nil
+  :ensure nil
   :config
   (setq native-comp-async-report-warnings-errors nil))
 
@@ -106,7 +106,7 @@
   (exec-path-from-shell-initialize))
 
 (use-package flymake
-  :elpaca nil
+  :ensure nil
   :bind (:map flymake-mode
               ("C-c e" . flymake-show-buffer-diagnostics))
   :config (setq flymake-suppress-zero-counters nil
@@ -132,7 +132,7 @@
   (smartparens-global-mode t))
 
 (use-package savehist
-  :elpaca nil
+  :ensure nil
   :init
   (savehist-mode))
 
@@ -272,7 +272,7 @@
   (global-corfu-mode))
 
 (use-package corfu-terminal
-  :elpaca (corfu-terminal :host codeberg :repo "akib/emacs-corfu-terminal")
+  :ensure (corfu-terminal :host codeberg :repo "akib/emacs-corfu-terminal")
   :demand t
   :hook (after-make-frame-functions . (lambda ()
                                         (unless (display-graphic-p)

@@ -17,7 +17,7 @@
   :demand t)
 
 (use-package magit
-  :elpaca (magit :host github :repo "magit/magit")
+  :ensure (magit :host github :repo "magit/magit")
   :demand t
   :bind (("C-x g" . magit-status))
   :hook ((magit-pre-refresh . diff-hl-magit-pre-refresh)
@@ -37,13 +37,13 @@
 ;;         forge-alist))
 
 (use-package hl-todo
-  :elpaca (hl-todo :host github :repo "tarsius/hl-todo"))
+  :ensure (hl-todo :host github :repo "tarsius/hl-todo"))
 
 (use-package magit-todos
   :after magit hl-todo
   :config (magit-todos-mode))
 
 (use-package git-link
-  :elpaca (git-link :host github :repo "sshaw/git-link")
+  :ensure (git-link :host github :repo "sshaw/git-link")
   :bind (("C-c g l" . git-link)))
 ;;; git.el ends here

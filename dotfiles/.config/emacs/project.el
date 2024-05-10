@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package project
-  :elpaca nil
+  :ensure nil
   :config
   (setq project-root-markers
         '("package.json"))
