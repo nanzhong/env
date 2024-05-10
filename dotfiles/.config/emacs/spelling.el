@@ -4,11 +4,10 @@
 
 ;;; Code:
 
-(use-package flyspell
+(use-package jinx
   :ensure nil
-  :hook ((text-mode . flyspell-mode)
-         (org-mode . flyspell-mode)
-         (git-commit-mode . flyspell-mode)
-         (prog-mode . flyspell-prog-mode)))
+  :hook (emacs-startup . global-jinx-mode)
+  :bind (("M-$" . jinx-correct)
+         ("C-M-$" . jinx-languages)))
 
 ;;; spelling.el ends here
