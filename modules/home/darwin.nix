@@ -3,8 +3,8 @@ with lib;
 let
   cfg = config.nanzhong.home;
 in {
-  imports = [ 
-    inputs.home-manager.darwinModules.home-manager  
+  imports = [
+    inputs.home-manager.darwinModules.home-manager
     ./default.nix
   ];
 

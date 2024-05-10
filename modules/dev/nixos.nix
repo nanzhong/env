@@ -2,13 +2,16 @@
 with lib;
 let
   cfg = config.nanzhong.dev;
+  emacs-nixos = ((pkgs.emacsPackagesFor pkgs.emacs-git-nox).emacsWithPackages (
+    epkgs: [ epkgs.jinx ]
+  ));
 in {
   imports = [ ./default.nix ];
   config = mkIf cfg.enable {
     environment.systemPackages = with pkgs; [
       docker
       docker-compose
-      emacs-git-nox
+      emacs-nixos
       syncthing
     ];
 
@@ -20,7 +23,7 @@ in {
 
       emacs = {
         enable = true;
-        package = pkgs.emacs-git-nox;
+        package = emacs-nixos;
       };
     };
   };

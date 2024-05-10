@@ -2,7 +2,7 @@
 with lib;
 let
   cfg = config.nanzhong.dev;
-  emacs-custom = (pkgs.emacs-git.override {
+  emacs-darwin = (pkgs.emacs-git.override {
     withNS = true;
     withX = false;
     withGTK2 = false;
@@ -23,7 +23,16 @@ let
         cp "${../../patches/emacs/emacs-16.png}" "etc/images/icons/hicolor/16x16/apps/emacs.png"
       ''
     ];
+
+    # Spell checking (e.g. hunspell, libenchant) expect XDG_DATA_DIRS to be set in order to find the necessary dictionaries
+    postInstall = old.postInstall + ''
+      wrapProgram "$out/Applications/Emacs.app/Contents/MacOS/Emacs" \
+        --set XDG_DATA_DIRS ${concatStringsSep ":" (map (path: path + "/share") config.environment.profiles)}
+    '';
   });
+  emacs-custom = ((pkgs.emacsPackagesFor emacs-darwin).emacsWithPackages (
+    epkgs: [ epkgs.jinx ]
+  ));
 in
 {
   imports = [ ./default.nix ];
