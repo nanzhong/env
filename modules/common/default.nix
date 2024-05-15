@@ -9,7 +9,7 @@ with lib;
         extra-nix-path = nixpkgs=flake:nixpkgs
       '';
 
-      package = pkgs.nixUnstable;
+      package = pkgs.nixVersions.latest;
 
       gc = {
         automatic = true;
