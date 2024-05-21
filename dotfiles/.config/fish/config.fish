@@ -4,8 +4,8 @@ alias e="emacsclient --alternate-editor=''"
 set -gx COLORTERM 'truecolor'
 
 if status is-interactive
-  set -gx EDITOR 'emacsclient'
-  set -gx VISUAL 'emacsclient'
+  set -gx EDITOR 'hx'
+  set -gx VISUAL 'hx'
   set -gx FZF_DEFAULT_COMMAND 'fd --hidden .'
   set -gx FZF_DEFAULT_OPTS '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*" --color="bg+:#1e2529,border:#272f35,gutter:#1e2529"'
   set -gx FORGIT_FZF_DEFAULT_OPTS $FZF_DEFAULT_OPTS

@@ -9,6 +9,7 @@ in {
 
   config = mkIf cfg.enable {
     nixpkgs.overlays = [
+      inputs.helix.overlays.default
       inputs.emacs.overlay
       (final: prev: {
         zig = inputs.zig.packages.${prev.system}.master;
@@ -30,6 +31,7 @@ in {
       gnumake
       go
       gopls
+      helix
       hunspell
       hunspellDicts.en-ca-large
       hunspellDicts.en-us-large

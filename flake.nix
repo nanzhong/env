@@ -15,6 +15,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    helix = {
+       url = "github:helix-editor/helix";
+       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     emacs = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
