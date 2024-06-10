@@ -12,6 +12,7 @@ in {
       inputs.helix.overlays.default
       inputs.emacs.overlay
       (final: prev: {
+        neovim = inputs.neovim.packages.${prev.system}.neovim;
         zig = inputs.zig.packages.${prev.system}.master;
         zls = inputs.zls.packages.${prev.system}.zls;
       })
@@ -37,6 +38,9 @@ in {
       hunspellDicts.en-us-large
       kubectl
       kubernetes-helm
+      marksman
+      markdown-oxide
+      neovim
       patchelf
       ripgrep
       ruby

@@ -3,11 +3,16 @@ return {
     'neovim/nvim-lspconfig',
     dependencies = { 'hrsh7th/cmp-nvim-lsp' },
     config = function()
-      local signs = { Error = '‼', Warn = '!', Hint = '?', Info = '*' }
-      for type, icon in pairs(signs) do
-        local hl = 'DiagnosticSign' .. type
-        vim.fn.sign_define(hl, { text = icon, texthl = hl })
-      end
+      vim.diagnostic.config({
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = '‼',
+            [vim.diagnostic.severity.WARN] = '!',
+            [vim.diagnostic.severity.HINT] = '?',
+            [vim.diagnostic.severity.INFO] = '*',
+          },
+        },
+      })
 
       vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
         border = 'rounded',
@@ -43,7 +48,8 @@ return {
           vim.keymap.set('n', 'K', vim.lsp.buf.hover, with_desc(bufopts, 'Show documentation'))
           vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, with_desc(bufopts, 'Show signature help'))
           vim.keymap.set('n', '<leader>wa', vim.lsp.buf.add_workspace_folder, with_desc(bufopts, 'Add workspace folder'))
-          vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder, with_desc(bufopts, 'Remove workspace folder'))
+          vim.keymap.set('n', '<leader>wr', vim.lsp.buf.remove_workspace_folder,
+            with_desc(bufopts, 'Remove workspace folder'))
           vim.keymap.set('n', '<leader>wl', function()
             print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
           end, with_desc(bufopts, 'List workspace folders'))
@@ -68,7 +74,7 @@ return {
         capabilities = capabilities,
         settings = {
           gopls = {
-            buildFlags = {'-tags=integration'}
+            buildFlags = { '-tags=integration' }
           }
         }
       }
@@ -87,7 +93,7 @@ return {
       lspconfig.lua_ls.setup {
         on_init = function(client)
           local path = client.workspace_folders[1].name
-          if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
+          if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
             client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
               Lua = {
                 runtime = {
@@ -119,7 +125,7 @@ return {
       }
       lspconfig.volar.setup {
         capabilities = capabilities,
-        filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
+        filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' }
       }
       lspconfig.zls.setup {
         capabilities = capabilities,

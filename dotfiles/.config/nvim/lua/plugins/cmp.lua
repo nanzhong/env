@@ -14,7 +14,7 @@ return {
     },
     config = function ()
       local cmp = require('cmp')
- 
+
       cmp.setup({
         snippet = {
           expand = function(args)
@@ -44,6 +44,7 @@ return {
           { name = 'nvim_lsp_signature_help' },
           { name = 'nvim_lua' },
           { name = 'luasnip' },
+        }, {
           { name = 'buffer' },
         }),
         formatting = {
@@ -60,7 +61,7 @@ return {
           })
         }
       })
-  
+
       cmp.setup.cmdline('/', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = {
@@ -68,7 +69,7 @@ return {
           { name = 'buffer' }
         }
       })
-  
+
       cmp.setup.cmdline(':', {
         mapping = cmp.mapping.preset.cmdline(),
         sources = cmp.config.sources({

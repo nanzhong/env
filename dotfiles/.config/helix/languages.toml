@@ -1,3 +1,7 @@
 [[language]]
 name = "go"
 indent = { tab-width = 2, unit = "  " }
+
+[[language]]
+name = "markdown"
+soft-wrap.enable = true

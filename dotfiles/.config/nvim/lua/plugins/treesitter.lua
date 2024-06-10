@@ -1,10 +1,37 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    dev = true,
+    build = ':TSUpdate',
     config = function ()
       require('nvim-treesitter.configs').setup {
-
+        ensure_installed = {
+          'bash',
+          'comment',
+          'css',
+          'dockerfile',
+          'fish',
+          'gitattributes',
+          'gitignore',
+          'go',
+          'gomod',
+          'gowork',
+          'hcl',
+          'javascript',
+          'jq',
+          'json',
+          'lua',
+          'make',
+          'markdown',
+          'nix',
+          'python',
+          'ruby',
+          'rust',
+          'toml',
+          'typescript',
+          'vue',
+          'yaml',
+          'zig',
+        },
         highlight = {
           enable = true
         },

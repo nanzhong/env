@@ -4,7 +4,7 @@
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJUk2KrM+qnxbNxxeux+liBV9EbAlnNodzDwb8v8GbE+
 
 [core]
-  editor = hx
+  editor = nvim
 
 [init]
   defaultBranch = main

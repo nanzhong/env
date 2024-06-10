@@ -71,6 +71,11 @@ in {
               source = ../../bin/helix-gh-browse;
             };
           };
+
+          activation.nvimLazyLock = ''
+            cp ${../../dotfiles/.config/nvim/lazy-lock.json.snapshot} ~/.config/nvim/lazy-lock.json
+            chmod 0644 ~/.config/nvim/lazy-lock.json
+          '';
         };
 
         programs = {
