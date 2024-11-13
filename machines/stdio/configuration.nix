@@ -19,4 +19,5 @@ with lib;
   environment.shells = [ pkgs.fish ];
   services.tailscale.enable = true;
   system.checks.verifyBuildUsers = false;
+  system.stateVersion = 5;
 }
