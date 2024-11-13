@@ -10,6 +10,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    raspberry-pi-nix.url = "github:nix-community/raspberry-pi-nix";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -83,6 +85,7 @@
         dev = mkLinuxSystem inputs.nixpkgs "x86_64-linux" "dev";
         media = mkLinuxSystem inputs.nixpkgs "x86_64-linux" "media";
         homepi = mkLinuxSystem inputs.nixpkgs "aarch64-linux" "homepi";
+        devpi = mkLinuxSystem inputs.nixpkgs "aarch64-linux" "devpi";
       };
 
       darwinConfigurations = {
