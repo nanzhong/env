@@ -5,7 +5,6 @@ let
   emacs-darwin = (pkgs.emacs-git.override {
     withNS = true;
     withX = false;
-    withGTK2 = false;
     withGTK3 = false;
   }).overrideAttrs (old: {
     postPatch = concatStringsSep "\n" [
