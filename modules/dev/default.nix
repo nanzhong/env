@@ -43,6 +43,7 @@ in {
       mariadb
       neovim
       patchelf
+      qemu
       ripgrep
       ruby
       s3cmd
