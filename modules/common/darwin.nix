@@ -23,20 +23,13 @@ in {
     '';
 
     # This is a workaround to setup finder aliases for gui applications so that spotlight can find them
-    system.activationScripts.applications.text = mkForce ''
-    echo "linking apps to /Applications..." >&2
-    app_path="/Applications/Nix Apps"
-    tmp_path="/tmp/nix-darwin-link-applications"
-
-    rm -rf "$tmp_path"
-    mkdir "$tmp_path"
-
-    ${pkgs.fd}/bin/fd \
-      -t l -d 1 . ${config.system.build.applications}/Applications \
-      -x $DRY_RUN_CMD ${mkalias} -L {} "$tmp_path/{/}"
-
-    $DRY_RUN_CMD rm -rf "$app_path"
-    $DRY_RUN_CMD mv "$tmp_path" "$app_path"
-  '';
+    system.activationScripts.postUserActivation.text = ''
+      apps_source="${config.system.build.applications}/Applications"
+      moniker="Nix Trampolines"
+      app_target_base="$HOME/Applications"
+      app_target="$app_target_base/$moniker"
+      mkdir -p "$app_target"
+      ${pkgs.rsync}/bin/rsync --archive --checksum --chmod=-w --copy-unsafe-links --delete "$apps_source/" "$app_target"
+    '';
   };
 }
