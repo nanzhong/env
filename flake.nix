@@ -81,7 +81,6 @@
         });
     in {
       nixosConfigurations = {
-        wrk = mkLinuxSystem inputs.nixpkgs "x86_64-linux" "wrk";
         dev = mkLinuxSystem inputs.nixpkgs "x86_64-linux" "dev";
         media = mkLinuxSystem inputs.nixpkgs "x86_64-linux" "media";
         homepi = mkLinuxSystem inputs.nixpkgs "aarch64-linux" "homepi";
@@ -90,7 +89,6 @@
 
       darwinConfigurations = {
         stdio = mkDarwinSystem inputs.nixpkgs "aarch64-darwin" "stdio";
-        do = mkDarwinSystem inputs.nixpkgs "aarch64-darwin" "do";
       };
 
       devShells = forEachSystem ({ pkgs, ... }: {

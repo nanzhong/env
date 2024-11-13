@@ -1,6 +1,6 @@
 # env
 
-This repository contains all the configuration needed to bootstrap my various machines and environments. It relies heavily on the nix ecosystem. This configuration manages my daily drivers that I use for both work @ [DigitalOcean](https://grnh.se/qmyvxul81) and personal side projects, as well as the other machines that I use. This setup is tailored specifically to me, so it likely contains things that are irrelevant or unwanted for you and your needs.
+This repository contains all the configuration needed to bootstrap my various machines and environments. It relies heavily on the nix ecosystem. This configuration manages my daily drivers that I use for both work and personal side projects, as well as the other machines that I use. This setup is tailored specifically to me, so it likely contains things that are irrelevant or unwanted for you and your needs.
 
 While I am by no means a nix expert, and don't pretend to be one, I aim to follow best practices and to demonstrate one way to organize and structure system and user configuration using a nix flake.
 
@@ -41,9 +41,8 @@ I only make use of home-manager to create symlinks for my dotfiles. The user con
 
 | Hostname | System           | Description                                      |
 |----------|------------------|--------------------------------------------------|
-| `wrk`    | `x86_64-linux`   | Cloud workstation vm for DigitalOcean.           |
 | `dev`    | `x86_64-linux`   | Cloud Workstation vm for personal side projects. |
 | `media`  | `x86_64-linux`   | Cloud media box.                                 |
 | `homepi` | `aarch64-linux`  | rpi at home.                                     |
-| `do`     | `x86_64-darwin`  | DigitalOcean Macbook Pro.                        |
+| `devpi`  | `aarch64-linux`  | rpi I carry around for fun.                      |
 | `stdio`  | `aarch64-darwin` | M2 Ultra Mac Studio.                             |
