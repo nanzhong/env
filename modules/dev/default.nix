@@ -40,6 +40,7 @@ in {
       kubernetes-helm
       marksman
       markdown-oxide
+      mariadb
       neovim
       patchelf
       ripgrep
