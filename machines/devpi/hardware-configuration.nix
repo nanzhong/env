@@ -1,8 +1,9 @@
 { ... }: {
   raspberry-pi-nix.board = "bcm2712";
   boot = {
+    kernelModules = [ "libcomposite" ];
     kernelParams = [
-      "modules-load=dwc2,g_ether"
+      "modules-load=dwc2"
     ];
   };
   hardware = {
