@@ -9,13 +9,7 @@ in {
 
   config = mkIf cfg.enable {
     nixpkgs.overlays = [
-      inputs.helix.overlays.default
       inputs.emacs.overlay
-      (final: prev: {
-        neovim = inputs.neovim.packages.${prev.system}.neovim;
-        zig = inputs.zig.packages.${prev.system}.master;
-        zls = inputs.zls.packages.${prev.system}.zls;
-      })
     ];
 
     environment.systemPackages = with pkgs; [
@@ -32,7 +26,6 @@ in {
       gnumake
       go
       gopls
-      helix
       hunspell
       hunspellDicts.en-ca-large
       hunspellDicts.en-us-large
@@ -41,7 +34,6 @@ in {
       marksman
       markdown-oxide
       mariadb
-      neovim
       patchelf
       qemu
       ripgrep
@@ -52,8 +44,6 @@ in {
       sshuttle
       sqlite
       unzip
-      zig
-      zls
     ];
   };
 }

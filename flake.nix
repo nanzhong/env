@@ -1,6 +1,6 @@
 {
   description = "Nan's environment configurations";
-  
+
   nixConfig = {
     extra-substituters = [
       "https://nix-community.cachix.org"
@@ -26,16 +26,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    neovim = {
-       url = "github:nix-community/neovim-nightly-overlay";
-       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    helix = {
-       url = "github:helix-editor/helix";
-       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     emacs = {
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -44,14 +34,6 @@
     mkAlias = {
       url = "github:reckenrode/mkAlias";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    zig = {
-      url = "github:mitchellh/zig-overlay";
-    };
-
-    zls = {
-      url = "github:zigtools/zls";
     };
   };
 
