@@ -21,10 +21,6 @@ in {
       home.file.".gitconfig" = {
         source = ../../dotfiles/.gitconfig. + "${cfg.user}" + ".darwin";
       };
-
-      home.file.".terminfo" = {
-        source = ../../dotfiles/.terminfo;
-      };
     };
   };
 }

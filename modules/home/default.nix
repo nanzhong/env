@@ -52,6 +52,9 @@ in {
               source = ../../dotfiles/.config;
               recursive = true;
             };
+            ".terminfo" = {
+              source = ../../dotfiles/.terminfo;
+            };
             ".gitignore" = {
               source = ../../dotfiles/.gitignore;
             };
