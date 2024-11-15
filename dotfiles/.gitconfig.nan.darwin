@@ -9,6 +9,12 @@
 [init]
   defaultBranch = main
 
+[gpg]
+  format = ssh
+
+[commit]
+  gpgsign = true
+
 [url "git@github.internal.digitalocean.com:"]
   insteadOf = git://github.internal.digitalocean.com/
   insteadOf = https://github.internal.digitalocean.com/
