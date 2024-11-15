@@ -274,7 +274,7 @@
 (use-package corfu-terminal
   :ensure (corfu-terminal :host codeberg :repo "akib/emacs-corfu-terminal")
   :demand t
-  :hook (after-make-frame-functions . (lambda ()
+  :hook (after-make-frame-functions . (lambda (_)
                                         (unless (display-graphic-p)
                                           (corfu-terminal-mode +1)))))
 
