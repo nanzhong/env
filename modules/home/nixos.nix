@@ -24,6 +24,8 @@ in {
       };
     };
 
+    programs.ssh.startAgent = true;
+
     home-manager.users."${cfg.user}" = {
       home.file.".gitconfig" = {
         source = (../../dotfiles/.gitconfig. + "${cfg.user}");
