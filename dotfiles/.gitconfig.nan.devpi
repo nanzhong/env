@@ -1,0 +1,10 @@
+[user]
+  name = Nan Zhong
+  email = me@nanzho.ng
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIYtYfxEmZmLmNTpNRcR7eF8IpU+wdcTZSHWGA0SNqTw
+
+[core]
+  editor = emacsclient
+
+[init]
+  defaultBranch = main

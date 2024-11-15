@@ -36,6 +36,11 @@ in {
         type = types.listOf types.str;
         default = keys;
       };
+
+      gitconfig = mkOption {
+        type = types.str;
+        default = ".gitconfig.${cfg.user}";
+      };
     };
   };
 
@@ -54,6 +59,9 @@ in {
             };
             ".terminfo" = {
               source = ../../dotfiles/.terminfo;
+            };
+            ".gitconfig" = {
+              source = ../../dotfiles/${cfg.gitconfig};
             };
             ".gitignore" = {
               source = ../../dotfiles/.gitignore;

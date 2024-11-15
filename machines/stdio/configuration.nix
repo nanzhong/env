@@ -7,6 +7,7 @@ with lib;
       user = "nan";
       group = "staff";
       includeDirenv = true;
+      gitconfig = ".gitconfig.nan.darwin";
     };
   };
 

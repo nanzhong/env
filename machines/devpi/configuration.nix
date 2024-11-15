@@ -10,6 +10,7 @@
     dev.enable = true;
     home =  {
       user = "nan";
+      gitconfig = ".gitconfig.nan.devpi";
     };
   };
 
