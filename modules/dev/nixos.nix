@@ -13,6 +13,7 @@ in {
       docker-compose
       emacs-nixos
       syncthing
+      vscode
     ];
 
     services = {
