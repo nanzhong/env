@@ -80,6 +80,7 @@
 
       darwinConfigurations = {
         stdio = mkDarwinSystem inputs.nixpkgs "aarch64-darwin" "stdio";
+        wrk = mkDarwinSystem inputs.nixpkgs "aarch64-darwin" "wrk";
       };
 
       devShells = forEachSystem ({ pkgs, ... }: {

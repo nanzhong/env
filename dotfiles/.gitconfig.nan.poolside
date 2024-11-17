@@ -1,7 +1,7 @@
 [user]
   name = Nan Zhong
   email = me@nanzho.ng
-  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJUk2KrM+qnxbNxxeux+liBV9EbAlnNodzDwb8v8GbE+
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbiU4cHpFhpAvsrSYIA6gI1Xz9564tz0OVhPZlsSFLR
 
 [core]
   editor = emacsclient

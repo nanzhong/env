@@ -39,10 +39,11 @@ I only make use of home-manager to create symlinks for my dotfiles. The user con
 
 ## Machines
 
-| Hostname | System           | Description                                      |
-|----------|------------------|--------------------------------------------------|
-| `dev`    | `x86_64-linux`   | Cloud Workstation vm for personal side projects. |
-| `media`  | `x86_64-linux`   | Cloud media box.                                 |
-| `homepi` | `aarch64-linux`  | rpi at home.                                     |
-| `devpi`  | `aarch64-linux`  | rpi I carry around for fun.                      |
-| `stdio`  | `aarch64-darwin` | M2 Ultra Mac Studio.                             |
+| Hostname | System           | Description                                     |
+|----------|------------------|-------------------------------------------------|
+| `dev`    | `x86_64-linux`   | Cloud Workstation vm for personal side projects |
+| `media`  | `x86_64-linux`   | Cloud media box                                 |
+| `homepi` | `aarch64-linux`  | rpi at home                                     |
+| `devpi`  | `aarch64-linux`  | rpi I carry around for fun                      |
+| `stdio`  | `aarch64-darwin` | M2 Ultra Mac Studio - personal                  |
+| `wrk`    | `aarch64-darwin` | M4 Pro Macbook Pro - work                       |
