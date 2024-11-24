@@ -17,6 +17,10 @@ with lib;
     ];
   };
 
+  environment.systemPackages = with pkgs; [
+    awscli2
+  ];
+
   environment.shells = [ pkgs.fish ];
   services.tailscale.enable = true;
   system.stateVersion = 5;
