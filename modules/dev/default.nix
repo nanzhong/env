@@ -15,13 +15,13 @@ in {
     environment.systemPackages = with pkgs; [
       asciinema
       bat
+      bazelisk
       btop
       choose
       direnv
       nix-direnv
       fd
       jq
-      gcc
       gh
       gnumake
       go
