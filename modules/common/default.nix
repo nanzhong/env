@@ -24,7 +24,6 @@ with lib;
     time.timeZone = "America/Toronto";
 
     environment.systemPackages = with pkgs; [
-      _1password
       cachix
       curl
       dnsutils
@@ -48,7 +47,7 @@ with lib;
 
     programs = {
       fish.enable = true;
-      nix-ld.enable = true;
+      #nix-ld.enable = true;
     };
   };
 }
