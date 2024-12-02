@@ -15,9 +15,11 @@ in {
     environment.systemPackages = with pkgs; [
       asciinema
       bat
+      bazel-buildtools
       bazelisk
       btop
       choose
+      diffutils
       direnv
       nix-direnv
       fd
