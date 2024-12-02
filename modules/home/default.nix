@@ -67,6 +67,9 @@ in {
             ".gitignore" = {
               source = ../../dotfiles/.gitignore;
             };
+            ".ssh/config" = {
+              source = ../../dotfiles/.ssh/config;
+            };
             "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {
               source = ../../bin/do-vpn.sh;
             };
