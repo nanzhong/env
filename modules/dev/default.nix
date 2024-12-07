@@ -45,6 +45,7 @@ in {
       shellcheck
       sshuttle
       sqlite
+      terraform
       unzip
     ];
   };
