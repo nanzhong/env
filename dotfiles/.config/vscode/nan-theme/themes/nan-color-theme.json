@@ -62,7 +62,7 @@
 		"editor.foldBackground": "#264f784d",
 		"editor.foreground": "#f2f2f7",
 		"editor.hoverHighlightBackground": "#e5e5ea55",
-		"editor.inactiveSelectionBackground": "#c7c7cc99",
+		"editor.inactiveSelectionBackground": "#48484a99",
 		"editor.lineHighlightBackground": "#3a3a3c",
 		"editor.lineHighlightBorder": "#3a3a3c",
 		"editor.rangeHighlightBackground": "#3a3a3c99",
