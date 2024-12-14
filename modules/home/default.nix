@@ -70,27 +70,7 @@ in {
             ".ssh/config" = {
               source = ../../dotfiles/.ssh/config;
             };
-            "bin/do-vpn.sh" = mkIf cfg.includeDOVPN {
-              source = ../../bin/do-vpn.sh;
-            };
-            "bin/hipreport.sh" = mkIf cfg.includeDOVPN {
-              source = ../../bin/hipreport.sh;
-            };
-            "bin/ical2diary.fish" = {
-              source = ../../bin/ical2diary.fish;
-            };
-            "bin/helix-git-blame" = {
-              source = ../../bin/helix-git-blame;
-            };
-            "bin/helix-gh-browse" = {
-              source = ../../bin/helix-gh-browse;
-            };
           };
-
-          activation.nvimLazyLock = ''
-            cp ${../../dotfiles/.config/nvim/lazy-lock.json.snapshot} ~/.config/nvim/lazy-lock.json
-            chmod 0644 ~/.config/nvim/lazy-lock.json
-          '';
         };
 
         programs = {
