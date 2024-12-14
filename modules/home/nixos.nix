@@ -15,7 +15,7 @@ in {
         home = "/home/${cfg.user}";
         description = "Nan Zhong";
         extraGroups = [ "wheel" "docker" ];
-        shell = pkgs.fish;
+        shell = pkgs.nushell;
         openssh.authorizedKeys.keys = cfg.keys;
       };
 

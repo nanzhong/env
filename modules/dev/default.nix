@@ -18,6 +18,7 @@ in {
       bazel-buildtools
       bazelisk
       btop
+      carapace
       choose
       diffutils
       direnv

@@ -17,7 +17,7 @@ with lib;
     ];
   };
 
-  environment.shells = [ pkgs.fish ];
+  environment.shells = [ pkgs.nushell ];
   system.checks.verifyBuildUsers = false;
   system.stateVersion = 5;
 }

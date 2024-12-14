@@ -26,7 +26,10 @@ with lib;
 
     users.mutableUsers = false;
 
-    programs.mosh.enable = true;
+    programs = {
+      mosh.enable = true;
+      nix-ld.enable = true;
+    };
 
     services.openssh = {
       enable = true;

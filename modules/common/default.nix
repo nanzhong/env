@@ -23,31 +23,30 @@ with lib;
 
     time.timeZone = "America/Toronto";
 
-    environment.systemPackages = with pkgs; [
-      cachix
-      curl
-      dnsutils
-      file
-      fish
-      fishPlugins.forgit
-      fishPlugins.fzf-fish
-      fzf
-      git
-      gnupg
-      inetutils
-      mosh
-      nix-index
-      openssl
-      podman
-      tmux
-      tree
-      wget
-      zoxide
-    ];
-
-    programs = {
-      fish.enable = true;
-      #nix-ld.enable = true;
+    environment = {
+      systemPackages = with pkgs; [
+        bash-env-json
+        cachix
+        curl
+        dnsutils
+        file
+        fish
+        fzf
+        git
+        gnupg
+        inetutils
+        mosh
+        nix-index
+        nushell
+        openssl
+        podman
+        tmux
+        tree
+        wget
+        zoxide
+      ];
+      
+      shells = [ pkgs.nushell ];
     };
   };
 }

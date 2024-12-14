@@ -1,4 +1,4 @@
-{ lib, config, pkgs, inputs, ... }:
+{ lib, config, pkgs, inputs, system, ... }:
 with lib;
 let
   keys = [
@@ -79,7 +79,16 @@ in {
             nix-direnv.enable = true;
           };
 
-          fish.enable = true;
+          nushell = {
+            enable = true;
+            envFile.text = (builtins.replaceStrings [
+              "NIX_BASH_ENV_NU_MODULE"
+            ] [
+              "${inputs.bash-env-nushell.packages.${system}.default}/bash-env.nu"
+            ] (builtins.readFile ../../dotfiles/.config/nushell/env.nu));
+            configFile.text = (builtins.readFile ../../dotfiles/.config/nushell/config.nu);
+            loginFile.text = (builtins.readFile ../../dotfiles/.config/nushell/login.nu);
+          };
         };
       };
     };

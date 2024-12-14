@@ -35,6 +35,17 @@
       url = "github:reckenrode/mkAlias";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    bash-env-json = {
+      url = "github:tesujimath/bash-env-json/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    bash-env-nushell = {
+      url = "github:tesujimath/bash-env-nushell/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.bash-env-json.follows = "bash-env-json";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:

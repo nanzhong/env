@@ -12,7 +12,7 @@ in {
     users.users = {
       "${cfg.user}" = {
         home = "/Users/${cfg.user}";
-        shell = pkgs.fish;
+        shell = pkgs.nushell;
         openssh.authorizedKeys.keys = cfg.keys;
       };
     };

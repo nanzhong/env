@@ -18,9 +18,11 @@ with lib;
   };
 
   environment.systemPackages = with pkgs; [
+    aerospace
     awscli2
+    nushell
   ];
 
-  environment.shells = [ pkgs.fish ];
+  environment.shells = [ pkgs.nushell ];
   system.stateVersion = 5;
 }
