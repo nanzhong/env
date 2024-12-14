@@ -40,5 +40,6 @@ $env.config = {
   }
 }
 
+source ~/.cache/starship/init.nu
 source ~/.cache/carapace/init.nu
 source ~/.cache/zoxide.nu

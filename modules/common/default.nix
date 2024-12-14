@@ -40,6 +40,7 @@ with lib;
         nushell
         openssl
         podman
+        starship
         tmux
         tree
         wget
