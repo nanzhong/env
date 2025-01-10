@@ -6,8 +6,8 @@ def --env darwin-rebuild-switch [target] {
   reload-nix-env --reset
 }
 
-$env.VISUAL = 'code --wait'
-$env.EDITOR = 'code --wait'
+$env.VISUAL = 'code --wait --new-window'
+$env.EDITOR = 'vim'
 $env.COLORTERM = 'truecolor'
 $env.FZF_DEFAULT_COMMAND = 'fd --hidden .'
 $env.FZF_DEFAULT_OPTS = '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*" --color="bg+:#1e2529,border:#272f35,gutter:#1e2529"'
@@ -30,6 +30,19 @@ $env.config = {
     max_size: 1_000_000
     sync_on_enter: true
     isolation: true
+  }
+
+  hooks: {
+    pre_prompt: [{ ||
+      if (which direnv | is-empty) {
+        return
+      }
+
+      direnv export json | from json | default {} | load-env
+      if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
+        $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
+      }
+    }]
   }
 
   color_config: {
@@ -126,19 +139,6 @@ $env.config = {
     row_index: { fg: '#30d158' attr: 'b' }
     search_result: { fg: '#1c1c1e' bg: '#bf5af2' }
     separator: '#d1d1d6'
-  }
-
-  hooks: {
-    pre_prompt: [{ ||
-      if (which direnv | is-empty) {
-        return
-      }
-
-      direnv export json | from json | default {} | load-env
-      if 'ENV_CONVERSIONS' in $env and 'PATH' in $env.ENV_CONVERSIONS {
-        $env.PATH = do $env.ENV_CONVERSIONS.PATH.from_string $env.PATH
-      }
-    }]
   }
 }
 
