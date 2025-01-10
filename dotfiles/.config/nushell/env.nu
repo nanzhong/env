@@ -1,6 +1,10 @@
 use NIX_BASH_ENV_NU_MODULE
-def --env "reload-nix-env" [] {
-  __NIXOS_SET_ENVIRONMENT_DONE="" __NIX_DARWIN_SET_ENVIRONMENT_DONE="" bash-env /etc/bashrc | load-env
+def --env reload-nix-env [--reset] {
+  if $reset {
+    hide-env __NIXOS_SET_ENVIRONMENT_DONE
+    hide-env __NIX_DARWIN_SET_ENVIRONMENT_DONE
+  }
+  bash-env /etc/bashrc | load-env
 }
 reload-nix-env
 

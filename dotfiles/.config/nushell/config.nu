@@ -3,7 +3,7 @@ alias open = ^open
 
 def --env darwin-rebuild-switch [target] {
   darwin-rebuild switch --flake $".#($target)" --print-build-logs
-  reload-nix-env
+  reload-nix-env --reset
 }
 
 $env.VISUAL = 'code --wait'
