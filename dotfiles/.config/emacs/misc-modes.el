@@ -1,4 +1,4 @@
-;;; misc-modes.el --- miscellaneous modes
+;;; misc-modes.el --- miscellaneous modes  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

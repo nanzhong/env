@@ -1,4 +1,4 @@
-;;; init.el --- emacs config
+;;; init.el --- emacs config  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -10,27 +10,27 @@
 ;; language server responses are often much larger than the 4KB default
 (setq read-process-output-max (* 10 1024 1024))
 
-(setq native-comp-deferred-compilation-deny-list nil)
+;;(setq native-comp-deferred-compilation-deny-list nil)
 
 ;; Bootstrap elpaca
-(defvar elpaca-installer-version 0.8)
+(defvar elpaca-installer-version 0.12)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
 (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
-(defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
+(defvar elpaca-sources-directory (expand-file-name "sources/" elpaca-directory))
 (defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
-                              :ref nil :depth 1
+                              :ref nil :depth 1 :inherit ignore
                               :files (:defaults "elpaca-test.el" (:exclude "extensions"))
-                              :build (:not elpaca--activate-package)))
+                              :build (:not elpaca-activate)))
 ;; Emacs built from emacs-overlay does not include build time info, we manually set it to the current date
 (defvar elpaca-core-date (list (string-to-number (format-time-string "%Y%m%d"))))
-(let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
+(let* ((repo  (expand-file-name "elpaca/" elpaca-sources-directory))
        (build (expand-file-name "elpaca/" elpaca-builds-directory))
        (order (cdr elpaca-order))
        (default-directory repo))
   (add-to-list 'load-path (if (file-exists-p build) build repo))
   (unless (file-exists-p repo)
     (make-directory repo t)
-    (when (< emacs-major-version 28) (require 'subr-x))
+    (when (<= emacs-major-version 28) (require 'subr-x))
     (condition-case-unless-debug err
         (if-let* ((buffer (pop-to-buffer-same-window "*elpaca-bootstrap*"))
                   ((zerop (apply #'call-process `("git" nil ,buffer t "clone"
@@ -50,7 +50,7 @@
   (unless (require 'elpaca-autoloads nil t)
     (require 'elpaca)
     (elpaca-generate-autoloads "elpaca" repo)
-    (load "./elpaca-autoloads")))
+    (let ((load-source-file-function nil)) (load "./elpaca-autoloads"))))
 (add-hook 'after-init-hook #'elpaca-process-queues)
 (elpaca `(,@elpaca-order))
 
@@ -58,8 +58,8 @@
 (elpaca elpaca-use-package
   ;; Enable :elpaca use-package keyword.
   (elpaca-use-package-mode)
-  ;; Assume :elpaca t unless otherwise specified.
-  (setq elpaca-use-package-by-default t))
+  ;; Assume :ensure t unless otherwise specified.
+  (setq use-package-always-ensure t))
 
 ;; Block until current queue processed.
 (elpaca-wait)
@@ -83,7 +83,7 @@
 (load (expand-file-name "swift.el" user-emacs-directory))
 (load (expand-file-name "js.el" user-emacs-directory))
 (load (expand-file-name "web.el" user-emacs-directory))
-(load (expand-file-name "git.el" user-emacs-directory))
+(load (expand-file-name "vc.el" user-emacs-directory))
 (load (expand-file-name "term.el" user-emacs-directory))
 (load (expand-file-name "spelling.el" user-emacs-directory))
 (load (expand-file-name "misc-modes.el" user-emacs-directory))

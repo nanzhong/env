@@ -1,4 +1,4 @@
-;;; js.el --- javascript related config
+;;; js.el --- javascript related config  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

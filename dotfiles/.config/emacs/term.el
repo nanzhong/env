@@ -1,4 +1,4 @@
-;;; term.el --- terminal and eshell specific
+;;; term.el --- terminal and eshell specific  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

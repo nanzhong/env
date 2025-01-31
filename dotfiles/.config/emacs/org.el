@@ -1,5 +1,4 @@
-;;; -*- lexical-binding: t; -*-
-;;; org.el --- org specific
+;;; org.el --- org specific  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

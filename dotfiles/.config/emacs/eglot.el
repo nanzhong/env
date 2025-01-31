@@ -1,4 +1,4 @@
-;;; eglot.el --- eglot configuration
+;;; eglot.el --- eglot configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

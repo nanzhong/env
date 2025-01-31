@@ -1,4 +1,4 @@
-;;; lisp.el --- lisp config
+;;; lisp.el --- lisp config  -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

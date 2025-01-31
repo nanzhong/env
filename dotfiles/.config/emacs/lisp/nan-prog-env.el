@@ -1,8 +1,8 @@
-;;; nan-prog-env.el --- Customizations for prog like modes
+;;; nan-prog-env.el --- Customizations for prog like modes  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023 Nan Zhong
 
-;; Author: Nan Zhong <me@nanzho.ng>
+;; Author: Nan Zhong <me@nanzhon.comg>
 ;; Version: 0.0.1
 ;; Package-Requires: (whitespace highlight-indent-guides)
 ;; Keywords: mode-line

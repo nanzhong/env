@@ -1,10 +1,10 @@
-;;; nan-theme.el --- NaN Theme
+;;; nan-theme.el --- Nan's personal theme  -*- lexical-binding: t; -*-
 
 ;; Copyright 2018-present, all rights reserved.
 ;;
 ;; Code licensed under MIT licence.
 
-;; Author: Nan Zhong <me@nanzho.ng>
+;; Author: Nan Zhong <me@nanzhong.com>
 ;; Version: 0.2
 ;; Package-Requires: ((emacs "24"))
 ;; URL: https://github.com/nanzhong/workstation

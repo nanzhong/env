@@ -1,4 +1,4 @@
-;;; zig.el --- zig specific
+;;; zig.el --- zig specific  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

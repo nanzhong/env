@@ -1,10 +1,9 @@
-;;; nan-mode-line.el --- My personalized mode-line
+;;; nan-mode-line.el --- My personalized mode-line Theme  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2023 Nan Zhong
 
-;; Author: Nan Zhong <me@nanzho.ng>
+;; Author: Nan Zhong <me@nanzhong.com>
 ;; Version: 0.0.1
-;; Package-Requires: (minions)
 ;; Keywords: mode-line
 
 ;;; Commentary:
@@ -72,10 +71,9 @@
   "mode-line segment for displaying misc info."
   (string-trim (format-mode-line mode-line-misc-info)))
 
-(require 'minions)
 (defun nan-mode-line-modes ()
   "mode-line segment for displaying modes."
-  (string-trim (format-mode-line minions-mode-line-modes)))
+  (string-trim (format-mode-line mode-line-modes)))
 
 (setq-default mode-line-format
               '((:eval (nan-mode-line-format

@@ -1,5 +1,4 @@
-;;; -*- lexical-binding: t; -*-
-;;; core.el --- core configuration
+;;; core.el --- core configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -270,13 +269,6 @@
   (corfu-auto t)
   :init
   (global-corfu-mode))
-
-(use-package corfu-terminal
-  :ensure (corfu-terminal :host codeberg :repo "akib/emacs-corfu-terminal")
-  :demand t
-  :hook (after-make-frame-functions . (lambda (_)
-                                        (unless (display-graphic-p)
-                                          (corfu-terminal-mode +1)))))
 
 (use-package kind-icon
   :demand t

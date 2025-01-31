@@ -1,4 +1,4 @@
-;;; project.el --- project.el related
+;;; project.el --- project.el related  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -19,7 +19,7 @@
 
   (defun project-find-root (path)
     "Search up the PATH for `project-root-markers'."
-    (when-let ((root (locate-dominating-file path #'project-root-p)))
+    (when-let* ((root (locate-dominating-file path #'project-root-p)))
       (cons 'transient (expand-file-name root))))
   (add-to-list 'project-find-functions #'project-find-root))
 

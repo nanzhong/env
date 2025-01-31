@@ -1,4 +1,4 @@
-;;; appearance.el --- theme and ui related config
+;;; appearance.el --- theme and ui related config  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -6,7 +6,7 @@
 
 (use-package emacs
   :ensure nil
-  :after (minions highlight-indent-guides)
+  :after (highlight-indent-guides)
   :config
   (add-to-list 'custom-theme-load-path "~/.config/emacs/themes")
   (load-theme 'nan t)
@@ -81,11 +81,15 @@
 (use-package highlight-indent-guides
   :demand t
   :config (setq highlight-indent-guides-method 'column
-                highlight-indent-guides-auto-odd-face-perc 30
-                highlight-indent-guides-auto-even-face-perc 25))
+                highlight-indent-guides-auto-odd-face-perc 5
+                highlight-indent-guides-auto-even-face-perc 10))
 
 (use-package rainbow-delimiters
   :demand t
   :hook (prog-mode . rainbow-delimiters-mode))
+
+(use-package all-the-icons
+  :if (display-graphic-p)
+  :demand t)
 
 ;;; appearance.el ends here

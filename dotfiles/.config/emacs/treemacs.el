@@ -1,4 +1,4 @@
-;;; treemacs.el --- treemacs configuration
+;;; treemacs.el --- treemacs configuration  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 
@@ -6,7 +6,13 @@
 
 (use-package treemacs
   :demand t
-  :defer t)
+  :defer t
+  :config
+  (treemacs-resize-icons 16))
+
+(use-package treemacs-all-the-icons
+  :after treemacs all-the-icons
+  :demand t)
 
 (use-package treemacs-icons-dired
   :after treemacs dired

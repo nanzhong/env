@@ -1,4 +1,4 @@
-;;; early-init.el --- emacs config
+;;; early-init.el --- emacs config  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

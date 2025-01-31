@@ -1,4 +1,4 @@
-;;; web.el --- web specific
+;;; web.el --- web specific  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

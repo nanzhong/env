@@ -1,4 +1,4 @@
-;;; go.el --- go specific
+;;; go.el --- go specific  -*- lexical-binding: t; -*-
 
 ;;; Commentary:
 

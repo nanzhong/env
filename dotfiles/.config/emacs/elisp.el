@@ -1,4 +1,4 @@
-;;; elisp.el. --- elisp config
+;;; elisp.el. --- elisp config  -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Code:
 

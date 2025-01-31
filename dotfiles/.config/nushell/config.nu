@@ -14,11 +14,7 @@ $env.PATH = (
   | uniq # filter so the paths are unique
 )
 
-$env.EDITOR = if (which code | length) == 1 {
-  'code --wait --new-window'
-} else {
-  'emacsclient -nw'
-}
+$env.EDITOR = 'emacsclient -nw'
 $env.VISUAL = $env.EDITOR
 $env.COLORTERM = 'truecolor'
 $env.FZF_DEFAULT_COMMAND = 'fd --hidden .'
@@ -26,7 +22,7 @@ $env.FZF_DEFAULT_OPTS = '--cycle --layout=reverse --border --height=90% --previe
 $env.TERMINFO_DIRS = $'($env.HOME)/.terminfo ($env.TERMINFO_DIRS)'
 
 $env.config.show_banner = false
-$env.config.buffer_editor = 'code'
+$env.config.buffer_editor = 'emacsclient -nw'
 $env.config.history = {
   file_format: sqlite
   max_size: 1_000_000

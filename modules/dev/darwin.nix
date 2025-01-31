@@ -7,6 +7,11 @@ let
     withX = false;
     withGTK3 = false;
   }).overrideAttrs (old: {
+    patches = old.patches ++ [
+      # https://github.com/d12frosted/homebrew-emacs-plus/issues/932#issuecomment-4115193064
+      ../../patches/emacs/rgb-path-fix.patch
+    ];
+
     postPatch = concatStringsSep "\n" [
       old.postPatch
       ''
