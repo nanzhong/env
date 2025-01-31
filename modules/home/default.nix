@@ -5,7 +5,7 @@ let
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIvUFgn/Sa929gXPYRlQcnmJtFG/1ntas0q1ShlzmKPt nan@iphone"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPRVyHqcSWD8nhiniAfDlV3UIua0/mkINp1XbmcwGHVc nan@ipad"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDH6q/qDHWgll9yMvxdbiBGKL/o6vp6ZfV17ckOKXozK nan@dev"
-    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJUk2KrM+qnxbNxxeux+liBV9EbAlnNodzDwb8v8GbE+ me@nanzho.ng"
+    "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIJUk2KrM+qnxbNxxeux+liBV9EbAlnNodzDwb8v8GbE+ me@nanzhong.com"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIYtYfxEmZmLmNTpNRcR7eF8IpU+wdcTZSHWGA0SNqTw nan@devpi"
     "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbiU4cHpFhpAvsrSYIA6gI1Xz9564tz0OVhPZlsSFLR nan@poolside.ai"
   ];
