@@ -72,9 +72,11 @@ in {
             };
           };
 
-          activation.nvimLazyLock = ''
+          activation.nvimLazyLock = inputs.home-manager.lib.hm.dag.entryAfter [ "writeBoundary" ] ''
             cp ${../../dotfiles/.config/nvim/lazy-lock.json.snapshot} ~/.config/nvim/lazy-lock.json
             chmod 0644 ~/.config/nvim/lazy-lock.json
+            echo "Syncing neovim plugins"
+            $DRY_RUN_CMD ${pkgs.neovim}/bin/nvim --headless "+Lazy! restore" +qa
           '';
         };
 

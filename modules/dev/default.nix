@@ -39,6 +39,7 @@ in {
       markdown-oxide
       mariadb
       nodejs
+      neovim
       patchelf
       pnpm
       qemu

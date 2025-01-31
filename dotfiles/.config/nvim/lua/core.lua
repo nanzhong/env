@@ -6,6 +6,10 @@ vim.opt.timeoutlen = 500
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
+-- search
+vim.opt.ignorecase = true
+vim.opt.smartcase = true
+
 -- visual
 vim.opt.cc = vim.opt.cc + { 80 }
 vim.opt.number = true
