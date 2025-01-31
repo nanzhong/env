@@ -1,8 +1,6 @@
 { lib, pkgs, config, inputs, system, ... }:
 with lib;
-let
-  mkalias = inputs.mkAlias.outputs.apps.${system}.default.program;
-in {
+{
   imports = [ ./default.nix ];
   config = {
     nix.gc.interval = { Weekday = 0; Hour = 0; Minute = 0; };
