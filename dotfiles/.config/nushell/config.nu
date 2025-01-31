@@ -146,4 +146,4 @@ $env.config.color_config = {
 source ~/.cache/starship/init.nu
 source ~/.cache/carapace/init.nu
 source ~/.cache/zoxide.nu
-source ~/.config/nushell/completions-jj.nu
+source ~/.cache/jj/completions.nu

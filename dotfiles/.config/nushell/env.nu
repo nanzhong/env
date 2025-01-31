@@ -15,4 +15,7 @@ carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 zoxide init nushell | save --force ~/.cache/zoxide.nu
 
 mkdir ~/.cache/starship
-starship init nu | save -f ~/.cache/starship/init.nu
+starship init nu | save --force ~/.cache/starship/init.nu
+
+mkdir ~/.cache/jj
+jj util completion nushell | save --force ~/.cache/jj/completions.nu
