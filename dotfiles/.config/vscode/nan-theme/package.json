@@ -1,21 +1,24 @@
 {
-  "name": "nan",
-  "displayName": "Nan",
-  "description": "Nan's personal theme",
-  "version": "0.0.1",
-  "engines": {
-    "vscode": "^1.95.0"
-  },
-  "categories": [
-    "Themes"
-  ],
-  "contributes": {
-    "themes": [
-      {
-        "label": "Nan",
-        "uiTheme": "vs-dark",
-        "path": "./themes/nan-color-theme.json"
-      }
-    ]
-  }
+	"name": "nan",
+	"displayName": "Nan",
+	"description": "Nan's personal theme",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.95.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Nan",
+				"uiTheme": "vs-dark",
+				"path": "./themes/nan-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"size": 53922
+	}
 }
