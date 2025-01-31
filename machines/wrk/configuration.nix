@@ -19,6 +19,9 @@ with lib;
 
   environment.systemPackages = with pkgs; [
     awscli2
+    amazon-ecr-credential-helper
+    jdk17
+    maven
   ];
 
   environment.shells = [ pkgs.nushell ];

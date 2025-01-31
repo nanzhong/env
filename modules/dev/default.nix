@@ -1,4 +1,4 @@
-{ lib, config, pkgs, inputs, ... }:
+{ lib, config, pkgs, inputs, system, ... }:
 with lib;
 let
   cfg = config.nanzhong.dev;
@@ -13,13 +13,16 @@ in {
     ];
 
     environment.systemPackages = with pkgs; [
+      abseil-cpp
       asciinema
       bat
       bazel-buildtools
       bazelisk
       btop
+      buf
       carapace
       choose
+      cue
       diffutils
       direnv
       nix-direnv
@@ -29,10 +32,13 @@ in {
       gnumake
       go
       gopls
+      gum
       hunspell
       hunspellDicts.en-ca-large
       hunspellDicts.en-us-large
       jujutsu
+      inputs.jjui.packages.${system}.default
+      kind
       kubectl
       kubernetes-helm
       marksman
@@ -40,8 +46,10 @@ in {
       mariadb
       nodejs
       neovim
+      opencode
       patchelf
       pnpm
+      python3
       qemu
       ripgrep
       ruby
@@ -50,6 +58,7 @@ in {
       shellcheck
       sshuttle
       sqlite
+      svelte-language-server
       terraform
       unzip
     ];
