@@ -7,7 +7,7 @@
 ;; Author: Nan Zhong <me@nanzhong.com>
 ;; Version: 0.2
 ;; Package-Requires: ((emacs "24"))
-;; URL: https://github.com/nanzhong/workstation
+;; URL: https://github.com/nanzhong/env
 
 ;;; Commentary:
 
@@ -70,20 +70,22 @@
    'nan
 
    ;; Default
-   `(default               ((t (:foreground ,fg :background ,bg))))
-   `(italic                ((t (:italic t))))
-   `(cursor                ((t (:background ,fg---))))
-   `(ffap                  ((t (:foreground ,base-7))))
-   `(fringe                ((t (:background ,bg))))
-   `(highlight             ((t (:background ,bg+))))
-   `(line-number           ((t (:foreground ,bg+++ :background ,bg))))
-   `(lazy-highlight        ((t (:background ,base-4))))
-   `(link                  ((t (:foreground ,base-4 :underline t))))
-   `(minibuffer-prompt     ((t (:foreground ,base-1))))
-   `(region                ((t (:background ,bg+++))))
-   `(show-paren-match-face ((t (:background ,base-6))))
-   `(vertical-border       ((t (:foreground ,bg+ :background ,bg))))
-   `(warning               ((t (:foreground ,base-0))))
+   `(default ((t (:foreground ,fg :background ,bg))))
+   `(italic ((t (:italic t))))
+   `(cursor ((t (:background ,fg---))))
+   `(ffap ((t (:foreground ,base-7))))
+   `(fringe ((t (:background ,bg))))
+   `(highlight ((t (:background ,bg+))))
+   `(line-number ((t (:foreground ,bg+++ :background ,bg))))
+   `(line-number-current-line ((t (:foreground ,fg- :background ,bg))))
+   `(lazy-highlight ((t (:background ,base-4))))
+   `(link ((t (:foreground ,base-4 :underline t))))
+   `(minibuffer-prompt ((t (:foreground ,base-1))))
+   `(region ((t (:background ,bg+++))))
+   `(show-paren-match ((t (:background ,base-6))))
+   `(show-paren-mismatch ((t (:foreground ,fg :background ,base-0 :weight bold))))
+   `(vertical-border ((t (:foreground ,bg+ :background ,bg))))
+   `(warning ((t (:foreground ,base-0))))
 
    ;; menu
    `(menu ((t (:foreground ,fg-- :background ,bg+))))
@@ -106,9 +108,6 @@
    `(nan-mode-line-buffer-name ((t (:foreground ,bg :background ,base-4 :weight bold))))
    `(nan-mode-line-vc ((t (:foreground ,base-7 :weight bold))))
 
-   ;; Minions
-   `(minions-mode-line-face ((t :background ,bg+++)))
-
    ;; flymake
    `(flymake-note ((t :background ,base-4 :foreground ,bg)))
    `(flymake-warning ((t :background ,base-2 :foreground ,bg)))
@@ -121,19 +120,27 @@
 
    ;; Syntax highlighting
    `(font-lock-builtin-face ((t (:foreground ,base-7))))
-   `(font-lock-comment-face ((t (:foreground ,fg-- :inherit italic))))
    `(font-lock-comment-delimiter-face ((t (:foreground ,fg-- :inherit italic))))
-   `(font-lock-constant-face ((t (:foreground ,base-1))))
+   `(font-lock-comment-face ((t (:foreground ,fg-- :inherit italic))))
+   `(font-lock-constant-face ((t (:foreground ,base-0))))
    `(font-lock-doc-face ((t (:foreground ,fg-- :inherit italic))))
+   `(font-lock-escape-face ((t (:foreground ,base-6))))
    `(font-lock-function-name-face ((t (:foreground ,base-4))))
+   `(font-lock-function-call-face ((t (:foreground ,base-6))))
    `(font-lock-keyword-face ((t (:foreground ,base-7))))
-   `(font-lock-negation-face ((t (:foreground ,base-0))))
+   `(font-lock-negation-char-face ((t (:foreground ,base-0))))
+   `(font-lock-number-face ((t (:foreground ,base-6))))
+   `(font-lock-operator-face ((t (:foreground ,base-3))))
    `(font-lock-preprocessor-face ((t (:foreground ,base-6))))
-   `(font-lock-regexp-grouping-construct ((t (:foreground ,base-6))))
+   `(font-lock-property-name-face ((t (:foreground ,base-4))))
+   `(font-lock-property-use-face ((t (:foreground ,base-5))))
+   `(font-lock-punctuation-face ((t (:foreground ,base-2))))
    `(font-lock-regexp-grouping-backslash ((t (:foreground ,base-6))))
-   `(font-lock-string-face ((t (:foreground ,base-1))))
-   `(font-lock-type-face ((t (:foreground ,base-4))))
+   `(font-lock-regexp-grouping-construct ((t (:foreground ,base-6))))
+   `(font-lock-string-face ((t (:foreground ,fg))))
+   `(font-lock-type-face ((t (:foreground ,base-1))))
    `(font-lock-variable-name-face ((t (:foreground ,base-4))))
+   `(font-lock-variable-use-face ((t (:foreground ,base-5))))
    `(font-lock-warning-face ((t (:foreground ,base-0))))
 
    ;; rainbow-delimiters
@@ -193,7 +200,7 @@
    ;; diff-hl
    `(diff-hl-insert ((t :foreground ,base-3 :background ,base-3)))
    `(diff-hl-change ((t :foreground ,base-2 :background ,base-2)))
-   `(diff-hl-delete ((t :foreground ,base-0, :background ,base-0)))
+   `(diff-hl-delete ((t :foreground ,base-0 :background ,base-0)))
 
    ;; git
    `(git-commit-summary ((t (:foreground ,base-4 :weight bold))))

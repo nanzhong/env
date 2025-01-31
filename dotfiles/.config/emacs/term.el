@@ -35,7 +35,7 @@ A simple wrapper around the standard 'find' function."
     "Searches for the first matching filename and loads it into a
 file to edit."
     (let* ((files (eshell/f filename dir))
-           (file (car (s-split "\n" files))))
+           (file (car (split-string files "\n"))))
       (find-file file)))
 
   (defun eshell/gst (&rest args)
@@ -70,20 +70,20 @@ file to edit."
        (with-face "\n" :background header-bg)
        (with-face user-login-name :foreground blue)
        "@"
-       (with-face "lime" :foreground green)
+       (with-face (system-name) :foreground green)
        (if (= (user-uid) 0)
            (with-face " #" :foreground red)
          " $")
        " ")))
   (setq eshell-prompt-function 'shk-eshell-prompt)
+  (setq eshell-prompt-regexp "^[^@\n]+@[^ \n]+ [#$] ")
   (setq eshell-highlight-prompt nil)
   (setq eshell-cmpl-cycle-completions nil))
 
 (use-package multi-term
   :demand t
   :config
-  (setq multi-term-program "/usr/local/bin/fish")
-  (setq multi-term-program-switches "--login")
+  (setq multi-term-program (executable-find "nu"))
   (setq multi-term-scroll-to-bottom-on-output nil))
 
 ;; disable hl-line and wrapping for term like modes

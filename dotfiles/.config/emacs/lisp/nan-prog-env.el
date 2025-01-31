@@ -2,7 +2,7 @@
 
 ;; Copyright (C) 2023 Nan Zhong
 
-;; Author: Nan Zhong <me@nanzhon.comg>
+;; Author: Nan Zhong <me@nanzhong.com>
 ;; Version: 0.0.1
 ;; Package-Requires: (whitespace highlight-indent-guides)
 ;; Keywords: mode-line
@@ -22,7 +22,7 @@
   ;; From whitespace
   (whitespace-mode)
   ;; Show trailing whitespace
-  (setq show-trailing-whitespace 1))
+  (setq show-trailing-whitespace t))
 
 (require 'derived)
 (dolist (hook (mapcar #'derived-mode-hook-name prog-like-modes))

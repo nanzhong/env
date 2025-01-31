@@ -5,7 +5,7 @@
 ;;; Code:
 
 (use-package ruby-mode
-  :elpaca (ruby-mode :host github :repo "ruby/elisp")
+  :ensure (ruby-mode :host github :repo "ruby/elisp")
   :demand t)
 
 (use-package inf-ruby

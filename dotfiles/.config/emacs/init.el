@@ -69,7 +69,6 @@
 
 ;; Load configs
 (load (expand-file-name "core.el" user-emacs-directory))
-(load (expand-file-name "project.el" user-emacs-directory))
 (load (expand-file-name "appearance.el" user-emacs-directory))
 (load (expand-file-name "eglot.el" user-emacs-directory))
 (load (expand-file-name "treemacs.el" user-emacs-directory))

@@ -5,6 +5,6 @@
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             ;; Use spaces, not tabs.
-            (setq-default indent-tabs-mode nil)))
+            (setq indent-tabs-mode nil)))
 
 ;;; elisp.el ends here

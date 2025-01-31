@@ -90,7 +90,8 @@
                         ;; Right
                         `((:eval (nan-mode-line-misc-info))
                           " "
-                          (:eval (nan-mode-line-modes)))))))
+                          (:eval (nan-mode-line-modes))
+                          " ")))))
 
 (provide 'nan-mode-line)
 

@@ -5,22 +5,17 @@
 ;;; Code:
 
 (use-package treemacs
-  :demand t
-  :defer t
-  :config
-  (treemacs-resize-icons 16))
-
-(use-package treemacs-all-the-icons
-  :after treemacs all-the-icons
   :demand t)
+
+(use-package treemacs-nerd-icons
+  :after treemacs
+  :config
+  (treemacs-nerd-icons-config))
 
 (use-package treemacs-icons-dired
-  :after treemacs dired
-  :demand t
-  :config (treemacs-icons-dired-mode))
+  :after treemacs)
 
 (use-package treemacs-magit
-  :after treemacs magit
-  :demand t)
+  :after treemacs magit)
 
 ;;; treemacs.el ends here

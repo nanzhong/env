@@ -11,6 +11,10 @@
   (setq inhibit-splash-screen t)
   (setq inhibit-startup-message t)
 
+  ;; Emacs expects a POSIX-compatible shell for subprocesses.
+  ;; Without this, nushell's built-ins (e.g. find) shadow system commands.
+  (setq shell-file-name (or (executable-find "bash") "/bin/sh"))
+
   ;; Make backups of files, even when they're in version control
   (setq vc-make-backup-files t)
 
@@ -106,15 +110,8 @@
 
 (use-package flymake
   :ensure nil
-  :bind (:map flymake-mode
-              ("C-c e" . flymake-show-buffer-diagnostics))
-  :config (setq flymake-suppress-zero-counters nil
-                flymake-mode-line-lighter ""
-                flymake-mode-line-counter-format `("["
-                                                   ,(propertize "⨂ " 'face 'compilation-error) (:eval (flymake--mode-line-counter :error t))
-                                                   ,(propertize " ⨁ " 'face 'compilation-warning) (:eval (flymake--mode-line-counter :warning t))
-                                                   ,(propertize " ⨀ " 'face 'compilation-info) (:eval (flymake--mode-line-counter :note t))
-                                                   "]")))
+  :bind (:map flymake-mode-map
+              ("C-c e" . flymake-show-buffer-diagnostics)))
 
 (use-package yasnippet
   :demand t
@@ -303,5 +300,7 @@
               ("M-w" . clipetty-kill-ring-save))
   :config
   (setq clipetty-tmux-ssh-tty "echo \"SSH_TTY=$(tmux display-message -p '#{pane_tty}')\""))
+
+(use-package vundo)
 
 ;;; core.el ends here

@@ -28,14 +28,22 @@
         ring-bell-function 'ignore)
 
   ;; Maximum styles
-  (setq font-lock-maximum-decoration t)
+  (setq font-lock-maximum-decoration t
+        treesit-font-lock-level 4)
 
   ;; Allow fitting window width
   (setq fit-window-to-buffer-horizontally t)
 
+  (add-hook 'after-make-frame-functions
+            (lambda (&optional frame)
+              (set-frame-parameter frame 'menu-bar-lines
+                                   (if (display-graphic-p frame) 1 0))))
+
   ;; Set a different character for the vertical border and wrap
   (add-hook 'window-configuration-change-hook
             (lambda ()
+              (unless standard-display-table
+                (setq standard-display-table (make-display-table)))
               (let ((display-table (or buffer-display-table standard-display-table)))
                 (set-display-table-slot display-table 'vertical-border ?│)
                 (set-display-table-slot display-table 'wrap ?↩))))
@@ -59,16 +67,9 @@
 
 (use-package nan-mode-line
   :ensure nil
-  :after minions
-  :demand t)
-
-(use-package minions
   :demand t
   :config
-  (minions-mode)
-  (setq minions-mode-line-lighter "⍠"
-        minions-mode-line-delimiters '("" . "")
-        minions-prominent-modes '(flymake-mode)))
+  (setq mode-line-collapse-minor-modes '(not flymake-mode)))
 
 (use-package whitespace
   :ensure nil
@@ -81,15 +82,11 @@
 (use-package highlight-indent-guides
   :demand t
   :config (setq highlight-indent-guides-method 'column
-                highlight-indent-guides-auto-odd-face-perc 5
-                highlight-indent-guides-auto-even-face-perc 10))
+                highlight-indent-guides-auto-odd-face-perc 2
+                highlight-indent-guides-auto-even-face-perc 5))
 
 (use-package rainbow-delimiters
   :demand t
   :hook (prog-mode . rainbow-delimiters-mode))
-
-(use-package all-the-icons
-  :if (display-graphic-p)
-  :demand t)
 
 ;;; appearance.el ends here

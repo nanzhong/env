@@ -16,7 +16,7 @@
         web-mode-style-padding 2
         web-mode-script-padding 0
         web-mode-block-padding 0
-        web-mode-enable-auto-pairing t
+        web-mode-enable-auto-pairing nil
         web-mode-enable-css-colorization t)
   (add-to-list 'auto-mode-alist '("\\.phtml\\'" . web-mode))
   (add-to-list 'auto-mode-alist '("\\.tpl\\.php\\'" . web-mode))

@@ -4,7 +4,7 @@
 
 ;;; Code:
 
-;; Disable package.el since we are using straight.el
+;; Disable package.el since we are using elpaca
 (setq package-enable-at-startup nil)
 
 ;; GUI tweaks for more minimal look

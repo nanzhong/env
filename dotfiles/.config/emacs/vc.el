@@ -7,14 +7,13 @@
 (use-package diff-hl
   :demand t
   :hook ((dired-mode . diff-hl-dired-mode-unless-remote)
-         (diff-hl . diff-hl-flydiff-mode))
+         (diff-hl-mode . diff-hl-flydiff-mode))
   :config
   (global-diff-hl-mode)
   (unless window-system
     (diff-hl-margin-mode)))
 
-(use-package git-modes
-  :demand t)
+(use-package git-modes)
 
 (use-package magit
   :ensure (magit :host github :repo "magit/magit")

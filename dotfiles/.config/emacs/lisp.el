@@ -2,7 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package sly
-  :demand t)
+(use-package sly)
 
 ;;; lisp.el ends here
