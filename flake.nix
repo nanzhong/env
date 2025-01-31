@@ -32,6 +32,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.bash-env-json.follows = "bash-env-json";
     };
+
+    jjui = {
+      url = "github:idursun/jjui/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, ... }@inputs:
