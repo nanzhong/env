@@ -1,6 +1,6 @@
 [user]
   name = Nan Zhong
-  email = me@nanzho.ng
+  email = me@nanzhong.com
   signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGbiU4cHpFhpAvsrSYIA6gI1Xz9564tz0OVhPZlsSFLR
 
 [init]
@@ -11,11 +11,6 @@
 
 [commit]
   gpgsign = true
-
-[url "git@github.internal.digitalocean.com:"]
-  insteadOf = git://github.internal.digitalocean.com/
-  insteadOf = https://github.internal.digitalocean.com/
-  insteadOf = http://github.internal.digitalocean.com/
 
 [url "git@github.com:"]
   insteadOf = git://github.com/
