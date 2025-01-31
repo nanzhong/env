@@ -22,6 +22,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neovim = {
+       url = "github:nix-community/neovim-nightly-overlay";
+       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     mkAlias = {
       url = "github:reckenrode/mkAlias";
       inputs.nixpkgs.follows = "nixpkgs";

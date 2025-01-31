@@ -4,6 +4,7 @@ vim.opt.mouse = "a"
 vim.opt.swapfile = false
 vim.opt.timeoutlen = 500
 vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
 
 -- visual
 vim.opt.cc = vim.opt.cc + { 80 }

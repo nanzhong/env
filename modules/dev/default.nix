@@ -10,6 +10,9 @@ in {
   config = mkIf cfg.enable {
     nixpkgs.overlays = [
       inputs.emacs.overlay
+      (final: prev: {
+        neovim = inputs.neovim.packages.${prev.system}.neovim;
+      })
     ];
 
     environment.systemPackages = with pkgs; [
@@ -38,6 +41,7 @@ in {
       marksman
       markdown-oxide
       mariadb
+      neovim
       patchelf
       qemu
       ripgrep
