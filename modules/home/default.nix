@@ -47,6 +47,7 @@ in {
 
   config = {
     home-manager = {
+      backupFileExtension = "hm.bak";
       useGlobalPkgs = true;
       useUserPackages = true;
       users."${cfg.user}" = {
