@@ -86,8 +86,8 @@ in {
             ] [
               "${inputs.bash-env-nushell.packages.${system}.default}/bash-env.nu"
             ] (builtins.readFile ../../dotfiles/.config/nushell/env.nu));
-            configFile.text = (builtins.readFile ../../dotfiles/.config/nushell/config.nu);
-            loginFile.text = (builtins.readFile ../../dotfiles/.config/nushell/login.nu);
+            configFile.source = ../../dotfiles/.config/nushell/config.nu;
+            loginFile.source = ../../dotfiles/.config/nushell/login.nu;
           };
         };
       };
