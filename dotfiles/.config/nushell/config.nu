@@ -2,7 +2,7 @@ alias nu-open = open
 alias open = ^open
 
 def --env darwin-rebuild-switch [target] {
-  darwin-rebuild switch --flake $".#($target)" --print-build-logs
+  sudo darwin-rebuild switch --flake $".#($target)" --print-build-logs
   reload-nix-env --reset
 }
 
