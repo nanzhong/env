@@ -45,7 +45,6 @@ with lib;
         nix-index
         nushell
         openssl
-        podman
         starship
         tmux
         tree

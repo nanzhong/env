@@ -23,7 +23,6 @@ with lib;
 
     virtualisation = {
       docker.enable = true;
-      podman.enable = true;
     };
 
     security.sudo.wheelNeedsPassword = false;
