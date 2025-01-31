@@ -11,7 +11,11 @@ with lib;
       };
     };
 
-    nix.gc.dates = "weekly";
+    nix.gc = {
+      automatic = true;
+      options = "--delete-older-than 30d";
+      dates = "weekly";
+    };
 
     networking.firewall = {
       allowPing = true;

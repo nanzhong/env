@@ -3,8 +3,6 @@ with lib;
 {
   imports = [ ./default.nix ];
   config = {
-    nix.gc.interval = { Weekday = 0; Hour = 0; Minute = 0; };
-
     # This is a workaround to setup finder aliases for gui applications so that spotlight can find them
     system.activationScripts.postUserActivation.text = ''
       apps_source="${config.system.build.applications}/Applications"
@@ -14,5 +12,6 @@ with lib;
       mkdir -p "$app_target"
       ${pkgs.rsync}/bin/rsync --archive --checksum --chmod=-w --copy-unsafe-links --delete "$apps_source/" "$app_target"
     '';
+    nix.enable = false;
   };
 }
