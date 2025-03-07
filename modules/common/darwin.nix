@@ -5,7 +5,6 @@ let
 in {
   imports = [ ./default.nix ];
   config = {
-    nix.useDaemon = true;
     nix.gc.interval = { Weekday = 0; Hour = 0; Minute = 0; };
 
     # This is a workaround to setup finder aliases for gui applications so that spotlight can find them
