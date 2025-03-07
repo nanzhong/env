@@ -32,6 +32,7 @@ in {
       hunspell
       hunspellDicts.en-ca-large
       hunspellDicts.en-us-large
+      jujutsu
       kubectl
       kubernetes-helm
       marksman

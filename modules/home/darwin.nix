@@ -16,5 +16,13 @@ in {
         openssh.authorizedKeys.keys = cfg.keys;
       };
     };
+
+    home-manager = {
+      users."${cfg.user}".home.file = {
+        "/Users/${cfg.user}/Library/Application Support/jj" = {
+          source = ../../dotfiles/.config/jj;
+        };
+      };
+    };
   };
 }
