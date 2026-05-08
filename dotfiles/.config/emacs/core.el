@@ -303,6 +303,17 @@
 
 (use-package vundo)
 
+(use-package server
+  :ensure nil
+  :defer 1
+  :config
+  ;; Start the Emacs server on startup so `emacsclient' can connect.
+  ;; Guarded with `server-running-p' so a second Emacs instance (or a
+  ;; reload of init) doesn't error out with "Unable to start the Emacs
+  ;; server" when a socket already exists for this `server-name'.
+  (unless (server-running-p)
+    (server-start)))
+
 (use-package project
   :ensure nil
   :custom
