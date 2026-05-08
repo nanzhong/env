@@ -55,8 +55,8 @@ in {
       ruby
       s3cmd
       sbcl
-      shellcheck
       sshuttle
+      shellcheck
       sqlite
       svelte-language-server
       terraform

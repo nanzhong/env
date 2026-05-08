@@ -16,6 +16,12 @@ $env.PATH = (
 
 $env.EDITOR = 'emacsclient -nw'
 $env.VISUAL = $env.EDITOR
+# When no Emacs server is running, `emacsclient` will fall back to
+# `$ALTERNATE_EDITOR`. Setting it to the empty string is a special
+# value that tells `emacsclient` to start `emacs --daemon` itself
+# and then reconnect, so the first client invocation bootstraps the
+# server transparently.
+$env.ALTERNATE_EDITOR = ''
 $env.COLORTERM = 'truecolor'
 $env.FZF_DEFAULT_COMMAND = 'fd --hidden .'
 $env.FZF_DEFAULT_OPTS = '--cycle --layout=reverse --border --height=90% --preview-window=wrap --marker="*" --color="bg+:#1e2529,border:#272f35,gutter:#1e2529"'
