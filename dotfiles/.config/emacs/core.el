@@ -303,4 +303,17 @@
 
 (use-package vundo)
 
+(use-package project
+  :ensure nil
+  :custom
+  ;; Use ripgrep for `project-find-regexp', `xref-find-references',
+  ;; `dired-do-find-regexp' and friends. `rg' honours .gitignore and is
+  ;; dramatically faster than the default `grep' on large repos, which
+  ;; is usually enough to stop the search from hanging Emacs.
+  ;;
+  ;; For truly async / cancellable searches, prefer `consult-ripgrep'
+  ;; (bound to `M-s r' above): it streams results live from an external
+  ;; `rg' process and can be interrupted at any time with `C-g'.
+  (xref-search-program 'ripgrep))
+
 ;;; core.el ends here
